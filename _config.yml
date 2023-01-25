@@ -83,11 +83,11 @@ author:
   name             : "Zhongxiang Sun"
   avatar           : "profile.png"
   bio              : "Ph.D. candidate At Renmin University of China"
-  location         : "Location"
+  location         : "Beijing China"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=4n5whr0AAAAJ"
-  email            :
+  email            : "sunzhongxiang@ruc.edu.cn"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/Jeryi-Sun"
+  github           : "Jeryi-Sun"
   google_plus      :
   keybase          :
   instagram        :
