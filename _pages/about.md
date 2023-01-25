@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-He is currently a 1th year Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are about LAI, Recommender System, etc. 
+He is currently a 1st year Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are about LAI, Recommender System, etc. 
 
 Education
 ======
