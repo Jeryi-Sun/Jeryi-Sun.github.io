@@ -24,9 +24,18 @@ Publications
 * ***Z Sun***, J Xu, X Zhang, Z Dong, JR Wen. Law Article-Enhanced Legal Case Matching: a Model-Agnostic Causal Learning Approach. (**arXiv preprint**)
 
 
+Teaching
+======
+1. Teaching Assistant, Introduction to Big Data Analytics RUC, Fall 2022
 
+Work Experience
+======
 
-
+- **Kuaishou**: Research Intern
+  - ***February. 2022 ~ Now***
+  - Model and Application Group
+  - Research Directions: Recommender Systems with Search Data
+  - Advisor: Xiaoxue Zang
 
 
 
