@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "zh-China"
+locale                   : "Beijing, China"
 title                    : "Zhongxiang Sun / Academic Profile"
 title_separator          : "-"
 name                     : &name "Zhongxiang Sun"
@@ -40,7 +40,7 @@ staticman:
   path                   : "_data/comments/{options.slug}"
   requiredFields         : ['name', 'email', 'message']
   transforms:
-    email                : "md5"
+    email                : "sunzhongxiang@ruc.edu.cn"
   generatedFields:
     date:
       type               : "date"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Zhongxiang Sun"
   avatar           : "profile.png"
-  bio              : "Welcome to my academic home page."
+  bio              : "Ph.D. candidate At Renmin University of China"
   location         : "Location"
   employer         :
   pubmed           : 
