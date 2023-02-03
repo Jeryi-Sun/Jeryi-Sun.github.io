@@ -36,6 +36,6 @@ Work Experience
   - Model and Application Group
   - Research Directions: Recommender Systems with Search Data
   - Advisor: Xiaoxue Zang
-- **CAIL 2022**[http://cail.cipsc.org.cn/index.html]: Committee Member 
+- [**CAIL 2022**](http://cail.cipsc.org.cn/index.html): Committee Member 
 
 
