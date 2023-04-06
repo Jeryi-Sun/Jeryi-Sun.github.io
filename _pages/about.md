@@ -17,17 +17,18 @@ Education
 
 Publications
 ======
+* ***Z Sun***, J Xu, X Zhang, Z Dong, JR Wen. Law Article-Enhanced Legal Case Matching: a Causal Learning Approach. (**SIGIR 2023**)
 * W Yu, ***Z Sun***, J Xu, Z Dong, X Chen, H Xu, JR Wen. Explainable legal case matching via inverse optimal transport-based rationale extraction. (**SIGIR 2022**).
 * G Song, J Yang, L He, Z Wang, G Li, C Duan, Y Liu, ***Z Sun***. AddrMiner: A Comprehensive Global Active IPv6 Address Discovery System. (**USENIX ATC 22**)
 * Haomin Wen, Youfang Lin, Fan Wu, Huaiyu Wan, ***Zhongxiang Sun***, Tianyue Cai, Hongyu Liu, Shengnan Guo, Jianbing Zheng, Chao Song, Lixia Wu. Enough Waiting for the Couriers --- Learning to Estimate Package Pick-up Arrival Time from Couriers' Spatial-Temporal Behaviors.(**TIST 2022**)
 * Zihua Si, ***Zhongxiang Sun***, Xiao Zhang, Jun Xu, Yang Song, Xiaoxue Zang, Ji-Rong Wen. Enhancing Recommendation with Search Data in a Causal Learning Manner. (**TOIS 2023**)
-* ***Z Sun***, J Xu, X Zhang, Z Dong, JR Wen. Law Article-Enhanced Legal Case Matching: a Model-Agnostic Causal Learning Approach. (**arXiv preprint**)
+
 
 
 Teaching
 ======
-1. Teaching Assistant, Introduction to Big Data Analytics RUC, Fall 2022
-
+1. Teaching Assistant, Introduction to Big Data Analytics in RUC, Fall 2022
+2. Teaching Assistant, Python in RUC, Spring 2022
 Work Experience
 ======
 
@@ -37,5 +38,6 @@ Work Experience
   - Research Directions: Recommender Systems with Search Data
   - Advisor: Xiaoxue Zang
 - [**CAIL 2022**](http://cail.cipsc.org.cn/index.html): Committee Member 
+- **TASLP** reviewer.
 
 
