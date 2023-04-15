@@ -22,6 +22,9 @@ Publications
 * Haomin Wen, Youfang Lin, Fan Wu, Huaiyu Wan, ***Zhongxiang Sun***, Tianyue Cai, Hongyu Liu, Shengnan Guo, Jianbing Zheng, Chao Song, Lixia Wu. Enough Waiting for the Couriers --- Learning to Estimate Package Pick-up Arrival Time from Couriers' Spatial-Temporal Behaviors.(**TIST 2022**)
 * Zihua Si, ***Zhongxiang Sun***, Xiao Zhang, Jun Xu, Yang Song, Xiaoxue Zang, Ji-Rong Wen. Enhancing Recommendation with Search Data in a Causal Learning Manner. (**TOIS 2023**)
 * ***Z Sun***, J Xu, X Zhang, Z Dong, JR Wen. Law Article-Enhanced Legal Case Matching: a Causal Learning Approach. (**SIGIR 2023**)
+* Zihua Si, **Zhongxiang Sun**, Xiao Zhang, Jun Xu, Xiaoxue Zang, Yang Song, Kun Gai, Ji-Rong Wen. When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation. (**SIGIR 2023**)
+
+
 
 
 Teaching
