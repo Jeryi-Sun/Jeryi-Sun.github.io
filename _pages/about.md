@@ -41,6 +41,6 @@ Work Experience
   - Research Directions: Recommender Systems with Search Data
   - Advisor: Xiaoxue Zang
 - [**CAIL 2022**](http://cail.cipsc.org.cn/index.html): Committee Member 
-- **TASLP** reviewer.
+- [**TASLP**](https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing)(CCF B) reviewer.
 
 
