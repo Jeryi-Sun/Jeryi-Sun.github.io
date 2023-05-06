@@ -23,6 +23,7 @@ Publications
 * Zihua Si, ***Zhongxiang Sun***, Xiao Zhang, Jun Xu, Yang Song, Xiaoxue Zang, Ji-Rong Wen. Enhancing Recommendation with Search Data in a Causal Learning Manner. (**TOIS 2023**)
 * ***Z Sun***, J Xu, X Zhang, Z Dong, JR Wen. Law Article-Enhanced Legal Case Matching: a Causal Learning Approach. (**SIGIR 2023**)
 * Zihua Si, **Zhongxiang Sun**, Xiao Zhang, Jun Xu, Xiaoxue Zang, Yang Song, Kun Gai, Ji-Rong Wen. When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation. (**SIGIR 2023**)
+* Sunhao Dai, Ninglu Shao, Haiyuan Zhao, Weijie Yu, Zihua Si, Chen Xu, **Zhongxiang Sun**, Xiao Zhang, Jun Xu. Uncovering ChatGPT's Capabilities in Recommender Systems (arxiv 2023)
 
 
 
