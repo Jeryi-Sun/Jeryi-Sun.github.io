@@ -46,4 +46,7 @@ Work Experience
 - [**TASLP**](https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing)(CCF B) reviewer.
 - [**CIKM 2023**]: PC Member.
 
+Talk
+======
+Accurate and Explainable Legal Case Matching [PPT](https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing)
 
