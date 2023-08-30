@@ -23,8 +23,8 @@ Publications
 * Zihua Si, ***Zhongxiang Sun***, Xiao Zhang, Jun Xu, Yang Song, Xiaoxue Zang, Ji-Rong Wen. Enhancing Recommendation with Search Data in a Causal Learning Manner. (**TOIS 2023**)
 * ***Z Sun***, J Xu, X Zhang, Z Dong, JR Wen. Law Article-Enhanced Legal Case Matching: a Causal Learning Approach. (**SIGIR 2023**)
 * Zihua Si, **Zhongxiang Sun**, Xiao Zhang, Jun Xu, Xiaoxue Zang, Yang Song, Kun Gai, Ji-Rong Wen. When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation. (**SIGIR 2023**)
-* Sunhao Dai, Ninglu Shao, Haiyuan Zhao, Weijie Yu, Zihua Si, Chen Xu, **Zhongxiang Sun**, Xiao Zhang, Jun Xu. Uncovering ChatGPT's Capabilities in Recommender Systems (arxiv 2023) [paper](https://arxiv.org/pdf/2305.02182.pdf)
-* KuaiSAR: A Unified Search And Recommendation Dataset **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Dewei Leng, Yanan Niu, Yang Song, Xiao Zhang, Jun Xu
+* Sunhao Dai, Ninglu Shao, Haiyuan Zhao, Weijie Yu, Zihua Si, Chen Xu, **Zhongxiang Sun**, Xiao Zhang, Jun Xu. Uncovering ChatGPT's Capabilities in Recommender Systems (**RecSys 2023**) [paper](https://arxiv.org/pdf/2305.02182.pdf)
+*  **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Dewei Leng, Yanan Niu, Yang Song, Xiao Zhang, Jun Xu. KuaiSAR: A Unified Search And Recommendation Dataset (**CIKM 2023**)
 
 
 
