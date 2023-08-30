@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-He is currently a 1st year Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are about LAI, Recommender System, etc. 
+He is currently a Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are about LAI, Recommender System, etc. 
 
 Education
 ======
@@ -48,5 +48,5 @@ Work Experience
 
 Talk
 ======
-Accurate and Explainable Legal Case Matching [PPT](https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing)
+Renmin University of China's First 'Frontiers of Innovation: International Academic Symposium for Doctoral Students': Accurate and Explainable Legal Case Matching [PPT](https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing)
 
