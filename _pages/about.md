@@ -25,6 +25,7 @@ Publications
 * Zihua Si, **Zhongxiang Sun**, Xiao Zhang, Jun Xu, Xiaoxue Zang, Yang Song, Kun Gai, Ji-Rong Wen. When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation. (**SIGIR 2023**)
 * Sunhao Dai, Ninglu Shao, Haiyuan Zhao, Weijie Yu, Zihua Si, Chen Xu, **Zhongxiang Sun**, Xiao Zhang, Jun Xu. Uncovering ChatGPT's Capabilities in Recommender Systems (**RecSys 2023**)
 *  **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Dewei Leng, Yanan Niu, Yang Song, Xiao Zhang, Jun Xu. KuaiSAR: A Unified Search And Recommendation Dataset (**CIKM 2023**)
+* **Zhongxiang Sun**, Weijie Yu, Zihua Si, Jun Xu, Zhenhua Dong, Xu Chen, Hongteng Xu, Ji-Rong Wen. Explainable Legal Case Matching via Graph Optimal Transport (**TKDE 2023**) (paper)[https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10285038]
 
 
 
