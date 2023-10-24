@@ -46,7 +46,7 @@ Work Experience
 - [**CAIL 2022**](http://cail.cipsc.org.cn/index.html): Committee Member .
 - [**TASLP**](https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing)(CCF B) reviewer.
 - **CIKM 2023**: PC Member.
-- **ACM TheWebConf 2024 Conference** reviewer.
+- **ACM TheWebConf 2024 Conference**: reviewer.
 
 Talk
 ======
