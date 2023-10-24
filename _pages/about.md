@@ -32,7 +32,7 @@ Publications
 
 Teaching
 ======
-1. Teaching Assistant, Introduction to Big Data Analytics in RUC, Fall 2022
+1. Teaching Assistant, Introduction to Big Data Analytics in RUC, Fall 2022, 2023
 2. Teaching Assistant, Python in RUC, Spring 2023
 
 Work Experience
