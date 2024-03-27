@@ -28,6 +28,10 @@ Publications
 * **Zhongxiang Sun**, Weijie Yu, Zihua Si, Jun Xu, Zhenhua Dong, Xu Chen, Hongteng Xu, Ji-Rong Wen. Explainable Legal Case Matching via Graph Optimal Transport (**TKDE 2023**) [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10285038)
 * **Zhongxiang Sun**, Kepu Zhang, Weijie Yu, Haoyu Wang, Jun Xu. Logic Rules as Explanations for Legal Case Retrieval (**COLING 2024**)
 
+**Preprint**
+======
+Large Language Models Enhanced Collaborative Filtering [arxiv](https://arxiv.org/abs/2403.17688)
+
 
 
 
