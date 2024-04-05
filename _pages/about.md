@@ -27,7 +27,7 @@ Publications
 *  **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Dewei Leng, Yanan Niu, Yang Song, Xiao Zhang, Jun Xu. KuaiSAR: A Unified Search And Recommendation Dataset (**CIKM 2023**)
 * **Zhongxiang Sun**, Weijie Yu, Zihua Si, Jun Xu, Zhenhua Dong, Xu Chen, Hongteng Xu, Ji-Rong Wen. Explainable Legal Case Matching via Graph Optimal Transport (**TKDE 2023**) [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10285038)
 * **Zhongxiang Sun**, Kepu Zhang, Weijie Yu, Haoyu Wang, Jun Xu. Logic Rules as Explanations for Legal Case Retrieval (**COLING 2024**)
-* **Zhongxiang Sun**, Zihua Si, Xiao Zhang, Xiaoxue Zang, Yang Song, Hongteng Xu and Jun Xu. To Search or to Recommend: Predicting Open-App Motivation with Neural Hawkes Process  (**SIGIR 2024**)
+* **Zhongxiang Sun**, Zihua Si, Xiao Zhang, Xiaoxue Zang, Yang Song, Hongteng Xu and Jun Xu. To Search or to Recommend: Predicting Open-App Motivation with Neural Hawkes Process  (**SIGIR 2024**) [paper](https://arxiv.org/abs/2404.03267)
 
 
 **Preprint**
