@@ -8,11 +8,13 @@ redirect_from:
   - /about.html
 ---
 
-He is currently a Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are Legal AI, Recommender Systems, Search, LLMs+X, etc. 
+He is currently a Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are Legal AI, Recommender Systems, Search, Safety LLMs+IR, etc. 
 
 Education
 ======
 * *08.2022-present* Ph.D. candidate, Gaoling School of Artificial Intelligence, Renmin University of China.
+* *08.2018-06.2022* Bachelor of Computer Science and Technology, Beijing Jiaotong University.
+
 
 
 Publications
