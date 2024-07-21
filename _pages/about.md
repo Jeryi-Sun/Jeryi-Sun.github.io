@@ -19,7 +19,7 @@ Education
 
 Publications
 ======
-* **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang and Jun Xu. Large Language Models Enhanced Collaborative Filtering (**CIKM 2024**)[arxiv](https://arxiv.org/abs/2403.17688)
+* **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang and Jun Xu. Large Language Models Enhanced Collaborative Filtering (**CIKM 2024**) [paper](https://arxiv.org/abs/2403.17688)
 * **ZhongXiang Sun**, Kepu Zhang*, Haoyu Wang, Xiao Zhang, Jun Xu Effective In-Context Example Selection through Data Compression (**ACL 2024 short finding**) [paper](../files/Effective_In_Context_Example_Selection_through_Data_Compression__ACL_.pdf)
 * **Zhongxiang Sun**, Zihua Si, Xiao Zhang, Xiaoxue Zang, Yang Song, Hongteng Xu and Jun Xu. To Search or to Recommend: Predicting Open-App Motivation with Neural Hawkes Process  (**SIGIR 2024**) [paper](https://arxiv.org/abs/2404.03267)
 * **Zhongxiang Sun**, Kepu Zhang, Weijie Yu, Haoyu Wang, Jun Xu. Logic Rules as Explanations for Legal Case Retrieval (**COLING 2024**)
