@@ -33,6 +33,11 @@ Publications
 * G Song, J Yang, L He, Z Wang, G Li, C Duan, Y Liu, ***Z Sun***. AddrMiner: A Comprehensive Global Active IPv6 Address Discovery System. (**USENIX ATC 22**)
 * W Yu, ***Z Sun***, J Xu, Z Dong, X Chen, H Xu, JR Wen. Explainable legal case matching via inverse optimal transport-based rationale extraction. (**SIGIR 2022**).
 
+Awards
+======
+1. The National Scholarship 2024 (The highest scholarship for students in China) 
+2. Renmin University of China Innovative Talent Program
+
 Teaching
 ======
 1. Teaching Assistant, Introduction to Big Data Analytics in RUC, Fall 2022, 2023
