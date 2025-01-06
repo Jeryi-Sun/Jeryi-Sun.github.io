@@ -41,9 +41,10 @@ Publications
 
 Awards
 ======
-1. The National Scholarship 2024 (The highest scholarship for students in China) 
-2. Renmin University of China Innovative Talent Program
-3. SIGIR-AP 2024 Best Paper Award.
+1. The National Scholarship 2024 (The highest scholarship for students in China).
+2. 2024 China Association for Science and Technology Youth Talent Support Program for PhD Students (2024年度中国科协青年人才托举工程博士生专项计划).
+3. Renmin University of China Innovative Talent Program.
+4. SIGIR-AP 2024 Best Paper Award.
 
 Teaching
 ======
