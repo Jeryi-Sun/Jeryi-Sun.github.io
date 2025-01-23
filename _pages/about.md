@@ -18,7 +18,7 @@ Education
 
 Pre-Print
 ======
-* **Zhongxiang Sun**, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding [paper](https://arxiv.org/abs/2501.07861)
+* ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding [paper](https://arxiv.org/abs/2501.07861) **Zhongxiang Sun**, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li.
 
 Publications
 ======
