@@ -22,7 +22,7 @@ Pre-Print
 
 Publications
 ======
-* **Zhongxiang Sun**, Xiaoxue Zang, Kai Zheng, Yang Song, Jun Xu, Xiao Zhang, Weijie Yu, Han Li. ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability(**ICLR 2025**) [paper](https://arxiv.org/pdf/2410.11414)
+* **Zhongxiang Sun**, Xiaoxue Zang, Kai Zheng, Yang Song, Jun Xu, Xiao Zhang, Weijie Yu, Han Li. ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability (**ICLR 2025**) [paper](https://arxiv.org/pdf/2410.11414)
 * **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu. LargePiG: Your Large Language Model is Secretly a Pointer Generator (**WWW 2025**) [paper](https://arxiv.org/pdf/2410.11366) 
 * Zihua Si, **Zhongxiang Sun**, Jiale Chen, Guozhang Chen, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu and Kun Gai. Generative Retrieval with Semantic Tree-Structured Identifiers and Contrastive Learning (**SIGIR-AP 2024**) **Best Paper Award**
 * **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang and Jun Xu. Large Language Models Enhanced Collaborative Filtering (**CIKM 2024**) [paper](https://arxiv.org/abs/2403.17688)
