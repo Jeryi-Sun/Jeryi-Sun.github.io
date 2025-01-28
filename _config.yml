@@ -9,7 +9,7 @@
 locale                   : "Beijing, China"
 title                    : "Zhongxiang Sun / Academic Profile"
 title_separator          : "-"
-name                     : &name "Zhongxiang Sun"
+name                     : &name "Zhongxiang Sun (孙忠祥)"
 description              : &description ""
 url                      : https://Jeryi-Sun.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
