@@ -59,14 +59,16 @@ Work Experience
   - ***February. 2022 ~ Now***
   - Advisor: Xiaoxue Zang, Kai Zheng, Yang Song
 - [**CAIL 2022**](http://cail.cipsc.org.cn/index.html): Committee Member .
-- [**TASLP**](https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing)(CCF B) reviewer.
-- **CIKM 2023**(CCF B): PC Member.
-- **ACM TheWebConf 2024 Conference**(CCF A): reviewer.
-- **SIGIR 2024**(CCF A): reviewer.
-- **CIKM 2024**(CCF B): reviewer.
+- **WWW 2024, 2025**(CCF A): Reviewer.
+- **SIGIR 2024, 2025**(CCF A): PC Member.
+- **TOIS**(CCF A) Reviewer.
+- **TASLP**(CCF B) Reviewer.
+- **CIKM 2023, 2024**(CCF B): PC Member.
     
 
 Talk
 ======
-Renmin University of China's First 'Frontiers of Innovation: International Academic Symposium for Doctoral Students': Accurate and Explainable Legal Case Matching [PPT](https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing)
+Renmin University of China's First 'Frontiers of Innovation: International Academic Symposium for Doctoral Students': Accurate and Explainable Legal Case Matching [slide](https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing)
+
+
 
