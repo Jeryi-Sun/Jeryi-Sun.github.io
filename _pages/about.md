@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Zhongxiang Sun"
+title: "Zhongxiang Sun (孙忠祥)"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -68,9 +68,8 @@ Work Experience
 
 Talk
 ======
-Renmin University of China's First 'Frontiers of Innovation: International Academic Symposium for Doctoral Students': Accurate and Explainable Legal Case Matching [slide](https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing)
-
-Invited to participate in the Zhongguancun Science City 'Rixin Youth Talk' Forum. [news](https://mp.weixin.qq.com/s/_31wIQDcXwO5QquX6EUAMw) 
+- Renmin University of China's First 'Frontiers of Innovation: International Academic Symposium for Doctoral Students': Accurate and Explainable Legal Case Matching [slide](https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing)
+- Invited to participate in the Zhongguancun Science City 'Rixin Youth Talk' Forum. [news](https://mp.weixin.qq.com/s/_31wIQDcXwO5QquX6EUAMw) 
 
 
 
