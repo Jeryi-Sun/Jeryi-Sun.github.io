@@ -36,7 +36,7 @@ Publications
 * Zihua Si, **Zhongxiang Sun**, Xiao Zhang, Jun Xu, Xiaoxue Zang, Yang Song, Kun Gai, Ji-Rong Wen. When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation. (**SIGIR 2023**)
 * ***Z Sun***, J Xu, X Zhang, Z Dong, JR Wen. Law Article-Enhanced Legal Case Matching: a Causal Learning Approach. (**SIGIR 2023**)
 * Zihua Si, ***Zhongxiang Sun***, Xiao Zhang, Jun Xu, Yang Song, Xiaoxue Zang, Ji-Rong Wen. Enhancing Recommendation with Search Data in a Causal Learning Manner. (**TOIS 2023**)
-* Haomin Wen, Youfang Lin, Fan Wu, Huaiyu Wan, ***Zhongxiang Sun***, Tianyue Cai, Hongyu Liu, Shengnan Guo, Jianbing Zheng, Chao Song, Lixia Wu. Enough Waiting for the Couriers --- Learning to Estimate Package Pick-up Arrival Time from Couriers' Spatial-Temporal Behaviors.(**TIST 2022**)
+* Haomin Wen, Youfang Lin, Fan Wu, Huaiyu Wan, ***Zhongxiang Sun***, Tianyue Cai, Hongyu Liu, Shengnan Guo, Jianbing Zheng, Chao Song, Lixia Wu. Enough Waiting for the Couriers --- Learning to Estimate Package Pick-up Arrival Time from Couriers' Spatial-Temporal Behaviors.(**TITS 2022**)
 * G Song, J Yang, L He, Z Wang, G Li, C Duan, Y Liu, ***Z Sun***. AddrMiner: A Comprehensive Global Active IPv6 Address Discovery System. (**USENIX ATC 22**)
 * W Yu, ***Z Sun***, J Xu, Z Dong, X Chen, H Xu, JR Wen. Explainable legal case matching via inverse optimal transport-based rationale extraction. (**SIGIR 2022**).
 
