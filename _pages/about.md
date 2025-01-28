@@ -59,7 +59,7 @@ Work Experience
   - ***February. 2022 ~ Now***
   - Model and Application Group
   - Research Directions: Recommender Systems with Search Data
-  - Advisor: Xiaoxue Zang
+  - Advisor: Xiaoxue Zang, Kai Zheng, Yang Song
 - [**CAIL 2022**](http://cail.cipsc.org.cn/index.html): Committee Member .
 - [**TASLP**](https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing)(CCF B) reviewer.
 - **CIKM 2023**(CCF B): PC Member.
