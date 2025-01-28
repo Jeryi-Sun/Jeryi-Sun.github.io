@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-He is currently a Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are Trustworthy LLMs for IR (Hallucination, Reasoning, Explainable), Recommender Systems, Search, Legal AI, etc. 
+He is currently a Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are Trustworthy LLMs for Information Retrieval (Hallucination, Reasoning, Explainable), Legal AI, etc. 
 
 Education
 ======
