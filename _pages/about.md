@@ -13,7 +13,7 @@ He is currently a Ph.D. student at [Gaoling School of Artificial Intelligence, R
 Education
 ======
 * *08.2022-present* Ph.D. candidate, Gaoling School of Artificial Intelligence, Renmin University of China.
-* *08.2018-06.2022* Bachelor of Computer Science and Technology, Beijing Jiaotong University.
+* *08.2018-06.2022* Bachelor of Computer Science and Technology, Beijing Jiaotong University (Rank 1 Top 0.4%).
 
 
 
