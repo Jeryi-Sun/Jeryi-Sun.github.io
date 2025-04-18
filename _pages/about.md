@@ -22,8 +22,11 @@ Pre-Print
 
 Publications
 ======
+* **Zhongxiang Sun**, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li. ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding (**SIGIR 2025 CCF-A**)
+* Xiaopeng Ye, Chen Xu, **Zhongxiang Sun**, Jun Xu, Gang Wang, Zhenhua Dong, Ji-Rong Wen. CreAgent: Towards Long-Term Evaluation of Recommender System under Platform-Creator Information Asymmetry (**SIGIR 2025 CCF-A**)
 * **Zhongxiang Sun**, Xiaoxue Zang, Kai Zheng, Yang Song, Jun Xu, Xiao Zhang, Weijie Yu, Han Li. ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability (**ICLR 2025**) <span style="color:red;">Spotlight Top 5.1 % !</span> [paper](https://arxiv.org/pdf/2410.11414)
-* **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu. LargePiG: Your Large Language Model is Secretly a Pointer Generator (**WWW 2025 CCF-A**) [paper](https://arxiv.org/pdf/2410.11366) 
+* **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu. LargePiG: Your Large Language Model is Secretly a Pointer Generator (**WWW 2025 CCF-A**) [paper](https://arxiv.org/pdf/2410.11366)
+* K Zhang, **Z Sun**, X Zhang, X Zang, K Zheng, Y Song, J Xu. Trigger3: Refining Query Correction via Adaptive Model Selector (**AAAI 2024 CCF-A**)
 * Zihua Si, **Zhongxiang Sun**, Jiale Chen, Guozhang Chen, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu and Kun Gai. Generative Retrieval with Semantic Tree-Structured Identifiers and Contrastive Learning (**SIGIR-AP 2024**) <span style="color:red;">Best Paper Award !</span>
 * **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang and Jun Xu. Large Language Models Enhanced Collaborative Filtering (**CIKM 2024 CCF-B**) [paper](https://arxiv.org/abs/2403.17688)
 * Zihua Si, Lin Guan, **Zhongxiang Sun**, Xiaoxue Zang, etc. Twin v2: Scaling ultra-long user behavior sequence modeling for enhanced ctr prediction at kuaishou   (**CIKM 2024 ADS CCF-B**)
