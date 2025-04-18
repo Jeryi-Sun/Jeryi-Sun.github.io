@@ -16,8 +16,6 @@ Education
 * *08.2018-06.2022* Bachelor of Computer Science and Technology, Beijing Jiaotong University.
 
 
-Pre-Print
-======
 
 Publications
 ======
