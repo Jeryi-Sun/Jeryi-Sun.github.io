@@ -46,6 +46,7 @@ Awards
 2. 2024 China Association for Science and Technology Youth Talent Support Program for PhD Students (2024年度中国科协青年人才托举工程博士生专项计划).
 3. Renmin University of China Innovative Talent Program.
 4. SIGIR-AP 2024 Best Paper Award.
+5. First Prize in the Inaugural Artificial Intelligence and Smart Governance Innovation and Entrepreneurship Competition for University Students.
 
 
 Teaching
