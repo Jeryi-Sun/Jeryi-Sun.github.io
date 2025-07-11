@@ -15,7 +15,7 @@ Education
 * *08.2022-present* Ph.D. candidate, Gaoling School of Artificial Intelligence, Renmin University of China.
 * *08.2018-06.2022* Bachelor of Computer Science and Technology, Beijing Jiaotong University (Rank 1 Top 0.4%).
 
-## Preprint
+# Preprint
 * **Zhongxiang Sun**, Qipeng Wang, Haoyu Wang, Xiao Zhang, Jun Xu. Detection and Mitigation of Hallucination in Large Reasoning Models: A Mechanistic Perspective [paper](https://arxiv.org/abs/2505.12886)
 
 Publications
