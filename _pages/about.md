@@ -8,7 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-He is currently a Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are Trustworthy LLMs for Information Retrieval (Hallucination, Reasoning, Explainable), Legal AI, etc. 
+<span style="color:red;"> I expect to graduate in June 2027 and am seeking faculty positions. If you are interested in trustworthy LLMs and agents, their synergy with information retrieval (hallucination, reasoning, explainability), applied mechanistic interpretability, or cognitive-neuroscience-inspired ASI, I would welcome the opportunity to discuss. !</span>
+
+He is currently a Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are Trustworthy LLMs (Agent) for Information Retrieval (Hallucination, Reasoning, Explainable), Legal AI, etc. 
 
 Education
 ======
@@ -55,18 +57,23 @@ Teaching
 1. Teaching Assistant, Introduction to Big Data Analytics in RUC, Fall 2022, 2023
 2. Teaching Assistant, Python in RUC, Spring 2023
 
-Work Experience
+Experience
 ======
-
+- **NTU**: Visiting student
+  - ***Sep. 2025 - Mar 2026***
+  - Advisor: Yang Liu
 - **Kuaishou**: Research Intern
-  - ***February. 2022 ~ Now***
+  - ***February. 2022 ~ June. 2025***
   - Advisor: Xiaoxue Zang, Kai Zheng, Yang Song
+  - _It was an invaluable experience during my PhD journey. Many thanks to all my advisors._
 - [**CAIL 2022**](http://cail.cipsc.org.cn/index.html): Committee Member .
 - **WWW 2024, 2025**(CCF A): Reviewer.
 - **SIGIR 2024, 2025**(CCF A): PC Member.
 - **TOIS**(CCF A) Reviewer.
 - **TASLP**(CCF B) Reviewer.
 - **CIKM 2023, 2024**(CCF B): PC Member.
+- **Neurips 2025**(CCF A): Reviewer.
+- **ICLR 2026**(CCF A): Reviewer.
     
 
 Talk
