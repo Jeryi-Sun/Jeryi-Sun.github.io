@@ -8,14 +8,14 @@ redirect_from:
   - /about.html
 ---
 
-<span style="color:red;"> I expect to graduate in June 2027 and am seeking research positions. If you are interested in trustworthy LLMs and agents, their synergy with information retrieval (hallucination, reasoning, explainability), applied mechanistic interpretability, or cognitive-neuroscience-inspired ASI, I would welcome the opportunity to discuss!</span>
-
 He is currently a Ph.D. student at [Gaoling School of Artificial Intelligence, Renmin University of China](http://ai.ruc.edu.cn/english/index.htm). His supervisor is Prof. [Jun Xu](https://scholar.google.com/citations?user=su14mcEAAAAJ). His major research interests are Trustworthy LLMs (Agent) for Information Retrieval (Hallucination, Reasoning, Explainable), Legal AI, etc. 
 
 Education
 ======
 * *08.2022-present* Ph.D. candidate, Gaoling School of Artificial Intelligence, Renmin University of China.
 * *08.2018-06.2022* Bachelor of Computer Science and Technology, Beijing Jiaotong University (Rank 1 Top 0.4%).
+
+<span style="color:red;"> I expect to graduate in June 2027 and am seeking research positions. If you are interested in trustworthy LLMs and agents, their synergy with information retrieval (hallucination, reasoning, explainability), applied mechanistic interpretability, or cognitive-neuroscience-inspired ASI, I would welcome the opportunity to discuss!</span>
 
 # Preprint
 * **Zhongxiang Sun**, Qipeng Wang, Haoyu Wang, Xiao Zhang, Jun Xu. Detection and Mitigation of Hallucination in Large Reasoning Models: A Mechanistic Perspective [paper](https://arxiv.org/abs/2505.12886)
