@@ -18,10 +18,11 @@ Education
 <span style="color:red;"> I expect to graduate in June 2027 and am seeking research positions. If you are interested in trustworthy LLMs and agents, their synergy with information retrieval (hallucination, reasoning, explainability), applied mechanistic interpretability, or cognitive-neuroscience-inspired AI, I would welcome the opportunity to discuss! </span> Email: _sunzhongxiang@ruc.edu.cn_
 
 # Preprint
-* **Zhongxiang Sun**, Qipeng Wang, Haoyu Wang, Xiao Zhang, Jun Xu. Detection and Mitigation of Hallucination in Large Reasoning Models: A Mechanistic Perspective [paper](https://arxiv.org/abs/2505.12886)
+* **Zhongxiang Sun**, Yi Zhan, Chenglei Shen, Weijie Yu, Xiao Zhang, Ming He, Jun Xu. When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs [paper](https://arxiv.org/abs/2601.11000)
 
 Publications
 ======
+* **Zhongxiang Sun**, Qipeng Wang, Haoyu Wang, Xiao Zhang, Jun Xu. Detection and Mitigation of Hallucination in Large Reasoning Models: A Mechanistic Perspective [paper](https://arxiv.org/abs/2505.12886) (**ICLR 2026**)
 * **Zhongxiang Sun**, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li. ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding (**SIGIR 2025 CCF-A**)
 * Xiaopeng Ye, Chen Xu, **Zhongxiang Sun**, Jun Xu, Gang Wang, Zhenhua Dong, Ji-Rong Wen. CreAgent: Towards Long-Term Evaluation of Recommender System under Platform-Creator Information Asymmetry (**SIGIR 2025 CCF-A**)
 * **Zhongxiang Sun**, Xiaoxue Zang, Kai Zheng, Yang Song, Jun Xu, Xiao Zhang, Weijie Yu, Han Li. ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability (**ICLR 2025**) <span style="color:red;">Spotlight Top 5.1 % !</span> [paper](https://arxiv.org/pdf/2410.11414)
