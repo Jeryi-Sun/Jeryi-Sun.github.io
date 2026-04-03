@@ -22,7 +22,7 @@ Education
 
 Publications
 ======
-* Jiahao Zhao*, Shaoxuan Xu*, **Zhongxiang Sun(equal first+project leader)**, Fengqi Zhu, Jingyang Ou, Yuling Shi, Chongxuan Li, Xiao Zhang, Jun Xu DLLM-Searcher: Adapting Diffusion Large Language Model for Search Agents [paper](https://arxiv.org/pdf/2602.07035) (**SIGIR 2026**)
+* Jiahao Zhao*, Shaoxuan Xu*, **Zhongxiang Sun(equal first+project leader)**, Fengqi Zhu, Jingyang Ou, Yuling Shi, Chongxuan Li, Xiao Zhang, Jun Xu. DLLM-Searcher: Adapting Diffusion Large Language Model for Search Agents [paper](https://arxiv.org/pdf/2602.07035) (**SIGIR 2026**)
 * **Zhongxiang Sun**, Qipeng Wang, Weijie Yu, Jingxuan Yang, Haolang Lu, Jun Xu. Deep Search with Hierarchical Meta-Cognitive Monitoring Inspired by Cognitive Neuroscience [paper](https://arxiv.org/pdf/2601.23188) (**SIGIR 2026**)
 * **Zhongxiang Sun**, Qipeng Wang, Haoyu Wang, Xiao Zhang, Jun Xu. Detection and Mitigation of Hallucination in Large Reasoning Models: A Mechanistic Perspective [paper](https://arxiv.org/abs/2505.12886) (**ICLR 2026**)
 * **Zhongxiang Sun**, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li. ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding (**SIGIR 2025 CCF-A**)
