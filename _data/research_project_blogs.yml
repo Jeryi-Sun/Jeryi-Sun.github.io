@@ -1,0 +1,1111 @@
+- id: redeep
+  research_question:
+    - >-
+      ReDeEP starts from a practical puzzle in retrieval-augmented generation: why does a model still hallucinate
+      after the system has already retrieved relevant evidence? In many RAG failures, the document pipeline is not
+      completely broken. The correct or useful evidence may be present in the prompt, yet the final answer still
+      follows an unsupported claim.
+    - >-
+      The project therefore separates retrieval success from evidence use. Retrieval success is an external-system
+      property: did the system bring useful documents into context? Evidence use is an internal-computation property:
+      did the model actually route generation through the external evidence, or did it fall back to stored parametric
+      knowledge and surface fluency?
+    - >-
+      The research question is how to observe the competition between external context and parametric knowledge while
+      the answer is being formed. This makes ReDeEP a mechanism study of the tool-evidence module in an AI agent.
+  motivation:
+    - >-
+      Retrieval is often treated as a direct antidote to hallucination. If a model can search documents, use a database,
+      or receive tool output, then it seems natural to expect the response to become grounded. ReDeEP argues that this
+      expectation is too optimistic because external evidence must still be integrated by the model's internal
+      computation.
+    - >-
+      This matters for agent systems. An agent that calls a search engine, reads a legal statute, or receives a database
+      record is not trustworthy merely because the evidence is available. It must also choose to rely on that evidence
+      at the right moment. A fluent answer can hide the fact that the model has ignored the retrieved context or resolved
+      a conflict in favor of a weaker internal prior.
+    - >-
+      Output-level detectors blur these cases together. They can tell us that a response is unsupported, but they cannot
+      explain whether the failure came from bad retrieval, weak attention to external evidence, overconfident parametric
+      knowledge, or a conflict between the two. ReDeEP moves the analysis inside the model so that these sources can be
+      separated.
+  approach:
+    - >-
+      The method treats generation as a competition between two information pathways. The external-context pathway
+      carries information from retrieved documents into the answer, while the parametric-knowledge pathway reflects
+      information stored in the model's parameters. Hallucination risk increases when the model has external evidence
+      but internally relies on the wrong source.
+    - >-
+      ReDeEP builds mechanism-aware signals for this competition. It examines how attention, copy behavior,
+      feed-forward computation, and residual-stream states change when a generation is faithful versus hallucinated.
+      These observations are summarized through scores that estimate external-context use and parametric-knowledge
+      reliance.
+    - >-
+      The important design choice is that the detector is not trained only on final text. It uses pathway imbalance as
+      an intermediate diagnostic signal. This creates a route from interpretability to action: if the model appears to
+      underuse external evidence, the system can flag the response as risky or steer generation toward the retrieved
+      context.
+    - >-
+      In the broader research program, ReDeEP is the first concrete example of module localization. It takes one agent
+      module, evidence use after retrieval, and asks where the failure forms, what internal signatures reveal it, and
+      how those signatures can support intervention.
+  key_findings:
+    - eyebrow: "Finding 1"
+      title: "RAG hallucination can happen after successful retrieval"
+      paragraphs:
+        - >-
+          The central finding is conceptual but important: the model can fail even when the evidence pipeline succeeds.
+          A document may contain the answer, but the model may still rely on a competing internal belief, a memorized
+          association, or an unsupported prior.
+        - >-
+          This reframes RAG hallucination from a pure retrieval problem into a source-selection problem. Detection must
+          measure both evidence availability and the causal weight that internal computation gives the evidence.
+    - eyebrow: "Finding 2"
+      title: "Faithful and hallucinated generations use information differently"
+      paragraphs:
+        - >-
+          ReDeEP shows that faithful and hallucinated generations are not merely different at the output level. They
+          differ in the way internal pathways use retrieved context and parametric knowledge. This is why pathway-level
+          scores are useful: they expose a hidden state of evidence dependence.
+        - >-
+          This gives researchers a more precise diagnostic vocabulary. Instead of saying that a response is simply
+          hallucinated, the page can ask whether the model ignored evidence, over-weighted internal knowledge, or failed
+          to resolve a conflict between the two.
+    - eyebrow: "Finding 3"
+      title: "Mechanistic detection supports targeted mitigation"
+      paragraphs:
+        - >-
+          Because the signal is tied to an internal mechanism, it can be used for more than post-hoc labeling. A high-risk
+          pathway imbalance can guide the system to re-check the evidence, request another retrieval step, or steer the
+          model toward external context.
+        - >-
+          This is the key difference between an ordinary classifier and a mechanism-aware detector. The detector is useful
+          because it says something about how the answer is being produced, which in turn suggests what kind of correction
+          is appropriate.
+    - eyebrow: "Finding 4"
+      title: "Tool use needs internal auditing"
+      paragraphs:
+        - >-
+          ReDeEP also has a broader implication for agents. Tool use cannot be trusted only at the interface level. An
+          agent may call the correct tool and still fail internally if it does not integrate the returned evidence.
+        - >-
+          This motivates later projects on process reward and metacognitive monitoring: a trustworthy agent must audit
+          the tool call and verify that returned evidence actually controlled the reasoning process.
+  narrative_sections:
+    - figure: "/images/research/redeep-problem-conflict.png"
+      title: "Evidence can be present but not used"
+      role: "Problem"
+      source: "Paper Fig. 1; graphs/introduction.pdf"
+      layout: "wide"
+      summary: "The figure contrasts a faithful Chang'e-6 case with a hallucinated ultrasound case where retrieved evidence and parametric knowledge disagree."
+      paragraphs:
+        - >-
+          The left half is a successful RAG behavior. The retrieved document states that Chang'e-6 brought back 1935.3
+          grams of lunar samples; the query asks how many grams were brought back; the response repeats the retrieved
+          value and is marked correct. This is the desired path: retrieved document, query, model, and answer are aligned.
+        - >-
+          The right half shows the failure ReDeEP targets. The retrieved document says good ultrasound pictures are best
+          between 20 and 32 weeks, while the purple parametric-knowledge box says 24 to 32 weeks. The final response mixes
+          in a 17-week condition and is marked hallucinated. This makes the figure a concrete example of evidence being
+          present but not controlling the answer.
+      reading_guide:
+        - "In the left example, the green retrieved-document box and yellow response box share the same key value, 1935.3 grams."
+        - "In the right example, the retrieved document says 20-32 weeks, while the parametric-knowledge box says 24-32 weeks; the response drifts instead of cleanly following either source."
+        - "The figure motivates ReDeEP's core diagnostic question: after retrieval, which source actually controls generation?"
+    - figure: "/images/research/redeep-causal-framing.png"
+      title: "Two information pathways in RAG"
+      role: "Mechanism"
+      source: "Paper Fig. 2; graphs/related_work.pdf"
+      layout: "wide"
+      summary: "The figure formalizes RAG hallucination with E for external context, P for parametric knowledge, and H for response hallucination."
+      paragraphs:
+        - >-
+          The left purple block shows existing detector settings where parametric knowledge P is confounded by external
+          evidence E. The middle green block shows the opposite case, where external evidence E is confounded by
+          parametric knowledge P. The lower center panel shows the mixed setting in which P and E jointly affect H.
+        - >-
+          The blue "Decouple & Regression" panel on the right is the methodological target: separate P and E so that
+          neither source masks the other. This is why the figure lists prior methods under the confounded settings and
+          reserves the decoupled graph for ReDeEP.
+      reading_guide:
+        - "Read E as the retrieved external context, P as parametric knowledge, and H as whether the response hallucinates."
+        - "The three causal graphs show why a detector can be misleading if it attributes hallucination to only one source."
+        - "ReDeEP's contribution is the rightmost decoupling step: estimate the influence of E and P separately."
+    - figure: "/images/research/redeep-method.png"
+      title: "Operationalizing evidence use"
+      role: "Method"
+      source: "Paper Fig. 3; graphs/method.pdf"
+      layout: "wide"
+      summary: "The method figure shows how External Context Score and Parametric Knowledge Score are computed from attention, hidden states, LogitLens, and FFN/residual changes."
+      paragraphs:
+        - >-
+          The left side computes External Context Score. Step 1 identifies attended tokens through attention weights;
+          Step 2 mean-pools selected hidden states and calculates cosine similarity. The output is an external-context
+          signal for a layer-head position, shown as E with layer/head superscripts.
+        - >-
+          The right side computes Parametric Knowledge Score. The figure follows the last-layer hidden state through
+          the unembedding matrix and also compares residual streams before and after FFN through LogitLens, softmax, and
+          JSD. This directly matches the paper's claim that ReDeEP measures both evidence attention and parametric
+          knowledge injection.
+      reading_guide:
+        - "Follow the orange arrows on the left to see how attended evidence tokens become External Context Score."
+        - "Follow the blue boxed LogitLens/JSD computation on the right to see how FFN/residual changes become Parametric Knowledge Score."
+        - "The figure explains why ReDeEP is mechanism-aware: it scores internal information routing, not just answer text."
+    - figure: "/images/research/redeep-ecs-pks-results.png"
+      title: "Internal evidence for the pathway account"
+      role: "Results"
+      toc_label: "Evidence"
+      source: "Paper Fig. 4; graphs/empirical_study_1.pdf"
+      layout: "wide"
+      summary: "The result figure combines external-context heatmaps, copying-head heatmaps, and parametric-knowledge layer bars to validate the pathway account."
+      paragraphs:
+        - >-
+          Panels (a) and (b) are layer-head heatmaps for external context: panel (a) shows the score difference between
+          truthful and hallucinated generations, while panel (b) reports Pearson correlation with the inverse
+          hallucination label. Panel (c) separately visualizes copying-head scores across layers and heads.
+        - >-
+          Panels (d) and (e) move to parametric knowledge. Panel (d) shows the hallucination-minus-truth score difference
+          by layer, with a dashed average line; panel (e) reports Pearson correlation between parametric knowledge score
+          and hallucination label. Together, the five panels align with the method figure: evidence use and parametric
+          knowledge reliance are both measurable and both differ across faithful and hallucinated behavior.
+      reading_guide:
+        - "Panels (a)-(c) should be read as evidence-side diagnostics over layers and heads."
+        - "Panels (d)-(e) should be read as knowledge-side diagnostics over layers."
+        - "The figure closes the loop with Fig. 3: the scores computed from internal components separate hallucinated from truthful generation."
+    - title: "Causal intervention and known/unknown evidence"
+      role: "Results"
+      toc_label: "Intervention"
+      source: "Paper Fig. 5; graphs/intervene_combined_result.pdf + graphs/parametric_know_unknow_socre.pdf"
+      layout: "wide"
+      panel_layout: "two"
+      summary: "The intervention panels test whether Copying Heads and Knowledge FFNs causally affect hallucination, then compare external-context and parametric-knowledge scores in known versus unknown settings."
+      panels:
+        - image: "/images/research/redeep-intervention-result.png"
+          label: "Intervention on attention heads and FFNs"
+          source: "graphs/intervene_combined_result.pdf"
+        - image: "/images/research/redeep-known-unknown-scores.png"
+          label: "Truth-known versus hallucinated-unknown scores"
+          source: "graphs/parametric_know_unknow_socre.pdf"
+      paragraphs:
+        - >-
+          The left panel is the causal check: interventions on the attention-head and FFN components change the loss in
+          the expected direction, supporting the claim that these components are not merely correlated with RAG
+          hallucination.
+        - >-
+          The right panel separates cases where the model knows the truthful answer from cases where it hallucinates when
+          the answer is unknown. This comparison keeps the ReDeEP story tied to source competition: external-context use
+          and parametric-knowledge reliance vary with whether generation is faithful or hallucinated.
+      reading_guide:
+        - "Use the intervention panel to read Copying Heads and Knowledge FFNs as causal handles, not only diagnostic features."
+        - "Use the known/unknown panel to connect the mechanism back to whether the model has reliable parametric knowledge."
+        - "Together these panels justify AARF-style mitigation: add attention-side evidence retention and reduce excessive FFN knowledge injection."
+  main_results:
+    title: "Main experimental results"
+    summary: >-
+      ReDeEP is evaluated as a hallucination detector on RAGTruth and Dolly (AC). The compact table reports
+      the strongest non-ReDeEP result for each selected metric alongside ReDeEP (chunk), which is the most
+      consistently effective variant in the main table.
+    tables:
+      - title: "RAG hallucination detection"
+        note: "Metrics are reported on a 0-1 scale. The baseline ceiling is the best non-ReDeEP value in the original table for each column."
+        columns: ["Backbone", "Method", "RAGTruth AUC", "RAGTruth F1", "Dolly AUC", "Dolly F1"]
+        rows:
+          - cells: ["LLaMA2-7B", "Best baseline", "0.7290", "0.7066", "0.7110", "0.7241"]
+          - cells: ["LLaMA2-7B", "ReDeEP (chunk)", "0.7458", "0.7190", "0.7949", "0.7833"]
+            highlight: true
+          - cells: ["LLaMA2-13B", "Best baseline", "0.8089", "0.7342", "0.7214", "0.7200"]
+          - cells: ["LLaMA2-13B", "ReDeEP (chunk)", "0.8244", "0.7587", "0.8420", "0.7603"]
+            highlight: true
+    insights:
+      - "ReDeEP (chunk) exceeds the strongest reported non-ReDeEP value on all eight selected backbone-dataset-metric comparisons."
+      - "The largest margins appear on Dolly AUC: +0.0839 with LLaMA2-7B and +0.1206 with LLaMA2-13B."
+      - "The result supports the central mechanism claim: jointly modeling external-context use and parametric-knowledge injection improves detection beyond output-only signals."
+  research_impact:
+    - >-
+      ReDeEP makes the evidence-use module of an agent inspectable. In a future agent workflow, retrieval, browsing, and
+      tool calls will be routine, but the central safety problem will remain: did the agent actually use the evidence it
+      gathered?
+    - >-
+      The project contributes a mechanism-level answer. It shows how to move from final-answer checking to internal
+      source auditing, which is a necessary step toward agents that can explain, monitor, and correct their own use of
+      external information.
+
+- id: rhd
+  research_question:
+    - >-
+      RHD asks where reasoning hallucination forms inside a long reasoning trajectory. For large reasoning models, the
+      final answer is only the endpoint of a process that may include early guesses, misleading subgoals, backtracking,
+      pseudo-verification, and overthinking.
+    - >-
+      The project treats hallucination as a temporal event across the reasoning trajectory. A wrong answer may be visible
+      at the end, but the failure often begins earlier, when the model first follows a shallow pattern or
+      commits to an unreliable intermediate state.
+    - >-
+      This makes RHD a diagnostic study of the reasoning-planning module in an AI agent. It asks how to make reasoning
+      trajectories observable, how to identify abnormal dynamics, and how process-level training can discourage
+      unreliable reasoning paths.
+  motivation:
+    - >-
+      Large reasoning models are attractive because they expose intermediate steps. This makes them easier to inspect
+      than a one-shot answer, but it also creates a new risk: a fluent trace can look deliberate while still being
+      mechanistically shallow or unstable.
+    - >-
+      Answer-only evaluation is too coarse for this setting. A model can arrive at the correct answer by luck, or reach a
+      wrong answer after many steps that appear self-consistent. In both cases, the final label hides the quality of the
+      path.
+    - >-
+      RHD evaluates reasoning reliability during the trajectory. Detecting failure before the final answer enables
+      process-level mitigation before endpoint reranking or correction.
+  approach:
+    - >-
+      The method introduces trajectory-level measurements that turn intermediate reasoning into analyzable signals.
+      Reasoning Score separates meaningful reasoning steps from shallow pattern matching. CV Score and
+      Attention Score expose instability and attention shifts across the trajectory.
+    - >-
+      RHD uses these signals to validate two trajectory-level hallucination patterns: large early fluctuations in
+      reasoning depth and later incorrect backtracking toward earlier shallow or overthinking steps. A separate mechanism
+      analysis connects excessive reasoning scores with perplexity and spurious verification behavior.
+    - >-
+      The mitigation side turns Reasoning Score into a step-level deep-reasoning reward. GRPO-R incorporates this signal
+      through potential-based reward shaping, encouraging deep reasoning while penalizing shallow and excessive steps.
+    - >-
+      In the broader program, this extends the ReDeEP idea from source use to temporal control. ReDeEP asks whether the
+      model uses the right evidence; RHD asks whether the reasoning process remains reliable over time.
+  key_findings:
+    - eyebrow: "Finding 1"
+      title: "Reasoning Score separates shallow and deep reasoning steps"
+      paragraphs:
+        - >-
+          On GSM-NoOp, steps misled by semantically irrelevant phrases receive lower Reasoning Scores than non-misled
+          steps. This validates the score as an internal signal for shallow pattern matching.
+        - >-
+          The score projects late-layer hidden states through LogitLens and measures distributional change across layers,
+          making reasoning depth observable before the final answer is produced.
+    - eyebrow: "Finding 2"
+      title: "Two trajectory patterns localize reasoning hallucination"
+      paragraphs:
+        - >-
+          Hallucinated traces show larger early-stage variation in Reasoning Score and stronger late-stage attention to
+          earlier shallow or overthinking steps. CV Score and Attention Score operationalize these two patterns.
+        - >-
+          These patterns are validated across Math, Science, and MultiHopQA subsets of ReTruthQA, connecting the case
+          study to broader reasoning domains.
+    - eyebrow: "Finding 3"
+      title: "Overthinking has a measurable uncertainty signature"
+      paragraphs:
+        - >-
+          The mechanism analysis links rising Reasoning Score patterns with consistency changes and perplexity. Excessive
+          score increases can correspond to overthinking and spurious verification instead of reliable correction.
+        - >-
+          This result sharpens the interpretation of Reasoning Score: both unusually shallow and excessively deep-looking
+          steps can signal an unreliable trajectory.
+    - eyebrow: "Finding 4"
+      title: "GRPO-R turns diagnosis into step-level reward"
+      paragraphs:
+        - >-
+          GRPO-R adds the mechanism-derived deep-reasoning signal to reinforcement learning through potential-based
+          shaping. The reward acts on intermediate steps while preserving the outcome objective.
+        - >-
+          The paper provides theoretical generalization analysis and empirical evidence that GRPO-R improves reasoning
+          quality while reducing hallucination, connecting trajectory diagnosis with process control.
+  narrative_sections:
+    - figure: "/images/research/rhd-method-score.png"
+      title: "Measuring reasoning trajectories"
+      role: "Method"
+      source: "Paper Fig. 1; graphs/method.pdf"
+      layout: "wide"
+      summary: "The method figure shows how hidden states, LogitLens vocabulary distributions, Reasoning Score, CV Score, and Attention Score are computed across steps."
+      paragraphs:
+        - >-
+          The left side starts from the transformer decoder layer: multi-self-attention and FFN update hidden states,
+          and LogitLens converts intermediate states into vocabulary distributions. The center grid then tracks
+          distributions over reasoning steps c1, c2, c3, ..., cK.
+        - >-
+          The colored triangles at the top represent step-level reasoning states used to compute R_score from early to
+          later steps. The right side defines CV Score as sigma over mean. Attention Score measures the fraction of
+          top-attended earlier steps whose Reasoning Scores fall in shallow or overthinking ranges. This figure is the
+          exact
+          measurement pipeline behind later "fluctuating", "stable", and "misguided attention" claims.
+      reading_guide:
+        - "Follow hidden state h through LogitLens to see where the per-step vocabulary distributions come from."
+        - "Read R_score as the trajectory's reasoning-strength signal over steps."
+        - "Read CV Score as early trajectory fluctuation and Attention Score as later attention to shallow or overthinking steps."
+    - figure: "/images/research/rhd-trajectory-case.png"
+      title: "A trajectory can go wrong before the answer"
+      role: "Problem"
+      source: "Paper Fig. 2; graphs/case_study.pdf"
+      layout: "wide"
+      summary: "The case figure compares a fluctuating hallucinated trajectory with a stable truthful trajectory on the same inflation word problem."
+      paragraphs:
+        - >-
+          The question asks how much Liam should pay now, given prices were 10 percent cheaper last year. The left plot
+          shows a hallucinated trajectory with a fluctuating R_score curve across about 100 steps; the right plot shows a
+          shorter truthful trajectory with a more stable R_score curve.
+        - >-
+          The bottom text boxes tie the curves to concrete reasoning events. Step 2 to Step 3 is a correct verification
+          even in the hallucinated trace. Step 44 to Step 45 is labeled incorrect verification and overthinking. Step 73
+          is labeled incorrect backtracking or misguided attention, leading to the wrong final answer 261.9 instead of
+          the golden answer 291. The figure therefore makes the failure temporally localizable.
+      reading_guide:
+        - "Use the red callouts to connect score fluctuations with named failure events."
+        - "Compare Step 44 to Step 45 and Step 73 with the truthful Step 23 to Step 24 verification."
+        - "The visible wrong answer, 261.9 versus golden answer 291, is the endpoint of earlier trajectory instability."
+    - title: "Validating misled reasoning patterns"
+      role: "Results"
+      toc_label: "Validation"
+      source: "Paper Fig. 3; graphs/js_div_comparison_correct.pdf + graphs/cv_scatter_math.pdf + graphs/attention_scores_math.pdf"
+      layout: "wide"
+      panel_layout: "three"
+      summary: "The result figure validates the scoring scheme with three bar charts: reasoning score, CV score, and attention score."
+      panels:
+        - image: "/images/research/rhd-pattern-reasoning-score.png"
+          label: "(a) Reasoning Score validation on GSM-NoOp"
+          source: "graphs/js_div_comparison_correct.pdf"
+        - image: "/images/research/rhd-pattern-cv-score.png"
+          label: "(b) Pattern #1 early fluctuation on ReTruthQA"
+          source: "graphs/cv_scatter_math.pdf"
+        - image: "/images/research/rhd-pattern-attention-score.png"
+          label: "(c) Pattern #2 misguided attention on ReTruthQA"
+          source: "graphs/attention_scores_math.pdf"
+      paragraphs:
+        - >-
+          Panel (a) compares mean reasoning score for misleading and non-misleading steps: the non-misleading bar is
+          higher, matching the interpretation that better reasoning steps should carry stronger reasoning signal.
+        - >-
+          Panels (b) and (c) compare truth versus hallucination on CV Score and Attention Score. Hallucination has higher
+          CV Score and higher Attention Score in the visible bars, aligning with the case figure's story that hallucinated
+          traces fluctuate more and concentrate attention on misleading steps.
+      reading_guide:
+        - "Panel (a) validates R_score against misleading versus non-misleading reasoning states."
+        - "Panel (b) links hallucination to higher trajectory fluctuation."
+        - "Panel (c) links hallucination to stronger attention concentration on problematic reasoning steps."
+    - title: "Connecting dynamics with reliability"
+      role: "Results"
+      toc_label: "Analysis"
+      source: "Paper Fig. 4; graphs/reasoning_consistency.pdf + graphs/rising_samples_analysis.pdf + graphs/ppl_r_score_scatter.pdf + graphs/perplexity_Science_fine_last_plot.pdf"
+      layout: "wide"
+      panel_layout: "four"
+      summary: "The consistency analysis combines pie charts, bar charts, and a scatter plot to connect rising consistency, reasoning score, and perplexity."
+      panels:
+        - image: "/images/research/rhd-consistency-reasoning.png"
+          label: "(a) Consistency analysis"
+          source: "graphs/reasoning_consistency.pdf"
+        - image: "/images/research/rhd-rising-accuracy.png"
+          label: "(b) Rising-2 accuracy comparison"
+          source: "graphs/rising_samples_analysis.pdf"
+        - image: "/images/research/rhd-ppl-rscore.png"
+          label: "(c) Reasoning score versus perplexity"
+          source: "graphs/ppl_r_score_scatter.pdf"
+        - image: "/images/research/rhd-rising-perplexity.png"
+          label: "(d) Rising-2 versus stable perplexity"
+          source: "graphs/perplexity_Science_fine_last_plot.pdf"
+      paragraphs:
+        - >-
+          Panels (a) and (b) compare rising consistency and stable consistency. The pie charts show that rising
+          consistency contains a much larger inconsistent portion than stable consistency, and the adjacent bar chart
+          compares the consistency ratio between successive steps.
+        - >-
+          Panel (c) plots perplexity against Reasoning Score and shows a downward trend: higher reasoning score
+          corresponds to lower perplexity in the visible scatter. Panel (d) compares mean perplexity for rising-2 and
+          stable conditions. These panels connect the trajectory scores to reliability and uncertainty, not just to
+          qualitative examples.
+      reading_guide:
+        - "Use panels (a)-(b) to read consistency as a step-to-step property, not a final-answer property."
+        - "Use panel (c) to connect R_score with perplexity through the visible negative trend."
+        - "Use panel (d) to see that the trajectory pattern has a measurable uncertainty signature."
+  main_results:
+    title: "Main experimental results"
+    summary: >-
+      RHD is tested both as a detector of reasoning hallucinations and as a process signal for mitigation.
+      The first table reports RHD's AUC and MC3 across ReTruthQA domains; the second shows how GRPO-R changes
+      downstream reasoning accuracy.
+    tables:
+      - title: "Reasoning hallucination detection on ReTruthQA"
+        note: "AUC evaluates binary detection; MC3 evaluates multi-trace ranking. Values are on a 0-1 scale."
+        columns: ["Backbone", "MATH AUC", "MATH MC3", "Science AUC", "Science MC3", "MultiHop AUC", "MultiHop MC3"]
+        rows:
+          - cells: ["R1-7B + RHD", "0.7978", "0.5699", "0.7194", "0.6009", "0.7361", "0.7103"]
+            highlight: true
+          - cells: ["R1-14B + RHD", "0.7292", "0.4644", "0.7686", "0.5671", "0.7255", "0.5154"]
+            highlight: true
+      - title: "Reasoning hallucination mitigation with GRPO-R"
+        note: "Accuracy on MATH500, AIME 2024, and GPQA. Values are on a 0-1 scale."
+        columns: ["Backbone", "Method", "MATH500", "AIME", "GPQA-D", "GPQA-M", "GPQA-E"]
+        rows:
+          - cells: ["DeepSeek-R1-1.5B", "GRPO", "0.770", "0.333", "0.359", "0.335", "0.359"]
+          - cells: ["DeepSeek-R1-1.5B", "GRPO-R", "0.788", "0.367", "0.414", "0.371", "0.357"]
+            highlight: true
+          - cells: ["Qwen2.5-1.5B", "GRPO", "0.480", "0.033", "0.247", "0.214", "0.266"]
+          - cells: ["Qwen2.5-1.5B", "GRPO-R", "0.490", "0.133", "0.247", "0.243", "0.275"]
+            highlight: true
+    insights:
+      - "RHD achieves the strongest AUC reported in the main table across all three domains for both R1-7B and R1-14B."
+      - "GRPO-R improves eight of ten benchmark-backbone comparisons, ties one, and is slightly lower on one GPQA-extended comparison."
+      - "The mitigation results connect diagnosis to control: the same reasoning-depth signal used to detect unstable trajectories can shape more reliable policies."
+  research_impact:
+    - >-
+      RHD contributes the temporal reasoning layer of the Cognitive Neuroscience of AI Agents program. It makes reasoning
+      paths observable in a way that answer-only evaluation cannot.
+    - >-
+      This matters for any agent that plans, searches, proves, or debugs over many steps. A reliable agent must know not
+      only whether its final answer is correct, but whether the path that produced the answer remained stable,
+      evidence-sensitive, and self-correcting.
+
+- id: fpps
+  research_question:
+    - >-
+      FPPS asks how a personalized language model can remain useful for user-specific tasks without letting user history
+      distort objective facts. The core tension is that personalization is both a capability and a risk.
+    - >-
+      A model should remember user preferences, long-term goals, local context, and prior interactions when the task
+      genuinely depends on the user. The same memory can become harmful when a factual question requires verifiable
+      evidence while the user's belief or history points elsewhere.
+    - >-
+      The project studies this as a representation-level problem. It asks where personalization enters the hidden state,
+      when it becomes entangled with factual knowledge, and how the representation can be steered without deleting useful
+      personalization.
+  motivation:
+    - >-
+      Personalization is often described as a positive feature of future assistants. A personalized model can support
+      continuity, adapt to writing style, remember domain needs, and reduce repeated instructions. In long-term agent
+      settings, this memory will be central to usability.
+    - >-
+      The risk is that memory is not always a neutral context. User history can contain false beliefs, outdated
+      preferences, local misconceptions, or task-specific assumptions. If the model treats these signals as factual
+      evidence, personalization becomes a source of hallucination.
+    - >-
+      This failure differs from single-turn hallucination. It accumulates over time. The model's response is shaped by a
+      history that may be useful in one query and misleading in another. FPPS therefore frames personalization-induced
+      hallucination as a long-timescale memory-modulation problem.
+  approach:
+    - >-
+      FPPS first distinguishes personalized-beneficial cases from factual-degraded cases. This distinction is essential
+      because the goal is not to suppress personalization globally. A good system should preserve user adaptation when it
+      helps and reduce it when it bends factual answers.
+    - >-
+      The method then studies hidden-state geometry. It examines whether personalization directions and factual
+      directions are cleanly separated or become non-orthogonal. When these directions become entangled, user-aligned
+      representations may pull the model away from factually reliable states.
+    - >-
+      Based on this diagnosis, FPPS introduces fact-preserving personalized steering. It selects personalization-sensitive
+      layers, uses a probe to detect factual risk, and applies adaptive steering at inference time. Strong harmful
+      personalization can be suppressed, while weaker distortion can be corrected with a fact-preserving direction.
+    - >-
+      The method is selective by design. It does not treat memory as bad. It treats memory as a control signal that must
+      be monitored, because the same user history can support personalization in one context and cause factual drift in
+      another.
+  key_findings:
+    - eyebrow: "Finding 1"
+      title: "Personalization creates a factual tradeoff"
+      paragraphs:
+        - >-
+          FPPS makes explicit that personalization can improve user fit while increasing factual risk. A model may answer
+          user-specific questions better but become less reliable when objective facts conflict with remembered context.
+        - >-
+          This finding is important because it rejects a one-dimensional view of personalization. The goal is not simply
+          more personalization; it is controlled personalization that respects factual boundaries.
+    - eyebrow: "Finding 2"
+      title: "The failure appears in representation geometry"
+      paragraphs:
+        - >-
+          The paper interprets personalization-induced hallucination as hidden-state entanglement. Personalization and
+          factuality are not always independent directions; they can interact in ways that bias the model before decoding.
+        - >-
+          This explains why output filtering is too late. If the representation has already been pulled toward a
+          user-aligned but factually wrong state, the final answer may be fluent and personalized while still unreliable.
+    - eyebrow: "Finding 3"
+      title: "Selective steering can preserve useful personalization"
+      paragraphs:
+        - >-
+          FPPS uses layer selection and factual-risk probing to decide whether intervention is needed. This creates a more
+          nuanced control policy than removing user history or refusing personalization entirely.
+        - >-
+          The method aims to keep the useful part of personalization while correcting the internal state when it begins
+          to threaten factual reliability.
+    - eyebrow: "Finding 4"
+      title: "Longer histories make monitoring more important"
+      paragraphs:
+        - >-
+          The history-length and simulation results emphasize that personalization risk can grow as memory accumulates.
+          A short prompt may be manageable, but long-term assistants need explicit checks on how memory changes factual
+          behavior.
+        - >-
+          This makes FPPS directly relevant to agent systems with persistent memory, user profiles, and long-running
+          task contexts.
+  narrative_sections:
+    - figure: "/images/research/fpps-personalization-case-web.png"
+      title: "Personalization is useful until it overrides facts"
+      role: "Problem"
+      source: "Paper Fig. 1; latex/graphs/introduction.pdf"
+      layout: "two-column"
+      summary: "The figure contrasts a normal LLM, a personalized LLM that hallucinates, and a personalized LLM with FPPS."
+      paragraphs:
+        - >-
+          The top block shows a standard LLM answering two different query types. For the fact query about the 161st New
+          York Volunteer Infantry Regiment, the model returns "Abraham Lincoln's inauguration in 1861"; for the
+          personalized query about attending Maundy Thursday service, it cannot answer because it has no chat history.
+          These correspond directly to the figure labels "Fact Query", "Fact Query Response", "Personalized Query", and
+          "Personalized Query Response".
+        - >-
+          The middle block adds chat history: the user is an Episcopalian and the history contains World War I context.
+          This enables the personalized query response, but it also produces a personalization-induced hallucination on
+          the fact query by answering "Woodrow Wilson" and World War I. The bottom block shows the target FPPS behavior:
+          keep the useful personalized response while restoring the factual answer to Abraham Lincoln's inauguration.
+      reading_guide:
+        - "Read the blue Fact Query boxes as factual QA behavior and the pink Personalized Query boxes as user-history-dependent behavior."
+        - "The middle row is the failure case: chat history helps the personalized query but contaminates the factual query."
+        - "The steering wheel icon in the bottom row marks FPPS as the control mechanism that separates those two effects."
+    - figure: "/images/research/fpps-representation-entanglement.png"
+      title: "Factuality and personalization are not always separable"
+      role: "Mechanism"
+      source: "Paper Fig. 2; latex/graphs/empirical.pdf"
+      layout: "two-column"
+      summary: "The figure visualizes factual representation, personalization representation, entangled representation, and the cosine-similarity gap between hallucination and truthful cases."
+      paragraphs:
+        - >-
+          The left schematic defines the geometry: a blue factual representation points upward, a pink personalization
+          representation points diagonally, and the entangled representation lies between them. The angle theta marks the
+          relation between factual and personalized directions, while the bracket labels the resulting factual distortion.
+        - >-
+          The right violin plot tests this geometry. It compares cosine similarity for hallucination versus truthful
+          cases and reports a Welch t-test with a significant gap. The plot is the empirical counterpart of the left
+          schematic: truthful cases have higher similarity to the intended direction, while hallucinated cases are more
+          distorted.
+      reading_guide:
+        - "Use theta and the factual-distortion bracket to read the left panel as a hidden-state geometry claim."
+        - "Use the violin plot to see that the geometry is tied to observed truthful versus hallucinated cases."
+        - "The figure motivates representation-level steering because the failure is already present before decoding."
+    - figure: "/images/research/fpps-controlled-simulation.png"
+      title: "Personalized teachers can transmit factual distortion"
+      role: "Controlled Study"
+      source: "Paper Fig. 3; latex/graphs/simulation.pdf"
+      layout: "wide"
+      summary: "The controlled teacher-student simulation tests whether personalization changes the factual knowledge acquired by a user model."
+      paragraphs:
+        - >-
+          Small LLMs act as users and larger LLMs act as teachers. After questions that the user model can already answer
+          are removed, the remaining factual questions are paired with personalized histories from PFQABench. The user
+          then learns through multi-turn interaction with either a standard teacher or a personalized teacher.
+        - >-
+          The final user answer measures knowledge acquisition after the dialogue. Across teacher-student model pairs,
+          users taught by personalized LLMs show lower factual accuracy, with an average drop of 10.5 percent reported
+          in the paper. This extends the representation-level mechanism into a downstream learning consequence.
+      reading_guide:
+        - "Follow the two teacher conditions: standard LLM versus personalized LLM with retrieved user history."
+        - "The user model is evaluated only after the learning dialogue, so the outcome measures transmitted knowledge rather than immediate teacher accuracy."
+        - "This experiment motivates FPPS as protection for both the current answer and the user's subsequent factual understanding."
+    - figure: "/images/research/fpps-method-framework.png"
+      title: "Fact-preserving personalized steering"
+      role: "Method"
+      source: "Paper Fig. 4; latex/graphs/methods.pdf"
+      layout: "wide"
+      summary: "The method figure has three explicit stages: offline layer selection, offline probing detection, and inference-time adaptive steering."
+      paragraphs:
+        - >-
+          Stage 1 compares "Query + User + Gold Answer" with "Query + Gold Answer" across layers, computes PPL with and
+          without user information, calculates relative deviation, and selects layer L. This stage identifies where
+          personalization most changes factual prediction behavior.
+        - >-
+          Stage 2 trains a logistic-regression prober on the selected layer using positive factual-degraded examples and
+          negative personalized-beneficial examples. Stage 3 applies the prober at inference time: if p-hat exceeds the
+          threshold tau, FPPS-H subtracts the user-history direction; otherwise FPPS-S combines fact and personalization
+          directions through the steering vector s_f before producing the final response.
+      reading_guide:
+        - "Stage 1 is layer selection through PPL deviation, not a learned detector."
+        - "Stage 2 is binary risk detection at the selected layer using factual-degraded versus personalized-beneficial states."
+        - "Stage 3 is conditional steering: high entanglement uses FPPS-H, lower detected risk uses FPPS-S."
+    - title: "Longer histories test factual robustness"
+      role: "Results"
+      toc_label: "Robustness"
+      source: "Paper Fig. 5; latex/graphs/history_length/*.pdf"
+      layout: "wide"
+      panel_layout: "three"
+      summary: "The figure plots F-score against history length ratio for LLaMA3.1-8B-IT, Qwen2.5-7B-IT, and Qwen2.5-14B-IT."
+      panels:
+        - image: "/images/research/fpps-history-llama31-8b.png"
+          label: "(a) LLaMA3.1-8B-IT"
+          source: "latex/graphs/history_length/history_length_fscore_LLaMA3.1-8B.pdf"
+        - image: "/images/research/fpps-history-qwen25-7b.png"
+          label: "(b) Qwen2.5-7B-IT"
+          source: "latex/graphs/history_length/history_length_fscore_Qwen2.5-7B.pdf"
+        - image: "/images/research/fpps-history-qwen25-14b.png"
+          label: "(c) Qwen2.5-14B-IT"
+          source: "latex/graphs/history_length/history_length_fscore_Qwen2.5-14B.pdf"
+      paragraphs:
+        - >-
+          Each panel compares a dashed Base Model curve with a solid Base+FPPS-M curve. In panel (a), the base LLaMA curve
+          drops sharply as history length ratio increases, while the FPPS-M curve stays near the top of the axis. Panel
+          (b) shows the same separation for Qwen2.5-7B-IT, and panel (c) shows a smaller but consistent gap for
+          Qwen2.5-14B-IT.
+        - >-
+          The x-axis is the history length ratio, so the figure directly tests whether more user history creates stronger
+          factual pressure. The repeated gap between dashed and solid curves shows that FPPS provides robustness across
+          history lengths and complements the single-case analysis.
+      reading_guide:
+        - "Read dashed lines as the unsteered base model and solid triangle lines as Base+FPPS-M."
+        - "The most visible degradation is in LLaMA3.1-8B-IT, where the base curve falls as the history ratio grows."
+        - "The figure supports the claim that FPPS-M stabilizes factual QA under longer personalization context."
+    - figure: "/images/research/fpps-simulation-result.png"
+      title: "Controlled personalization simulation"
+      role: "Results"
+      toc_label: "Mitigation"
+      source: "Paper Fig. 6; latex/graphs/simulation_result_fpps.pdf"
+      layout: "two-column"
+      summary: "The bar chart compares Accuracy across UI and FI settings for control, experimental, and experimental+FPPS conditions."
+      paragraphs:
+        - >-
+          The grouped bars show three conditions: Control in blue, Experimental in pink, and Experimental+FPPS in green.
+          The x-axis lists UI/FI model-pair settings such as LLaMA3.2-1B with Qwen2.5-14B and LLaMA3.2-1B with LLaMA3.1-8B.
+        - >-
+          The labels above the bars show that the experimental condition often drops below control, while the FPPS bar
+          partially recovers accuracy in several settings, most visibly where the green bar rises well above the pink bar.
+          The figure gives a controlled complement to the history-length curves by testing whether steering helps when
+          personalization is simulated through teaching-style conditions.
+      reading_guide:
+        - "Compare pink and green bars within each model-pair group to see where FPPS recovers accuracy."
+        - "Use the printed bar values to avoid over-reading small visual differences."
+        - "The figure supports the same mechanism as Fig. 5 under a more controlled simulation setup."
+  main_results:
+    title: "Main experimental results"
+    summary: >-
+      PFQABench jointly measures personalized utility (P-Score) and factual reliability (F-Score). To keep the
+      webpage readable, the table focuses on the Overall score and compares each personalized baseline with
+      its adaptive FPPS-M variant across three backbones.
+    tables:
+      - title: "Overall score on PFQABench (%)"
+        note: "Overall is the paper's joint factuality-personalization measure. Base and +M denote the original personalized system and the FPPS-M variant."
+        columns: ["Personalization", "LLaMA Base", "LLaMA +M", "Qwen-7B Base", "Qwen-7B +M", "Qwen-14B Base", "Qwen-14B +M"]
+        rows:
+          - cells: ["PAG", "32.2", "60.8", "35.8", "63.8", "36.8", "64.8"]
+            highlight: true
+          - cells: ["DPL", "24.6", "57.6", "33.8", "58.2", "35.0", "56.8"]
+            highlight: true
+          - cells: ["RAG", "22.2", "57.6", "38.0", "56.4", "34.4", "58.0"]
+            highlight: true
+          - cells: ["LLM-TRSR", "23.0", "52.6", "21.0", "54.6", "24.6", "40.4"]
+            highlight: true
+    insights:
+      - "FPPS-M improves Overall in all 12 backbone-personalization settings shown in the main table."
+      - "The gains come primarily from recovering factual performance while retaining substantially more personalized utility than hard steering alone."
+      - "The consistent pattern across PAG, DPL, RAG, and LLM-TRSR supports FPPS as an inference-time control layer rather than a method-specific patch."
+  research_impact:
+    - >-
+      FPPS adds the personalized-memory module to the Cognitive Neuroscience of AI Agents program. It studies how
+      accumulated user history reshapes internal representations and factual behavior over time.
+    - >-
+      The project is important for long-term assistants, recommender agents, legal agents, and research agents. These
+      systems will need memory, but they also need a principled way to decide when memory should influence an answer and
+      when factuality should dominate.
+
+- id: rearter
+  research_question:
+    - >-
+      ReARTeR asks how retrieval-augmented reasoning can receive trustworthy supervision throughout the process. A
+      complex answer may depend on sub-query decomposition, retrieval timing, evidence selection, intermediate reasoning,
+      and final synthesis.
+    - >-
+      The project focuses on the process layer. It asks whether each intermediate step can be evaluated for quality and
+      trustworthiness so that the system can search over better reasoning paths and improve through step-level feedback.
+    - >-
+      This is especially important for agentic search. An agent that reasons over retrieved evidence should not receive
+      feedback only after the final answer; it should receive feedback while it is deciding what to retrieve, how to use
+      evidence, and whether each intermediate step is supported.
+  motivation:
+    - >-
+      Final-answer supervision is too coarse for multi-step retrieval-augmented reasoning. A correct answer can be
+      produced through unsupported reasoning, while an incorrect answer may be caused by one early retrieval or
+      decomposition error.
+    - >-
+      When retrieval and reasoning are interleaved, reliability depends on the path. A bad sub-query can bring irrelevant
+      evidence, a weak evidence judgment can mislead the next reasoning step, and an unsupported intermediate conclusion
+      can contaminate the final synthesis.
+    - >-
+      ReARTeR is motivated by the need for process rewards that are both useful for optimization and readable as
+      explanations. The reward should not be a black-box scalar alone; it should help identify why a step is trustworthy
+      or unreliable.
+  approach:
+    - >-
+      ReARTeR combines a Process Reward Model (PRM) for scalar step scoring with a Process Explanation Model (PEM) for
+      natural-language critique and refinement. Balanced Monte Carlo annotation and stronger generators improve PRM data
+      for difficult examples.
+    - >-
+      At test time, a temporal-difference look-ahead strategy reduces the PRM's early-step bias. Off-policy preference
+      learning aligns PEM explanations with PRM scores, allowing low-quality steps to be refined with interpretable
+      feedback while search selects stronger candidate paths.
+    - >-
+      At post-training time, PRM-guided Monte Carlo Tree Search collects step-level preference data. Iterative offline
+      optimization with KTO updates the generator so process quality becomes part of the model's learned behavior.
+    - >-
+      In the larger program, ReARTeR turns diagnosis into supervision. ReDeEP and RHD identify internal and temporal
+      failures; ReARTeR asks how a system can be rewarded for avoiding such failures during execution.
+  key_findings:
+    - eyebrow: "Finding 1"
+      title: "Balanced annotation improves process reward data"
+      paragraphs:
+        - >-
+          Standard Monte Carlo annotation can produce skewed labels and weak supervision on difficult questions. ReARTeR
+          balances positive and negative process examples and uses stronger generators when ordinary rollouts collapse.
+        - >-
+          The resulting PRM receives more discriminative step-level data for judging retrieval-augmented reasoning paths.
+    - eyebrow: "Finding 2"
+      title: "Look-ahead scoring and aligned explanations improve refinement"
+      paragraphs:
+        - >-
+          TD-based look-ahead scoring reduces early-step bias in the PRM, where shallow search nodes are harder to judge
+          reliably from local information alone.
+        - >-
+          PEM alignment converts PRM feedback into explanations that are more likely to improve a weak reasoning step,
+          giving test-time search both a score and an actionable critique.
+    - eyebrow: "Finding 3"
+      title: "Process rewards support test-time and post-training scaling"
+      paragraphs:
+        - >-
+          At test time, process rewards guide candidate-path search and step refinement. During post-training, the same
+          reward machinery guides MCTS collection of step-level preference data.
+        - >-
+          Accuracy improves over iterative reinforcement fine-tuning on multiple multi-hop reasoning datasets, linking
+          the method's training loop to measurable scaling behavior.
+    - eyebrow: "Finding 4"
+      title: "PEM-PRM alignment has measurable downstream effects"
+      paragraphs:
+        - >-
+          Aligning PEM explanations with PRM scores increases the rate at which explanation-guided refinement improves
+          process reward and raises final task accuracy across the reported datasets.
+        - >-
+          This provides the process-feedback foundation for DS-MCM, where monitoring and correction require trustworthy
+          signals about intermediate states.
+  narrative_sections:
+    - figure: "/images/research/rearter-rartpr-example.png"
+      title: "Why final-answer supervision is too coarse"
+      role: "Problem"
+      source: "Paper Fig. 1; samples/graph/intro.pdf"
+      layout: "two-column"
+      summary: "The example figure follows an X.com question through generator steps, retriever outputs, look-ahead search, PRM scoring, and PEM refinement."
+      paragraphs:
+        - >-
+          The left side gives a concrete process trace. The generator first asks about the company Elon Musk found in
+          1999 and searches adaptively; the retriever returns evidence that X.com was an online bank founded by Ed Ho,
+          Harris Fricker, Elon Musk, and others. The next generator step asks for the current name of X.com, and the
+          retriever returns evidence that X.com was rebranded as PayPal after merging with Confinity.
+        - >-
+          The right side shows why this trace needs process supervision. A tree of candidate steps is scored with
+          look-ahead search, rollout, and backpropagation; the PRM gives process scores such as 0.3, 0.4, and 0.2, while
+          the PEM refines a reasoning step using explanations about question decomposition, retrieval, and answer
+          generation errors. The bottom legend breaks the process into sub-query, retrieval, and reasoning.
+      reading_guide:
+        - "Read the left trace as evidence that retrieval-augmented reasoning is a sequence of generator and retriever decisions."
+        - "Read the right tree as the search space over possible intermediate steps."
+        - "PRM scores select promising paths, while PEM explanations indicate what kind of process error should be refined."
+    - figure: "/images/research/rearter-test-time-scaling.png"
+      title: "Process rewards at test time"
+      role: "Method"
+      toc_label: "Test-Time"
+      source: "Paper Fig. 2; samples/graph/model_graph_1.pdf"
+      layout: "wide"
+      summary: "The figure combines bias-reducing process search, PRM data collection, Monte Carlo filtering, and PEM-PRM alignment."
+      paragraphs:
+        - >-
+          Panel (a) explains how PRM training data are collected. Multiple rollouts e1, e2, and e3 produce candidate
+          answers a1, a2, and a3. Their Monte Carlo correctness score MC decides whether the system should use a stronger
+          generator, collect PRM data with OmegaPRM, or keep the example distribution balanced.
+        - >-
+          Panel (b) shows the bias-reduction motivation: shallow nodes can receive higher PRM bias than deeper nodes, and
+          the bias-reducing score reduces this early-node preference. Panel (c) aligns PRM and PEM: PRM gives rewards r1
+          and r2 for steps, while PEM generates explanations c1 and labels positive or negative examples based on whether
+          r2 is greater than r1.
+      reading_guide:
+        - "Panel (a) is about collecting less biased PRM training data from rollout correctness."
+        - "Panel (b) explains why shallow-node preference must be reduced during look-ahead search."
+        - "Panel (c) connects numerical PRM rewards with PEM explanations so the process score is more interpretable."
+    - figure: "/images/research/rearter-post-training-scaling.png"
+      title: "Post-training with step-level feedback"
+      role: "Method"
+      toc_label: "Post-Training"
+      source: "Paper Fig. 3; samples/graph/model_graph_2.pdf"
+      layout: "wide"
+      summary: "The post-training figure shows warm-up from a strong generator and step-level offline RL over selected tree paths."
+      paragraphs:
+        - >-
+          The left side shows a strong generator sampling reasoning data and a weak generator receiving SFT warm-up. The
+          central box then runs interactive reasoning with a search tree where node 0 is selected, binary search expands
+          candidate nodes, and PRM/PEM refine the selected path.
+        - >-
+          The bottom update line shows step-level offline reinforcement learning data such as path fragments with +1 and
+          -1 labels. The right side ends with the generator after reasoning fine-tuning, showing that process rewards rank
+          paths at inference time and improve the generator itself.
+      reading_guide:
+        - "The strong generator supplies warm-up data; the weak generator is improved through SFT before RL."
+        - "The selected tree nodes are turned into labeled step-level training sequences."
+        - "PRM and PEM appear inside the training loop, not only as external evaluators."
+    - title: "Post-training scaling across retrieval-augmented reasoning datasets"
+      role: "Results"
+      toc_label: "Scaling"
+      source: "Paper Fig. 4; samples/graph/*_rft.pdf"
+      layout: "wide"
+      panel_layout: "four-inline"
+      summary: "The iteration curves show how step-level post-training changes retrieval-augmented reasoning accuracy across 2WikiMultiHopQA, Bamboogle, HotpotQA, and Musique."
+      panels:
+        - image: "/images/research/rearter-rft-2wiki.png"
+          label: "2WikiMultiHopQA"
+          source: "samples/graph/2WikiMultiHopQA_rft.pdf"
+        - image: "/images/research/rearter-rft-bamboogle.png"
+          label: "Bamboogle"
+          source: "samples/graph/Bamboogle_rft.pdf"
+        - image: "/images/research/rearter-rft-hotpotqa.png"
+          label: "HotpotQA"
+          source: "samples/graph/HotpotQA_rft.pdf"
+        - image: "/images/research/rearter-rft-musique.png"
+          label: "Musique"
+          source: "samples/graph/Musique_rft.pdf"
+      paragraphs:
+        - >-
+          These panels correspond to the paper's post-training scaling analysis. Each curve tracks how performance
+          changes across reinforcement fine-tuning iterations, making the training effect visible as a process rather
+          than as a single final table entry.
+        - >-
+          The dataset-level separation is useful for project-page readers because it shows where process-reward training
+          is stable and where gains are more task-dependent. It also connects the method figure's step-level offline RL
+          loop to empirical behavior across multi-hop reasoning benchmarks.
+      reading_guide:
+        - "Read each panel as a dataset-specific trajectory over post-training iterations."
+        - "Compare curve shape, not only final height, because the figure is about scaling behavior over training."
+        - "These results provide the empirical counterpart to the post-training pipeline in Paper Fig. 3."
+    - title: "PEM and PRM alignment effects"
+      role: "Results"
+      toc_label: "Alignment"
+      source: "Paper Fig. 5; samples/graph/Improvement_Rate_BarChart.pdf + samples/graph/ACC_L_BarChart.pdf"
+      layout: "wide"
+      panel_layout: "two"
+      summary: "The two bar charts evaluate whether aligning process explanations with reward scores improves reasoning-path refinement."
+      panels:
+        - image: "/images/research/rearter-pem-improvement.png"
+          label: "Improvement rate after PEM-guided refinement"
+          source: "samples/graph/Improvement_Rate_BarChart.pdf"
+        - image: "/images/research/rearter-pem-acc.png"
+          label: "Accuracy after PEM and PRM alignment"
+          source: "samples/graph/ACC_L_BarChart.pdf"
+      paragraphs:
+        - >-
+          These panels isolate the role of PEM/PRM alignment. The improvement-rate chart asks whether explanations help
+          repair weak intermediate steps, while the accuracy chart asks whether that explanation-guided repair improves
+          the final retrieval-augmented reasoning outcome.
+        - >-
+          This matters because ReARTeR is not only assigning scalar process rewards. It uses explanations as part of the
+          correction loop, so the webpage should show the evidence that explanation alignment has a measurable effect.
+      reading_guide:
+        - "Use the improvement-rate chart to read PEM as a refinement mechanism for low-quality steps."
+        - "Use the accuracy chart to connect explanation alignment back to task performance."
+        - "Together the panels support the trustworthiness claim: process rewards become more useful when paired with aligned natural-language explanations."
+  main_results:
+    title: "Main experimental results"
+    summary: >-
+      ReARTeR is evaluated with a proprietary generator under test-time scaling and an open-source generator
+      under test-time plus post-training scaling. The table reports ACC-L, the GPT-4o judged answer accuracy,
+      for Standard RAG, the strongest test-time baseline CR-Planner, and ReARTeR.
+    tables:
+      - title: "Multi-step retrieval-augmented reasoning (ACC-L)"
+        note: "Values are on a 0-1 scale. 2Wiki abbreviates 2WikiMultiHopQA."
+        columns: ["Generator", "Method", "2Wiki", "Bamboogle", "HotpotQA", "Musique", "StrategyQA"]
+        rows:
+          - cells: ["GPT-4o-mini", "Standard RAG", "0.292", "0.328", "0.450", "0.188", "0.674"]
+          - cells: ["GPT-4o-mini", "CR-Planner", "0.478", "0.524", "0.416", "0.262", "0.744"]
+          - cells: ["GPT-4o-mini", "ReARTeR", "0.534", "0.544", "0.506", "0.302", "0.772"]
+            highlight: true
+          - cells: ["LLaMA3.1-8B", "Standard RAG", "0.212", "0.216", "0.398", "0.098", "0.674"]
+          - cells: ["LLaMA3.1-8B", "CR-Planner", "0.350", "0.336", "0.350", "0.098", "0.654"]
+          - cells: ["LLaMA3.1-8B", "ReARTeR", "0.364", "0.484", "0.434", "0.252", "0.724"]
+            highlight: true
+    insights:
+      - "ReARTeR outperforms CR-Planner on all ten generator-dataset comparisons in ACC-L."
+      - "Against Standard RAG, mean ACC-L increases by 14.5 percentage points with GPT-4o-mini and 13.2 points with LLaMA3.1-8B."
+      - "The gains across both generators support the combined value of trustworthy process scoring, explanation-guided refinement, and post-training."
+  research_impact:
+    - >-
+      ReARTeR provides the process-rewarding foundation for metacognitive control. It changes retrieval-augmented
+      reasoning from a final-answer task into a supervised execution process.
+    - >-
+      The broader impact is that trustworthy agents need reward signals for intermediate behavior. ReARTeR supplies this
+      layer for retrieval-augmented reasoning, making later monitoring, reflection, and correction more actionable.
+
+- id: mcm_ds
+  research_question:
+    - >-
+      DS-MCM asks how a deep-search agent can monitor its own execution, diagnose errors, and revise behavior during
+      long-horizon tasks. The central problem is maintaining calibrated reasoning and retrieval states as evidence evolves.
+    - >-
+      Deep search creates a control problem. The agent must determine whether internal reasoning uncertainty is calibrated
+      to the uncertainty of retrieved evidence and whether the current step resembles successful or failed past behavior.
+    - >-
+      The project therefore studies metacognitive monitoring for agents: a layer above ordinary action and observation
+      that detects abnormal states, attributes failure causes, suggests corrections, and stores experience for future
+      tasks.
+  motivation:
+    - >-
+      Standard search or ReAct-style loops can act, observe, and continue without an explicit monitor for execution
+      reliability. An agent may remain overconfident under ambiguous evidence or unnecessarily uncertain when evidence is
+      coherent.
+    - >-
+      In long-horizon tasks, many failures form during the process. The agent needs online signals that identify when
+      reasoning and retrieval become inconsistent, followed by experience-informed guidance for subsequent steps.
+    - >-
+      DS-MCM is motivated by cognitive-neuroscience-style monitoring: fast local checks catch immediate inconsistency,
+      while slower reflective diagnosis explains what went wrong and how the agent should change its trajectory.
+  approach:
+    - >-
+      The framework adds a hierarchical monitoring layer to the deep-search loop. A fast monitor checks local consistency
+      between reasoning uncertainty and evidence uncertainty. This supports quick detection when the current state looks
+      abnormal.
+    - >-
+      A slower experience-driven monitor retrieves related sessions from success and failure memory. A critical model
+      compares those experiences with the current step, identifies cognitive error patterns, and issues corrective
+      guidance for subsequent execution.
+    - >-
+      DS-MCM also supports optional online memory consolidation. New monitoring experience is deduplicated and stored as
+      reusable control knowledge for later tasks.
+    - >-
+      In the broader program, DS-MCM is the long-horizon regulation layer. It operationalizes agents that monitor and
+      regulate their own cognition-like processes during next-step generation.
+  key_findings:
+    - eyebrow: "Finding 1"
+      title: "Fast monitoring calibrates reasoning against evidence"
+      paragraphs:
+        - >-
+          Searching Entropy measures semantic fragmentation in retrieved documents, while Reasoning Entropy measures
+          uncertainty in the model's reasoning tokens. Successful trajectories define their expected relationship.
+        - >-
+          The fast monitor flags large residuals between observed and expected Reasoning Entropy, detecting both excessive
+          uncertainty under coherent evidence and overconfidence under ambiguous evidence.
+    - eyebrow: "Finding 2"
+      title: "Slow monitoring diagnoses with success and failure memory"
+      paragraphs:
+        - >-
+          The slow monitor retrieves similar sessions from separate success and failure memory pools. These examples give
+          the critical model concrete behavioral context for diagnosing the flagged step.
+        - >-
+          The output is an error decision and a corrective suggestion that conditions the agent's next action.
+    - eyebrow: "Finding 3"
+      title: "Selective triggering connects detection to control"
+      paragraphs:
+        - >-
+          The fast monitor runs at every step, while the slower critical process is activated only when uncertainty
+          calibration becomes abnormal. This separates lightweight detection from more expensive reflection.
+        - >-
+          Corrective guidance is inserted into the next-step policy context, turning monitoring into an execution control
+          mechanism.
+    - eyebrow: "Finding 4"
+      title: "The framework improves deep-search robustness"
+      paragraphs:
+        - >-
+          Across multiple deep-search benchmarks and backbone models, DS-MCM consistently improves performance and
+          robustness. The sensitivity analyses test the entropy threshold, retrieved-memory count, and document budget.
+        - >-
+          Optional online memory consolidation provides a route for retaining useful monitoring experience across future
+          tasks.
+  narrative_sections:
+    - figure: "/images/research/mcm-ds-hierarchical-monitoring-web.png"
+      title: "Why deep-search agents need metacognitive monitoring"
+      role: "Problem"
+      source: "Paper Fig. 1; graphs/introduction.pdf"
+      layout: "two-column"
+      summary: "The figure compares human hierarchical metacognitive monitoring, a standard deep-search agent that ends in error, and a DS agent augmented with MCM."
+      paragraphs:
+        - >-
+          The top row maps human monitoring onto execution: the fast monitor checker, associated with ACC, triggers
+          low-cost anomaly detection, while the slow monitor checker, associated with PFC and hippocampus, performs
+          explicit memory-augmented reflection. Execution proceeds from task start through steps to completion.
+        - >-
+          The middle row shows the failure mode in a deep-search agent: query, tool use, reasoning, repeated execution,
+          and then an error. The bottom row adds MCM. In the visible example, the query about a missing 16-year-old is
+          processed through tool and reasoning steps; the system identifies a failure to understand the query, triggers
+          rethinking, and produces a corrected final state.
+      reading_guide:
+        - "Top: use ACC versus PFC+hippocampus labels to distinguish fast anomaly detection from slow reflection."
+        - "Middle: the ordinary deep-search loop has tool and reasoning modules but no explicit correction point."
+        - "Bottom: MCM inserts query-understanding diagnosis and rethinking before the final answer."
+    - figure: "/images/research/mcm-ds-method-framework.png"
+      title: "DS-MCM execution pipeline"
+      role: "Method"
+      source: "Paper Fig. 2; graphs/method.pdf"
+      layout: "wide"
+      summary: "The method figure details the ReAct-style execution loop, Fast Consistency Monitor, Slow Experience-Driven Monitor, and Memory Update."
+      paragraphs:
+        - >-
+          The top execution pipeline starts from user query q. Step s_t interleaves retrieval action, document set D_t,
+          semantic clusters C_t, reasoning trace, and token distribution p_r. These produce searching entropy SE_t and
+          reasoning entropy RE_t, which enter the Fast Consistency Monitor.
+        - >-
+          The yellow monitor box calibrates expected reasoning entropy from searching entropy, computes epsilon_t, and
+          triggers monitoring when |epsilon_t| exceeds threshold tau. The lower blue region builds memory from historical
+          trajectories, retrieves success and failure experiences, uses a critical model C to produce corrective
+          suggestion delta_t or error flag err_t, and then updates memory through deduplication and consolidation.
+      reading_guide:
+        - "SE_t comes from the retrieval/search side; RE_t comes from the reasoning/token-distribution side."
+        - "The fast monitor decides whether the current step is divergent or consistent by checking calibrated entropy mismatch."
+        - "The slow monitor turns retrieved success/failure experiences into corrective suggestions and memory updates."
+    - title: "Checking robustness of the monitoring mechanism"
+      role: "Results"
+      toc_label: "Robustness"
+      source: "Paper Fig. 3; graphs/sensitivity_entropy_threshold.pdf + graphs/sensitivity_memory_retrieved.pdf + graphs/sensitivity_retrieved_docs.pdf"
+      layout: "wide"
+      panel_layout: "three"
+      summary: "The sensitivity figure plots accuracy against entropy threshold k, number of retrieved memories |R|, and top-K retrieved documents."
+      panels:
+        - image: "/images/research/mcm-ds-sensitivity-entropy.png"
+          label: "(a) Entropy threshold k"
+          source: "graphs/sensitivity_entropy_threshold.pdf"
+        - image: "/images/research/mcm-ds-sensitivity-memory.png"
+          label: "(b) Retrieved monitoring memories |R|"
+          source: "graphs/sensitivity_memory_retrieved.pdf"
+        - image: "/images/research/mcm-ds-sensitivity-docs.png"
+          label: "(c) Retrieved documents top-K"
+          source: "graphs/sensitivity_retrieved_docs.pdf"
+      paragraphs:
+        - >-
+          Panel (a) varies the entropy threshold k. Panel (b) varies the number of retrieved memories |R|. Panel (c)
+          varies the number of retrieved documents top-K. In all three panels, the blue Tongyi-Deepresearch curve stays
+          clearly above the purple dashed Mirothinker-Deepresearch curve.
+        - >-
+          The curves also show that the best settings are not always at the largest value: the blue curve peaks around
+          moderate k and |R| values, and panel (c) peaks around a mid-range top-K setting. This is why the result belongs
+          in a monitoring paper: thresholds and retrieval budgets are part of the control mechanism.
+      reading_guide:
+        - "Panel (a) checks the trigger sensitivity of the fast monitor through entropy threshold k."
+        - "Panel (b) checks how much retrieved monitoring memory is useful."
+        - "Panel (c) checks the evidence retrieval budget through top-K documents."
+  main_results:
+    title: "Main experimental results"
+    summary: >-
+      DS-MCM is evaluated on four deep-search benchmarks using three open-source backbones. The table compares
+      each unmodified system, an LLM-as-Critic baseline, and DS-MCM; GPT-5 is included only as a proprietary
+      reference point reported in the paper.
+    tables:
+      - title: "Deep-search benchmark accuracy (%)"
+        note: "An asterisk marks DS-MCM improvements reported as statistically significant in the paper's main table."
+        columns: ["System", "BrowseComp+", "BrowseComp-ZH", "X-Bench", "GAIA", "Average"]
+        rows:
+          - cells: ["GPT-5 (reference)", "70.0", "34.3", "75.0", "62.8", "60.5"]
+          - cells: ["Tongyi-DR", "51.0", "38.0", "69.0", "70.1", "57.0"]
+          - cells: ["Tongyi-DR + Critic", "55.0", "42.0", "68.0", "69.3", "58.6"]
+          - cells: ["Tongyi-DR + DS-MCM", "62.0*", "45.0*", "74.0*", "71.7", "63.2*"]
+            highlight: true
+          - cells: ["MiroThinker-DR", "21.0", "31.0", "62.0", "63.8", "44.5"]
+          - cells: ["MiroThinker-DR + Critic", "24.0", "30.0", "64.0", "63.0", "45.2"]
+          - cells: ["MiroThinker-DR + DS-MCM", "26.0", "34.0*", "68.0*", "69.3*", "49.3*"]
+            highlight: true
+          - cells: ["Qwen3-30B-MoE", "5.0", "21.0", "42.0", "40.9", "27.2"]
+          - cells: ["Qwen3-30B-MoE + Critic", "22.0", "27.0", "47.0", "43.3", "34.8"]
+          - cells: ["Qwen3-30B-MoE + DS-MCM", "29.0*", "35.0*", "53.0*", "47.2*", "41.1*"]
+            highlight: true
+    insights:
+      - "DS-MCM improves the average over the unmodified backbone by 6.2 points for Tongyi-DR, 4.8 for MiroThinker-DR, and 13.9 for Qwen3-30B-MoE."
+      - "It also exceeds the generic LLM-as-Critic baseline on every backbone, showing that structured fast and slow monitoring contributes beyond additional critique calls."
+      - "Tongyi-DR + DS-MCM reaches a 63.2 average, 2.7 points above the GPT-5 reference reported in the table."
+  research_impact:
+    - >-
+      DS-MCM is the metacognitive-control endpoint of the current project sequence. ReDeEP studies evidence use, RHD
+      studies reasoning dynamics, ReARTeR studies process rewards, and DS-MCM integrates these ideas into a monitoring
+      and correction loop.
+    - >-
+      The long-term impact is a framework for agents that can inspect their own execution state. As AI agents become more
+      autonomous in research, legal, scientific, and decision-support tasks, this kind of monitoring layer becomes central
+      to reliability.

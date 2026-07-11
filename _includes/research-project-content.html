@@ -1,0 +1,203 @@
+{% assign project = nil %}
+{% for item in site.data.research_projects %}
+  {% if item.id == page.project_id %}
+    {% assign project = item %}
+  {% endif %}
+{% endfor %}
+
+{% if project %}
+{% assign project_blog = nil %}
+{% for item in site.data.research_project_blogs %}
+  {% if item.id == page.project_id %}
+    {% assign project_blog = item %}
+  {% endif %}
+{% endfor %}
+{% assign narrative_sections = project_blog.narrative_sections | default: project_blog.figure_guide %}
+
+<nav class="research-toc" aria-label="Project contents">
+  <span>Contents</span>
+  <a href="#research-question">Question</a>
+  {% for section in narrative_sections %}
+    <a href="#walkthrough-{{ forloop.index }}">{{ section.toc_label | default: section.role | default: section.title }}</a>
+  {% endfor %}
+  {% if project_blog.main_results %}<a href="#main-results">Main results</a>{% endif %}
+  <a href="#takeaways">Takeaways</a>
+  <a href="#research-impact">Impact</a>
+  <a href="#resources">Resources</a>
+</nav>
+
+<section class="research-hero research-hero--project">
+  <div class="research-hero__text">
+    <p class="research-kicker">{{ project.layer }}</p>
+    <h1>{{ project.title }}</h1>
+    <p class="research-lede">{{ project.summary }}</p>
+    <div class="research-meta-row">
+      <span>{{ project.venue }}</span>
+      <span>{{ project.role }}</span>
+      <span>{{ project.authors }}</span>
+    </div>
+    <div class="research-link-row">
+      {% if project.paper_url and project.paper_url != "" %}
+        <a class="research-button" href="{{ project.paper_url }}">Paper</a>
+      {% endif %}
+      {% if project.code_url and project.code_url != "" %}
+        <a class="research-button research-button--secondary" href="{{ project.code_url }}">Code</a>
+      {% endif %}
+      <a class="research-button research-button--secondary" href="/research/cognitive-neuroscience/">Research Program</a>
+    </div>
+  </div>
+  {% if project.teaser and project.teaser != "" %}
+  <figure class="research-hero__media research-hero__media--project research-hero__media--visual-abstract">
+    <img src="{{ project.teaser }}" alt="{{ project.short_title }} visual abstract">
+  </figure>
+  {% endif %}
+</section>
+
+<section class="research-section research-question" id="research-question">
+  <p class="research-section-label">Research Question</p>
+  <h2>{{ project.one_liner }}</h2>
+  <div class="research-callout">
+    <p>{{ project.research_question }}</p>
+  </div>
+</section>
+
+{% if narrative_sections %}
+<section class="research-section research-walkthrough" id="paper-walkthrough">
+  <div class="research-walkthrough__intro">
+    <p class="research-section-label">Paper Walkthrough</p>
+    <h2>From the research problem to mechanism and evidence</h2>
+    <p>The figures below follow their order in the paper. Each section connects the figure to the question it resolves and the conclusion it supports.</p>
+  </div>
+
+  <div class="research-narrative-list">
+    {% for section in narrative_sections %}
+    {% assign section_layout = section.layout | default: "wide" %}
+    {% assign section_image = section.figure | default: section.image %}
+    <article class="research-narrative research-narrative--{{ section_layout }}" id="walkthrough-{{ forloop.index }}">
+      <header class="research-narrative__header">
+        <span class="research-narrative__number">{{ forloop.index }}</span>
+        <div>
+          <p class="research-figure-role">{{ section.role }}</p>
+          <h3>{{ section.title }}</h3>
+          <p class="research-narrative__summary">{{ section.summary }}</p>
+        </div>
+      </header>
+
+      <figure class="research-narrative__media{% if section.panels %} research-narrative__media--panel-group{% endif %}">
+        {% if section.panels %}
+        {% assign panel_layout = section.panel_layout | default: "auto" %}
+        <div class="research-figure-panel-grid research-figure-panel-grid--{{ panel_layout }}">
+          {% for panel in section.panels %}
+          <div class="research-figure-panel">
+            <img src="{{ panel.image }}" alt="{{ project.short_title }} {{ section.title }} {{ panel.label | default: forloop.index }} panel">
+            {% if panel.label %}<p><strong>{{ panel.label }}</strong></p>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <img src="{{ section_image }}" alt="{{ project.short_title }} {{ section.title }} figure">
+        {% endif %}
+      </figure>
+
+      <div class="research-narrative__explanation">
+        {% for paragraph in section.paragraphs %}
+          <p>{{ paragraph }}</p>
+        {% endfor %}
+        {% assign reading_guide = section.reading_guide | default: section.details %}
+        {% if reading_guide %}
+        <div class="research-reading-guide">
+          <strong>How to read this figure</strong>
+          <ul>
+            {% for detail in reading_guide %}<li>{{ detail }}</li>{% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if project_blog.main_results %}
+{% assign main_results = project_blog.main_results %}
+<section class="research-section research-main-results" id="main-results">
+  <p class="research-section-label">Experimental Evidence</p>
+  <h2>{{ main_results.title }}</h2>
+  <p class="research-main-results__summary">{{ main_results.summary }}</p>
+
+  {% for result_table in main_results.tables %}
+  <article class="research-result-table-block">
+    <h3>{{ result_table.title }}</h3>
+    <div class="research-result-table-scroll" tabindex="0" role="region" aria-label="{{ result_table.title }}">
+      <table class="research-result-table">
+        <thead>
+          <tr>{% for column in result_table.columns %}<th scope="col">{{ column }}</th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+          {% for row in result_table.rows %}
+          <tr{% if row.highlight %} class="research-result-table__highlight"{% endif %}>
+            {% for cell in row.cells %}
+              {% if forloop.first %}<th scope="row">{{ cell }}</th>{% else %}<td>{{ cell }}</td>{% endif %}
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% if result_table.note %}<p class="research-result-table-note">{{ result_table.note }}</p>{% endif %}
+  </article>
+  {% endfor %}
+
+  {% if main_results.insights %}
+  <div class="research-result-insights">
+    <h3>What the results show</h3>
+    <ul>{% for insight in main_results.insights %}<li>{{ insight }}</li>{% endfor %}</ul>
+  </div>
+  {% endif %}
+</section>
+{% endif %}
+
+<section class="research-section" id="takeaways">
+  <p class="research-section-label">Main Takeaways</p>
+  <h2>What this project establishes</h2>
+  <div class="research-takeaway-list">
+    {% for result in project_blog.key_findings %}
+    <article>
+      <span>{{ forloop.index }}</span>
+      <div>
+        <h3>{{ result.title }}</h3>
+        <p>{{ result.paragraphs | first }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="research-section" id="research-impact">
+  <p class="research-section-label">Research Impact</p>
+  <h2>Position in the broader research program</h2>
+  {% if project_blog and project_blog.research_impact %}
+    <div class="research-callout research-callout--blog">
+      {% for paragraph in project_blog.research_impact %}<p>{{ paragraph }}</p>{% endfor %}
+    </div>
+  {% else %}
+    <div class="research-callout"><p>{{ project.research_impact | default: project.impact }}</p></div>
+  {% endif %}
+</section>
+
+<section class="research-section" id="resources">
+  <h2>Resources and Citation</h2>
+  <div class="research-link-row">
+    {% if project.paper_url and project.paper_url != "" %}<a class="research-button" href="{{ project.paper_url }}">Paper</a>{% endif %}
+    {% if project.code_url and project.code_url != "" %}<a class="research-button research-button--secondary" href="{{ project.code_url }}">Code</a>{% endif %}
+    <a class="research-button research-button--secondary" href="/publications/">Full Publication List</a>
+  </div>
+  {% if project.citation and project.citation != "" %}<pre class="research-citation">{{ project.citation | escape }}</pre>{% endif %}
+</section>
+{% else %}
+<section class="research-section">
+  <h1>Project Not Found</h1>
+  <p>The requested project id does not match an entry in <code>_data/research_projects.yml</code>.</p>
+</section>
+{% endif %}

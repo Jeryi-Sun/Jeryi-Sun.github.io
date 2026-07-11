@@ -1,0 +1,696 @@
+- id: neurocogmap
+  title: "NeuroCogMap Reveals Cognitive Organization of Large Language Models"
+  short_title: "NeuroCogMap"
+  venue: "arXiv 2026"
+  role: "Lead project"
+  authors: "Zhongxiang Sun, Haolang Lu, Qiang Ma, Qi Li, Qipeng Wang, Liang Pang, Chenyu Liu, Qiankun Li, Hao Sun, Kun Wang, Yi Zeng, Jun Xu, Guoqi Li, Ji-Rong Wen"
+  layer: "Internal Cognitive Organization"
+  paper_url: "https://arxiv.org/pdf/2607.00397"
+  project_url: "https://neurocogmap.site/"
+  code_url: "https://github.com/Jeryi-Sun/NeuroCogMap"
+  teaser: "/images/research/neurocogmap-teaser.png"
+  hero_image: "/images/research/neurocogmap-framework.png"
+  one_liner: "A multi-level map connecting sparse model features, functional parcels, cognitive capabilities, capability hierarchy, and pathology localization."
+  summary: "NeuroCogMap provides the explanatory coordinate system for my thesis work. It treats large language models as experimentally accessible artificial cognitive systems and asks how internal functional organization can explain normal behavior, pathological model behavior, human cortical correspondence, and cognitive-model discovery."
+  research_question: >-
+    Can large language models be studied as artificial cognitive systems with an internal organization that
+    is more structured than isolated neurons or final outputs?
+  motivation: >-
+    Most evaluations tell us what a model can do, but they do not explain where a capability lives internally
+    or why the same model fails under nearby conditions. NeuroCogMap fills this gap by building a middle-scale
+    map between raw activations and benchmark outcomes.
+  approach: >-
+    The project extracts sparse internal features, groups them into functional parcels, links parcels to
+    cognitive capabilities, and studies how those capabilities form hierarchical relations and pathology
+    signatures.
+  research_impact: >-
+    NeuroCogMap anchors the broader Cognitive Neuroscience of AI Agents program by giving later studies a
+    shared coordinate system for explaining capability, failure, and intervention.
+  abstract: "NeuroCogMap asks whether large language models have an internal organization that can be studied at a useful middle scale between single neurons and final outputs. The project builds a cognitive map from capability space and internal activations, organizing sparse features into functional parcels, cognitive maps, cognitive capabilities, and hierarchical relations. This map is then used to compare normal and hallucinated responses, turning hallucination from a final-output error into a problem of abnormal activation, capability misrouting, and internal pathology localization."
+  method_summary: "The framework extracts model-internal sparse features, clusters them into reproducible functional parcels, links parcels to cognitive capabilities, and studies how parcel activation and connectivity differ across normal and pathological behavior. Its role in the broader program is to provide a shared internal language for later work on tool use, reasoning, personalization, and metacognitive control."
+  figures:
+    - image: "/images/research/neurocogmap-framework.png"
+      label: "Neuroscience-inspired framework"
+      role: "Framework"
+      source: "Paper Fig. 1"
+      layout: "wide"
+      caption: "NeuroCogMap starts from an analogy in research strategy: use cognitive tasks and internal activations to construct a middle-scale map of model organization, without claiming that LLMs are biological brains."
+    - image: "/images/research/neurocogmap-structure.png"
+      label: "Multi-level cognitive structure"
+      role: "Mechanism"
+      source: "Paper Fig. 2"
+      layout: "wide"
+      caption: "The map links functional parcels, cognitive maps, capability activations, and hierarchical relations, giving later hallucination studies a coordinate system for locating abnormal model states."
+    - image: "/images/research/neurocogmap-pathology-localization.png"
+      label: "Pathology localization"
+      role: "Result"
+      source: "Paper Fig. 3"
+      layout: "wide"
+      caption: "Hallucination, bias, jailbreak, and sycophancy are analyzed as representational pathologies with distinct signatures across functional parcels and cognitive capabilities."
+  figure_guide:
+    - image: "/images/research/neurocogmap-framework.png"
+      title: "Why a cognitive map is needed"
+      role: "Problem / Framework"
+      source: "Paper Fig. 1"
+      layout: "wide"
+      summary: "The framework starts from cognitive tasks and internal activations to build a middle-scale map of model organization."
+      reading_guide:
+        - "Read this figure as a methodological analogy to cognitive neuroscience, not as a claim that LLMs are biological brains."
+        - "The figure connects behavior, internal activation, and capability collection, which motivates why raw benchmark scores are not enough."
+        - "It defines the role of NeuroCogMap in the broader program: provide the coordinate system for later hallucination-mechanism studies."
+    - image: "/images/research/neurocogmap-structure.png"
+      title: "From sparse features to cognitive capabilities"
+      role: "Mechanism"
+      source: "Paper Fig. 2"
+      layout: "wide"
+      summary: "The map links functional parcels, cognitive maps, capability activations, and hierarchical relations."
+      reading_guide:
+        - "The central move is from isolated activation features to organized functional parcels."
+        - "Capabilities are treated as structured internal systems, making it possible to compare tasks and failure modes in the same space."
+        - "This is the bridge between local interpretability and system-level explanation."
+    - image: "/images/research/neurocogmap-pathology-localization.png"
+      title: "Localizing abnormal model behavior"
+      role: "Results"
+      source: "Paper Fig. 3"
+      layout: "wide"
+      summary: "Hallucination and related pathologies are analyzed as abnormal patterns within the same internal map."
+      reading_guide:
+        - "The figure shows why hallucination can be treated as representational pathology rather than only a wrong final answer."
+        - "Different abnormal behaviors can be compared by where and how they disturb the internal organization."
+        - "This localization view motivates downstream studies on evidence use, reasoning, personalization, and metacognitive control."
+  result_sections:
+    - eyebrow: "Finding 1"
+      title: "Internal organization gives hallucination a coordinate system"
+      body: "Instead of treating hallucination as an isolated output mistake, NeuroCogMap provides a structured internal space where abnormal behavior can be localized to functional parcels, capability use, and hierarchical organization."
+    - eyebrow: "Finding 2"
+      title: "The same map connects normal ability and pathological behavior"
+      body: "The internal organization used to explain normal cognitive capability can also compare hallucinated and faithful responses, supporting a shared explanation of capability and failure."
+    - eyebrow: "Finding 3"
+      title: "The framework supports cross-module mechanism studies"
+      body: "ReDeEP, RHD, FPPS, ReARTeR, and DS-MCM can be read as downstream studies that place tool use, reasoning, memory, and control failures into this internal-mechanism language."
+  impact: "NeuroCogMap anchors the research program by making large-model agents observable, comparable, and eventually intervenable at an internal cognitive-system level."
+  citation: ""
+  homepage_priority: 10
+  show_on_homepage: true
+
+- id: redeep
+  title: "ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability"
+  short_title: "ReDeEP"
+  venue: "ICLR 2025 Spotlight"
+  role: "First author"
+  authors: "Zhongxiang Sun, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Weijie Yu, Yang Song, Han Li"
+  layer: "Agent Module Mechanisms"
+  paper_url: "https://arxiv.org/abs/2410.11414"
+  project_url: "/ReDeEP_Page/"
+  code_url: "https://github.com/Jeryi-Sun/ReDEeP-ICLR"
+  teaser: "/images/research/redeep-teaser.png"
+  hero_image: "/images/research/redeep-problem-conflict.png"
+  one_liner: "A mechanism-level view of RAG hallucination as imbalance between external-evidence use and parametric-knowledge reliance."
+  summary: "ReDeEP studies tool and evidence-use hallucination in retrieval-augmented generation. It separates evidence-sensitive pathways from parametric-knowledge pathways, locates failure signals in model internals, and uses this structure for hallucination detection and intervention."
+  research_question: >-
+    Why do retrieval-augmented generation systems still hallucinate when relevant external evidence is
+    available?
+  motivation: >-
+    Retrieval does not guarantee evidence use. A model may receive a correct document and still produce an
+    answer driven by parametric knowledge, so output-only checks miss the internal conflict that causes many
+    RAG failures.
+  approach: >-
+    ReDeEP decomposes generation into external-context use and parametric-knowledge reliance, then uses
+    internal pathway signals such as evidence-use and knowledge-reliance scores to detect and regulate
+    hallucination risk.
+  research_impact: >-
+    ReDeEP makes the tool-evidence module of an agent inspectable: it explains how an agent uses external
+    evidence, when that use fails, and how the failure can be corrected.
+  abstract: "Retrieval-augmented generation should reduce hallucination by grounding answers in external evidence, but models can still ignore, underuse, or conflict with retrieved documents. ReDeEP studies this failure mechanistically. It frames RAG hallucination as an imbalance between an external-evidence pathway and a parametric-knowledge pathway, then uses model-internal signals to detect and regulate hallucination risk."
+  method_summary: "ReDeEP decomposes generation into evidence-sensitive computation and parametric-knowledge reliance. It analyzes attention evidence pathways, copy-related behavior, feed-forward knowledge pathways, and residual-stream signals, then uses pathway imbalance as a mechanism-level hallucination signal. The resulting regulation aims to push generation toward evidence-grounded computation when the internal state indicates risk."
+  figures:
+    - image: "/images/research/redeep-problem-conflict.png"
+      label: "RAG conflict cases"
+      role: "Problem"
+      source: "Paper Fig. 1; graphs/introduction.pdf"
+      layout: "wide"
+      caption: "The retrieved document can be correct while the model's internal parametric knowledge conflicts with it, so hallucination is not only a retrieval failure."
+    - image: "/images/research/redeep-causal-framing.png"
+      label: "Causal framing"
+      role: "Mechanism"
+      source: "Paper Fig. 2; graphs/related_work.pdf"
+      layout: "wide"
+      caption: "ReDeEP separates the external-context pathway from the parametric-knowledge pathway, avoiding detectors that confound the two sources of information."
+    - image: "/images/research/redeep-method.png"
+      label: "External Context Score and Parametric Knowledge Score"
+      role: "Method"
+      source: "Paper Fig. 3; graphs/method.pdf"
+      layout: "wide"
+      caption: "The method computes signals for how much the model attends to external context and how strongly it relies on parametric knowledge during generation."
+    - image: "/images/research/redeep-ecs-pks-results.png"
+      label: "Mechanism evidence"
+      role: "Result"
+      source: "Paper Fig. 4; graphs/empirical_study_1.pdf"
+      layout: "wide"
+      caption: "Layer-head patterns and score differences show that hallucinated generations have distinct internal signatures in evidence use and parametric-knowledge reliance."
+  figure_guide:
+    - image: "/images/research/redeep-problem-conflict.png"
+      title: "Evidence can be available but unused"
+      role: "Problem"
+      source: "Paper Fig. 1; graphs/introduction.pdf"
+      layout: "wide"
+      summary: "The retrieved document can contain the correct answer while the model still follows its internal prior."
+      reading_guide:
+        - "This figure separates retrieval success from generation faithfulness."
+        - "The failure happens after evidence is retrieved, so the problem cannot be solved by retrieval quality alone."
+        - "It motivates studying how the model internally resolves conflicts between documents and parametric knowledge."
+    - image: "/images/research/redeep-causal-framing.png"
+      title: "Two information pathways in RAG"
+      role: "Mechanism"
+      source: "Paper Fig. 2; graphs/related_work.pdf"
+      layout: "wide"
+      summary: "ReDeEP frames hallucination as imbalance between external-context use and parametric-knowledge reliance."
+      reading_guide:
+        - "The external pathway represents how retrieved evidence enters the generation process."
+        - "The parametric pathway represents the model's stored knowledge and priors."
+        - "Hallucination risk increases when the model resolves a conflict in favor of unreliable internal knowledge."
+    - image: "/images/research/redeep-method.png"
+      title: "Scoring evidence use and knowledge reliance"
+      role: "Method"
+      source: "Paper Fig. 3; graphs/method.pdf"
+      layout: "wide"
+      summary: "The method computes signals that estimate whether generation is grounded in external context or internal knowledge."
+      reading_guide:
+        - "External Context Score measures how much generation uses retrieved evidence."
+        - "Parametric Knowledge Score captures reliance on internal knowledge pathways."
+        - "The detector is mechanism-aware because it uses pathway imbalance rather than only the final text."
+    - image: "/images/research/redeep-ecs-pks-results.png"
+      title: "Internal signatures of RAG hallucination"
+      role: "Results"
+      source: "Paper Fig. 4; graphs/empirical_study_1.pdf"
+      layout: "wide"
+      summary: "Layer-head patterns and score differences support the claim that hallucinated generations have distinct internal signatures."
+      reading_guide:
+        - "The result connects observable hallucination with internal computation."
+        - "The score patterns show that faithful and hallucinated generations use information differently."
+        - "This evidence supports using mechanistic signals for both detection and targeted mitigation."
+  result_sections:
+    - eyebrow: "Finding 1"
+      title: "Evidence availability is not the same as evidence use"
+      body: "The central failure mode is not simply missing retrieval. A model can receive useful evidence and still produce a response driven by internal prior knowledge."
+    - eyebrow: "Finding 2"
+      title: "RAG hallucination has an internal pathway signature"
+      body: "By separating evidence-sensitive and knowledge-driven computation, ReDeEP turns hallucination detection from an output-only classifier into a mechanism-aware diagnosis of how the model is using information."
+    - eyebrow: "Finding 3"
+      title: "Mechanistic signals can guide targeted mitigation"
+      body: "The pathway imbalance can be used not only to flag risk but also to regulate inference toward evidence-grounded computation, providing a bridge from interpretability to intervention."
+  impact: "ReDeEP makes the tool-evidence module of an agent inspectable. In the larger research program, it is the single-step functional-circuit study: how an agent sees external evidence, when that process fails, and how the failure can be corrected."
+  citation: |
+    @inproceedings{sun2025redeep,
+      title={{ReDeEP}: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability},
+      author={Sun, Zhongxiang and Zang, Xiaoxue and Zheng, Kai and Xu, Jun and Zhang, Xiao and Yu, Weijie and Song, Yang and Li, Han},
+      booktitle={International Conference on Learning Representations},
+      year={2025}
+    }
+  homepage_priority: 20
+  show_on_homepage: true
+
+- id: rhd
+  title: "Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models"
+  short_title: "RHD / GRPO-R"
+  venue: "ICLR 2026"
+  role: "First author"
+  authors: "Zhongxiang Sun, Qipeng Wang, Haoyu Wang, Xiao Zhang, Jun Xu"
+  layer: "Agent Module Mechanisms"
+  paper_url: "https://openreview.net/pdf?id=XU2STJa1Fi"
+  project_url: "/RHD_Page/"
+  code_url: "https://github.com/Jeryi-Sun/Reasoning_Hallucination"
+  teaser: "/images/research/rhd-teaser.png"
+  hero_image: "/images/research/rhd-trajectory-case.png"
+  one_liner: "A temporal neural-dynamics account of reasoning hallucination in large reasoning models."
+  summary: "RHD moves hallucination analysis from final answers to reasoning trajectories. It characterizes early fluctuation, shallow pattern matching, erroneous backtracking, and pseudo-verification in multi-step reasoning, then uses process-level reward constraints to mitigate these failures."
+  research_question: >-
+    When a large reasoning model produces a wrong answer, where does the hallucination actually form across
+    the reasoning trajectory?
+  motivation: >-
+    Large reasoning models expose intermediate steps, but answer-only evaluation cannot distinguish robust
+    reasoning from a lucky final answer. RHD studies hallucination as a temporal process that develops before
+    the final response.
+  approach: >-
+    The method tracks reasoning trajectories with Reasoning Score, CV Score, and Attention Score, then uses
+    the diagnosis to motivate process-level reward constraints for more reliable reasoning paths.
+  research_impact: >-
+    RHD contributes the reasoning-planning module of the research program by making hallucination visible as
+    temporal dynamics rather than only as an output-level error.
+  abstract: "Large reasoning models expose long reasoning traces, making it possible to study hallucination as a temporal process rather than a final-answer event. RHD analyzes reasoning hallucination through neural and behavioral dynamics across steps, while GRPO-R introduces process-level constraints to reduce unreliable reasoning trajectories."
+  method_summary: "The method tracks reasoning trajectories and identifies temporal signals associated with shallow pattern matching, early fluctuation, erroneous backtracking, overthinking, and pseudo-verification. It defines Reasoning Score, CV Score, and Attention Score as trajectory-level probes, then uses this diagnosis to motivate process-level reward constraints for more reliable reasoning behavior."
+  figures:
+    - image: "/images/research/rhd-method-score.png"
+      label: "Trajectory scoring"
+      role: "Method"
+      source: "Paper Fig. 1; graphs/method.pdf"
+      layout: "wide"
+      caption: "RHD computes Reasoning Score, CV Score, and Attention Score to quantify how reasoning depth and attention evolve across intermediate steps."
+    - image: "/images/research/rhd-trajectory-case.png"
+      label: "GSM-NoOp trajectory case"
+      role: "Problem"
+      source: "Paper Fig. 2; graphs/case_study.pdf"
+      layout: "wide"
+      caption: "The same question can yield truthful and hallucinated traces with different step-level reasoning-score dynamics, showing why final-answer checks are insufficient."
+    - image: "/images/research/rhd-pattern-reasoning-score.png"
+      label: "Pattern validation"
+      role: "Result"
+      source: "Paper Fig. 3a; graphs/js_div_comparison_correct.pdf"
+      layout: "wide"
+      caption: "Reasoning Score validates misled versus non-misled steps, while CV and attention scores capture early fluctuation and misguided attention patterns."
+    - image: "/images/research/rhd-consistency-reasoning.png"
+      label: "Consistency and perplexity analysis"
+      role: "Result"
+      source: "Paper Fig. 4a; graphs/reasoning_consistency.pdf"
+      layout: "wide"
+      caption: "Pattern-level analysis connects reasoning-score dynamics with consistency, accuracy, and perplexity, grounding the behavioral failure in trajectory structure."
+  figure_guide:
+    - image: "/images/research/rhd-method-score.png"
+      title: "Measuring reasoning trajectories"
+      role: "Method"
+      source: "Paper Fig. 1; graphs/method.pdf"
+      layout: "wide"
+      summary: "RHD defines trajectory-level scores that make intermediate reasoning behavior measurable."
+      reading_guide:
+        - "Reasoning Score measures whether a step reflects meaningful reasoning rather than shallow pattern matching."
+        - "CV and attention scores capture instability and attention shifts across the trajectory."
+        - "The figure establishes the measurement layer used by the rest of the project."
+    - image: "/images/research/rhd-trajectory-case.png"
+      title: "A hallucination trajectory forms before the answer"
+      role: "Problem"
+      source: "Paper Fig. 2; graphs/case_study.pdf"
+      layout: "wide"
+      summary: "Truthful and hallucinated reasoning traces can diverge in their step-level dynamics before the final answer appears."
+      reading_guide:
+        - "The important object is the reasoning path, not only the final response."
+        - "Misleading steps can accumulate even when the trace remains fluent and self-consistent."
+        - "This motivates process-level diagnosis for large reasoning models."
+    - image: "/images/research/rhd-pattern-reasoning-score.png"
+      title: "Validating misled reasoning patterns"
+      role: "Results"
+      source: "Paper Fig. 3a; graphs/js_div_comparison_correct.pdf"
+      layout: "wide"
+      summary: "The scores distinguish misled and non-misled steps and reveal early fluctuation and attention patterns."
+      reading_guide:
+        - "The result checks whether the proposed scores correspond to real failure states."
+        - "Early instability becomes a useful warning signal for later hallucination."
+        - "The figure supports a temporal-dynamics account rather than a static answer-only account."
+    - image: "/images/research/rhd-consistency-reasoning.png"
+      title: "Connecting dynamics with reliability"
+      role: "Results"
+      source: "Paper Fig. 4a; graphs/reasoning_consistency.pdf"
+      layout: "wide"
+      summary: "Pattern-level analysis links trajectory structure with consistency, accuracy, and perplexity."
+      reading_guide:
+        - "The figure grounds the mechanism in observable reliability metrics."
+        - "It shows that reasoning dynamics are not cosmetic; they relate to whether the model can reach stable and accurate answers."
+        - "This motivates GRPO-R as process-level mitigation rather than final-answer correction."
+  result_sections:
+    - eyebrow: "Finding 1"
+      title: "Reasoning hallucination is often formed before the final answer"
+      body: "The reasoning trace can accumulate unstable transitions, false evidence, or incorrect backtracking long before the model emits the final response. This makes trajectory analysis necessary."
+    - eyebrow: "Finding 2"
+      title: "Temporal dynamics reveal failures that answer-only evaluation hides"
+      body: "Early fluctuation, shallow matching, overthinking, and pseudo-verification provide a mechanism-level vocabulary for diagnosing why a reasoning path becomes unreliable."
+    - eyebrow: "Finding 3"
+      title: "Process reward can target the path, not only the outcome"
+      body: "GRPO-R extends the diagnosis into mitigation by constraining reasoning trajectories, discouraging unreliable intermediate states rather than waiting for final-answer correction."
+  impact: "RHD is the reasoning-planning module of the broader program. It studies agent hallucination as a temporal neural-dynamics problem, connecting internal trajectory diagnosis with process-level regulation."
+  citation: |
+    @inproceedings{sun2026mechanistic,
+      title={Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models},
+      author={Sun, Zhongxiang and Wang, Qipeng and Wang, Haoyu and Zhang, Xiao and Xu, Jun},
+      booktitle={The Fourteenth International Conference on Learning Representations},
+      year={2026}
+    }
+  homepage_priority: 30
+  show_on_homepage: true
+
+- id: fpps
+  title: "When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs"
+  short_title: "FPPS"
+  venue: "ACL 2026 Findings"
+  role: "First author"
+  authors: "Zhongxiang Sun, Yi Zhan, Chenglei Shen, Weijie Yu, Xiao Zhang, Ming He, Jun Xu"
+  layer: "Agent Module Mechanisms"
+  paper_url: "https://aclanthology.org/2026.findings-acl.395/"
+  project_url: "/FPPS_Page/"
+  code_url: "https://github.com/zhengyi-ai/ACL2026"
+  teaser: "/images/research/fpps-teaser.png"
+  hero_image: "/images/research/fpps-personalization-case-web.png"
+  one_liner: "A representation-level account of how personalized memory can bend factual behavior."
+  summary: "FPPS studies personalization-induced hallucination. It asks how long-term user history and preference signals become entangled with factual representations, and how inference-time representation steering can preserve personalization while reducing factual drift."
+  research_question: >-
+    How can a personalized language model remain useful for user-specific tasks without letting user history
+    distort objective facts?
+  motivation: >-
+    Personalization is useful when answers should depend on user history, but the same memory can become a
+    factual risk when user-specific context conflicts with verifiable facts. FPPS treats this as a
+    long-timescale memory-modulation problem.
+  approach: >-
+    FPPS separates personalized-beneficial and factual-degraded cases, locates personalization-sensitive
+    layers, probes factual risk, and applies adaptive steering only when the internal state indicates
+    factual distortion.
+  research_impact: >-
+    FPPS contributes the personalized-memory module of the research program by showing how accumulated user
+    history reshapes factual representations and how that drift can be controlled.
+  abstract: "Personalized LLMs adapt to user history and preferences, but personalization can also mislead factual behavior when remembered user-specific context conflicts with objective facts. FPPS studies this as a representation-level interaction between long-term user memory and factual knowledge. The paper first defines personalization-induced hallucination, then shows that factual and personalization directions can become entangled in hidden states. Based on this diagnosis, FPPS introduces fact-preserving personalized steering: detect whether a query is at risk of factual distortion, and steer only the relevant internal representation so that useful personalization is preserved without letting user history override facts."
+  method_summary: "FPPS proceeds in three steps. First, it constructs personalized factual settings that distinguish beneficial personalization from factual degradation. Second, it selects personalization-sensitive layers and trains a probe to detect when the current personalized state is likely to be factually degraded. Third, it applies adaptive inference-time steering. If personalization strongly conflicts with factuality, FPPS-H suppresses the personalization direction; if the signal is weaker, FPPS-S adds a fact-oriented correction direction. This makes the method a targeted intervention on the representation state rather than a blanket removal of personalization."
+  story_points:
+    - label: "Problem"
+      title: "Personalization can become a factual risk"
+      body: "A personalized assistant should remember user history, but the same memory can bias factual answers when user-specific beliefs or preferences conflict with verifiable facts."
+    - label: "Mechanism"
+      title: "The failure is not only prompt contamination"
+      body: "The paper frames the problem as latent-state entanglement: personalization representations and factual representations can point in conflicting or non-orthogonal directions."
+    - label: "Intervention"
+      title: "Steer only when factual distortion is detected"
+      body: "FPPS uses layer selection and probing to decide whether a personalized state is risky, then applies a targeted steering rule instead of removing personalization globally."
+    - label: "Evidence"
+      title: "The method is tested under longer histories and simulations"
+      body: "The result figures check whether factual performance remains stable as user history grows and whether the intervention helps in controlled teaching-style settings."
+  figures:
+    - image: "/images/research/fpps-personalization-case-web.png"
+      label: "Personalization-induced hallucination"
+      role: "Problem"
+      source: "Paper Fig. 1; latex/graphs/introduction.pdf"
+      layout: "two-column"
+      caption: "A personalized model can answer user-specific questions better while introducing factual hallucination when user history conflicts with objective facts."
+      details:
+        - "This figure motivates the paper's core tradeoff: personalization is useful when the answer should depend on the user, but harmful when user history conflicts with factual reality."
+        - "The important distinction is between personalized-beneficial cases and factual-degraded cases. FPPS is designed to keep the former while reducing the latter."
+        - "For the broader research program, this is the long-term memory version of hallucination: the failure is accumulated through user history rather than caused by a single retrieval or reasoning step."
+    - image: "/images/research/fpps-representation-entanglement.png"
+      label: "Representation entanglement"
+      role: "Mechanism"
+      source: "Paper Fig. 2; latex/graphs/empirical.pdf"
+      layout: "two-column"
+      caption: "Personalization directions can become non-orthogonal to factual representations, bending latent states toward user-aligned but factually unreliable responses."
+      details:
+        - "The paper interprets personalization-induced hallucination as a geometry problem in hidden states, where factual and personalization directions are not cleanly separated."
+        - "When the personalized direction pulls the state away from the factual direction, the model may become more user-aligned while becoming less factually reliable."
+        - "This mechanism explains why output filtering alone is insufficient: the distortion has already appeared in the internal representation before the final answer."
+    - image: "/images/research/fpps-method-framework.png"
+      label: "Fact-preserving personalized steering"
+      role: "Method"
+      source: "Paper Fig. 4; latex/graphs/methods.pdf"
+      layout: "wide"
+      caption: "FPPS locates personalization-sensitive layers, probes factual entanglement, and applies adaptive steering only when factual distortion is detected."
+      details:
+        - "Stage 1 selects the layer where personalization most strongly changes factual prediction behavior, using paired inputs with and without user history."
+        - "Stage 2 trains a lightweight probe to distinguish factual-degraded states from personalized-beneficial states at the selected layer."
+        - "Stage 3 applies adaptive steering at inference time: FPPS-H suppresses harmful personalization, while FPPS-S mixes in a fact-preserving correction direction."
+        - "The key design choice is selective control. The method does not treat all personalization as bad; it intervenes when the internal state indicates factual risk."
+    - image: "/images/research/fpps-history-llama31-8b.png"
+      label: "History-length robustness"
+      role: "Result"
+      source: "Paper Fig. 5a; latex/graphs/history_length/history_length_fscore_LLaMA3.1-8B.pdf"
+      layout: "wide"
+      caption: "As user-history length increases, the base personalized model degrades in factual QA, while FPPS-M keeps factual performance more stable across model backbones."
+      details:
+        - "This result tests whether factual reliability breaks down as more user history is injected into the context."
+        - "The base model curves show that longer histories can amplify factual degradation, which supports the claim that personalization is a long-timescale risk."
+        - "FPPS-M is meant to preserve factuality under this stronger memory pressure, showing the practical value of the representation-level diagnosis."
+    - image: "/images/research/fpps-simulation-result.png"
+      label: "Controlled simulation"
+      role: "Result"
+      source: "Paper Fig. 6; latex/graphs/simulation_result_fpps.pdf"
+      layout: "two-column"
+      caption: "Controlled teaching simulations show how personalization can damage factual knowledge acquisition and how FPPS-M mitigates the degradation."
+      details:
+        - "The simulation setting isolates the effect of personalized teaching signals, making it easier to see when user history changes factual acquisition."
+        - "This figure complements the history-length result: it shows the mechanism under a more controlled personalization process rather than only in natural user-history prompts."
+        - "Together, the results support the main claim that personalization should be monitored and steered, not simply maximized."
+  figure_guide:
+    - image: "/images/research/fpps-personalization-case-web.png"
+      title: "Personalization creates a factual tradeoff"
+      role: "Problem"
+      source: "Paper Fig. 1; latex/graphs/introduction.pdf"
+      layout: "two-column"
+      summary: "A personalized model can answer user-specific questions better while introducing factual hallucination when history conflicts with objective facts."
+      reading_guide:
+        - "This figure distinguishes personalized-beneficial behavior from factual-degraded behavior."
+        - "The goal of FPPS is to preserve useful user adaptation without letting memory override facts."
+        - "This is the long-term memory version of hallucination in the broader program."
+    - image: "/images/research/fpps-representation-entanglement.png"
+      title: "Factual and personalization directions become entangled"
+      role: "Mechanism"
+      source: "Paper Fig. 2; latex/graphs/empirical.pdf"
+      layout: "two-column"
+      summary: "Personalization directions can become non-orthogonal to factual representations, bending latent states toward user-aligned but unreliable responses."
+      reading_guide:
+        - "The paper interprets the failure as hidden-state geometry, not only as prompt contamination."
+        - "When personalization pulls the state away from the factual direction, factual reliability can drop."
+        - "This explains why output filtering alone is insufficient."
+    - image: "/images/research/fpps-method-framework.png"
+      title: "Fact-preserving personalized steering"
+      role: "Method"
+      source: "Paper Fig. 4; latex/graphs/methods.pdf"
+      layout: "wide"
+      summary: "FPPS selects a personalization-sensitive layer, probes factual risk, and applies adaptive steering at inference time."
+      reading_guide:
+        - "Stage 1 selects the layer where personalization most strongly changes factual prediction behavior."
+        - "Stage 2 trains a probe to distinguish factual-degraded states from personalized-beneficial states."
+        - "Stage 3 applies FPPS-H or FPPS-S depending on the detected level of factual distortion."
+        - "The method intervenes selectively; it does not remove personalization globally."
+    - image: "/images/research/fpps-history-llama31-8b.png"
+      title: "Robustness under longer user histories"
+      role: "Results"
+      source: "Paper Fig. 5a; latex/graphs/history_length/history_length_fscore_LLaMA3.1-8B.pdf"
+      layout: "wide"
+      summary: "The result tests whether factual reliability degrades as more user history is added."
+      reading_guide:
+        - "Longer histories create stronger memory pressure and can amplify factual degradation."
+        - "The comparison shows whether FPPS-M preserves factuality under that pressure."
+        - "This figure supports the claim that personalization risk grows over time."
+    - image: "/images/research/fpps-simulation-result.png"
+      title: "Controlled personalization simulation"
+      role: "Results"
+      source: "Paper Fig. 6; latex/graphs/simulation_result_fpps.pdf"
+      layout: "two-column"
+      summary: "The simulation isolates how personalized teaching signals affect factual acquisition and whether FPPS-M mitigates the degradation."
+      reading_guide:
+        - "The setting controls the personalization process more directly than natural history prompts."
+        - "It complements the history-length result by testing the mechanism under a cleaner intervention."
+        - "Together the results argue that personalization should be monitored and steered, not simply maximized."
+  result_sections:
+    - eyebrow: "Finding 1"
+      title: "Personalization can improve user fit while increasing factual risk"
+      body: "A model that adapts to user history can become more useful for user-specific requests yet less reliable for objective factual questions. FPPS makes this tradeoff explicit by separating personalized-beneficial behavior from factual-degraded behavior."
+    - eyebrow: "Finding 2"
+      title: "The failure is a representation entanglement problem"
+      body: "FPPS frames personalization-induced hallucination as a long-term memory modulation effect: user-preference representations and factual representations can become coupled in ways that bend factual behavior before the output is produced."
+    - eyebrow: "Finding 3"
+      title: "Inference-time steering can preserve both goals"
+      body: "By locating personalization-sensitive layers, probing factual risk, and steering only when needed, FPPS aims to reduce factual drift without removing personalization altogether."
+  impact: "FPPS adds the personalized-memory module to the research program. It studies a longer-timescale failure than RAG or single-chain reasoning: how accumulated user history reshapes factual representation and agent behavior."
+  citation: |
+    @inproceedings{sun2026personalization,
+      title={When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs},
+      author={Sun, Zhongxiang and Zhan, Yi and Shen, Chenglei and Yu, Weijie and Zhang, Xiao and He, Ming and Xu, Jun},
+      booktitle={Findings of the Association for Computational Linguistics: ACL 2026},
+      pages={8041--8060},
+      year={2026}
+    }
+  homepage_priority: 40
+  show_on_homepage: true
+
+- id: rearter
+  title: "ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding"
+  short_title: "ReARTeR"
+  venue: "SIGIR 2025"
+  role: "First author"
+  authors: "Zhongxiang Sun, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li"
+  layer: "Metacognitive Control"
+  paper_url: "https://arxiv.org/abs/2501.07861"
+  project_url: "/ReARTeR_Page/"
+  code_url: "https://github.com/Jeryi-Sun/ReARTeR"
+  teaser: "/images/research/rearter-teaser.png"
+  hero_image: "/images/research/rearter-rartpr-example.png"
+  one_liner: "A process-rewarding framework for trustworthy multi-step retrieval-augmented reasoning."
+  summary: "ReARTeR makes retrieval-augmented reasoning reliable at the process level. It combines scalar process rewards, aligned natural-language explanations, bias-aware look-ahead search, and step-level post-training to improve intermediate reasoning and final answers."
+  research_question: >-
+    How can retrieval-augmented reasoning receive trustworthy supervision throughout test-time search and
+    post-training?
+  motivation: >-
+    A final answer can be correct for unsupported reasons or wrong because an earlier sub-query, retrieval
+    decision, or reasoning step failed. Long-horizon agents need feedback inside the reasoning process.
+  approach: >-
+    ReARTeR decomposes retrieval-augmented reasoning into intermediate steps and uses process reward signals
+    to guide test-time search and post-training improvement.
+  research_impact: >-
+    ReARTeR provides the process-rewarding foundation for metacognitive control by making intermediate
+    evidence use and reasoning quality visible to training and inference.
+  abstract: "Retrieval-augmented reasoning systems should not only retrieve useful documents and produce a final answer. They also need reliable intermediate reasoning. ReARTeR introduces trustworthy process rewarding for retrieval-augmented reasoning, evaluating step quality, evidence use, and reasoning consistency throughout the process."
+  method_summary: "ReARTeR decomposes retrieval-augmented reasoning into intermediate process steps and assigns trustworthy process feedback to evidence use, step validity, and reasoning consistency. It combines test-time search with process reward modeling and post-training scaling, making process-level reward a practical foundation for later metacognitive monitoring."
+  figures:
+    - image: "/images/research/rearter-rartpr-example.png"
+      label: "RARTPR example"
+      role: "Problem"
+      source: "Paper Fig. 1; samples/graph/intro.pdf"
+      layout: "two-column"
+      caption: "A complex multi-step question requires sub-query decomposition, adaptive retrieval, reasoning thought, and process feedback rather than a single final-answer judgment."
+    - image: "/images/research/rearter-test-time-scaling.png"
+      label: "Test-time scaling"
+      role: "Method"
+      source: "Paper Fig. 2; samples/graph/model_graph_1.pdf"
+      layout: "wide"
+      caption: "ReARTeR collects process-reward training data, reduces early-step bias, and aligns PEM explanations with PRM scores during test-time search."
+    - image: "/images/research/rearter-post-training-scaling.png"
+      label: "Post-training scaling"
+      role: "Method"
+      source: "Paper Fig. 3; samples/graph/model_graph_2.pdf"
+      layout: "wide"
+      caption: "The post-training stage uses warm-up and step-level offline reinforcement learning to improve retrieval-augmented reasoning behavior."
+  figure_guide:
+    - image: "/images/research/rearter-rartpr-example.png"
+      title: "Why final-answer supervision is too coarse"
+      role: "Problem"
+      source: "Paper Fig. 1; samples/graph/intro.pdf"
+      layout: "two-column"
+      summary: "A complex question requires sub-query decomposition, retrieval, reasoning thought, and process feedback."
+      reading_guide:
+        - "The figure shows that reliability depends on intermediate steps, not only the final answer."
+        - "A wrong sub-query or unsupported reasoning step can corrupt the final response."
+        - "This motivates process rewarding as supervision inside the reasoning trajectory."
+    - image: "/images/research/rearter-test-time-scaling.png"
+      title: "Using process rewards at test time"
+      role: "Method"
+      source: "Paper Fig. 2; samples/graph/model_graph_1.pdf"
+      layout: "wide"
+      summary: "ReARTeR collects process-reward data and uses evaluators to guide search over reasoning paths."
+      reading_guide:
+        - "The process reward model evaluates intermediate retrieval and reasoning steps."
+        - "Bias reduction and explanation alignment make process evaluation more trustworthy."
+        - "The key point is that inference is guided by step-level quality rather than only answer likelihood."
+    - image: "/images/research/rearter-post-training-scaling.png"
+      title: "Post-training with step-level feedback"
+      role: "Method"
+      source: "Paper Fig. 3; samples/graph/model_graph_2.pdf"
+      layout: "wide"
+      summary: "Warm-up and step-level offline reinforcement learning turn process feedback into improved retrieval-augmented reasoning behavior."
+      reading_guide:
+        - "This figure connects process evaluation to model improvement."
+        - "Step-level feedback provides a training signal for trustworthy intermediate behavior."
+        - "The method becomes a foundation for agents that monitor and repair their reasoning processes."
+  result_sections:
+    - eyebrow: "Finding 1"
+      title: "Trustworthiness must be evaluated inside the reasoning process"
+      body: "A final answer can be correct for the wrong reasons or wrong because of an earlier unsupported step. ReARTeR shifts supervision toward intermediate evidence use and process quality."
+    - eyebrow: "Finding 2"
+      title: "Process rewards connect explanation with optimization"
+      body: "Step-level feedback makes it possible to identify where the reasoning process fails and to use that signal as a training or post-training objective."
+    - eyebrow: "Finding 3"
+      title: "Process rewarding is a bridge to metacognitive control"
+      body: "By making intermediate failures visible, ReARTeR provides a practical foundation for agents that monitor, diagnose, and repair their own execution process."
+  impact: "ReARTeR is the process-rewarding foundation of the metacognitive-control layer. It turns retrieval-augmented reasoning from a final-answer task into a supervised process that can be monitored and improved."
+  citation: |
+    @inproceedings{sun2025rearter,
+      title={ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding},
+      author={Sun, Zhongxiang and Wang, Qipeng and Yu, Weijie and Zang, Xiaoxue and Zheng, Kai and Xu, Jun and Zhang, Xiao and Song, Yang and Li, Han},
+      booktitle={Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+      pages={1251--1261},
+      year={2025}
+    }
+  homepage_priority: 50
+  show_on_homepage: true
+
+- id: mcm_ds
+  title: "Deep Search with Hierarchical Meta-Cognitive Monitoring Inspired by Cognitive Neuroscience"
+  short_title: "DS-MCM"
+  venue: "SIGIR 2026"
+  role: "First author"
+  authors: "Zhongxiang Sun, Qipeng Wang, Weijie Yu, Jingxuan Yang, Haolang Lu, Jun Xu"
+  layer: "Metacognitive Control"
+  paper_url: "https://arxiv.org/abs/2601.23188"
+  project_url: "/MCM_DS_Page/"
+  code_url: "https://github.com/ChangWang9/MC-DSA"
+  teaser: "/images/research/mcm-ds-teaser.png"
+  hero_image: "/images/research/mcm-ds-hierarchical-monitoring-web.png"
+  one_liner: "A deep-search framework that calibrates reasoning uncertainty against evidence uncertainty and triggers experience-driven correction."
+  summary: "DS-MCM brings meta-cognitive monitoring into long-horizon search agents. It adds fast monitoring, slower reflective diagnosis, and experience updating so that agents can detect abnormal states, attribute failures, correct themselves, and reuse lessons across tasks."
+  research_question: >-
+    How can a deep-search agent monitor its own execution, diagnose errors, and revise its behavior during
+    long-horizon tasks?
+  motivation: >-
+    Deep-search agents interleave reasoning with evolving, incomplete, and sometimes conflicting evidence.
+    Reliable execution requires explicit monitoring of how internal confidence aligns with external evidence.
+  approach: >-
+    DS-MCM adds fast consistency monitoring, slower experience-driven diagnosis, corrective suggestions, and
+    optional online memory consolidation to the deep-search loop.
+  research_impact: >-
+    DS-MCM is the long-horizon regulation layer of the research program: it turns mechanism understanding
+    into metacognitive monitoring, correction, and reusable control knowledge.
+  abstract: "Deep-search agents face long-horizon reliability problems as reasoning and retrieval evolve under partial or conflicting evidence. DS-MCM introduces hierarchical meta-cognitive monitoring so that search agents can detect abnormal states, reflect on causes, correct their execution, and update experience."
+  method_summary: "The framework places monitoring above retrieval, reasoning, feedback interpretation, and experience updating. A fast consistency monitor detects local mismatches between retrieved evidence uncertainty and reasoning uncertainty. A slower experience-driven monitor diagnoses root causes, decides whether to re-search or re-plan, and stores corrective experience for future tasks."
+  figures:
+    - image: "/images/research/mcm-ds-hierarchical-monitoring-web.png"
+      label: "Hierarchical metacognitive monitoring"
+      role: "Problem"
+      source: "Paper Fig. 1; graphs/introduction.pdf"
+      layout: "two-column"
+      caption: "The paper maps human fast and slow monitoring ideas onto deep-search agents, showing why standard search loops lack explicit mechanisms for detecting and correcting cognitive errors."
+    - image: "/images/research/mcm-ds-method-framework.png"
+      label: "DS-MCM execution pipeline"
+      role: "Method"
+      source: "Paper Fig. 2; graphs/method.pdf"
+      layout: "wide"
+      caption: "DS-MCM adds a fast consistency monitor, a slow experience-driven monitor, corrective suggestions, and optional online memory consolidation to the ReAct-style deep-search loop."
+    - image: "/images/research/mcm-ds-sensitivity-entropy.png"
+      label: "Sensitivity analysis"
+      role: "Result"
+      source: "Paper Fig. 3a; graphs/sensitivity_entropy_threshold.pdf"
+      layout: "wide"
+      caption: "The sensitivity analysis checks key hyperparameters, supporting the claim that the monitoring mechanism is not only a single fixed setting."
+  figure_guide:
+    - image: "/images/research/mcm-ds-hierarchical-monitoring-web.png"
+      title: "Why deep-search agents need monitoring"
+      role: "Problem"
+      source: "Paper Fig. 1; graphs/introduction.pdf"
+      layout: "two-column"
+      summary: "The figure maps fast and slow monitoring ideas onto deep-search agents, showing why standard search loops are not enough."
+      reading_guide:
+        - "Deep-search agents can drift, misread evidence, or accumulate contradictions during execution."
+        - "Fast monitoring catches local inconsistency, while slower monitoring supports diagnosis."
+        - "This figure positions DS-MCM as a metacognitive layer above ordinary ReAct-style execution."
+    - image: "/images/research/mcm-ds-method-framework.png"
+      title: "DS-MCM execution pipeline"
+      role: "Method"
+      source: "Paper Fig. 2; graphs/method.pdf"
+      layout: "wide"
+      summary: "The method adds fast consistency monitoring, slow experience-driven monitoring, corrective suggestions, and optional online memory consolidation."
+      reading_guide:
+        - "The fast monitor compares uncertainty in reasoning and retrieved evidence."
+        - "The slow monitor diagnoses root causes and decides whether to re-search, revise, or re-plan."
+        - "Experience updates turn failures into reusable control knowledge for later tasks."
+    - image: "/images/research/mcm-ds-sensitivity-entropy.png"
+      title: "Checking robustness of the monitoring mechanism"
+      role: "Results"
+      source: "Paper Fig. 3a; graphs/sensitivity_entropy_threshold.pdf"
+      layout: "wide"
+      summary: "The sensitivity analysis checks whether the monitoring mechanism depends on a single fragile hyperparameter setting."
+      reading_guide:
+        - "The figure supports reading DS-MCM as a control framework with empirically tested operating settings."
+        - "It helps show which settings affect monitoring behavior."
+        - "The result connects the metacognitive design to empirical stability."
+  result_sections:
+    - eyebrow: "Finding 1"
+      title: "Long-horizon search needs monitoring beyond final answers"
+      body: "A search agent can drift, use insufficient evidence, misread feedback, or accumulate contradictions while still producing a confident final response. The control problem must be process-level."
+    - eyebrow: "Finding 2"
+      title: "Fast monitoring and slow reflection separate detection from diagnosis"
+      body: "DS-MCM distinguishes local anomaly detection from experience-informed diagnosis, allowing agents to continue normally or revise subsequent execution."
+    - eyebrow: "Finding 3"
+      title: "Experience updating turns failures into reusable control knowledge"
+      body: "The framework moves agents from passive next-step generation to self-evaluation, correction, and future-task adaptation."
+  impact: "DS-MCM is the long-horizon regulation layer of the research program. It operationalizes the idea that trustworthy agents should monitor their own state, diagnose failure causes, and actively correct execution."
+  citation: |
+    @inproceedings{sun2026deep,
+      title={Deep Search with Hierarchical Meta-Cognitive Monitoring Inspired by Cognitive Neuroscience},
+      author={Sun, Zhongxiang and Wang, Qipeng and Yu, Weijie and Yang, Jingxuan and Lu, Haolang and Xu, Jun},
+      booktitle={Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+      doi={10.1145/3805712.3809549},
+      year={2026}
+    }
+  homepage_priority: 60
+  show_on_homepage: true

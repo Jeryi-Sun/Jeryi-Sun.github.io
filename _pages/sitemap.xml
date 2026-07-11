@@ -38,11 +38,6 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jeryi-sun.github.io/cv/</loc>
-  <lastmod>2023-04-28T03:19:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://jeryi-sun.github.io/markdown/</loc>
   <lastmod>2023-04-28T03:19:04+00:00</lastmod>
   <priority>0.64</priority>
@@ -64,7 +59,37 @@
 </url>
 <url>
   <loc>https://jeryi-sun.github.io/publications/</loc>
-  <lastmod>2023-04-28T03:19:04+00:00</lastmod>
+  <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jeryi-sun.github.io/research/cognitive-neuroscience/</loc>
+  <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jeryi-sun.github.io/ReDeEP_Page/</loc>
+  <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jeryi-sun.github.io/RHD_Page/</loc>
+  <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jeryi-sun.github.io/FPPS_Page/</loc>
+  <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jeryi-sun.github.io/ReARTeR_Page/</loc>
+  <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jeryi-sun.github.io/MCM_DS_Page/</loc>
+  <lastmod>2026-07-07T00:00:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
@@ -134,21 +159,6 @@
 </url>
 <url>
   <loc>https://jeryi-sun.github.io/portfolio/portfolio-2/</loc>
-  <lastmod>2023-04-28T03:19:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jeryi-sun.github.io/publication/2009-10-01-paper-title-number-1</loc>
-  <lastmod>2023-04-28T03:19:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jeryi-sun.github.io/publication/2010-10-01-paper-title-number-2</loc>
-  <lastmod>2023-04-28T03:19:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jeryi-sun.github.io/publication/2015-10-01-paper-title-number-3</loc>
   <lastmod>2023-04-28T03:19:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>

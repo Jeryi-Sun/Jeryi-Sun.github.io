@@ -1,90 +1,203 @@
 ---
+layout: research
 permalink: /
 title: "Zhongxiang Sun (孙忠祥)"
 excerpt: "About me"
-author_profile: true
-redirect_from: 
+author_profile: false
+redirect_from:
   - /about/
   - /about.html
 ---
 
-He is currently a Ph.D. student at the Gaoling School of Artificial Intelligence, Renmin University of China, supervised by Prof. Jun Xu. His research focuses on the cognitive neuroscience of LLM agents, especially their hallucination mechanisms, reasoning and planning, trustworthy information retrieval, explainability, and legal AI.
+<section class="research-profile">
+  <div>
+    <p class="research-kicker">Large-model agents | Hallucination | Mechanistic interpretability | Search</p>
+    <h1>Zhongxiang Sun (孙忠祥)</h1>
+    <p>
+      I am a Ph.D. candidate at the Gaoling School of Artificial Intelligence, Renmin University of China,
+      advised by Prof. Jun Xu. My research focuses on trustworthy LLM agents, especially hallucination
+      mechanisms, reasoning and planning, information retrieval, explainability, and legal AI. I use
+      cognitive-neuroscience-inspired task design, behavior analysis, representation analysis, mechanism
+      intervention, and process-level control to study these systems.
+    </p>
+    <p>
+      I expect to graduate in June 2027 and am seeking research positions. If you are interested in
+      trustworthy LLMs and agents, their synergy with information retrieval, applied mechanistic
+      interpretability, or cognitive-neuroscience-inspired AI, I would welcome the opportunity to discuss.
+    </p>
+    <div class="research-link-row">
+      <a class="research-button" href="mailto:sunzhongxiang@ruc.edu.cn">Email</a>
+      <a class="research-button research-button--secondary" href="https://scholar.google.com/citations?user=4n5whr0AAAAJ">Google Scholar</a>
+      <a class="research-button research-button--secondary" href="https://github.com/Jeryi-Sun">GitHub</a>
+    </div>
+  </div>
+  <img src="/images/profile.png" alt="Zhongxiang Sun">
+</section>
 
-Education
-======
-* *08.2022-present* Ph.D. candidate, Gaoling School of Artificial Intelligence, Renmin University of China.
-* *08.2018-06.2022* Bachelor of Computer Science and Technology, Beijing Jiaotong University (Rank 1 Top 0.4%).
+<section class="research-section research-impact">
+  <h2>Impact Snapshot</h2>
+  <div class="research-evidence-list">
+    <article>
+      <span>Contribution</span>
+      <strong>A thesis-level program on trustworthy LLM agents</strong>
+      <p>
+        The work connects internal organization, module-level hallucination mechanisms, and long-horizon
+        metacognitive control into one coherent research program.
+      </p>
+    </article>
+    <article>
+      <span>Evidence</span>
+      <strong>First-author work across ICLR, SIGIR, and ACL</strong>
+      <p>
+        Representative projects cover retrieval-augmented generation, large reasoning models,
+        personalized LLMs, process rewarding, and deep-search agents.
+      </p>
+    </article>
+    <article>
+      <span>Recognition</span>
+      <strong>Spotlight, Best Paper, and Paper Digest highlights</strong>
+      <p>
+        Selected work has been recognized by ICLR, SIGIR-AP, and Paper Digest.
+      </p>
+    </article>
+    <article>
+      <span>Public Assets</span>
+      <strong>NeuroCogMap website, code, and full publication record</strong>
+      <p>
+        The site links project pages, source artifacts, and a compact full publication list for fast
+        faculty-level evaluation of scope, continuity, and impact.
+      </p>
+    </article>
+  </div>
+</section>
 
-<span style="color:red;"> I expect to graduate in June 2027 and am seeking research positions. If you are interested in trustworthy LLMs and agents, their synergy with information retrieval (hallucination, reasoning, explainability), applied mechanistic interpretability, or cognitive-neuroscience-inspired AI, I would welcome the opportunity to discuss! </span> Email: _sunzhongxiang@ruc.edu.cn_
+<section class="research-section">
+  <h2>Research</h2>
+  <p class="research-section-intro">
+    My research studies large-model agents as complex artificial intelligent systems that perceive context,
+    reason over goals, call tools, use memory, interact with humans and other agents, and act in changing
+    environments. I build cognitive-neuroscience-inspired methods for explaining and controlling these
+    systems: task paradigms reveal behavioral boundaries, representation analysis locates internal
+    structure, mechanism intervention validates causal pathways, and process-level monitoring turns
+    diagnosis into control.
+  </p>
+  <div class="research-program-path">
+    <article>
+      <span class="research-tag">Explain</span>
+      <div>
+        <h3>Internal Cognitive Organization</h3>
+        <p>
+          I build NeuroCogMap-style internal cognitive maps that connect sparse features, functional parcels,
+          capability hierarchy, and pathology localization.
+        </p>
+      </div>
+      <a href="/research/cognitive-neuroscience/#internal-organization">Explore internal organization</a>
+    </article>
+    <article>
+      <span class="research-tag">Locate</span>
+      <div>
+        <h3>Agent Module Mechanisms</h3>
+        <p>
+          I analyze tool evidence use, temporal reasoning dynamics, and personalized-memory drift through
+          ReDeEP, RHD, and FPPS.
+        </p>
+      </div>
+      <a href="/research/cognitive-neuroscience/#module-mechanisms">View module mechanisms</a>
+    </article>
+    <article>
+      <span class="research-tag">Regulate</span>
+      <div>
+        <h3>Metacognitive Control</h3>
+        <p>
+          I design process reward, hierarchical monitoring, reflection, corrective action, and experience
+          updating through ReARTeR and DS-MCM.
+        </p>
+      </div>
+      <a href="/research/cognitive-neuroscience/#metacognitive-control">View metacognitive control</a>
+    </article>
+  </div>
+</section>
 
-# Preprint
+<section class="research-section">
+  <div class="research-section-heading">
+    <div>
+      <h2>Selected Publications</h2>
+      <p>
+        Representative work with project pages. The complete publication list is maintained separately as a
+        compact text list.
+      </p>
+    </div>
+    <a class="research-button research-button--secondary" href="/publications/">Full Publication List</a>
+  </div>
+  {% assign homepage_projects = site.data.research_projects | where: "show_on_homepage", true | sort: "homepage_priority" %}
+  {% for project in homepage_projects %}
+  <article class="research-publication">
+    <a href="{{ project.project_url }}"><img src="{{ project.teaser }}" alt="{{ project.short_title }} teaser"></a>
+    <div>
+      <h3><a href="{{ project.project_url }}">{{ project.title }}</a></h3>
+      <p><strong>{{ project.venue }}</strong> | {{ project.role }} | {{ project.layer }}</p>
+      <p>{{ project.one_liner }}</p>
+      <div class="research-link-row">
+        {% if project.paper_url and project.paper_url != "" %}
+          <a href="{{ project.paper_url }}">paper</a>
+        {% endif %}
+        <a href="{{ project.project_url }}">project</a>
+        {% if project.code_url and project.code_url != "" %}
+          <a href="{{ project.code_url }}">code</a>
+        {% endif %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
 
+<section class="research-section">
+  <h2>Education</h2>
+  <ul>
+    <li><strong>08.2022-present</strong> Ph.D. candidate, Gaoling School of Artificial Intelligence, Renmin University of China.</li>
+    <li><strong>08.2018-06.2022</strong> Bachelor of Computer Science and Technology, Beijing Jiaotong University (ranked 1st, top 0.4%).</li>
+  </ul>
+</section>
 
-Publications
-======
-* Haoyu Wang, Yifan Shang, **Zhongxiang Sun**, Weijie Yu, Xiao Zhang, Jun Xu. Towards Understanding Continual Factual Knowledge Acquisition of Language Models: From Theory to Algorithm [paper](https://arxiv.org/pdf/2605.10640) (**ICML 2026**)
-* **Zhongxiang Sun**, Yi Zhan, Chenglei Shen, Weijie Yu, Xiao Zhang, Ming He, Jun Xu. When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs [paper](https://arxiv.org/abs/2601.11000) (**ACL 2026 Findings**)
-* Jiahao Zhao*, Shaoxuan Xu*, **Zhongxiang Sun(equal first+project leader)**, Fengqi Zhu, Jingyang Ou, Yuling Shi, Chongxuan Li, Xiao Zhang, Jun Xu. DLLM-Searcher: Adapting Diffusion Large Language Model for Search Agents [paper](https://arxiv.org/pdf/2602.07035) (**SIGIR 2026**)
-* **Zhongxiang Sun**, Qipeng Wang, Weijie Yu, Jingxuan Yang, Haolang Lu, Jun Xu. Deep Search with Hierarchical Meta-Cognitive Monitoring Inspired by Cognitive Neuroscience [paper](https://arxiv.org/pdf/2601.23188) (**SIGIR 2026**)
-* **Zhongxiang Sun**, Qipeng Wang, Haoyu Wang, Xiao Zhang, Jun Xu. Detection and Mitigation of Hallucination in Large Reasoning Models: A Mechanistic Perspective [paper](https://arxiv.org/abs/2505.12886) (**ICLR 2026**)
-* **Zhongxiang Sun**, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li. ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding (**SIGIR 2025 CCF-A**)  [<span style="color:red;">ReARTeR ranked 2nd among SIGIR 2025 papers in Paper Digest’s Most Influential SIGIR Papers list.</span>](https://www.paperdigest.org/2026/03/most-influential-sigir-papers-2026-03-version/)
-* Xiaopeng Ye, Chen Xu, **Zhongxiang Sun**, Jun Xu, Gang Wang, Zhenhua Dong, Ji-Rong Wen. CreAgent: Towards Long-Term Evaluation of Recommender System under Platform-Creator Information Asymmetry (**SIGIR 2025 CCF-A**)
-* **Zhongxiang Sun**, Xiaoxue Zang, Kai Zheng, Yang Song, Jun Xu, Xiao Zhang, Weijie Yu, Han Li. ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability (**ICLR 2025**) <span style="color:red;">Spotlight Top 5.1 % !</span> [paper](https://arxiv.org/pdf/2410.11414)
-* **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu. LargePiG: Your Large Language Model is Secretly a Pointer Generator (**WWW 2025 CCF-A**) [paper](https://arxiv.org/pdf/2410.11366)
-* K Zhang, **Z Sun**, X Zhang, X Zang, K Zheng, Y Song, J Xu. Trigger3: Refining Query Correction via Adaptive Model Selector (**AAAI 2024 CCF-A**)
-* Zihua Si, **Zhongxiang Sun**, Jiale Chen, Guozhang Chen, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu and Kun Gai. Generative Retrieval with Semantic Tree-Structured Identifiers and Contrastive Learning (**SIGIR-AP 2024**) <span style="color:red;">Best Paper Award !</span>
-* **Zhongxiang Sun**, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang and Jun Xu. Large Language Models Enhanced Collaborative Filtering (**CIKM 2024 CCF-B**) [paper](https://arxiv.org/abs/2403.17688) [<span style="color:red;">LLM-CF ranked 4th among CIKM 2024 papers in Paper Digest’s Most Influential CIKM Papers list.</span>](https://resources.paperdigest.org/2026/03/most-influential-cikm-papers-2026-03-version/)
-* Zihua Si, Lin Guan, **Zhongxiang Sun**, Xiaoxue Zang, etc. Twin v2: Scaling ultra-long user behavior sequence modeling for enhanced ctr prediction at kuaishou   (**CIKM 2024 ADS CCF-B**) [<span style="color:red;">Twin v2 ranked 7th among CIKM 2024 papers in Paper Digest’s Most Influential CIKM Papers list.</span>](https://resources.paperdigest.org/2026/03/most-influential-cikm-papers-2026-03-version/)
-* **ZhongXiang Sun**, Kepu Zhang*, Haoyu Wang, Xiao Zhang, Jun Xu Effective In-Context Example Selection through Data Compression (**ACL 2024 short finding CCF-A**) [paper](../files/Effective_In_Context_Example_Selection_through_Data_Compression__ACL_.pdf)
-* **Zhongxiang Sun**, Zihua Si, Xiao Zhang, Xiaoxue Zang, Yang Song, Hongteng Xu and Jun Xu. To Search or to Recommend: Predicting Open-App Motivation with Neural Hawkes Process  (**SIGIR 2024 CCF-A**) [paper](https://arxiv.org/abs/2404.03267)
-* **Zhongxiang Sun**, Kepu Zhang, Weijie Yu, Haoyu Wang, Jun Xu. Logic Rules as Explanations for Legal Case Retrieval (**COLING 2024 CCF-B**)
-* **Zhongxiang Sun**, Weijie Yu, Zihua Si, Jun Xu, Zhenhua Dong, Xu Chen, Hongteng Xu, Ji-Rong Wen. Explainable Legal Case Matching via Graph Optimal Transport (**TKDE 2023 CCF-A**) [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10285038)
-*  **Zhongxiang Sun**, Zihua Si*, Xiaoxue Zang, Dewei Leng, Yanan Niu, Yang Song, Xiao Zhang, Jun Xu. KuaiSAR: A Unified Search And Recommendation Dataset (**CIKM 2023 CCF-B**)
-* Sunhao Dai, Ninglu Shao, Haiyuan Zhao, Weijie Yu, Zihua Si, Chen Xu, **Zhongxiang Sun**, Xiao Zhang, Jun Xu. Uncovering ChatGPT's Capabilities in Recommender Systems (**RecSys 2023 CCF-B**)
-* Zihua Si, **Zhongxiang Sun**, Xiao Zhang, Jun Xu, Xiaoxue Zang, Yang Song, Kun Gai, Ji-Rong Wen. When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation. (**SIGIR 2023 CCF-A**)
-* ***Z Sun***, J Xu, X Zhang, Z Dong, JR Wen. Law Article-Enhanced Legal Case Matching: a Causal Learning Approach. (**SIGIR 2023 CCF-A**)
-* Zihua Si, ***Zhongxiang Sun***, Xiao Zhang, Jun Xu, Yang Song, Xiaoxue Zang, Ji-Rong Wen. Enhancing Recommendation with Search Data in a Causal Learning Manner. (**TOIS 2023 CCF-A**)
-* Haomin Wen, Youfang Lin, Fan Wu, Huaiyu Wan, ***Zhongxiang Sun***, Tianyue Cai, Hongyu Liu, Shengnan Guo, Jianbing Zheng, Chao Song, Lixia Wu. Enough Waiting for the Couriers --- Learning to Estimate Package Pick-up Arrival Time from Couriers' Spatial-Temporal Behaviors.(**TITS 2022**)
-* G Song, J Yang, L He, Z Wang, G Li, C Duan, Y Liu, ***Z Sun***. AddrMiner: A Comprehensive Global Active IPv6 Address Discovery System. (**USENIX ATC 22 CCF-A**)
-* W Yu, ***Z Sun***, J Xu, Z Dong, X Chen, H Xu, JR Wen. Explainable legal case matching via inverse optimal transport-based rationale extraction. (**SIGIR 2022 CCF-A**).
+<section class="research-section">
+  <h2>Awards</h2>
+  <ul>
+    <li>The National Scholarship 2024, selected as one of the 100 national representatives of Graduate National Scholarship recipients in China. <a href="https://www.peopleapp.com/column/30048976446-500006240986">News</a></li>
+    <li>2024 China Association for Science and Technology Youth Talent Support Program for Ph.D. Students.</li>
+    <li>Renmin University of China Innovative Talent Program.</li>
+    <li>SIGIR-AP 2024 Best Paper Award.</li>
+    <li>First Prize in the inaugural Artificial Intelligence and Smart Governance Innovation and Entrepreneurship Competition for University Students.</li>
+  </ul>
+</section>
 
-Awards
-======
-1. The National Scholarship 2024 (Selected as one of the 100 national representatives of Graduate National Scholarship recipients in China) [news](https://www.peopleapp.com/column/30048976446-500006240986).
-2. 2024 China Association for Science and Technology Youth Talent Support Program for PhD Students (2024年度中国科协青年人才托举工程博士生专项计划).
-3. Renmin University of China Innovative Talent Program.
-4. SIGIR-AP 2024 Best Paper Award.
-5. First Prize in the Inaugural Artificial Intelligence and Smart Governance Innovation and Entrepreneurship Competition for University Students.
+<section class="research-section">
+  <h2>Teaching</h2>
+  <ul>
+    <li>Teaching Assistant, Introduction to Big Data Analytics, Renmin University of China, Fall 2022 and Fall 2023.</li>
+    <li>Teaching Assistant, Python, Renmin University of China, Spring 2023.</li>
+  </ul>
+</section>
 
+<section class="research-section">
+  <h2>Experience</h2>
+  <ul>
+    <li><strong>NTU</strong>, visiting student, Sep. 2025-Mar. 2026. Advisor: Yang Liu.</li>
+    <li><strong>Kuaishou</strong>, research intern, Feb. 2022-Jun. 2025. Advisors: Xiaoxue Zang, Kai Zheng, Yang Song.</li>
+    <li><a href="http://cail.cipsc.org.cn/index.html"><strong>CAIL 2022</strong></a>, committee member.</li>
+    <li><strong>WWW 2024, 2025</strong>, reviewer.</li>
+    <li><strong>SIGIR 2024, 2025</strong>, program committee member.</li>
+    <li><strong>TOIS</strong>, reviewer.</li>
+    <li><strong>TASLP</strong>, reviewer.</li>
+    <li><strong>CIKM 2023, 2024</strong>, program committee member.</li>
+    <li><strong>NeurIPS 2025</strong>, reviewer.</li>
+    <li><strong>ICLR 2026</strong>, reviewer.</li>
+  </ul>
+</section>
 
-Teaching
-======
-1. Teaching Assistant, Introduction to Big Data Analytics in RUC, Fall 2022, 2023
-2. Teaching Assistant, Python in RUC, Spring 2023
-
-Experience
-======
-- **NTU**: Visiting student
-  - ***Sep. 2025 - Mar 2026***
-  - Advisor: Yang Liu
-- **Kuaishou**: Research Intern
-  - ***February. 2022 ~ June. 2025***
-  - Advisor: Xiaoxue Zang, Kai Zheng, Yang Song
-  - _It was an invaluable experience during my PhD journey. Many thanks to all my advisors._
-- [**CAIL 2022**](http://cail.cipsc.org.cn/index.html): Committee Member .
-- **WWW 2024, 2025**(CCF A): Reviewer.
-- **SIGIR 2024, 2025**(CCF A): PC Member.
-- **TOIS**(CCF A) Reviewer.
-- **TASLP**(CCF B) Reviewer.
-- **CIKM 2023, 2024**(CCF B): PC Member.
-- **Neurips 2025**(CCF A): Reviewer.
-- **ICLR 2026**(CCF A): Reviewer.
-    
-
-Talk
-======
-- Renmin University of China's First 'Frontiers of Innovation: International Academic Symposium for Doctoral Students': Accurate and Explainable Legal Case Matching [slide](https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing)
-- Invited to participate in the Zhongguancun Science City 'Rixin Youth Talk' Forum. [news](https://mp.weixin.qq.com/s/_31wIQDcXwO5QquX6EUAMw) 
-
-
-
+<section class="research-section">
+  <h2>Talks</h2>
+  <ul>
+    <li>Renmin University of China's First "Frontiers of Innovation: International Academic Symposium for Doctoral Students": Accurate and Explainable Legal Case Matching. <a href="https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing">Slides</a></li>
+    <li>Invited participant, Zhongguancun Science City "Rixin Youth Talk" Forum. <a href="https://mp.weixin.qq.com/s/_31wIQDcXwO5QquX6EUAMw">News</a></li>
+  </ul>
+</section>

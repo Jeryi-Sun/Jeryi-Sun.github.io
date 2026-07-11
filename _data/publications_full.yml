@@ -1,0 +1,201 @@
+- title: "NeuroCogMap Reveals Cognitive Organization of Large Language Models"
+  authors: "Zhongxiang Sun, Haolang Lu, Qiang Ma, Qi Li, Qipeng Wang, Liang Pang, Chenyu Liu, Qiankun Li, Hao Sun, Kun Wang, Yi Zeng, Jun Xu, Guoqi Li, Ji-Rong Wen"
+  venue: "arXiv 2026"
+  links:
+    - label: "paper"
+      url: "https://arxiv.org/abs/2607.00397"
+    - label: "project"
+      url: "https://neurocogmap.site/"
+    - label: "code"
+      url: "https://github.com/Jeryi-Sun/NeuroCogMap"
+  highlight: "A system-level map of functional organization, model pathology, human cortical correspondence, and cognitive-model discovery."
+
+- title: "Towards Understanding Continual Factual Knowledge Acquisition of Language Models: From Theory to Algorithm"
+  authors: "Haoyu Wang, Yifan Shang, Zhongxiang Sun, Weijie Yu, Xiao Zhang, Jun Xu"
+  venue: "ICML 2026"
+  links:
+    - label: "paper"
+      url: "https://arxiv.org/pdf/2605.10640"
+  highlight: ""
+
+- title: "When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs"
+  authors: "Zhongxiang Sun, Yi Zhan, Chenglei Shen, Weijie Yu, Xiao Zhang, Ming He, Jun Xu"
+  venue: "ACL 2026 Findings"
+  links:
+    - label: "paper"
+      url: "https://aclanthology.org/2026.findings-acl.395/"
+    - label: "code"
+      url: "https://github.com/zhengyi-ai/ACL2026"
+  highlight: "Personalization-induced hallucination and FPPS mitigation."
+
+- title: "DLLM-Searcher: Adapting Diffusion Large Language Model for Search Agents"
+  authors: "Jiahao Zhao*, Shaoxuan Xu*, Zhongxiang Sun (equal first + project leader), Fengqi Zhu, Jingyang Ou, Yuling Shi, Chongxuan Li, Xiao Zhang, Jun Xu"
+  venue: "SIGIR 2026"
+  links:
+    - label: "paper"
+      url: "https://arxiv.org/pdf/2602.07035"
+  highlight: ""
+
+- title: "Deep Search with Hierarchical Meta-Cognitive Monitoring Inspired by Cognitive Neuroscience"
+  authors: "Zhongxiang Sun, Qipeng Wang, Weijie Yu, Jingxuan Yang, Haolang Lu, Jun Xu"
+  venue: "SIGIR 2026"
+  links:
+    - label: "paper"
+      url: "https://arxiv.org/pdf/2601.23188"
+    - label: "code"
+      url: "https://github.com/ChangWang9/MC-DSA"
+  highlight: "Meta-cognitive monitoring for deep-search agents."
+
+- title: "Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models"
+  authors: "Zhongxiang Sun, Qipeng Wang, Haoyu Wang, Xiao Zhang, Jun Xu"
+  venue: "ICLR 2026"
+  links:
+    - label: "paper"
+      url: "https://openreview.net/pdf?id=XU2STJa1Fi"
+    - label: "code"
+      url: "https://github.com/Jeryi-Sun/Reasoning_Hallucination"
+  highlight: "RHD and GRPO-R for reasoning hallucination."
+
+- title: "ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding"
+  authors: "Zhongxiang Sun, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li"
+  venue: "SIGIR 2025"
+  links:
+    - label: "paper"
+      url: "https://arxiv.org/abs/2501.07861"
+    - label: "code"
+      url: "https://github.com/Jeryi-Sun/ReARTeR"
+    - label: "highlight"
+      url: "https://www.paperdigest.org/2026/03/most-influential-sigir-papers-2026-03-version/"
+  highlight: "Paper Digest Most Influential SIGIR Papers list."
+
+- title: "CreAgent: Towards Long-Term Evaluation of Recommender System under Platform-Creator Information Asymmetry"
+  authors: "Xiaopeng Ye, Chen Xu, Zhongxiang Sun, Jun Xu, Gang Wang, Zhenhua Dong, Ji-Rong Wen"
+  venue: "SIGIR 2025"
+  links: []
+  highlight: ""
+
+- title: "ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability"
+  authors: "Zhongxiang Sun, Xiaoxue Zang, Kai Zheng, Yang Song, Jun Xu, Xiao Zhang, Weijie Yu, Han Li"
+  venue: "ICLR 2025"
+  links:
+    - label: "paper"
+      url: "https://arxiv.org/pdf/2410.11414"
+    - label: "code"
+      url: "https://github.com/Jeryi-Sun/ReDEeP-ICLR"
+  highlight: "Spotlight."
+
+- title: "LargePiG: Your Large Language Model is Secretly a Pointer Generator"
+  authors: "Zhongxiang Sun, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu"
+  venue: "WWW 2025"
+  links:
+    - label: "paper"
+      url: "https://arxiv.org/pdf/2410.11366"
+  highlight: ""
+
+- title: "Trigger3: Refining Query Correction via Adaptive Model Selector"
+  authors: "Kepu Zhang, Zhongxiang Sun, Xiao Zhang, Xiaoxue Zang, Kai Zheng, Yang Song, Jun Xu"
+  venue: "AAAI 2024"
+  links: []
+  highlight: ""
+
+- title: "Generative Retrieval with Semantic Tree-Structured Identifiers and Contrastive Learning"
+  authors: "Zihua Si, Zhongxiang Sun, Jiale Chen, Guozhang Chen, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu, Kun Gai"
+  venue: "SIGIR-AP 2024"
+  links: []
+  highlight: "Best Paper Award."
+
+- title: "Large Language Models Enhanced Collaborative Filtering"
+  authors: "Zhongxiang Sun, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu"
+  venue: "CIKM 2024"
+  links:
+    - label: "paper"
+      url: "https://arxiv.org/abs/2403.17688"
+    - label: "highlight"
+      url: "https://resources.paperdigest.org/2026/03/most-influential-cikm-papers-2026-03-version/"
+  highlight: "Paper Digest Most Influential CIKM Papers list."
+
+- title: "Twin v2: Scaling Ultra-Long User Behavior Sequence Modeling for Enhanced CTR Prediction at Kuaishou"
+  authors: "Zihua Si, Lin Guan, Zhongxiang Sun, Xiaoxue Zang, et al."
+  venue: "CIKM 2024 ADS"
+  links:
+    - label: "highlight"
+      url: "https://resources.paperdigest.org/2026/03/most-influential-cikm-papers-2026-03-version/"
+  highlight: "Paper Digest Most Influential CIKM Papers list."
+
+- title: "Effective In-Context Example Selection through Data Compression"
+  authors: "Zhongxiang Sun, Kepu Zhang*, Haoyu Wang, Xiao Zhang, Jun Xu"
+  venue: "ACL 2024 Findings Short"
+  links:
+    - label: "paper"
+      url: "/files/Effective_In_Context_Example_Selection_through_Data_Compression__ACL_.pdf"
+  highlight: ""
+
+- title: "To Search or to Recommend: Predicting Open-App Motivation with Neural Hawkes Process"
+  authors: "Zhongxiang Sun, Zihua Si, Xiao Zhang, Xiaoxue Zang, Yang Song, Hongteng Xu, Jun Xu"
+  venue: "SIGIR 2024"
+  links:
+    - label: "paper"
+      url: "https://arxiv.org/abs/2404.03267"
+  highlight: ""
+
+- title: "Logic Rules as Explanations for Legal Case Retrieval"
+  authors: "Zhongxiang Sun, Kepu Zhang, Weijie Yu, Haoyu Wang, Jun Xu"
+  venue: "COLING 2024"
+  links: []
+  highlight: ""
+
+- title: "Explainable Legal Case Matching via Graph Optimal Transport"
+  authors: "Zhongxiang Sun, Weijie Yu, Zihua Si, Jun Xu, Zhenhua Dong, Xu Chen, Hongteng Xu, Ji-Rong Wen"
+  venue: "TKDE 2023"
+  links:
+    - label: "paper"
+      url: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10285038"
+  highlight: ""
+
+- title: "KuaiSAR: A Unified Search And Recommendation Dataset"
+  authors: "Zhongxiang Sun, Zihua Si*, Xiaoxue Zang, Dewei Leng, Yanan Niu, Yang Song, Xiao Zhang, Jun Xu"
+  venue: "CIKM 2023"
+  links: []
+  highlight: ""
+
+- title: "Uncovering ChatGPT's Capabilities in Recommender Systems"
+  authors: "Sunhao Dai, Ninglu Shao, Haiyuan Zhao, Weijie Yu, Zihua Si, Chen Xu, Zhongxiang Sun, Xiao Zhang, Jun Xu"
+  venue: "RecSys 2023"
+  links: []
+  highlight: ""
+
+- title: "When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation"
+  authors: "Zihua Si, Zhongxiang Sun, Xiao Zhang, Jun Xu, Xiaoxue Zang, Yang Song, Kun Gai, Ji-Rong Wen"
+  venue: "SIGIR 2023"
+  links: []
+  highlight: ""
+
+- title: "Law Article-Enhanced Legal Case Matching: A Causal Learning Approach"
+  authors: "Zhongxiang Sun, Jun Xu, Xiao Zhang, Zhenhua Dong, Ji-Rong Wen"
+  venue: "SIGIR 2023"
+  links: []
+  highlight: ""
+
+- title: "Enhancing Recommendation with Search Data in a Causal Learning Manner"
+  authors: "Zihua Si, Zhongxiang Sun, Xiao Zhang, Jun Xu, Yang Song, Xiaoxue Zang, Ji-Rong Wen"
+  venue: "TOIS 2023"
+  links: []
+  highlight: ""
+
+- title: "Enough Waiting for the Couriers: Learning to Estimate Package Pick-up Arrival Time from Couriers' Spatial-Temporal Behaviors"
+  authors: "Haomin Wen, Youfang Lin, Fan Wu, Huaiyu Wan, Zhongxiang Sun, Tianyue Cai, Hongyu Liu, Shengnan Guo, Jianbing Zheng, Chao Song, Lixia Wu"
+  venue: "TITS 2022"
+  links: []
+  highlight: ""
+
+- title: "AddrMiner: A Comprehensive Global Active IPv6 Address Discovery System"
+  authors: "G. Song, J. Yang, L. He, Z. Wang, G. Li, C. Duan, Y. Liu, Zhongxiang Sun"
+  venue: "USENIX ATC 2022"
+  links: []
+  highlight: ""
+
+- title: "Explainable Legal Case Matching via Inverse Optimal Transport-Based Rationale Extraction"
+  authors: "Weijie Yu, Zhongxiang Sun, Jun Xu, Zhenhua Dong, Xu Chen, Hongteng Xu, Ji-Rong Wen"
+  venue: "SIGIR 2022"
+  links: []
+  highlight: ""
