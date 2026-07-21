@@ -1452,4 +1452,57 @@
   .research-section h2 {
     font-size: 21px;
   }
+
+  .research-profile {
+    gap: 18px;
+  }
+
+  .research-profile img {
+    order: -1;
+    width: 128px;
+    max-height: 190px;
+  }
+
+  .research-profile .research-link-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .research-profile .research-button,
+  .research-section-heading > .research-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .research-section-heading {
+    display: block;
+  }
+
+  .research-section-heading > .research-button {
+    margin-top: 14px;
+  }
+
+  .research-kicker {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .research-publication {
+    gap: 14px;
+  }
+
+  .research-publication img {
+    max-height: none;
+  }
+
+  .research-section ul {
+    padding-left: 1.15rem;
+  }
+
+  .research-page h1,
+  .research-page h2,
+  .research-page h3,
+  .research-page a {
+    overflow-wrap: anywhere;
+  }
 }
