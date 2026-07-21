@@ -55,9 +55,10 @@ redirect_from:
     </article>
     <article>
       <span>Recognition</span>
-      <strong>Spotlight, Best Paper, and Paper Digest highlights</strong>
+      <strong>ICLR Spotlight, SIGIR-AP Best Paper Award, and Paper Digest Hot Papers</strong>
       <p>
-        Selected work has been recognized by ICLR, SIGIR-AP, and Paper Digest.
+        Selected work received an ICLR Spotlight, won the SIGIR-AP Best Paper Award, and was selected by
+        Paper Digest as Hot Papers at SIGIR and CIKM.
       </p>
     </article>
     <article>
