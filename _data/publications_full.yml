@@ -1,3 +1,15 @@
+- title: "ToolArtist: Tool-Using Unified Multimodal Models for Agentic Image Generation"
+  authors: "Jiahao Zhao, Xiaomin Yu, Zhongxiang Sun, Fengwei Teng, Chengwei Qin, Xiaobin Hu, Jun Xu, Shuicheng Yan"
+  venue: "arXiv 2026"
+  links:
+    - label: "paper"
+      url: "https://arxiv.org/abs/2608.04436"
+    - label: "Hugging Face"
+      url: "https://huggingface.co/papers/2608.04436"
+    - label: "recognition"
+      url: "https://huggingface.co/papers/date/2026-08-06"
+  highlight: "#1 Paper of the Day on Hugging Face (August 6, 2026)."
+
 - title: "NeuroCogMap Reveals Cognitive Organization of Large Language Models"
   authors: "Zhongxiang Sun, Haolang Lu, Qiang Ma, Qi Li, Qipeng Wang, Liang Pang, Chenyu Liu, Qiankun Li, Hao Sun, Kun Wang, Yi Zeng, Jun Xu, Guoqi Li, Ji-Rong Wen"
   venue: "arXiv 2026"
