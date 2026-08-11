@@ -1,7 +1,7 @@
 {% assign optimized_image = site.data.optimized_images[include.src] %}
 <picture{% if include.picture_class %} class="{{ include.picture_class }}"{% endif %}>
   {% if optimized_image and optimized_image.webp %}
-  <source srcset="{{ optimized_image.webp | relative_url }}" type="image/webp">
+  <source srcset="{{ optimized_image.webp | relative_url }}?v={{ optimized_image.digest }}" type="image/webp">
   {% endif %}
   <img
     src="{{ include.src | relative_url }}"

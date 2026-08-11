@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -129,8 +130,10 @@ def write_asset(public_path: str, category: str):
         image.save(output, **save_options)
         width, height = image.size
 
+    digest = hashlib.sha256(output.read_bytes()).hexdigest()[:12]
     return {
         "webp": output_public,
+        "digest": digest,
         "width": width,
         "height": height,
         "bytes": output.stat().st_size,
@@ -181,6 +184,9 @@ def validate_manifest(expected_assets, projects, blogs):
             )
         if entry.get("bytes") != actual_bytes:
             errors.append(f"Manifest byte count is stale for {entry['webp']}")
+        actual_digest = hashlib.sha256(optimized.read_bytes()).hexdigest()[:12]
+        if entry.get("digest") != actual_digest:
+            errors.append(f"Manifest digest is stale for {entry['webp']}")
         try:
             with Image.open(optimized) as image:
                 if image.format != "WEBP":
