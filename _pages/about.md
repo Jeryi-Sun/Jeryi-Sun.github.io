@@ -31,7 +31,7 @@ redirect_from:
       <a class="research-button research-button--secondary" href="https://github.com/Jeryi-Sun">GitHub</a>
     </div>
   </div>
-  <img src="/images/profile.png" alt="Zhongxiang Sun">
+  {% include optimized-image.html src="/images/profile.png" alt="Zhongxiang Sun" loading="eager" fetchpriority="high" %}
 </section>
 
 <section class="research-section research-impact">
@@ -133,7 +133,9 @@ redirect_from:
   {% assign homepage_projects = site.data.research_projects | where: "show_on_homepage", true | sort: "homepage_priority" %}
   {% for project in homepage_projects %}
   <article class="research-publication">
-    <a href="{{ project.project_url }}"><img src="{{ project.teaser }}" alt="{{ project.short_title }} teaser"></a>
+    <a href="{{ project.project_url }}">
+      {% include optimized-image.html src=project.teaser alt=project.short_title loading="lazy" %}
+    </a>
     <div>
       <h3><a href="{{ project.project_url }}">{{ project.title }}</a></h3>
       <p><strong>{{ project.venue }}</strong> | {{ project.role }} | {{ project.layer }}</p>

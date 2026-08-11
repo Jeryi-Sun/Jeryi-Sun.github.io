@@ -1,0 +1,33 @@
+name: Image budget
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+    paths:
+      - "images/**"
+      - "_data/research_projects.yml"
+      - "_data/research_project_blogs.yml"
+      - "_data/optimized_images.yml"
+      - "_includes/optimized-image.html"
+      - "_includes/research-project-content.html"
+      - "_pages/about.md"
+      - "_pages/cognitive-neuroscience.md"
+      - ".github/workflows/image-budget.yml"
+      - "scripts/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements-images.txt
+      - run: pip install -r scripts/requirements-images.txt
+      - run: python scripts/optimize_images.py --check

@@ -48,7 +48,7 @@
   </div>
   {% if project.teaser and project.teaser != "" %}
   <figure class="research-hero__media research-hero__media--project research-hero__media--visual-abstract">
-    <img src="{{ project.teaser }}" alt="{{ project.short_title }} visual abstract">
+    {% include optimized-image.html src=project.teaser alt=project.short_title loading="eager" fetchpriority="high" %}
   </figure>
   {% endif %}
 </section>
@@ -89,13 +89,15 @@
         <div class="research-figure-panel-grid research-figure-panel-grid--{{ panel_layout }}">
           {% for panel in section.panels %}
           <div class="research-figure-panel">
-            <img src="{{ panel.image }}" alt="{{ project.short_title }} {{ section.title }} {{ panel.label | default: forloop.index }} panel">
+            {% capture panel_alt %}{{ project.short_title }} {{ section.title }} {{ panel.label | default: forloop.index }} panel{% endcapture %}
+            {% include optimized-image.html src=panel.image alt=panel_alt loading="lazy" %}
             {% if panel.label %}<p><strong>{{ panel.label }}</strong></p>{% endif %}
           </div>
           {% endfor %}
         </div>
         {% else %}
-        <img src="{{ section_image }}" alt="{{ project.short_title }} {{ section.title }} figure">
+        {% capture section_alt %}{{ project.short_title }} {{ section.title }} figure{% endcapture %}
+        {% include optimized-image.html src=section_image alt=section_alt loading="lazy" %}
         {% endif %}
       </figure>
 

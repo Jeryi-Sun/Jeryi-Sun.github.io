@@ -25,7 +25,7 @@ redirect_from:
     </div>
   </div>
   <figure class="research-hero__media research-program-overview">
-    <img src="/images/research/cognitive-neuroscience-overview-en.png" alt="Research roadmap for long-horizon agent state distortion, propagation, causal localization, and trustworthy control">
+    {% include optimized-image.html src="/images/research/cognitive-neuroscience-overview-en.png" alt="Research roadmap for long-horizon agent state distortion, propagation, causal localization, and trustworthy control" loading="eager" fetchpriority="high" %}
     <figcaption>
       From local mechanisms to long-horizon trustworthy control.
     </figcaption>
@@ -265,7 +265,9 @@ redirect_from:
     <p class="research-kicker">Explain: Internal Cognitive Organization</p>
     {% assign neurocogmap = site.data.research_projects | where: "id", "neurocogmap" | first %}
     <article class="research-publication">
-      <a href="{{ neurocogmap.project_url }}"><img src="{{ neurocogmap.teaser }}" alt="NeuroCogMap teaser"></a>
+      <a href="{{ neurocogmap.project_url }}">
+        {% include optimized-image.html src=neurocogmap.teaser alt="NeuroCogMap teaser" loading="lazy" %}
+      </a>
       <div>
         <h3><a href="{{ neurocogmap.project_url }}">{{ neurocogmap.title }}</a></h3>
         <p><strong>{{ neurocogmap.venue }}</strong> | {{ neurocogmap.role }}</p>
@@ -285,7 +287,9 @@ redirect_from:
     {% for project in site.data.research_projects %}
       {% if project.id == "redeep" or project.id == "rhd" or project.id == "fpps" %}
       <article class="research-publication">
-        <a href="{{ project.project_url }}"><img src="{{ project.teaser }}" alt="{{ project.short_title }} teaser"></a>
+        <a href="{{ project.project_url }}">
+          {% include optimized-image.html src=project.teaser alt=project.short_title loading="lazy" %}
+        </a>
         <div>
           <h3><a href="{{ project.project_url }}">{{ project.title }}</a></h3>
           <p><strong>{{ project.venue }}</strong> | {{ project.role }}</p>
@@ -307,7 +311,9 @@ redirect_from:
     {% for project in site.data.research_projects %}
       {% if project.id == "rearter" or project.id == "mcm_ds" %}
       <article class="research-publication">
-        <a href="{{ project.project_url }}"><img src="{{ project.teaser }}" alt="{{ project.short_title }} teaser"></a>
+        <a href="{{ project.project_url }}">
+          {% include optimized-image.html src=project.teaser alt=project.short_title loading="lazy" %}
+        </a>
         <div>
           <h3><a href="{{ project.project_url }}">{{ project.title }}</a></h3>
           <p><strong>{{ project.venue }}</strong> | {{ project.role }}</p>

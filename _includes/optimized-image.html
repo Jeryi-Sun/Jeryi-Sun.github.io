@@ -1,0 +1,15 @@
+{% assign optimized_image = site.data.optimized_images[include.src] %}
+<picture{% if include.picture_class %} class="{{ include.picture_class }}"{% endif %}>
+  {% if optimized_image and optimized_image.webp %}
+  <source srcset="{{ optimized_image.webp | relative_url }}" type="image/webp">
+  {% endif %}
+  <img
+    src="{{ include.src | relative_url }}"
+    alt="{{ include.alt | escape }}"
+    {% if optimized_image and optimized_image.width %}width="{{ optimized_image.width }}"{% endif %}
+    {% if optimized_image and optimized_image.height %}height="{{ optimized_image.height }}"{% endif %}
+    loading="{{ include.loading | default: 'lazy' }}"
+    decoding="async"
+    {% if include.fetchpriority %}fetchpriority="{{ include.fetchpriority }}"{% endif %}
+    {% if include.img_class %}class="{{ include.img_class }}"{% endif %}>
+</picture>
