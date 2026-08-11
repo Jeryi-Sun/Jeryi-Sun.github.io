@@ -90,12 +90,12 @@
   webp: /images/optimized/research/fpps-simulation-result.webp
   width: 1782
 /images/research/fpps-teaser.png:
-  bytes: 172060
+  bytes: 145230
   category: teaser
-  digest: 5e9a3d0da947
+  digest: 982332e41a6e
   height: 900
   lossless: false
-  quality: 94
+  quality: 100
   webp: /images/optimized/research/fpps-teaser.webp
   width: 1600
 /images/research/mcm-ds-hierarchical-monitoring-web.png:
@@ -144,21 +144,21 @@
   webp: /images/optimized/research/mcm-ds-sensitivity-memory.webp
   width: 647
 /images/research/mcm-ds-teaser.png:
-  bytes: 179752
+  bytes: 145490
   category: teaser
-  digest: 04eb336b9b16
+  digest: 37c7af13386d
   height: 900
   lossless: false
-  quality: 94
+  quality: 100
   webp: /images/optimized/research/mcm-ds-teaser.webp
   width: 1600
 /images/research/neurocogmap-teaser.png:
-  bytes: 232798
+  bytes: 232946
   category: teaser
-  digest: 909f18200efd
+  digest: 89a61852a92e
   height: 900
   lossless: false
-  quality: 94
+  quality: 100
   webp: /images/optimized/research/neurocogmap-teaser.webp
   width: 1600
 /images/research/rearter-pem-acc.png:
@@ -234,12 +234,12 @@
   webp: /images/optimized/research/rearter-rft-musique.webp
   width: 880
 /images/research/rearter-teaser.png:
-  bytes: 135048
+  bytes: 160876
   category: teaser
-  digest: 5d18aa15ac72
+  digest: 45b9b7aa1c6b
   height: 900
   lossless: false
-  quality: 94
+  quality: 100
   webp: /images/optimized/research/rearter-teaser.webp
   width: 1600
 /images/research/rearter-test-time-scaling.png:
@@ -306,12 +306,12 @@
   webp: /images/optimized/research/redeep-problem-conflict.webp
   width: 2400
 /images/research/redeep-teaser.png:
-  bytes: 132556
+  bytes: 153180
   category: teaser
-  digest: 253cee4ab939
+  digest: 32bcf0d56fef
   height: 900
   lossless: false
-  quality: 94
+  quality: 100
   webp: /images/optimized/research/redeep-teaser.webp
   width: 1600
 /images/research/rhd-consistency-reasoning.png:
@@ -387,12 +387,12 @@
   webp: /images/optimized/research/rhd-rising-perplexity.webp
   width: 697
 /images/research/rhd-teaser.png:
-  bytes: 190854
+  bytes: 162380
   category: teaser
-  digest: 840c01accf93
+  digest: 3178ccc44eb0
   height: 900
   lossless: false
-  quality: 94
+  quality: 100
   webp: /images/optimized/research/rhd-teaser.webp
   width: 1600
 /images/research/rhd-trajectory-case.png:

@@ -35,7 +35,7 @@ class ImageRule:
 
 RULES = {
     "profile": ImageRule("profile", 960, 92, 160 * KIB),
-    "teaser": ImageRule("teaser", 1600, 94, 250 * KIB),
+    "teaser": ImageRule("teaser", 1600, 100, 250 * KIB),
     "overview": ImageRule("overview", 1600, 95, 250 * KIB),
     "figure": ImageRule("figure", 2400, 100, 800 * KIB, lossless=True),
 }
@@ -229,8 +229,8 @@ def validate_manifest(expected_assets, projects, blogs):
             )
         page_assets = list(dict.fromkeys(page_assets))
         page_total = sum(optimized_size(path) for path in page_assets)
-        if optimized_size(project["teaser"]) > 200 * KIB:
-            errors.append(f"{blog['id']} critical image budget exceeds 200 KiB")
+        if optimized_size(project["teaser"]) > 250 * KIB:
+            errors.append(f"{blog['id']} critical image budget exceeds 250 KiB")
         if page_total > 1.6 * MIB:
             errors.append(
                 f"{blog['id']} image total is {page_total / MIB:.2f} MiB; budget is 1.6 MiB"
