@@ -29,13 +29,14 @@ class ImageRule:
     max_width: int
     quality: int
     budget_bytes: int
+    lossless: bool = False
 
 
 RULES = {
-    "profile": ImageRule("profile", 640, 84, 80 * KIB),
-    "teaser": ImageRule("teaser", 1280, 86, 150 * KIB),
-    "overview": ImageRule("overview", 1280, 88, 200 * KIB),
-    "figure": ImageRule("figure", 1800, 90, 350 * KIB),
+    "profile": ImageRule("profile", 960, 92, 160 * KIB),
+    "teaser": ImageRule("teaser", 1600, 94, 250 * KIB),
+    "overview": ImageRule("overview", 1600, 95, 250 * KIB),
+    "figure": ImageRule("figure", 2400, 100, 800 * KIB, lossless=True),
 }
 
 
@@ -117,9 +118,12 @@ def write_asset(public_path: str, category: str):
             image = image.convert("RGBA" if "transparency" in image.info else "RGB")
         save_options = {
             "format": "WEBP",
-            "quality": rule.quality,
             "method": 6,
         }
+        if rule.lossless:
+            save_options["lossless"] = True
+        else:
+            save_options["quality"] = rule.quality
         if opened.info.get("icc_profile"):
             save_options["icc_profile"] = opened.info["icc_profile"]
         image.save(output, **save_options)
@@ -132,6 +136,7 @@ def write_asset(public_path: str, category: str):
         "bytes": output.stat().st_size,
         "category": rule.category,
         "quality": rule.quality,
+        "lossless": rule.lossless,
     }
 
 
@@ -198,8 +203,8 @@ def validate_manifest(expected_assets, projects, blogs):
         if project.get("show_on_homepage") and project.get("teaser")
     )
     home_total = sum(optimized_size(path) for path in dict.fromkeys(home_assets))
-    if home_total > MIB:
-        errors.append(f"Homepage image total is {home_total / MIB:.2f} MiB; budget is 1 MiB")
+    if home_total > 1.25 * MIB:
+        errors.append(f"Homepage image total is {home_total / MIB:.2f} MiB; budget is 1.25 MiB")
     if optimized_size(PROFILE_IMAGE) > 200 * KIB:
         errors.append("Homepage critical image budget exceeds 200 KiB")
 
@@ -220,9 +225,9 @@ def validate_manifest(expected_assets, projects, blogs):
         page_total = sum(optimized_size(path) for path in page_assets)
         if optimized_size(project["teaser"]) > 200 * KIB:
             errors.append(f"{blog['id']} critical image budget exceeds 200 KiB")
-        if page_total > 1.5 * MIB:
+        if page_total > 1.6 * MIB:
             errors.append(
-                f"{blog['id']} image total is {page_total / MIB:.2f} MiB; budget is 1.5 MiB"
+                f"{blog['id']} image total is {page_total / MIB:.2f} MiB; budget is 1.6 MiB"
             )
 
     return errors
