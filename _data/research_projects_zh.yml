@@ -1,0 +1,756 @@
+- id: neurocogmap
+  title: "NeuroCogMap Reveals Cognitive Organization of Large Language Models"
+  short_title: "NeuroCogMap"
+  venue: "arXiv 2026"
+  role: "项目负责人"
+  authors: "Zhongxiang Sun, Haolang Lu, Qiang Ma, Qi Li, Qipeng Wang, Liang Pang, Chenyu Liu, Qiankun Li, Hao Sun, Kun Wang, Yi Zeng, Jun Xu, Guoqi Li, Ji-Rong Wen"
+  layer: "内部认知组织"
+  paper_url: "https://arxiv.org/pdf/2607.00397"
+  project_url: "https://neurocogmap.site/"
+  code_url: "https://github.com/Jeryi-Sun/NeuroCogMap"
+  teaser: "/images/research/neurocogmap-teaser.png"
+  hero_image: "/images/research/neurocogmap-framework.png"
+  one_liner: "连接稀疏特征、功能分区、认知能力、能力层级与病理定位的多层认知图谱。"
+  summary: >-
+    NeuroCogMap 为我的博士研究提供一套解释坐标。它把大语言模型视为可通过实验研究的人工认知系统，
+    考察内部功能组织如何解释正常行为、异常行为、与人类皮层的对应关系，以及认知模型的发现过程。
+  research_question: >-
+    能否把大语言模型作为人工认知系统来研究，并在单个神经元和最终输出之间找到具有稳定结构的内部组织？
+  motivation: >-
+    常见评测能够说明模型会做什么，却很难回答某项能力在模型内部如何组织，也无法解释模型为何会在相近条件下失败。
+    NeuroCogMap 在原始激活与基准结果之间建立中尺度图谱，用来补足这一层解释。
+  approach: >-
+    项目先提取模型内部的稀疏特征，再将其组织成功能分区并关联到认知能力，随后分析能力之间的层级关系及其异常模式。
+  research_impact: >-
+    NeuroCogMap 为“AI 智能体的认知神经科学”研究提供共同的内部坐标，使后续工作能够在同一框架下讨论能力、失效与干预。
+  abstract: >-
+    NeuroCogMap 研究大语言模型在单个神经元与最终输出之间是否存在可解释的中尺度组织。
+    项目结合能力空间和内部激活构建认知图谱，将稀疏特征组织成功能分区、认知图谱、认知能力及其层级关系。
+    这套图谱还用于比较正常回答与幻觉回答，把幻觉从最终输出错误进一步定位为异常激活、能力路由偏差和内部病理模式。
+  method_summary: >-
+    该框架提取模型内部的稀疏特征，将其聚类为可复现的功能分区，并把功能分区与认知能力相连。
+    研究随后比较正常行为与异常行为中的分区激活和连接方式。对于工具使用、推理、个性化和元认知调控等后续研究，
+    这套方法提供了一套可以共用的内部描述语言。
+  figures:
+    - image: "/images/research/neurocogmap-framework.png"
+      label: "受认知神经科学启发的研究框架"
+      role: "框架"
+      source: "Paper Fig. 1"
+      layout: "wide"
+      caption: >-
+        NeuroCogMap 借鉴认知神经科学的研究思路，通过认知任务和内部激活构建模型的中尺度组织图谱；
+        这里借用的是方法，而不是把大语言模型等同于生物脑。
+    - image: "/images/research/neurocogmap-structure.png"
+      label: "多层认知结构"
+      role: "机制"
+      source: "Paper Fig. 2"
+      layout: "wide"
+      caption: >-
+        图谱连接功能分区、认知图谱、能力激活与层级关系，为后续幻觉研究定位异常模型状态提供坐标。
+    - image: "/images/research/neurocogmap-pathology-localization.png"
+      label: "病理定位"
+      role: "结果"
+      source: "Paper Fig. 3"
+      layout: "wide"
+      caption: >-
+        幻觉、偏见、越狱和迎合行为被放入同一图谱中分析，并在功能分区和认知能力层面呈现不同的表征异常模式。
+  figure_guide:
+    - image: "/images/research/neurocogmap-framework.png"
+      title: "为什么需要认知图谱"
+      role: "问题与框架"
+      source: "Paper Fig. 1"
+      layout: "wide"
+      summary: "框架从认知任务和内部激活出发，构建模型组织的中尺度图谱。"
+      reading_guide:
+        - "这张图表达的是认知神经科学的方法类比，并不主张大语言模型就是生物脑。"
+        - "图中把行为、内部激活和能力集合连在一起，说明单一基准分数为何不足以解释模型。"
+        - "NeuroCogMap 在整个研究计划中负责提供坐标，后续的幻觉机制研究都可以落到这套坐标上。"
+    - image: "/images/research/neurocogmap-structure.png"
+      title: "从稀疏特征到认知能力"
+      role: "机制"
+      source: "Paper Fig. 2"
+      layout: "wide"
+      summary: "图谱把功能分区、认知图谱、能力激活与层级关系连接起来。"
+      reading_guide:
+        - "核心步骤是把零散的激活特征组织成具有一致功能的分区。"
+        - "能力被视为结构化的内部系统，因此不同任务和失效类型可以在同一空间内比较。"
+        - "这一级组织连接了局部可解释性与系统层面的解释。"
+    - image: "/images/research/neurocogmap-pathology-localization.png"
+      title: "定位模型的异常行为"
+      role: "结果"
+      source: "Paper Fig. 3"
+      layout: "wide"
+      summary: "幻觉及相关异常被表示为同一内部图谱中的异常模式。"
+      reading_guide:
+        - "幻觉在这里被处理为表征病理，而不只是错误答案。"
+        - "不同异常行为可以通过其扰动内部组织的位置和方式进行比较。"
+        - "这种定位思路继续延伸到证据使用、推理、个性化和元认知调控研究。"
+  result_sections:
+    - eyebrow: "发现 1"
+      title: "内部组织为幻觉提供了定位坐标"
+      body: >-
+        NeuroCogMap 不把幻觉看成孤立的输出错误，而是在结构化内部空间中定位异常，具体考察功能分区、能力调用和层级组织。
+    - eyebrow: "发现 2"
+      title: "同一图谱可以解释正常能力与异常行为"
+      body: >-
+        解释正常认知能力的内部组织也可以用来比较真实回答与幻觉回答，从而在同一框架中分析能力及其失效。
+    - eyebrow: "发现 3"
+      title: "该框架支持跨模块机理研究"
+      body: >-
+        ReDeEP、RHD、FPPS、ReARTeR 和 DS-MCM 可以视为后续模块研究，它们分别把工具使用、推理、记忆和控制失效纳入内部机制分析。
+  impact: >-
+    NeuroCogMap 让大模型智能体的内部认知系统可以被观察和比较，也为后续的机制干预提供结构基础。
+  citation: ""
+  homepage_priority: 10
+  show_on_homepage: true
+
+- id: redeep
+  title: "ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability"
+  short_title: "ReDeEP"
+  venue: "ICLR 2025 Spotlight"
+  role: "第一作者"
+  authors: "Zhongxiang Sun, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Weijie Yu, Yang Song, Han Li"
+  layer: "智能体模块机理"
+  paper_url: "https://arxiv.org/abs/2410.11414"
+  project_url: "/zh/ReDeEP_Page/"
+  code_url: "https://github.com/Jeryi-Sun/ReDEeP-ICLR"
+  teaser: "/images/research/redeep-teaser.png"
+  hero_image: "/images/research/redeep-problem-conflict.png"
+  one_liner: "从机制层面解释 RAG 幻觉：外部证据利用不足与参数知识依赖失衡。"
+  summary: >-
+    ReDeEP 研究检索增强生成中的工具与证据使用幻觉。它分离对外部证据敏感的通路和参数知识通路，
+    在模型内部定位失效信号，并利用这套机制进行幻觉检测与干预。
+  research_question: "检索增强生成系统已经获得相关外部证据，为什么仍会产生幻觉？"
+  motivation: >-
+    完成检索不等于真正使用证据。模型可能拿到正确文档，回答却仍由参数知识主导。
+    只检查输出无法看见造成这类 RAG 失效的内部冲突。
+  approach: >-
+    ReDeEP 将生成过程拆分为外部上下文利用和参数知识依赖，并通过证据利用分数、知识依赖分数等内部通路信号检测和调节幻觉风险。
+  research_impact: >-
+    ReDeEP 让智能体的工具证据模块可以被检查：外部证据如何进入生成、何时没有发挥作用，以及可以怎样纠正。
+  abstract: >-
+    检索增强生成利用外部证据约束回答，但模型仍可能忽略、低估或违背检索文档。ReDeEP 从内部机制研究这一失效。
+    它将 RAG 幻觉表示为外部证据通路与参数知识通路之间的失衡，并用模型内部信号检测风险、调节生成。
+  method_summary: >-
+    ReDeEP 将生成拆分为证据敏感计算和参数知识依赖。方法分析注意力中的证据通路、复制行为、前馈网络中的知识通路及残差流信号，
+    并以通路失衡作为机制层面的幻觉指标。当内部状态出现风险时，调节方法会让生成更多地依据外部证据。
+  figures:
+    - image: "/images/research/redeep-problem-conflict.png"
+      label: "RAG 冲突案例"
+      role: "问题"
+      source: "Paper Fig. 1; graphs/introduction.pdf"
+      layout: "wide"
+      caption: >-
+        检索文档可以完全正确，但模型内部的参数知识仍可能与其冲突，因此 RAG 幻觉并不只是检索失败。
+    - image: "/images/research/redeep-causal-framing.png"
+      label: "因果框架"
+      role: "机制"
+      source: "Paper Fig. 2; graphs/related_work.pdf"
+      layout: "wide"
+      caption: >-
+        ReDeEP 分离外部上下文通路与参数知识通路，避免检测方法把两类信息来源混在一起。
+    - image: "/images/research/redeep-method.png"
+      label: "外部上下文分数与参数知识分数"
+      role: "方法"
+      source: "Paper Fig. 3; graphs/method.pdf"
+      layout: "wide"
+      caption: >-
+        方法分别计算模型在生成时使用外部上下文的程度，以及依赖参数知识的强度。
+    - image: "/images/research/redeep-ecs-pks-results.png"
+      label: "机制证据"
+      role: "结果"
+      source: "Paper Fig. 4; graphs/empirical_study_1.pdf"
+      layout: "wide"
+      caption: >-
+        层与注意力头上的模式和分数差异表明，真实生成与幻觉生成在证据利用和参数知识依赖上具有不同的内部特征。
+  figure_guide:
+    - image: "/images/research/redeep-problem-conflict.png"
+      title: "证据已经找到，却没有被采用"
+      role: "问题"
+      source: "Paper Fig. 1; graphs/introduction.pdf"
+      layout: "wide"
+      summary: "检索文档包含正确答案时，模型仍可能沿用内部先验。"
+      reading_guide:
+        - "这张图把检索成功和生成忠实性分开来看。"
+        - "错误发生在证据返回之后，所以单靠提高检索质量无法解决。"
+        - "由此需要分析模型如何在文档证据与参数知识发生冲突时作出选择。"
+    - image: "/images/research/redeep-causal-framing.png"
+      title: "RAG 中的两条信息通路"
+      role: "机制"
+      source: "Paper Fig. 2; graphs/related_work.pdf"
+      layout: "wide"
+      summary: "ReDeEP 将幻觉解释为外部上下文利用与参数知识依赖之间的失衡。"
+      reading_guide:
+        - "外部通路描述检索证据如何进入生成过程。"
+        - "参数通路对应模型已经存储的知识和先验。"
+        - "当模型在冲突中偏向不可靠的内部知识时，幻觉风险会上升。"
+    - image: "/images/research/redeep-method.png"
+      title: "度量证据利用和知识依赖"
+      role: "方法"
+      source: "Paper Fig. 3; graphs/method.pdf"
+      layout: "wide"
+      summary: "方法通过内部信号判断生成主要依据外部上下文还是模型已有知识。"
+      reading_guide:
+        - "External Context Score 衡量生成利用检索证据的程度。"
+        - "Parametric Knowledge Score 衡量模型对内部知识通路的依赖。"
+        - "检测器使用的是通路失衡，而不是只看最终文本。"
+    - image: "/images/research/redeep-ecs-pks-results.png"
+      title: "RAG 幻觉的内部特征"
+      role: "结果"
+      source: "Paper Fig. 4; graphs/empirical_study_1.pdf"
+      layout: "wide"
+      summary: "层、注意力头与分数差异支持幻觉生成具有不同内部特征这一判断。"
+      reading_guide:
+        - "结果把可观察的幻觉和内部计算联系起来。"
+        - "分数模式说明真实生成与幻觉生成使用信息的方式不同。"
+        - "这些证据使机制信号可以同时服务于检测和定向干预。"
+  result_sections:
+    - eyebrow: "发现 1"
+      title: "有证据不等于使用证据"
+      body: >-
+        核心失效并非简单的检索缺失。模型即使收到有用证据，也可能让内部先验主导回答。
+    - eyebrow: "发现 2"
+      title: "RAG 幻觉具有内部通路特征"
+      body: >-
+        ReDeEP 分离证据敏感计算和知识驱动计算，把幻觉检测从输出分类转化为对信息使用方式的机制诊断。
+    - eyebrow: "发现 3"
+      title: "机制信号可以指导定向缓解"
+      body: >-
+        通路失衡既能提示风险，也能用于调节推理，使生成更多地依赖证据，从可解释性进一步走向干预。
+  impact: >-
+    ReDeEP 使智能体的工具证据模块可被检查。在整体研究中，它对应单步功能回路问题：智能体怎样读取外部证据、何时失效，以及如何纠正。
+  citation: |
+    @inproceedings{sun2025redeep,
+      title={{ReDeEP}: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability},
+      author={Sun, Zhongxiang and Zang, Xiaoxue and Zheng, Kai and Xu, Jun and Zhang, Xiao and Yu, Weijie and Song, Yang and Li, Han},
+      booktitle={International Conference on Learning Representations},
+      year={2025}
+    }
+  homepage_priority: 20
+  show_on_homepage: true
+
+- id: rhd
+  title: "Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models"
+  short_title: "RHD / GRPO-R"
+  venue: "ICLR 2026"
+  role: "第一作者"
+  authors: "Zhongxiang Sun, Qipeng Wang, Haoyu Wang, Xiao Zhang, Jun Xu"
+  layer: "智能体模块机理"
+  paper_url: "https://openreview.net/pdf?id=XU2STJa1Fi"
+  project_url: "/zh/RHD_Page/"
+  code_url: "https://github.com/Jeryi-Sun/Reasoning_Hallucination"
+  teaser: "/images/research/rhd-teaser.png"
+  hero_image: "/images/research/rhd-trajectory-case.png"
+  one_liner: "从时间神经动力学分析大推理模型中的推理幻觉。"
+  summary: >-
+    RHD 将幻觉分析从最终答案推进到完整推理轨迹。它刻画多步推理中的早期波动、浅层模式匹配、错误回溯和伪验证，
+    再用过程级奖励约束缓解这些失效。
+  research_question: "大推理模型给出错误答案时，幻觉究竟在推理轨迹的哪个阶段形成？"
+  motivation: >-
+    大推理模型公开了中间步骤，但只看最终答案，仍无法区分扎实推理和偶然答对。
+    RHD 把幻觉视为在最终回答之前逐步发展的时间过程。
+  approach: >-
+    方法使用 Reasoning Score、CV Score 和 Attention Score 跟踪推理轨迹，并据此设计过程级奖励约束，使推理路径更可靠。
+  research_impact: >-
+    RHD 对应研究计划中的推理规划模块。它把幻觉呈现为时间动力学问题，而不只是一项输出错误。
+  abstract: >-
+    大推理模型会生成较长的推理轨迹，这使我们能够把幻觉作为时间过程来研究。RHD 分析各个步骤的神经与行为动力学，
+    GRPO-R 则加入过程级约束，减少不可靠的推理轨迹。
+  method_summary: >-
+    方法跟踪推理轨迹，识别与浅层模式匹配、早期波动、错误回溯、过度思考和伪验证相关的时间信号。
+    Reasoning Score、CV Score 和 Attention Score 分别作为轨迹探针，再由诊断结果引出过程级奖励约束。
+  figures:
+    - image: "/images/research/rhd-method-score.png"
+      label: "轨迹评分"
+      role: "方法"
+      source: "Paper Fig. 1; graphs/method.pdf"
+      layout: "wide"
+      caption: "RHD 计算 Reasoning Score、CV Score 和 Attention Score，量化推理深度及注意力在中间步骤中的变化。"
+    - image: "/images/research/rhd-trajectory-case.png"
+      label: "GSM-NoOp 轨迹案例"
+      role: "问题"
+      source: "Paper Fig. 2; graphs/case_study.pdf"
+      layout: "wide"
+      caption: >-
+        同一道题的真实轨迹与幻觉轨迹呈现不同的逐步 Reasoning Score 动力学，说明只检查最终答案会遗漏形成错误的过程。
+    - image: "/images/research/rhd-pattern-reasoning-score.png"
+      label: "模式验证"
+      role: "结果"
+      source: "Paper Fig. 3a; graphs/js_div_comparison_correct.pdf"
+      layout: "wide"
+      caption: >-
+        Reasoning Score 区分受误导与未受误导的步骤，CV Score 和 Attention Score 则捕捉早期波动与错误注意模式。
+    - image: "/images/research/rhd-consistency-reasoning.png"
+      label: "一致性与困惑度分析"
+      role: "结果"
+      source: "Paper Fig. 4a; graphs/reasoning_consistency.pdf"
+      layout: "wide"
+      caption: >-
+        模式分析把 Reasoning Score 的变化同一致性、准确率和困惑度联系起来，使行为失效可以落到轨迹结构上解释。
+  figure_guide:
+    - image: "/images/research/rhd-method-score.png"
+      title: "度量推理轨迹"
+      role: "方法"
+      source: "Paper Fig. 1; graphs/method.pdf"
+      layout: "wide"
+      summary: "RHD 定义轨迹级分数，使中间推理行为可以被量化。"
+      reading_guide:
+        - "Reasoning Score 用来判断一个步骤是在进行有效推理，还是停留在浅层模式匹配。"
+        - "CV Score 和 Attention Score 分别刻画轨迹波动及注意力转移。"
+        - "这张图给出了后续分析所依赖的测量方法。"
+    - image: "/images/research/rhd-trajectory-case.png"
+      title: "幻觉在答案出现前已经形成"
+      role: "问题"
+      source: "Paper Fig. 2; graphs/case_study.pdf"
+      layout: "wide"
+      summary: "真实轨迹与幻觉轨迹在最终答案出现之前，逐步动力学已经开始分化。"
+      reading_guide:
+        - "分析对象是整条推理路径，而不只是最终回答。"
+        - "即使文字流畅、前后看似一致，误导性步骤也可能不断累积。"
+        - "因此，大推理模型需要过程级诊断。"
+    - image: "/images/research/rhd-pattern-reasoning-score.png"
+      title: "验证受误导的推理模式"
+      role: "结果"
+      source: "Paper Fig. 3a; graphs/js_div_comparison_correct.pdf"
+      layout: "wide"
+      summary: "这些分数可以区分受误导与未受误导的步骤，并识别早期波动和注意力异常。"
+      reading_guide:
+        - "该结果检验所定义的分数是否对应真实失效状态。"
+        - "早期不稳定可以作为后续幻觉的预警信号。"
+        - "图中的结果支持时间动力学解释，而不是静态的答案分类。"
+    - image: "/images/research/rhd-consistency-reasoning.png"
+      title: "连接轨迹动力学与可靠性"
+      role: "结果"
+      source: "Paper Fig. 4a; graphs/reasoning_consistency.pdf"
+      layout: "wide"
+      summary: "模式分析将轨迹结构同一致性、准确率和困惑度关联起来。"
+      reading_guide:
+        - "图中用可观测的可靠性指标验证所分析的机制。"
+        - "推理动力学与模型能否稳定得到正确答案相关，并非仅是表面形式。"
+        - "这一结果说明 GRPO-R 应针对推理过程进行缓解，而不是等到最终答案再纠错。"
+  result_sections:
+    - eyebrow: "发现 1"
+      title: "推理幻觉往往早于最终答案形成"
+      body: >-
+        模型输出答案之前，推理轨迹中可能已经积累不稳定转移、错误证据或不当回溯。因此需要分析完整轨迹。
+    - eyebrow: "发现 2"
+      title: "时间动力学揭示答案评测看不到的失效"
+      body: >-
+        早期波动、浅层匹配、过度思考和伪验证提供了一套机制语言，用来解释推理路径为何变得不可靠。
+    - eyebrow: "发现 3"
+      title: "过程奖励可以直接约束推理路径"
+      body: >-
+        GRPO-R 把诊断结果用于缓解，抑制不可靠的中间状态，而不是等到最终答案生成后再纠正。
+  impact: >-
+    RHD 是整体研究中的推理规划模块。它把智能体幻觉作为时间神经动力学问题处理，并连接内部轨迹诊断与过程调节。
+  citation: |
+    @inproceedings{sun2026mechanistic,
+      title={Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models},
+      author={Sun, Zhongxiang and Wang, Qipeng and Wang, Haoyu and Zhang, Xiao and Xu, Jun},
+      booktitle={The Fourteenth International Conference on Learning Representations},
+      year={2026}
+    }
+  homepage_priority: 30
+  show_on_homepage: true
+
+- id: fpps
+  title: "When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs"
+  short_title: "FPPS"
+  venue: "ACL 2026 Findings"
+  role: "第一作者"
+  authors: "Zhongxiang Sun, Yi Zhan, Chenglei Shen, Weijie Yu, Xiao Zhang, Ming He, Jun Xu"
+  layer: "智能体模块机理"
+  paper_url: "https://aclanthology.org/2026.findings-acl.395/"
+  project_url: "/zh/FPPS_Page/"
+  code_url: "https://github.com/zhengyi-ai/ACL2026"
+  teaser: "/images/research/fpps-teaser.png"
+  hero_image: "/images/research/fpps-personalization-case-web.png"
+  one_liner: "从表征层面解释个性化记忆如何使事实行为发生偏移。"
+  summary: >-
+    FPPS 研究个性化诱发的幻觉。它分析长期用户历史和偏好信号如何与事实表征纠缠，
+    并通过推理时表征调控，在保留个性化能力的同时减少事实偏移。
+  research_question: "个性化语言模型如何既服务于用户特定任务，又不让用户历史扭曲客观事实？"
+  motivation: >-
+    当回答确实取决于用户历史时，个性化很有用；当用户情境与可验证事实冲突时，同一份记忆也可能成为事实风险。
+    FPPS 将其视为长时间尺度上的记忆调制问题。
+  approach: >-
+    FPPS 区分个性化有益与事实受损的样本，定位对个性化敏感的模型层，探测事实风险，并仅在内部状态显示事实偏移时进行自适应调控。
+  research_impact: >-
+    FPPS 对应研究计划中的个性化记忆模块，说明累积的用户历史如何改变事实表征，以及如何控制这种偏移。
+  abstract: >-
+    个性化大语言模型会根据用户历史和偏好调整回答，但当用户特定情境与客观事实冲突时，个性化也可能误导事实判断。
+    FPPS 将这一问题视为长期用户记忆与事实知识在表征层面的相互影响。论文先定义个性化诱发的幻觉，再分析事实方向与个性化方向在隐藏状态中的纠缠。
+    在此基础上，FPPS 判断查询是否存在事实偏移风险，并只调节相关内部表征，从而保留有用的个性化行为，同时避免用户历史覆盖事实。
+  method_summary: >-
+    FPPS 分为三个步骤。第一步构造个性化事实场景，区分个性化有益与事实受损样本；第二步选择对个性化敏感的层，并训练探针识别事实受损状态；
+    第三步在推理时进行自适应调控。个性化与事实严重冲突时，FPPS-H 抑制个性化方向；信号较弱时，FPPS-S 加入事实导向的修正方向。
+    干预针对当前表征状态，不会统一移除所有个性化信息。
+  story_points:
+    - label: "问题"
+      title: "个性化也会带来事实风险"
+      body: >-
+        个性化助手需要记住用户历史，但当用户的信念或偏好与可验证事实冲突时，这份记忆可能使事实回答产生偏差。
+    - label: "机制"
+      title: "问题不只是提示词污染"
+      body: >-
+        论文从潜在状态的纠缠解释失效：个性化表征与事实表征可能相互耦合，方向并不正交。
+    - label: "干预"
+      title: "检测到事实偏移时再进行调控"
+      body: >-
+        FPPS 先通过层选择和探针判断个性化状态是否存在风险，再定向调整表征，而不是全面取消个性化。
+    - label: "证据"
+      title: "在更长用户历史和受控模拟中检验方法"
+      body: >-
+        实验考察用户历史变长时事实性能是否稳定，并在受控教学场景中检验干预效果。
+  figures:
+    - image: "/images/research/fpps-personalization-case-web.png"
+      label: "个性化诱发的幻觉"
+      role: "问题"
+      source: "Paper Fig. 1; latex/graphs/introduction.pdf"
+      layout: "two-column"
+      caption: >-
+        个性化模型可以更好地回答用户特定问题，但在用户历史与客观事实冲突时，也可能引入事实幻觉。
+      details:
+        - "这张图呈现论文研究的取舍：答案依赖用户时，个性化有用；用户历史与事实冲突时，个性化会造成伤害。"
+        - "需要区分个性化有益样本和事实受损样本。FPPS 保留前者，同时减少后者。"
+        - "在整体研究中，这是长时记忆引发的幻觉，问题由用户历史逐渐累积，并非来自单次检索或单步推理。"
+    - image: "/images/research/fpps-representation-entanglement.png"
+      label: "表征纠缠"
+      role: "机制"
+      source: "Paper Fig. 2; latex/graphs/empirical.pdf"
+      layout: "two-column"
+      caption: >-
+        个性化方向可能与事实表征不正交，使潜在状态偏向符合用户历史、却不符合事实的回答。
+      details:
+        - "论文把个性化诱发的幻觉解释为隐藏状态中的几何问题：事实方向与个性化方向没有被清楚分开。"
+        - "个性化方向把状态拉离事实方向时，模型可能更符合用户，却更不符合事实。"
+        - "事实偏移在最终答案之前已经出现在内部表征中，因此只过滤输出并不能解决问题。"
+    - image: "/images/research/fpps-method-framework.png"
+      label: "事实保持的个性化调控"
+      role: "方法"
+      source: "Paper Fig. 4; latex/graphs/methods.pdf"
+      layout: "wide"
+      caption: >-
+        FPPS 定位对个性化敏感的层，探测事实纠缠，并只在发现事实偏移时进行自适应调控。
+      details:
+        - "阶段 1 使用包含和不包含用户历史的配对输入，选择个性化对事实预测影响最强的模型层。"
+        - "阶段 2 在选定层训练轻量探针，区分事实受损状态和个性化有益状态。"
+        - "阶段 3 在推理时自适应调控：FPPS-H 抑制有害的个性化方向，FPPS-S 则混入保持事实的修正方向。"
+        - "方法只在内部状态显示事实风险时介入，不把所有个性化都当成问题。"
+    - image: "/images/research/fpps-history-llama31-8b.png"
+      label: "用户历史长度鲁棒性"
+      role: "结果"
+      source: "Paper Fig. 5a; latex/graphs/history_length/history_length_fscore_LLaMA3.1-8B.pdf"
+      layout: "wide"
+      caption: >-
+        随着用户历史增长，基础个性化模型的事实问答表现下降；FPPS-M 在不同模型骨干上保持了更稳定的事实性能。
+      details:
+        - "该实验检验更多用户历史进入上下文后，事实可靠性是否继续下降。"
+        - "基础模型曲线说明长历史会加重事实偏移，这与个性化具有长时间尺度风险的判断一致。"
+        - "FPPS-M 在更强记忆压力下保持事实性，说明表征机制诊断可以直接支持干预。"
+    - image: "/images/research/fpps-simulation-result.png"
+      label: "受控模拟"
+      role: "结果"
+      source: "Paper Fig. 6; latex/graphs/simulation_result_fpps.pdf"
+      layout: "two-column"
+      caption: >-
+        受控教学模拟显示个性化如何损害事实知识学习，以及 FPPS-M 如何缓解这种下降。
+      details:
+        - "模拟环境单独控制个性化教学信号，更容易观察用户历史何时改变事实知识的获得。"
+        - "这项结果补充了历史长度实验，用更受控的个性化过程检验机制。"
+        - "两组结果共同说明，个性化需要接受监测和调控，不能只追求更强的用户适配。"
+  figure_guide:
+    - image: "/images/research/fpps-personalization-case-web.png"
+      title: "个性化带来的事实取舍"
+      role: "问题"
+      source: "Paper Fig. 1; latex/graphs/introduction.pdf"
+      layout: "two-column"
+      summary: "个性化模型更擅长回答用户特定问题，但历史与客观事实冲突时也会产生事实幻觉。"
+      reading_guide:
+        - "图中区分了个性化有益行为和事实受损行为。"
+        - "FPPS 要保留有用的用户适配，同时防止记忆覆盖事实。"
+        - "在整体研究中，这对应长时记忆引发的幻觉。"
+    - image: "/images/research/fpps-representation-entanglement.png"
+      title: "事实方向与个性化方向发生纠缠"
+      role: "机制"
+      source: "Paper Fig. 2; latex/graphs/empirical.pdf"
+      layout: "two-column"
+      summary: "个性化方向与事实表征不正交时，潜在状态可能偏向符合用户历史但不可靠的回答。"
+      reading_guide:
+        - "论文将失效解释为隐藏状态的几何关系，而不只归因于提示词污染。"
+        - "个性化把状态拉离事实方向后，事实可靠性可能下降。"
+        - "因此，只在输出端过滤并不足够。"
+    - image: "/images/research/fpps-method-framework.png"
+      title: "事实保持的个性化调控"
+      role: "方法"
+      source: "Paper Fig. 4; latex/graphs/methods.pdf"
+      layout: "wide"
+      summary: "FPPS 选择个性化敏感层、探测事实风险，并在推理时自适应调控。"
+      reading_guide:
+        - "阶段 1 选择个性化对事实预测影响最明显的模型层。"
+        - "阶段 2 训练探针，区分事实受损状态与个性化有益状态。"
+        - "阶段 3 根据事实偏移程度采用 FPPS-H 或 FPPS-S。"
+        - "方法只在需要时干预，不会统一移除个性化信息。"
+    - image: "/images/research/fpps-history-llama31-8b.png"
+      title: "更长用户历史下的鲁棒性"
+      role: "结果"
+      source: "Paper Fig. 5a; latex/graphs/history_length/history_length_fscore_LLaMA3.1-8B.pdf"
+      layout: "wide"
+      summary: "实验检验用户历史增加后，事实可靠性是否继续下降。"
+      reading_guide:
+        - "更长的历史带来更强的记忆压力，也可能加剧事实偏移。"
+        - "对比结果检验 FPPS-M 能否在这种压力下保持事实性。"
+        - "图中的变化支持个性化风险会随历史累积的判断。"
+    - image: "/images/research/fpps-simulation-result.png"
+      title: "受控个性化模拟"
+      role: "结果"
+      source: "Paper Fig. 6; latex/graphs/simulation_result_fpps.pdf"
+      layout: "two-column"
+      summary: "模拟实验分离个性化教学信号对事实学习的影响，并检验 FPPS-M 的缓解效果。"
+      reading_guide:
+        - "该设置比自然用户历史提示更直接地控制个性化过程。"
+        - "它与历史长度实验互补，在干扰更少的条件下检验机制。"
+        - "两组结果都说明个性化应当受到监测和调控。"
+  result_sections:
+    - eyebrow: "发现 1"
+      title: "个性化提高用户适配时，也可能增加事实风险"
+      body: >-
+        根据用户历史调整模型可以改善用户特定任务，却可能损害客观事实问答。FPPS 通过区分个性化有益行为与事实受损行为，把这项取舍明确下来。
+    - eyebrow: "发现 2"
+      title: "失效来自表征纠缠"
+      body: >-
+        FPPS 将个性化诱发的幻觉视为长时记忆调制效应：用户偏好表征与事实表征发生耦合，在输出之前已经改变事实行为。
+    - eyebrow: "发现 3"
+      title: "推理时调控可以兼顾事实性与个性化"
+      body: >-
+        FPPS 先定位个性化敏感层、探测事实风险，再按需调控，从而减少事实偏移，同时保留个性化能力。
+  impact: >-
+    FPPS 为整体研究加入个性化记忆模块。相比单次 RAG 或单条推理链，它关注更长时间尺度上的问题：累积的用户历史如何改变事实表征和智能体行为。
+  citation: |
+    @inproceedings{sun2026personalization,
+      title={When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs},
+      author={Sun, Zhongxiang and Zhan, Yi and Shen, Chenglei and Yu, Weijie and Zhang, Xiao and He, Ming and Xu, Jun},
+      booktitle={Findings of the Association for Computational Linguistics: ACL 2026},
+      pages={8041--8060},
+      year={2026}
+    }
+  homepage_priority: 40
+  show_on_homepage: true
+
+- id: rearter
+  title: "ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding"
+  short_title: "ReARTeR"
+  venue: "SIGIR 2025"
+  role: "第一作者"
+  authors: "Zhongxiang Sun, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li"
+  layer: "元认知调控"
+  paper_url: "https://arxiv.org/abs/2501.07861"
+  project_url: "/zh/ReARTeR_Page/"
+  code_url: "https://github.com/Jeryi-Sun/ReARTeR"
+  teaser: "/images/research/rearter-teaser.png"
+  hero_image: "/images/research/rearter-rartpr-example.png"
+  one_liner: "面向可信多步检索增强推理的过程奖励框架。"
+  summary: >-
+    ReARTeR 从过程层面提高检索增强推理的可靠性。它结合标量过程奖励、与评分对齐的自然语言解释、考虑偏差的前瞻搜索和逐步后训练，
+    同时改进中间推理和最终答案。
+  research_question: "如何在测试时搜索和后训练过程中，为检索增强推理提供可信的全过程监督？"
+  motivation: >-
+    最终答案可能结论正确却缺少可靠依据，也可能因为前面的子查询、检索决策或推理步骤出错而失败。
+    长程智能体需要在推理过程中得到反馈。
+  approach: >-
+    ReARTeR 将检索增强推理拆分为中间步骤，用过程奖励信号指导测试时搜索和后训练。
+  research_impact: >-
+    ReARTeR 为元认知调控提供过程奖励基础，使训练和推理能够观察中间证据使用与推理质量。
+  abstract: >-
+    检索增强推理系统除了找到有用文档并给出最终答案，还需要保证中间推理可靠。
+    ReARTeR 为这类推理引入可信过程奖励，在整个执行过程中评估步骤质量、证据利用和推理一致性。
+  method_summary: >-
+    ReARTeR 将检索增强推理分解为若干中间步骤，并针对证据利用、步骤有效性和推理一致性给出可信过程反馈。
+    方法结合测试时搜索、过程奖励建模与后训练扩展，为后续元认知监测提供可实施的过程奖励基础。
+  figures:
+    - image: "/images/research/rearter-rartpr-example.png"
+      label: "RARTPR 示例"
+      role: "问题"
+      source: "Paper Fig. 1; samples/graph/intro.pdf"
+      layout: "two-column"
+      caption: >-
+        复杂多步问题需要拆分子查询、自适应检索、逐步推理和过程反馈，单次最终答案判断无法覆盖这些环节。
+    - image: "/images/research/rearter-test-time-scaling.png"
+      label: "测试时扩展"
+      role: "方法"
+      source: "Paper Fig. 2; samples/graph/model_graph_1.pdf"
+      layout: "wide"
+      caption: >-
+        ReARTeR 收集过程奖励训练数据，缓解早期步骤偏差，并在测试时搜索中对齐 PEM 解释与 PRM 分数。
+    - image: "/images/research/rearter-post-training-scaling.png"
+      label: "后训练扩展"
+      role: "方法"
+      source: "Paper Fig. 3; samples/graph/model_graph_2.pdf"
+      layout: "wide"
+      caption: >-
+        后训练阶段包含预热和逐步离线强化学习，用于改进检索增强推理行为。
+  figure_guide:
+    - image: "/images/research/rearter-rartpr-example.png"
+      title: "为什么最终答案监督过于粗略"
+      role: "问题"
+      source: "Paper Fig. 1; samples/graph/intro.pdf"
+      layout: "two-column"
+      summary: "复杂问题需要经过子查询拆分、检索、逐步思考和过程反馈。"
+      reading_guide:
+        - "可靠性取决于中间步骤，而不只取决于最终答案。"
+        - "错误子查询或缺乏证据的推理步骤都可能破坏最终回答。"
+        - "因此，监督信号需要进入推理轨迹内部。"
+    - image: "/images/research/rearter-test-time-scaling.png"
+      title: "在测试时使用过程奖励"
+      role: "方法"
+      source: "Paper Fig. 2; samples/graph/model_graph_1.pdf"
+      layout: "wide"
+      summary: "ReARTeR 收集过程奖励数据，并用评估器指导推理路径搜索。"
+      reading_guide:
+        - "过程奖励模型评估中间检索和推理步骤。"
+        - "训练数据偏差修正和解释对齐提高了过程评估的可信度。"
+        - "推理过程由步骤质量指导，而不是只按答案似然选择。"
+    - image: "/images/research/rearter-post-training-scaling.png"
+      title: "利用逐步反馈进行后训练"
+      role: "方法"
+      source: "Paper Fig. 3; samples/graph/model_graph_2.pdf"
+      layout: "wide"
+      summary: "预热和逐步离线强化学习把过程反馈转化为更可靠的检索增强推理行为。"
+      reading_guide:
+        - "这张图连接了过程评估与模型改进。"
+        - "逐步反馈为可信的中间行为提供训练信号。"
+        - "该方法为智能体监测和修复自身推理过程提供基础。"
+  result_sections:
+    - eyebrow: "发现 1"
+      title: "可信度需要在推理过程中评估"
+      body: >-
+        最终答案可能结论正确却理由错误，也可能因较早的无依据步骤而失败。ReARTeR 将监督放到中间证据使用和过程质量上。
+    - eyebrow: "发现 2"
+      title: "过程奖励连接解释与优化"
+      body: >-
+        逐步反馈既能定位推理过程的失效位置，也能作为训练和后训练目标。
+    - eyebrow: "发现 3"
+      title: "过程奖励为元认知调控提供基础"
+      body: >-
+        中间失效变得可见后，智能体才有条件监测、诊断并修复自己的执行过程。
+  impact: >-
+    ReARTeR 是元认知调控层的过程奖励基础。它把检索增强推理从最终答案任务转化为可监督、可监测、可改进的执行过程。
+  citation: |
+    @inproceedings{sun2025rearter,
+      title={ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding},
+      author={Sun, Zhongxiang and Wang, Qipeng and Yu, Weijie and Zang, Xiaoxue and Zheng, Kai and Xu, Jun and Zhang, Xiao and Song, Yang and Li, Han},
+      booktitle={Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+      pages={1251--1261},
+      year={2025}
+    }
+  homepage_priority: 50
+  show_on_homepage: true
+
+- id: mcm_ds
+  title: "Deep Search with Hierarchical Meta-Cognitive Monitoring Inspired by Cognitive Neuroscience"
+  short_title: "DS-MCM"
+  venue: "SIGIR 2026"
+  role: "第一作者"
+  authors: "Zhongxiang Sun, Qipeng Wang, Weijie Yu, Jingxuan Yang, Haolang Lu, Jun Xu"
+  layer: "元认知调控"
+  paper_url: "https://arxiv.org/abs/2601.23188"
+  project_url: "/zh/MCM_DS_Page/"
+  code_url: "https://github.com/ChangWang9/MC-DSA"
+  teaser: "/images/research/mcm-ds-teaser.png"
+  hero_image: "/images/research/mcm-ds-hierarchical-monitoring-web.png"
+  one_liner: "校准推理不确定性与证据不确定性，并按需触发经验驱动纠错的深度搜索框架。"
+  summary: >-
+    DS-MCM 将元认知监测引入长程搜索智能体。框架加入快速监测、较慢的反思诊断和经验更新，
+    使智能体能够发现异常、分析原因、修正执行，并在后续任务中复用经验。
+  research_question: "深度搜索智能体如何在长程任务中监测自身执行、诊断错误并及时修正行为？"
+  motivation: >-
+    深度搜索智能体需要在不断变化、不完整甚至互相冲突的证据中交替检索和推理。
+    要保证执行可靠，系统必须明确监测内部置信度是否与外部证据相匹配。
+  approach: >-
+    DS-MCM 在深度搜索循环中加入快速一致性监测、经验驱动的慢速诊断、纠正建议和可选的在线记忆整合。
+  research_impact: >-
+    DS-MCM 对应研究计划中的长程调控层，把机制理解落实为元认知监测、纠错与可复用的控制知识。
+  abstract: >-
+    深度搜索智能体在部分或冲突证据下持续检索和推理，容易出现长程可靠性问题。
+    DS-MCM 引入分层元认知监测，使搜索智能体能够发现异常状态、反思原因、修正执行并更新经验。
+  method_summary: >-
+    框架在检索、推理、反馈理解和经验更新之上增加监测层。快速一致性监测器发现检索证据不确定性与推理不确定性之间的局部失配；
+    较慢的经验驱动监测器进一步诊断原因，决定重新搜索还是重新规划，并把纠正经验保存到后续任务中。
+  figures:
+    - image: "/images/research/mcm-ds-hierarchical-monitoring-web.png"
+      label: "分层元认知监测"
+      role: "问题"
+      source: "Paper Fig. 1; graphs/introduction.pdf"
+      layout: "two-column"
+      caption: >-
+        论文将人类快速与慢速监测的思路用于深度搜索智能体，并说明常规搜索循环为何缺少发现和纠正认知错误的显式机制。
+    - image: "/images/research/mcm-ds-method-framework.png"
+      label: "DS-MCM 执行流程"
+      role: "方法"
+      source: "Paper Fig. 2; graphs/method.pdf"
+      layout: "wide"
+      caption: >-
+        DS-MCM 在 ReAct 式深度搜索循环中加入快速一致性监测器、慢速经验驱动监测器、纠正建议和可选的在线记忆整合。
+    - image: "/images/research/mcm-ds-sensitivity-entropy.png"
+      label: "敏感性分析"
+      role: "结果"
+      source: "Paper Fig. 3a; graphs/sensitivity_entropy_threshold.pdf"
+      layout: "wide"
+      caption: >-
+        敏感性实验考察主要超参数，检验监测机制是否依赖某一个固定设置。
+  figure_guide:
+    - image: "/images/research/mcm-ds-hierarchical-monitoring-web.png"
+      title: "为什么深度搜索智能体需要监测"
+      role: "问题"
+      source: "Paper Fig. 1; graphs/introduction.pdf"
+      layout: "two-column"
+      summary: "图中把快速与慢速监测思路用于深度搜索智能体，并说明普通搜索循环的不足。"
+      reading_guide:
+        - "深度搜索智能体在执行中可能偏离目标、误读证据或不断累积矛盾。"
+        - "快速监测发现局部不一致，慢速监测负责进一步诊断。"
+        - "DS-MCM 位于常规 ReAct 式执行之上，承担元认知调控。"
+    - image: "/images/research/mcm-ds-method-framework.png"
+      title: "DS-MCM 执行流程"
+      role: "方法"
+      source: "Paper Fig. 2; graphs/method.pdf"
+      layout: "wide"
+      summary: "方法加入快速一致性监测、慢速经验驱动监测、纠正建议和可选的在线记忆整合。"
+      reading_guide:
+        - "快速监测器比较推理不确定性和检索证据不确定性。"
+        - "慢速监测器诊断原因，并决定重新搜索、修改当前步骤或重新规划。"
+        - "经验更新把一次失败转化为后续任务可以调用的控制知识。"
+    - image: "/images/research/mcm-ds-sensitivity-entropy.png"
+      title: "检验监测机制的鲁棒性"
+      role: "结果"
+      source: "Paper Fig. 3a; graphs/sensitivity_entropy_threshold.pdf"
+      layout: "wide"
+      summary: "敏感性分析检查监测机制是否依赖脆弱的单一超参数设置。"
+      reading_guide:
+        - "实验给出 DS-MCM 在不同运行设置下的表现。"
+        - "图中的变化说明哪些参数会影响监测行为。"
+        - "该结果把元认知设计与实际运行稳定性联系起来。"
+  result_sections:
+    - eyebrow: "发现 1"
+      title: "长程搜索需要持续监测执行过程"
+      body: >-
+        搜索智能体可能在执行中偏离目标、证据不足、误读反馈或积累矛盾，最后仍给出很有把握的回答。因此，控制必须进入过程内部。
+    - eyebrow: "发现 2"
+      title: "快速监测与慢速反思分别承担发现和诊断"
+      body: >-
+        DS-MCM 将局部异常检测和经验支持的原因诊断分开，使智能体可以正常继续，也可以在需要时修改后续执行。
+    - eyebrow: "发现 3"
+      title: "经验更新形成可复用的控制知识"
+      body: >-
+        框架使智能体从被动生成下一步，转向评估自身状态、纠正当前执行，并在后续任务中使用已有经验。
+  impact: >-
+    DS-MCM 是整体研究中的长程调控层。它把“智能体应监测自身状态、诊断失效原因并主动纠正执行”落实为可运行的方法。
+  citation: |
+    @inproceedings{sun2026deep,
+      title={Deep Search with Hierarchical Meta-Cognitive Monitoring Inspired by Cognitive Neuroscience},
+      author={Sun, Zhongxiang and Wang, Qipeng and Yu, Weijie and Yang, Jingxuan and Lu, Haolang and Xu, Jun},
+      booktitle={Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+      doi={10.1145/3805712.3809549},
+      year={2026}
+    }
+  homepage_priority: 60
+  show_on_homepage: true

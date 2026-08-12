@@ -2,31 +2,31 @@
   authors: "Jiahao Zhao, Xiaomin Yu, Zhongxiang Sun, Fengwei Teng, Chengwei Qin, Xiaobin Hu, Jun Xu, Shuicheng Yan"
   venue: "arXiv 2026"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://arxiv.org/abs/2608.04436"
     - label: "Hugging Face"
       url: "https://huggingface.co/papers/2608.04436"
-    - label: "recognition"
+    - label: "入选记录"
       url: "https://huggingface.co/papers/date/2026-08-06"
-  highlight: "#1 Paper of the Day on Hugging Face (August 6, 2026)."
+  highlight: "2026 年 8 月 6 日位列 Hugging Face Paper of the Day 第 1 名。"
 
 - title: "NeuroCogMap Reveals Cognitive Organization of Large Language Models"
   authors: "Zhongxiang Sun, Haolang Lu, Qiang Ma, Qi Li, Qipeng Wang, Liang Pang, Chenyu Liu, Qiankun Li, Hao Sun, Kun Wang, Yi Zeng, Jun Xu, Guoqi Li, Ji-Rong Wen"
   venue: "arXiv 2026"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://arxiv.org/abs/2607.00397"
-    - label: "project"
+    - label: "项目主页"
       url: "https://neurocogmap.site/"
-    - label: "code"
+    - label: "代码"
       url: "https://github.com/Jeryi-Sun/NeuroCogMap"
-  highlight: "A system-level map of functional organization, model pathology, human cortical correspondence, and cognitive-model discovery."
+  highlight: "构建系统级图谱，分析功能组织、模型病理、人类皮层对应关系与认知模型发现。"
 
 - title: "Towards Understanding Continual Factual Knowledge Acquisition of Language Models: From Theory to Algorithm"
   authors: "Haoyu Wang, Yifan Shang, Zhongxiang Sun, Weijie Yu, Xiao Zhang, Jun Xu"
   venue: "ICML 2026"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://arxiv.org/pdf/2605.10640"
   highlight: ""
 
@@ -34,17 +34,17 @@
   authors: "Zhongxiang Sun, Yi Zhan, Chenglei Shen, Weijie Yu, Xiao Zhang, Ming He, Jun Xu"
   venue: "ACL 2026 Findings"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://aclanthology.org/2026.findings-acl.395/"
-    - label: "code"
+    - label: "代码"
       url: "https://github.com/zhengyi-ai/ACL2026"
-  highlight: "Personalization-induced hallucination and FPPS mitigation."
+  highlight: "研究个性化诱发的幻觉，并提出 FPPS 缓解方法。"
 
 - title: "DLLM-Searcher: Adapting Diffusion Large Language Model for Search Agents"
-  authors: "Jiahao Zhao*, Shaoxuan Xu*, Zhongxiang Sun (equal first + project leader), Fengqi Zhu, Jingyang Ou, Yuling Shi, Chongxuan Li, Xiao Zhang, Jun Xu"
+  authors: "Jiahao Zhao*, Shaoxuan Xu*, Zhongxiang Sun（共同一作、项目负责人）, Fengqi Zhu, Jingyang Ou, Yuling Shi, Chongxuan Li, Xiao Zhang, Jun Xu"
   venue: "SIGIR 2026"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://arxiv.org/pdf/2602.07035"
   highlight: ""
 
@@ -52,33 +52,33 @@
   authors: "Zhongxiang Sun, Qipeng Wang, Weijie Yu, Jingxuan Yang, Haolang Lu, Jun Xu"
   venue: "SIGIR 2026"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://arxiv.org/pdf/2601.23188"
-    - label: "code"
+    - label: "代码"
       url: "https://github.com/ChangWang9/MC-DSA"
-  highlight: "Meta-cognitive monitoring for deep-search agents."
+  highlight: "面向深度搜索智能体的元认知监测。"
 
 - title: "Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models"
   authors: "Zhongxiang Sun, Qipeng Wang, Haoyu Wang, Xiao Zhang, Jun Xu"
   venue: "ICLR 2026"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://openreview.net/pdf?id=XU2STJa1Fi"
-    - label: "code"
+    - label: "代码"
       url: "https://github.com/Jeryi-Sun/Reasoning_Hallucination"
-  highlight: "RHD and GRPO-R for reasoning hallucination."
+  highlight: "使用 RHD 与 GRPO-R 研究推理幻觉。"
 
 - title: "ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding"
   authors: "Zhongxiang Sun, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li"
   venue: "SIGIR 2025"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://arxiv.org/abs/2501.07861"
-    - label: "code"
+    - label: "代码"
       url: "https://github.com/Jeryi-Sun/ReARTeR"
-    - label: "highlight"
+    - label: "入选信息"
       url: "https://www.paperdigest.org/2026/03/most-influential-sigir-papers-2026-03-version/"
-  highlight: "Paper Digest Most Influential SIGIR Papers list."
+  highlight: "入选 Paper Digest 最具影响力 SIGIR 论文榜单。"
 
 - title: "CreAgent: Towards Long-Term Evaluation of Recommender System under Platform-Creator Information Asymmetry"
   authors: "Xiaopeng Ye, Chen Xu, Zhongxiang Sun, Jun Xu, Gang Wang, Zhenhua Dong, Ji-Rong Wen"
@@ -90,17 +90,17 @@
   authors: "Zhongxiang Sun, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Weijie Yu, Yang Song, Han Li"
   venue: "ICLR 2025"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://arxiv.org/pdf/2410.11414"
-    - label: "code"
+    - label: "代码"
       url: "https://github.com/Jeryi-Sun/ReDEeP-ICLR"
-  highlight: "Spotlight."
+  highlight: "Spotlight 论文。"
 
 - title: "LargePiG: Your Large Language Model is Secretly a Pointer Generator"
   authors: "Zhongxiang Sun, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu"
   venue: "WWW 2025"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://arxiv.org/pdf/2410.11366"
   highlight: ""
 
@@ -114,31 +114,31 @@
   authors: "Zihua Si, Zhongxiang Sun, Jiale Chen, Guozhang Chen, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu, Kun Gai"
   venue: "SIGIR-AP 2024"
   links: []
-  highlight: "Best Paper Award."
+  highlight: "最佳论文奖。"
 
 - title: "Large Language Models Enhanced Collaborative Filtering"
   authors: "Zhongxiang Sun, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu"
   venue: "CIKM 2024"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://arxiv.org/abs/2403.17688"
-    - label: "highlight"
+    - label: "入选信息"
       url: "https://resources.paperdigest.org/2026/03/most-influential-cikm-papers-2026-03-version/"
-  highlight: "Paper Digest Most Influential CIKM Papers list."
+  highlight: "入选 Paper Digest 最具影响力 CIKM 论文榜单。"
 
 - title: "Twin v2: Scaling Ultra-Long User Behavior Sequence Modeling for Enhanced CTR Prediction at Kuaishou"
   authors: "Zihua Si, Lin Guan, Zhongxiang Sun, Xiaoxue Zang, et al."
   venue: "CIKM 2024 ADS"
   links:
-    - label: "highlight"
+    - label: "入选信息"
       url: "https://resources.paperdigest.org/2026/03/most-influential-cikm-papers-2026-03-version/"
-  highlight: "Paper Digest Most Influential CIKM Papers list."
+  highlight: "入选 Paper Digest 最具影响力 CIKM 论文榜单。"
 
 - title: "Effective In-Context Example Selection through Data Compression"
   authors: "Zhongxiang Sun, Kepu Zhang*, Haoyu Wang, Xiao Zhang, Jun Xu"
   venue: "ACL 2024 Findings Short"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "/files/Effective_In_Context_Example_Selection_through_Data_Compression__ACL_.pdf"
   highlight: ""
 
@@ -146,7 +146,7 @@
   authors: "Zhongxiang Sun, Zihua Si, Xiao Zhang, Xiaoxue Zang, Yang Song, Hongteng Xu, Jun Xu"
   venue: "SIGIR 2024"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://arxiv.org/abs/2404.03267"
   highlight: ""
 
@@ -160,7 +160,7 @@
   authors: "Zhongxiang Sun, Weijie Yu, Zihua Si, Jun Xu, Zhenhua Dong, Xu Chen, Hongteng Xu, Ji-Rong Wen"
   venue: "TKDE 2023"
   links:
-    - label: "paper"
+    - label: "论文"
       url: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10285038"
   highlight: ""
 

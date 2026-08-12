@@ -25,6 +25,15 @@
   }
 }
 
+html[lang="zh"] .research-page {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+
+  p,
+  li {
+    line-height: 1.75;
+  }
+}
+
 .research-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.8fr);

@@ -16,10 +16,13 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "_data" / "research_projects.yml"
 BLOGS_PATH = ROOT / "_data" / "research_project_blogs.yml"
+PROJECTS_ZH_PATH = ROOT / "_data" / "research_projects_zh.yml"
+BLOGS_ZH_PATH = ROOT / "_data" / "research_project_blogs_zh.yml"
 MANIFEST_PATH = ROOT / "_data" / "optimized_images.yml"
 
 PROFILE_IMAGE = "/images/profile.png"
 PROGRAM_OVERVIEW = "/images/research/cognitive-neuroscience-overview-en.png"
+PROGRAM_OVERVIEW_ZH = "/images/research/cognitive-neuroscience-overview-zh.png"
 KIB = 1024
 MIB = 1024 * KIB
 
@@ -59,7 +62,7 @@ def optimized_public_path(public_path: str) -> str:
 def rule_for(public_path: str, category: str) -> ImageRule:
     if public_path == PROFILE_IMAGE:
         return RULES["profile"]
-    if public_path == PROGRAM_OVERVIEW:
+    if public_path in {PROGRAM_OVERVIEW, PROGRAM_OVERVIEW_ZH}:
         return RULES["overview"]
     if category == "teaser" or Path(public_path).stem.endswith("-teaser"):
         return RULES["teaser"]
@@ -69,28 +72,34 @@ def rule_for(public_path: str, category: str) -> ImageRule:
 def collect_assets():
     projects = load_yaml(PROJECTS_PATH)
     blogs = load_yaml(BLOGS_PATH)
-    projects_by_id = {project["id"]: project for project in projects}
+    localized_sets = [
+        (projects, blogs),
+        (load_yaml(PROJECTS_ZH_PATH), load_yaml(BLOGS_ZH_PATH)),
+    ]
 
     assets = {
         PROFILE_IMAGE: "profile",
         PROGRAM_OVERVIEW: "overview",
+        PROGRAM_OVERVIEW_ZH: "overview",
     }
-    for project in projects:
-        teaser = project.get("teaser")
-        if teaser:
-            assets[teaser] = "teaser"
+    for localized_projects, localized_blogs in localized_sets:
+        projects_by_id = {project["id"]: project for project in localized_projects}
+        for project in localized_projects:
+            teaser = project.get("teaser")
+            if teaser:
+                assets[teaser] = "teaser"
 
-    for blog in blogs:
-        project = projects_by_id.get(blog.get("id"))
-        if project and project.get("teaser"):
-            assets[project["teaser"]] = "teaser"
-        for section in blog.get("narrative_sections", []):
-            figure = section.get("figure") or section.get("image")
-            if figure:
-                assets.setdefault(figure, "figure")
-            for panel in section.get("panels", []):
-                if panel.get("image"):
-                    assets.setdefault(panel["image"], "figure")
+        for blog in localized_blogs:
+            project = projects_by_id.get(blog.get("id"))
+            if project and project.get("teaser"):
+                assets[project["teaser"]] = "teaser"
+            for section in blog.get("narrative_sections", []):
+                figure = section.get("figure") or section.get("image")
+                if figure:
+                    assets.setdefault(figure, "figure")
+                for panel in section.get("panels", []):
+                    if panel.get("image"):
+                        assets.setdefault(panel["image"], "figure")
 
     return dict(sorted(assets.items())), projects, blogs
 

@@ -3,6 +3,8 @@ layout: research
 title: "Cognitive Neuroscience of AI Agents"
 permalink: /research/cognitive-neuroscience/
 author_profile: false
+lang: en
+lang_switch_url: /zh/research/cognitive-neuroscience/
 redirect_from:
   - /research/ai-cognitive-neuroscience/
 ---

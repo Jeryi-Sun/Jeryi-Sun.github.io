@@ -462,6 +462,27 @@
     white-space: nowrap;
   }
 
+  .mobile-nav__actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .language-switch--mobile {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 11px;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius;
+    color: $primary-color;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
   .mobile-nav__details {
     position: relative;
     flex: 0 0 auto;

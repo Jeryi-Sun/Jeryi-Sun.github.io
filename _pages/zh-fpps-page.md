@@ -1,11 +1,11 @@
 ---
 layout: research
 title: "FPPS"
-permalink: /FPPS_Page/
+permalink: /zh/FPPS_Page/
 author_profile: false
 project_id: fpps
-lang: en
-lang_switch_url: /zh/FPPS_Page/
+lang: zh
+lang_switch_url: /FPPS_Page/
 ---
 
 {% include research-project-content.html %}

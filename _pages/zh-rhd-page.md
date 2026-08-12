@@ -1,11 +1,11 @@
 ---
 layout: research
 title: "RHD / GRPO-R"
-permalink: /RHD_Page/
+permalink: /zh/RHD_Page/
 author_profile: false
 project_id: rhd
-lang: en
-lang_switch_url: /zh/RHD_Page/
+lang: zh
+lang_switch_url: /RHD_Page/
 ---
 
 {% include research-project-content.html %}

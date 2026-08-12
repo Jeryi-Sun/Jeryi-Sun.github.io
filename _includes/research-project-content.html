@@ -1,29 +1,48 @@
+{% assign is_zh = false %}
+{% if page.lang == "zh" %}{% assign is_zh = true %}{% endif %}
+{% if is_zh %}
+  {% assign project_collection = site.data.research_projects_zh %}
+  {% assign blog_collection = site.data.research_project_blogs_zh %}
+{% else %}
+  {% assign project_collection = site.data.research_projects %}
+  {% assign blog_collection = site.data.research_project_blogs %}
+{% endif %}
 {% assign project = nil %}
-{% for item in site.data.research_projects %}
+{% for item in project_collection %}
   {% if item.id == page.project_id %}
     {% assign project = item %}
   {% endif %}
 {% endfor %}
 
-{% if project %}
 {% assign project_blog = nil %}
-{% for item in site.data.research_project_blogs %}
+{% for item in blog_collection %}
   {% if item.id == page.project_id %}
     {% assign project_blog = item %}
   {% endif %}
 {% endfor %}
+{% if project and project_blog %}
 {% assign narrative_sections = project_blog.narrative_sections | default: project_blog.figure_guide %}
 
-<nav class="research-toc" aria-label="Project contents">
-  <span>Contents</span>
-  <a href="#research-question">Question</a>
+<nav class="research-toc" aria-label="{% if is_zh %}项目目录{% else %}Project contents{% endif %}">
+  <span>{% if is_zh %}目录{% else %}Contents{% endif %}</span>
+  <a href="#research-question">{% if is_zh %}问题{% else %}Question{% endif %}</a>
   {% for section in narrative_sections %}
-    <a href="#walkthrough-{{ forloop.index }}">{{ section.toc_label | default: section.role | default: section.title }}</a>
+    {% assign toc_label = section.toc_label | default: section.role | default: section.title %}
+    {% if is_zh and section.toc_label == nil %}
+      {% case section.role %}
+        {% when "Problem" %}{% assign toc_label = "问题" %}
+        {% when "Mechanism" %}{% assign toc_label = "机制" %}
+        {% when "Method" %}{% assign toc_label = "方法" %}
+        {% when "Results" %}{% assign toc_label = "结果" %}
+        {% when "Controlled Study" %}{% assign toc_label = "受控实验" %}
+      {% endcase %}
+    {% endif %}
+    <a href="#walkthrough-{{ forloop.index }}">{{ toc_label }}</a>
   {% endfor %}
-  {% if project_blog.main_results %}<a href="#main-results">Main results</a>{% endif %}
-  <a href="#takeaways">Takeaways</a>
-  <a href="#research-impact">Impact</a>
-  <a href="#resources">Resources</a>
+  {% if project_blog.main_results %}<a href="#main-results">{% if is_zh %}主要结果{% else %}Main results{% endif %}</a>{% endif %}
+  <a href="#takeaways">{% if is_zh %}主要结论{% else %}Takeaways{% endif %}</a>
+  <a href="#research-impact">{% if is_zh %}研究价值{% else %}Impact{% endif %}</a>
+  <a href="#resources">{% if is_zh %}资源{% else %}Resources{% endif %}</a>
 </nav>
 
 <section class="research-hero research-hero--project">
@@ -38,12 +57,12 @@
     </div>
     <div class="research-link-row">
       {% if project.paper_url and project.paper_url != "" %}
-        <a class="research-button" href="{{ project.paper_url }}">Paper</a>
+        <a class="research-button" href="{{ project.paper_url }}">{% if is_zh %}论文{% else %}Paper{% endif %}</a>
       {% endif %}
       {% if project.code_url and project.code_url != "" %}
-        <a class="research-button research-button--secondary" href="{{ project.code_url }}">Code</a>
+        <a class="research-button research-button--secondary" href="{{ project.code_url }}">{% if is_zh %}代码{% else %}Code{% endif %}</a>
       {% endif %}
-      <a class="research-button research-button--secondary" href="/research/cognitive-neuroscience/">Research Program</a>
+      <a class="research-button research-button--secondary" href="{% if is_zh %}/zh/research/cognitive-neuroscience/{% else %}/research/cognitive-neuroscience/{% endif %}">{% if is_zh %}研究计划{% else %}Research Program{% endif %}</a>
     </div>
   </div>
   {% if project.teaser and project.teaser != "" %}
@@ -54,7 +73,7 @@
 </section>
 
 <section class="research-section research-question" id="research-question">
-  <p class="research-section-label">Research Question</p>
+  <p class="research-section-label">{% if is_zh %}研究问题{% else %}Research Question{% endif %}</p>
   <h2>{{ project.one_liner }}</h2>
   <div class="research-callout">
     <p>{{ project.research_question }}</p>
@@ -64,20 +83,30 @@
 {% if narrative_sections %}
 <section class="research-section research-walkthrough" id="paper-walkthrough">
   <div class="research-walkthrough__intro">
-    <p class="research-section-label">Paper Walkthrough</p>
-    <h2>From the research problem to mechanism and evidence</h2>
-    <p>The figures below follow their order in the paper. Each section connects the figure to the question it resolves and the conclusion it supports.</p>
+    <p class="research-section-label">{% if is_zh %}论文解读{% else %}Paper Walkthrough{% endif %}</p>
+    <h2>{% if is_zh %}从研究问题到机制与证据{% else %}From the research problem to mechanism and evidence{% endif %}</h2>
+    <p>{% if is_zh %}下面按论文的图表顺序展开。每一节都说明这张图回答了什么问题，又支持了哪一步结论。{% else %}The figures below follow their order in the paper. Each section connects the figure to the question it resolves and the conclusion it supports.{% endif %}</p>
   </div>
 
   <div class="research-narrative-list">
     {% for section in narrative_sections %}
     {% assign section_layout = section.layout | default: "wide" %}
     {% assign section_image = section.figure | default: section.image %}
+    {% assign section_role = section.role %}
+    {% if is_zh %}
+      {% case section.role %}
+        {% when "Problem" %}{% assign section_role = "问题" %}
+        {% when "Mechanism" %}{% assign section_role = "机制" %}
+        {% when "Method" %}{% assign section_role = "方法" %}
+        {% when "Results" %}{% assign section_role = "结果" %}
+        {% when "Controlled Study" %}{% assign section_role = "受控实验" %}
+      {% endcase %}
+    {% endif %}
     <article class="research-narrative research-narrative--{{ section_layout }}" id="walkthrough-{{ forloop.index }}">
       <header class="research-narrative__header">
         <span class="research-narrative__number">{{ forloop.index }}</span>
         <div>
-          <p class="research-figure-role">{{ section.role }}</p>
+          <p class="research-figure-role">{{ section_role }}</p>
           <h3>{{ section.title }}</h3>
           <p class="research-narrative__summary">{{ section.summary }}</p>
         </div>
@@ -89,14 +118,14 @@
         <div class="research-figure-panel-grid research-figure-panel-grid--{{ panel_layout }}">
           {% for panel in section.panels %}
           <div class="research-figure-panel">
-            {% capture panel_alt %}{{ project.short_title }} {{ section.title }} {{ panel.label | default: forloop.index }} panel{% endcapture %}
+            {% capture panel_alt %}{{ project.short_title }} {{ section.title }} {{ panel.label | default: forloop.index }}{% if is_zh %}子图{% else %} panel{% endif %}{% endcapture %}
             {% include optimized-image.html src=panel.image alt=panel_alt loading="lazy" %}
             {% if panel.label %}<p><strong>{{ panel.label }}</strong></p>{% endif %}
           </div>
           {% endfor %}
         </div>
         {% else %}
-        {% capture section_alt %}{{ project.short_title }} {{ section.title }} figure{% endcapture %}
+        {% capture section_alt %}{{ project.short_title }} {{ section.title }}{% if is_zh %}图示{% else %} figure{% endif %}{% endcapture %}
         {% include optimized-image.html src=section_image alt=section_alt loading="lazy" %}
         {% endif %}
       </figure>
@@ -108,7 +137,7 @@
         {% assign reading_guide = section.reading_guide | default: section.details %}
         {% if reading_guide %}
         <div class="research-reading-guide">
-          <strong>How to read this figure</strong>
+          <strong>{% if is_zh %}读图要点{% else %}How to read this figure{% endif %}</strong>
           <ul>
             {% for detail in reading_guide %}<li>{{ detail }}</li>{% endfor %}
           </ul>
@@ -124,7 +153,7 @@
 {% if project_blog.main_results %}
 {% assign main_results = project_blog.main_results %}
 <section class="research-section research-main-results" id="main-results">
-  <p class="research-section-label">Experimental Evidence</p>
+  <p class="research-section-label">{% if is_zh %}实验证据{% else %}Experimental Evidence{% endif %}</p>
   <h2>{{ main_results.title }}</h2>
   <p class="research-main-results__summary">{{ main_results.summary }}</p>
 
@@ -153,7 +182,7 @@
 
   {% if main_results.insights %}
   <div class="research-result-insights">
-    <h3>What the results show</h3>
+    <h3>{% if is_zh %}结果说明了什么{% else %}What the results show{% endif %}</h3>
     <ul>{% for insight in main_results.insights %}<li>{{ insight }}</li>{% endfor %}</ul>
   </div>
   {% endif %}
@@ -161,8 +190,8 @@
 {% endif %}
 
 <section class="research-section" id="takeaways">
-  <p class="research-section-label">Main Takeaways</p>
-  <h2>What this project establishes</h2>
+  <p class="research-section-label">{% if is_zh %}主要结论{% else %}Main Takeaways{% endif %}</p>
+  <h2>{% if is_zh %}这项工作得到了什么{% else %}What this project establishes{% endif %}</h2>
   <div class="research-takeaway-list">
     {% for result in project_blog.key_findings %}
     <article>
@@ -177,8 +206,8 @@
 </section>
 
 <section class="research-section" id="research-impact">
-  <p class="research-section-label">Research Impact</p>
-  <h2>Position in the broader research program</h2>
+  <p class="research-section-label">{% if is_zh %}研究价值{% else %}Research Impact{% endif %}</p>
+  <h2>{% if is_zh %}在整体研究计划中的位置{% else %}Position in the broader research program{% endif %}</h2>
   {% if project_blog and project_blog.research_impact %}
     <div class="research-callout research-callout--blog">
       {% for paragraph in project_blog.research_impact %}<p>{{ paragraph }}</p>{% endfor %}
@@ -189,17 +218,17 @@
 </section>
 
 <section class="research-section" id="resources">
-  <h2>Resources and Citation</h2>
+  <h2>{% if is_zh %}资源与引用{% else %}Resources and Citation{% endif %}</h2>
   <div class="research-link-row">
-    {% if project.paper_url and project.paper_url != "" %}<a class="research-button" href="{{ project.paper_url }}">Paper</a>{% endif %}
-    {% if project.code_url and project.code_url != "" %}<a class="research-button research-button--secondary" href="{{ project.code_url }}">Code</a>{% endif %}
-    <a class="research-button research-button--secondary" href="/publications/">Full Publication List</a>
+    {% if project.paper_url and project.paper_url != "" %}<a class="research-button" href="{{ project.paper_url }}">{% if is_zh %}论文{% else %}Paper{% endif %}</a>{% endif %}
+    {% if project.code_url and project.code_url != "" %}<a class="research-button research-button--secondary" href="{{ project.code_url }}">{% if is_zh %}代码{% else %}Code{% endif %}</a>{% endif %}
+    <a class="research-button research-button--secondary" href="{% if is_zh %}/zh/publications/{% else %}/publications/{% endif %}">{% if is_zh %}完整论文列表{% else %}Full Publication List{% endif %}</a>
   </div>
   {% if project.citation and project.citation != "" %}<pre class="research-citation">{{ project.citation | escape }}</pre>{% endif %}
 </section>
 {% else %}
 <section class="research-section">
-  <h1>Project Not Found</h1>
-  <p>The requested project id does not match an entry in <code>_data/research_projects.yml</code>.</p>
+  <h1>{% if is_zh %}未找到项目{% else %}Project Not Found{% endif %}</h1>
+  <p>{% if is_zh %}当前项目 ID 在项目数据中没有对应条目。{% else %}The requested project id does not match an entry in <code>_data/research_projects.yml</code>.{% endif %}</p>
 </section>
 {% endif %}

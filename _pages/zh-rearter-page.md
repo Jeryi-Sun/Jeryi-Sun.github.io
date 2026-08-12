@@ -1,11 +1,11 @@
 ---
 layout: research
 title: "ReARTeR"
-permalink: /ReARTeR_Page/
+permalink: /zh/ReARTeR_Page/
 author_profile: false
 project_id: rearter
-lang: en
-lang_switch_url: /zh/ReARTeR_Page/
+lang: zh
+lang_switch_url: /ReARTeR_Page/
 ---
 
 {% include research-project-content.html %}

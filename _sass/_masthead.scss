@@ -50,6 +50,28 @@
     padding-right: 2em;
     font-weight: 700;
   }
+
+  &--language a {
+    min-width: 58px;
+    margin-left: 1.15rem;
+    padding: 0.42rem 0.72rem !important;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius;
+    color: $primary-color;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+
+    &:before {
+      display: none;
+    }
+
+    &:hover {
+      background: mix(#fff, $primary-color, 92%);
+      color: $primary-color;
+    }
+  }
 }
 
 @media (max-width: 760px) {

@@ -1,11 +1,11 @@
 ---
 layout: research
 title: "ReDeEP"
-permalink: /ReDeEP_Page/
+permalink: /zh/ReDeEP_Page/
 author_profile: false
 project_id: redeep
-lang: en
-lang_switch_url: /zh/ReDeEP_Page/
+lang: zh
+lang_switch_url: /ReDeEP_Page/
 ---
 
 {% include research-project-content.html %}

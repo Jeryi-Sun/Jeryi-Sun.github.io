@@ -17,6 +17,15 @@
   quality: 95
   webp: /images/optimized/research/cognitive-neuroscience-overview-en.webp
   width: 1600
+/images/research/cognitive-neuroscience-overview-zh.png:
+  bytes: 195744
+  category: overview
+  digest: d0da31aad8e5
+  height: 900
+  lossless: false
+  quality: 95
+  webp: /images/optimized/research/cognitive-neuroscience-overview-zh.webp
+  width: 1600
 /images/research/fpps-controlled-simulation.png:
   bytes: 526620
   category: figure

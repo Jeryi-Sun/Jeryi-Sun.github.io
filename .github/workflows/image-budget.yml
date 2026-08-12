@@ -7,12 +7,16 @@ on:
     paths:
       - "images/**"
       - "_data/research_projects.yml"
+      - "_data/research_projects_zh.yml"
       - "_data/research_project_blogs.yml"
+      - "_data/research_project_blogs_zh.yml"
       - "_data/optimized_images.yml"
       - "_includes/optimized-image.html"
       - "_includes/research-project-content.html"
       - "_pages/about.md"
+      - "_pages/zh-about.md"
       - "_pages/cognitive-neuroscience.md"
+      - "_pages/zh-cognitive-neuroscience.md"
       - ".github/workflows/image-budget.yml"
       - "scripts/**"
 

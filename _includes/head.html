@@ -4,6 +4,18 @@
 
 {% include seo.html %}
 
+{% if page.lang_switch_url %}
+  {% if page.lang == "zh" %}
+    <link rel="alternate" hreflang="zh-CN" href="{{ page.url | absolute_url }}">
+    <link rel="alternate" hreflang="en" href="{{ page.lang_switch_url | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ page.lang_switch_url | absolute_url }}">
+  {% else %}
+    <link rel="alternate" hreflang="en" href="{{ page.url | absolute_url }}">
+    <link rel="alternate" hreflang="zh-CN" href="{{ page.lang_switch_url | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+  {% endif %}
+{% endif %}
+
 <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 
 <!-- http://t.co/dKP3o1e -->

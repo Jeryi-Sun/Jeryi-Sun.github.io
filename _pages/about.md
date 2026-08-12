@@ -4,6 +4,8 @@ permalink: /
 title: "Zhongxiang Sun (孙忠祥)"
 excerpt: "About me"
 author_profile: false
+lang: en
+lang_switch_url: /zh/
 redirect_from:
   - /about/
   - /about.html

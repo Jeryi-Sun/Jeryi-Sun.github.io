@@ -1,45 +1,66 @@
 {% include base_path %}
+{% if page.lang == "zh" %}
+  {% assign nav_home_url = "/zh/" %}
+  {% assign nav_home_title = "孙忠祥 / 学术主页" %}
+  {% assign nav_research_title = "认知神经科学" %}
+  {% assign nav_research_url = "/zh/research/cognitive-neuroscience/" %}
+  {% assign nav_publications_title = "论文" %}
+  {% assign nav_publications_url = "/zh/publications/" %}
+  {% assign language_label = "English" %}
+  {% assign language_code = "en" %}
+  {% assign language_url = page.lang_switch_url %}
+  {% assign mobile_menu_label = "菜单" %}
+  {% assign open_navigation_label = "打开导航菜单" %}
+  {% assign primary_nav_label = "主导航" %}
+  {% assign mobile_nav_label = "移动端主导航" %}
+{% else %}
+  {% assign nav_home_url = "/" %}
+  {% assign nav_home_title = site.title %}
+  {% assign nav_research_title = "Cognitive Neuroscience" %}
+  {% assign nav_research_url = "/research/cognitive-neuroscience/" %}
+  {% assign nav_publications_title = "Publications" %}
+  {% assign nav_publications_url = "/publications/" %}
+  {% assign language_label = "中文" %}
+  {% assign language_code = "zh-CN" %}
+  {% assign language_url = page.lang_switch_url %}
+  {% assign mobile_menu_label = "Menu" %}
+  {% assign open_navigation_label = "Open navigation menu" %}
+  {% assign primary_nav_label = "Primary navigation" %}
+  {% assign mobile_nav_label = "Mobile primary navigation" %}
+{% endif %}
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
-        <button type="button" aria-label="Open navigation menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="{{ primary_nav_label }}">
+        <button type="button" aria-label="{{ open_navigation_label }}">
           <span class="navicon" aria-hidden="true"></span>
         </button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}{{ nav_home_url }}">{{ nav_home_title }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ base_path }}{{ nav_research_url }}">{{ nav_research_title }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ base_path }}{{ nav_publications_url }}">{{ nav_publications_title }}</a></li>
+          {% if language_url %}<li class="masthead__menu-item masthead__menu-item--language"><a href="{{ base_path }}{{ language_url }}" lang="{{ language_code }}" hreflang="{{ language_code }}">{{ language_label }}</a></li>{% endif %}
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
 
-      <nav class="mobile-nav" aria-label="Mobile primary navigation">
-        <a class="mobile-nav__title" href="{{ base_path }}/">{{ site.name }}</a>
-        <details class="mobile-nav__details">
-          <summary>
-            <span class="mobile-nav__menu-label">Menu</span>
-            <span class="mobile-nav__icon" aria-hidden="true"></span>
-          </summary>
-          <ul class="mobile-nav__links">
-            <li><a href="{{ base_path }}/">Home</a></li>
-            {% for link in site.data.navigation.main %}
-              {% if link.url contains 'http' %}
-                {% assign domain = '' %}
-              {% else %}
-                {% assign domain = base_path %}
-              {% endif %}
-              <li><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </details>
+      <nav class="mobile-nav" aria-label="{{ mobile_nav_label }}">
+        <a class="mobile-nav__title" href="{{ base_path }}{{ nav_home_url }}">{{ nav_home_title }}</a>
+        <div class="mobile-nav__actions">
+          {% if language_url %}<a class="language-switch language-switch--mobile" href="{{ base_path }}{{ language_url }}" lang="{{ language_code }}" hreflang="{{ language_code }}">{{ language_label }}</a>{% endif %}
+          <details class="mobile-nav__details">
+            <summary>
+              <span class="mobile-nav__menu-label">{{ mobile_menu_label }}</span>
+              <span class="mobile-nav__icon" aria-hidden="true"></span>
+            </summary>
+            <ul class="mobile-nav__links">
+              <li><a href="{{ base_path }}{{ nav_home_url }}">{% if page.lang == "zh" %}首页{% else %}Home{% endif %}</a></li>
+              <li><a href="{{ base_path }}{{ nav_research_url }}">{{ nav_research_title }}</a></li>
+              <li><a href="{{ base_path }}{{ nav_publications_url }}">{{ nav_publications_title }}</a></li>
+            </ul>
+          </details>
+        </div>
       </nav>
     </div>
   </div>
