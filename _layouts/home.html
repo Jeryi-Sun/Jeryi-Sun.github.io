@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+{% if page.lang == "zh" %}
+  {% assign home_name = "孙忠祥" %}
+  {% assign home_name_secondary = "Zhongxiang Sun" %}
+  {% assign home_role = "博士生" %}
+  {% assign home_school = "中国人民大学高瓴人工智能学院" %}
+  {% assign home_topics = "大模型智能体 · 幻觉 · 机理可解释性 · 搜索" %}
+  {% assign home_nav_label = "主页章节" %}
+  {% assign home_language_label = "English" %}
+  {% assign home_language_url = "/" %}
+  {% assign home_email_label = "邮箱" %}
+  {% assign home_nav_bio = "个人简介" %}
+  {% assign home_nav_impact = "研究概览" %}
+  {% assign home_nav_research = "研究" %}
+  {% assign home_nav_publications = "论文" %}
+  {% assign home_nav_education = "教育经历" %}
+  {% assign home_nav_awards = "获奖情况" %}
+  {% assign home_nav_teaching = "教学经历" %}
+  {% assign home_nav_experience = "学术经历" %}
+  {% assign home_nav_talks = "报告" %}
+{% else %}
+  {% assign home_name = "Zhongxiang Sun" %}
+  {% assign home_name_secondary = "孙忠祥" %}
+  {% assign home_role = "Ph.D. Candidate" %}
+  {% assign home_school = "Gaoling School of Artificial Intelligence, Renmin University of China" %}
+  {% assign home_topics = "Large-model agents · Hallucination · Mechanistic interpretability · Search" %}
+  {% assign home_nav_label = "Homepage sections" %}
+  {% assign home_language_label = "中文" %}
+  {% assign home_language_url = "/zh/" %}
+  {% assign home_email_label = "Email" %}
+  {% assign home_nav_bio = "Biography" %}
+  {% assign home_nav_impact = "Impact" %}
+  {% assign home_nav_research = "Research" %}
+  {% assign home_nav_publications = "Papers" %}
+  {% assign home_nav_education = "Education" %}
+  {% assign home_nav_awards = "Awards" %}
+  {% assign home_nav_teaching = "Teaching" %}
+  {% assign home_nav_experience = "Experience" %}
+  {% assign home_nav_talks = "Talks" %}
+{% endif %}
+
+<div class="academic-home">
+  <aside class="academic-home__sidebar" aria-label="{{ home_nav_label }}">
+    <div class="academic-home__identity">
+      {% include optimized-image.html src="/images/profile.png" alt=home_name loading="eager" fetchpriority="high" picture_class="academic-home__portrait" %}
+      <h1>{{ home_name }} <span>{{ home_name_secondary }}</span></h1>
+      <p class="academic-home__role">{{ home_role }}</p>
+      <p class="academic-home__school">{{ home_school }}</p>
+      <p class="academic-home__topics">{{ home_topics }}</p>
+    </div>
+
+    <div class="academic-home__socials">
+      <a href="mailto:{{ site.author.email }}" aria-label="{{ home_email_label }}" title="{{ home_email_label }}">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+      </a>
+      <a href="{{ site.author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar">
+        <i class="ai ai-google-scholar" aria-hidden="true"></i>
+      </a>
+      <a href="https://github.com/{{ site.author.github }}" aria-label="GitHub" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <nav class="academic-home__nav" aria-label="{{ home_nav_label }}">
+      <a href="#biography">{{ home_nav_bio }}</a>
+      <a href="#impact">{{ home_nav_impact }}</a>
+      <a href="#research">{{ home_nav_research }}</a>
+      <a href="#publications">{{ home_nav_publications }}</a>
+      <a href="#education">{{ home_nav_education }}</a>
+      <a href="#awards">{{ home_nav_awards }}</a>
+      <a href="#teaching">{{ home_nav_teaching }}</a>
+      <a href="#experience">{{ home_nav_experience }}</a>
+      <a href="#talks">{{ home_nav_talks }}</a>
+    </nav>
+
+    <a class="academic-home__language" href="{{ base_path }}{{ home_language_url }}" hreflang="{% if page.lang == 'zh' %}en{% else %}zh-CN{% endif %}">
+      {{ home_language_label }}
+    </a>
+  </aside>
+
+  <main class="research-page academic-home__content" role="main">
+    {{ content }}
+  </main>
+</div>

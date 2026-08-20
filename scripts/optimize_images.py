@@ -37,7 +37,7 @@ class ImageRule:
 
 
 RULES = {
-    "profile": ImageRule("profile", 960, 92, 160 * KIB),
+    "profile": ImageRule("profile", 640, 94, 160 * KIB),
     "teaser": ImageRule("teaser", 1600, 100, 250 * KIB),
     "overview": ImageRule("overview", 1600, 95, 250 * KIB),
     "figure": ImageRule("figure", 2400, 100, 800 * KIB, lossless=True),
@@ -123,7 +123,15 @@ def write_asset(public_path: str, category: str):
 
     with Image.open(source) as opened:
         image = ImageOps.exif_transpose(opened)
-        image = resize_image(image, rule.max_width)
+        if public_path == PROFILE_IMAGE:
+            image = ImageOps.fit(
+                image,
+                (640, 800),
+                method=Image.Resampling.LANCZOS,
+                centering=(0.5, 0.35),
+            )
+        else:
+            image = resize_image(image, rule.max_width)
         if image.mode not in {"RGB", "RGBA"}:
             image = image.convert("RGBA" if "transparency" in image.info else "RGB")
         save_options = {

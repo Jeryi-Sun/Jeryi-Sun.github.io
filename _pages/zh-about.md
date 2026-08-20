@@ -1,36 +1,28 @@
 ---
-layout: research
+layout: home
 permalink: /zh/
 title: "孙忠祥 (Zhongxiang Sun)"
 excerpt: "个人主页"
 author_profile: false
+hide_masthead: true
 lang: zh
 lang_switch_url: /
 ---
 
-<section class="research-profile">
-  <div>
-    <p class="research-kicker">大模型智能体 | 幻觉 | 机理可解释性 | 搜索</p>
-    <h1>孙忠祥 (Zhongxiang Sun)</h1>
-    <p>
-      我是中国人民大学高瓴人工智能学院博士生，导师是许俊教授。我的研究围绕可信大语言模型与智能体展开，
-      目前主要关注幻觉机理、推理与规划、信息检索、可解释性和法律智能。我借鉴认知神经科学的研究方法，
-      通过任务设计、行为分析、表征分析、机制干预和过程监控，理解大模型智能体如何工作，又会在什么情况下出错。
-    </p>
-    <p>
-      我预计于 2027 年 6 月毕业，目前正在寻找研究岗位。欢迎与我讨论可信大模型与智能体、
-      大模型与信息检索的结合、机理可解释性，以及认知神经科学对人工智能研究的启发。
-    </p>
-    <div class="research-link-row">
-      <a class="research-button" href="mailto:sunzhongxiang@ruc.edu.cn">邮箱</a>
-      <a class="research-button research-button--secondary" href="https://scholar.google.com/citations?user=4n5whr0AAAAJ">Google Scholar</a>
-      <a class="research-button research-button--secondary" href="https://github.com/Jeryi-Sun">GitHub</a>
-    </div>
-  </div>
-  {% include optimized-image.html src="/images/profile.png" alt="孙忠祥" loading="eager" fetchpriority="high" %}
+<section id="biography" class="academic-home__biography">
+  <h2 class="screen-reader-text">个人简介</h2>
+  <p>
+    我是中国人民大学高瓴人工智能学院博士生，导师是许俊教授。我的研究围绕可信大语言模型与智能体展开，
+    目前主要关注幻觉机理、推理与规划、信息检索、可解释性和法律智能。我借鉴认知神经科学的研究方法，
+    通过任务设计、行为分析、表征分析、机制干预和过程监控，理解大模型智能体如何工作，又会在什么情况下出错。
+  </p>
+  <p>
+    我预计于 2027 年 6 月毕业，目前正在寻找研究岗位。欢迎与我讨论可信大模型与智能体、
+    大模型与信息检索的结合、机理可解释性，以及认知神经科学对人工智能研究的启发。
+  </p>
 </section>
 
-<section class="research-section research-impact">
+<section id="impact" class="research-section research-impact">
   <h2>研究概览</h2>
   <div class="research-evidence-list">
     <article>
@@ -64,7 +56,7 @@ lang_switch_url: /
   </div>
 </section>
 
-<section class="research-section">
+<section id="research" class="research-section">
   <h2>研究</h2>
   <p class="research-section-intro">
     我把大模型智能体视为一种新的人工智能系统。它能理解上下文，围绕目标展开推理，调用工具和记忆，
@@ -105,7 +97,7 @@ lang_switch_url: /
   </div>
 </section>
 
-<section class="research-section">
+<section id="publications" class="research-section">
   <div class="research-section-heading">
     <div>
       <h2>代表论文</h2>
@@ -139,7 +131,7 @@ lang_switch_url: /
   {% endfor %}
 </section>
 
-<section class="research-section">
+<section id="education" class="research-section">
   <h2>教育经历</h2>
   <ul>
     <li><strong>2022.08 至今</strong> 中国人民大学高瓴人工智能学院，博士研究生。</li>
@@ -147,7 +139,7 @@ lang_switch_url: /
   </ul>
 </section>
 
-<section class="research-section">
+<section id="awards" class="research-section">
   <h2>奖励与荣誉</h2>
   <ul>
     <li>2024 年国家奖学金，并入选全国 100 名研究生国家奖学金获奖学生代表。<a href="https://www.peopleapp.com/column/30048976446-500006240986">报道</a></li>
@@ -158,7 +150,7 @@ lang_switch_url: /
   </ul>
 </section>
 
-<section class="research-section">
+<section id="teaching" class="research-section">
   <h2>教学经历</h2>
   <ul>
     <li>中国人民大学《大数据分析导论》课程助教，2022 年秋季、2023 年秋季。</li>
@@ -166,7 +158,7 @@ lang_switch_url: /
   </ul>
 </section>
 
-<section class="research-section">
+<section id="experience" class="research-section">
   <h2>学术与研究经历</h2>
   <ul>
     <li><strong>南洋理工大学</strong>，访问学生，2025.09–2026.03，合作导师：刘杨教授。</li>
@@ -182,7 +174,7 @@ lang_switch_url: /
   </ul>
 </section>
 
-<section class="research-section">
+<section id="talks" class="research-section">
   <h2>报告</h2>
   <ul>
     <li>中国人民大学首届“创新前沿·博士生国际学术研讨会”：精准且可解释的法律案例匹配。<a href="https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing">幻灯片</a></li>
