@@ -1,4 +1,6 @@
-<script src="{{ base_path }}/assets/js/main.min.js"></script>
+{% unless page.hide_masthead %}
+  <script src="{{ base_path }}/assets/js/main.min.js"></script>
+{% endunless %}
 
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}

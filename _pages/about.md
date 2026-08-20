@@ -1,9 +1,10 @@
 ---
-layout: research
+layout: home
 permalink: /
 title: "Zhongxiang Sun (孙忠祥)"
 excerpt: "About me"
 author_profile: false
+hide_masthead: true
 lang: en
 lang_switch_url: /zh/
 redirect_from:
@@ -11,32 +12,23 @@ redirect_from:
   - /about.html
 ---
 
-<section class="research-profile">
-  <div>
-    <p class="research-kicker">Large-model agents | Hallucination | Mechanistic interpretability | Search</p>
-    <h1>Zhongxiang Sun (孙忠祥)</h1>
-    <p>
-      I am a Ph.D. candidate at the Gaoling School of Artificial Intelligence, Renmin University of China,
-      advised by Prof. Jun Xu. My research focuses on trustworthy LLM agents, especially hallucination
-      mechanisms, reasoning and planning, information retrieval, explainability, and legal AI. I use
-      cognitive-neuroscience-inspired task design, behavior analysis, representation analysis, mechanism
-      intervention, and process-level control to study these systems.
-    </p>
-    <p>
-      I expect to graduate in June 2027 and am seeking research positions. If you are interested in
-      trustworthy LLMs and agents, their synergy with information retrieval, applied mechanistic
-      interpretability, or cognitive-neuroscience-inspired AI, I would welcome the opportunity to discuss.
-    </p>
-    <div class="research-link-row">
-      <a class="research-button" href="mailto:sunzhongxiang@ruc.edu.cn">Email</a>
-      <a class="research-button research-button--secondary" href="https://scholar.google.com/citations?user=4n5whr0AAAAJ">Google Scholar</a>
-      <a class="research-button research-button--secondary" href="https://github.com/Jeryi-Sun">GitHub</a>
-    </div>
-  </div>
-  {% include optimized-image.html src="/images/profile.png" alt="Zhongxiang Sun" loading="eager" fetchpriority="high" %}
+<section id="biography" class="academic-home__biography">
+  <h2 class="screen-reader-text">Biography</h2>
+  <p>
+    I am a Ph.D. candidate at the Gaoling School of Artificial Intelligence, Renmin University of China,
+    advised by Prof. Jun Xu. My research focuses on trustworthy LLM agents, especially hallucination
+    mechanisms, reasoning and planning, information retrieval, explainability, and legal AI. I use
+    cognitive-neuroscience-inspired task design, behavior analysis, representation analysis, mechanism
+    intervention, and process-level control to study these systems.
+  </p>
+  <p>
+    I expect to graduate in June 2027 and am seeking research positions. If you are interested in
+    trustworthy LLMs and agents, their synergy with information retrieval, applied mechanistic
+    interpretability, or cognitive-neuroscience-inspired AI, I would welcome the opportunity to discuss.
+  </p>
 </section>
 
-<section class="research-section research-impact">
+<section id="impact" class="research-section research-impact">
   <h2>Impact Snapshot</h2>
   <div class="research-evidence-list">
     <article>
@@ -74,7 +66,7 @@ redirect_from:
   </div>
 </section>
 
-<section class="research-section">
+<section id="research" class="research-section">
   <h2>Research</h2>
   <p class="research-section-intro">
     My research studies large-model agents as complex artificial intelligent systems that perceive context,
@@ -121,7 +113,7 @@ redirect_from:
   </div>
 </section>
 
-<section class="research-section">
+<section id="publications" class="research-section">
   <div class="research-section-heading">
     <div>
       <h2>Selected Publications</h2>
@@ -156,7 +148,7 @@ redirect_from:
   {% endfor %}
 </section>
 
-<section class="research-section">
+<section id="education" class="research-section">
   <h2>Education</h2>
   <ul>
     <li><strong>08.2022-present</strong> Ph.D. candidate, Gaoling School of Artificial Intelligence, Renmin University of China.</li>
@@ -164,7 +156,7 @@ redirect_from:
   </ul>
 </section>
 
-<section class="research-section">
+<section id="awards" class="research-section">
   <h2>Awards</h2>
   <ul>
     <li>The National Scholarship 2024, selected as one of the 100 national representatives of Graduate National Scholarship recipients in China. <a href="https://www.peopleapp.com/column/30048976446-500006240986">News</a></li>
@@ -175,7 +167,7 @@ redirect_from:
   </ul>
 </section>
 
-<section class="research-section">
+<section id="teaching" class="research-section">
   <h2>Teaching</h2>
   <ul>
     <li>Teaching Assistant, Introduction to Big Data Analytics, Renmin University of China, Fall 2022 and Fall 2023.</li>
@@ -183,7 +175,7 @@ redirect_from:
   </ul>
 </section>
 
-<section class="research-section">
+<section id="experience" class="research-section">
   <h2>Experience</h2>
   <ul>
     <li><strong>NTU</strong>, visiting student, Sep. 2025-Mar. 2026. Advisor: Yang Liu.</li>
@@ -199,7 +191,7 @@ redirect_from:
   </ul>
 </section>
 
-<section class="research-section">
+<section id="talks" class="research-section">
   <h2>Talks</h2>
   <ul>
     <li>Renmin University of China's First "Frontiers of Innovation: International Academic Symposium for Doctoral Students": Accurate and Explainable Legal Case Matching. <a href="https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing">Slides</a></li>
