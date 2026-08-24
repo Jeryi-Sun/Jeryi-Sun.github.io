@@ -57,12 +57,17 @@ lang_switch_url: /
 </section>
 
 <section id="research" class="research-section">
-  <h2>研究</h2>
-  <p class="research-section-intro">
-    我把大模型智能体视为一种新的人工智能系统。它能理解上下文，围绕目标展开推理，调用工具和记忆，
-    与人或其他智能体协作，并在变化的环境中行动。我的工作关心这些能力在模型内部如何组织、故障如何产生，
-    以及怎样在执行过程中及时发现并纠正问题。具体方法包括认知任务范式、行为边界测试、表征分析、因果干预和过程级监控。
-  </p>
+  <div class="research-section-heading">
+    <div>
+      <h2>研究</h2>
+      <p class="research-section-intro">
+        我把大模型智能体视为一种新的人工智能系统。它能理解上下文，围绕目标展开推理，调用工具和记忆，
+        与人或其他智能体协作，并在变化的环境中行动。我的工作关心这些能力在模型内部如何组织、故障如何产生，
+        以及怎样在执行过程中及时发现并纠正问题。具体方法包括认知任务范式、行为边界测试、表征分析、因果干预和过程级监控。
+      </p>
+    </div>
+    <a class="research-button research-button--secondary" href="/zh/research/cognitive-neuroscience/">查看完整研究规划</a>
+  </div>
   <div class="research-program-path">
     <article>
       <span class="research-tag">解释</span>

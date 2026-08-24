@@ -278,6 +278,11 @@ html[lang="zh"] .research-page {
   justify-content: space-between;
   margin-bottom: 6px;
 
+  > div {
+    flex: 1 1 500px;
+    min-width: 0;
+  }
+
   h2 {
     margin-bottom: 8px;
   }

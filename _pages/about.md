@@ -67,15 +67,20 @@ redirect_from:
 </section>
 
 <section id="research" class="research-section">
-  <h2>Research</h2>
-  <p class="research-section-intro">
-    My research studies large-model agents as complex artificial intelligent systems that perceive context,
-    reason over goals, call tools, use memory, interact with humans and other agents, and act in changing
-    environments. I build cognitive-neuroscience-inspired methods for explaining and controlling these
-    systems: task paradigms reveal behavioral boundaries, representation analysis locates internal
-    structure, mechanism intervention validates causal pathways, and process-level monitoring turns
-    diagnosis into control.
-  </p>
+  <div class="research-section-heading">
+    <div>
+      <h2>Research</h2>
+      <p class="research-section-intro">
+        My research studies large-model agents as complex artificial intelligent systems that perceive context,
+        reason over goals, call tools, use memory, interact with humans and other agents, and act in changing
+        environments. I build cognitive-neuroscience-inspired methods for explaining and controlling these
+        systems: task paradigms reveal behavioral boundaries, representation analysis locates internal
+        structure, mechanism intervention validates causal pathways, and process-level monitoring turns
+        diagnosis into control.
+      </p>
+    </div>
+    <a class="research-button research-button--secondary" href="/research/cognitive-neuroscience/">Full Research Overview</a>
+  </div>
   <div class="research-program-path">
     <article>
       <span class="research-tag">Explain</span>
