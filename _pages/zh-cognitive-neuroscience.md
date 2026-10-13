@@ -214,7 +214,7 @@ lang_switch_url: /research/cognitive-neuroscience/
     </div>
     <div class="research-flow__item">
       <strong>调控</strong>
-      <p>ReARTeR 和 DS-MCM 研究过程奖励、分层监控、反思纠错与经验更新。</p>
+      <p>元认知调控将过程自监控、反思纠错与基于行为证据的人工监督衔接起来，调节智能体的长程执行。</p>
     </div>
   </div>
 
@@ -296,6 +296,12 @@ lang_switch_url: /research/cognitive-neuroscience/
 
   <div class="research-paper-group" id="metacognitive-control">
     <p class="research-kicker">调控：元认知调控</p>
+    <p>
+      这一方向将智能体的自我评估、反思纠错与 human-in-the-loop 监督衔接起来。
+      过程奖励和分层监控指导智能体调整执行；
+      <a href="https://arxiv.org/pdf/2610.06406">EBG</a> 将行为证据组织为可核验的依据，
+      让用户了解关键决策及其后果，并通过判断和反馈指导后续行动。
+    </p>
     {% for project in site.data.research_projects_zh %}
       {% if project.id == "rearter" or project.id == "mcm_ds" %}
       <article class="research-publication">

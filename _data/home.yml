@@ -46,16 +46,16 @@ en:
       label: "Failure Mechanisms"
       url: "/research/cognitive-neuroscience/#module-mechanisms"
     - title: "How can an agent correct its behavior during a task?"
-      text: "ReARTeR develops process rewards for retrieval-augmented reasoning. DS-MCM uses fast and slow monitors to detect uncertainty, reflect, and correct deep-search trajectories."
+      text: >-
+        I study metacognitive control for long-horizon agents, connecting process evaluation and
+        hierarchical self-monitoring with evidence-grounded human oversight. Agents assess reasoning
+        and evidence use to identify drift and guide reflection and correction. Human-in-the-loop
+        monitoring makes consequential decisions, their evidence, and their implications available
+        for user verification, allowing human judgment and feedback to guide subsequent execution.
+      paper_label: "EBG Paper"
+      paper_url: "https://arxiv.org/pdf/2610.06406"
       label: "Metacognitive Control"
       url: "/research/cognitive-neuroscience/#metacognitive-control"
-  future_title: "Next: Mechanistic AI for Science"
-  future_intro: >-
-    I plan to extend cognitive mapping and causal intervention to scientific models. The goal is to
-    extract mechanisms that can be tested, reused across conditions, and revised when new evidence arrives.
-  future_items:
-    - "Mechanistic world models: extract variables, relationships, and validity conditions from model representations; express candidate mechanisms as equations, programs, or structured modules; test them through independent experiments."
-    - "Automated mechanism discovery: build a research loop for question selection, hypothesis and experiment design, independent validation, and mechanism updating, with expert checks at key scientific decisions."
   publications_title: "Selected Publications"
   publications_url: "/publications/"
   publications_link: "Full Publication List"
@@ -170,14 +170,14 @@ zh:
       label: "失效机制研究"
       url: "/zh/research/cognitive-neuroscience/#module-mechanisms"
     - title: "智能体怎样在执行任务时纠正行为？"
-      text: "ReARTeR 研究检索增强推理的过程奖励；DS-MCM 通过快、慢两级监控，在深度搜索中识别不确定性、反思并纠错。"
+      text: >-
+        我研究长程智能体的元认知调控，将过程评估、分层自监控与基于行为证据的人工监督衔接起来。
+        智能体持续检查推理与证据使用，识别偏差并触发反思和纠错；human-in-the-loop 监督
+        则将关键决策、依据及潜在后果呈现给用户，让人的核验和反馈指导后续执行。
+      paper_label: "EBG 论文"
+      paper_url: "https://arxiv.org/pdf/2610.06406"
       label: "元认知调控"
       url: "/zh/research/cognitive-neuroscience/#metacognitive-control"
-  future_title: "下一步：面向 AI4Science 的机制研究"
-  future_intro: "我计划将认知图谱和因果干预方法拓展到科学大模型，提取可检验、可复用的机制，并用新证据持续修正。"
-  future_items:
-    - "机制世界模型：从模型表征中提取变量、作用关系与适用条件，以方程、程序或结构化模块表达候选机制，通过独立实验检验其跨条件复用能力。"
-    - "自动化机制发现：建立问题选择、假说与实验设计、独立验证、机制更新的研究流程，在关键科学判断处引入专家核实。"
   publications_title: "代表论文"
   publications_url: "/zh/publications/"
   publications_link: "完整论文列表"

@@ -222,15 +222,6 @@
   a i { font-size: 10px; }
 }
 
-.home-future {
-  padding-left: 18px;
-  border-left: 2px solid #8b1e2d;
-
-  h3 { margin-top: 0; }
-  p, li { font-size: 15px; }
-  ul { margin-bottom: 0; }
-}
-
 .home-paper {
   display: grid;
   grid-template-columns: 144px minmax(0, 1fr);
@@ -454,7 +445,6 @@
   .home-section__heading { gap: 2px 12px; }
   .home-section__more { min-height: 36px; font-size: 12px; }
   .home-research dt { font-size: 15px; }
-  .home-future { padding-left: 14px; }
 
   .home-paper {
     grid-template-columns: 100px minmax(0, 1fr);
