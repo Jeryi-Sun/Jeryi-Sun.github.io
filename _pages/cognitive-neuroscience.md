@@ -224,7 +224,7 @@ redirect_from:
     </div>
     <div class="research-flow__item">
       <strong>Regulate</strong>
-      <p>ReARTeR and DS-MCM develop process reward, hierarchical monitoring, reflection, corrective action, and experience updating.</p>
+      <p>Metacognitive control connects process-level self-monitoring and correction with evidence-grounded human oversight of long-horizon agents.</p>
     </div>
   </div>
 
@@ -310,6 +310,12 @@ redirect_from:
 
   <div class="research-paper-group" id="metacognitive-control">
     <p class="research-kicker">Regulate: Metacognitive Control</p>
+    <p>
+      This research direction connects an agent's self-evaluation and correction with human-in-the-loop
+      oversight. Process rewards and hierarchical monitoring guide reflection and execution;
+      <a href="https://arxiv.org/pdf/2610.06406">EBG</a> organizes behavioral evidence so that consequential
+      decisions can be reviewed by users. Human judgment and feedback can then guide subsequent actions.
+    </p>
     {% for project in site.data.research_projects %}
       {% if project.id == "rearter" or project.id == "mcm_ds" %}
       <article class="research-publication">

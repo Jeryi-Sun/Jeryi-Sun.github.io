@@ -15,15 +15,10 @@
     {% for thread in home.threads %}
     <div>
       <dt>{{ thread.title }}</dt>
-      <dd>{{ thread.text }} <a href="{{ thread.url | relative_url }}">{{ thread.label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a></dd>
+      <dd>{{ thread.text }}{% if thread.paper_url %} <a href="{{ thread.paper_url }}">{{ thread.paper_label }}</a>{% endif %} <a href="{{ thread.url | relative_url }}">{{ thread.label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a></dd>
     </div>
     {% endfor %}
   </dl>
-  <div class="home-future">
-    <h3>{{ home.future_title }}</h3>
-    <p>{{ home.future_intro }}</p>
-    <ul>{% for item in home.future_items %}<li>{{ item }}</li>{% endfor %}</ul>
-  </div>
 </section>
 
 <section id="publications" class="home-section">
