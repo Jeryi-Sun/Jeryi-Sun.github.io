@@ -1,0 +1,236 @@
+selected_project_ids: [redeep, rearter, neurocogmap, mcm_ds, fpps, rhd]
+linkedin_url: "https://www.linkedin.com/in/zhongxiang-sun-7235a82b8/"
+
+en:
+  name: "Zhongxiang Sun"
+  secondary_name: "孙忠祥"
+  role: "Ph.D. Candidate"
+  school: "Gaoling School of Artificial Intelligence"
+  university: "Renmin University of China"
+  topics: "Trustworthy AI agents & mechanistic interpretability"
+  language_label: "中文"
+  language_url: "/zh/"
+  nav_label: "Homepage sections"
+  nav:
+    - {id: biography, label: "About"}
+    - {id: research, label: "Research & Plans"}
+    - {id: publications, label: "Selected Papers"}
+    - {id: education, label: "Background"}
+    - {id: awards, label: "Honors"}
+    - {id: teaching, label: "Teaching & Service"}
+    - {id: talks, label: "Talks"}
+  about_title: "About"
+  biography:
+    - >-
+      I am a Ph.D. candidate at the Gaoling School of Artificial Intelligence, Renmin University of China,
+      advised by Prof. Jun Xu. I study trustworthy large language models and agents, with a focus on
+      mechanistic interpretability. I expect to graduate in June 2027 and am seeking research positions.
+    - >-
+      My research draws on cognitive neuroscience to map how capabilities are organized inside models,
+      identify the mechanisms behind failures, and intervene during long-running tasks. My first-author
+      work includes 13 papers at CCF A/B venues (10 at CCF A venues). I also hold four granted invention
+      patents. Research recognition includes an ICLR Spotlight and Best Paper Awards at SIGIR-AP and CCIR.
+  research_title: "Research & Plans"
+  research_url: "/research/cognitive-neuroscience/"
+  research_link: "Full Research Program"
+  research_intro: >-
+    My current program, Cognitive Neuroscience of AI Agents, connects behavioral experiments,
+    representation analysis, and causal intervention. The work follows three questions:
+  threads:
+    - title: "How are cognitive capabilities organized?"
+      text: "NeuroCogMap connects sparse model features to functional parcels, capability hierarchies, and the localization of model failures."
+      label: "NeuroCogMap"
+      url: "https://neurocogmap.site/"
+    - title: "What causes failures in reasoning, retrieval, and memory?"
+      text: "ReDeEP studies the balance between retrieved evidence and parametric knowledge. RHD examines reasoning trajectories; FPPS studies factual drift caused by personalized memory."
+      label: "Failure Mechanisms"
+      url: "/research/cognitive-neuroscience/#module-mechanisms"
+    - title: "How can an agent correct its behavior during a task?"
+      text: "ReARTeR develops process rewards for retrieval-augmented reasoning. DS-MCM uses fast and slow monitors to detect uncertainty, reflect, and correct deep-search trajectories."
+      label: "Metacognitive Control"
+      url: "/research/cognitive-neuroscience/#metacognitive-control"
+  future_title: "Next: Mechanistic AI for Science"
+  future_intro: >-
+    I plan to extend cognitive mapping and causal intervention to scientific models. The goal is to
+    extract mechanisms that can be tested, reused across conditions, and revised when new evidence arrives.
+  future_items:
+    - "Mechanistic world models: extract variables, relationships, and validity conditions from model representations; express candidate mechanisms as equations, programs, or structured modules; test them through independent experiments."
+    - "Automated mechanism discovery: build a research loop for question selection, hypothesis and experiment design, independent validation, and mechanism updating, with expert checks at key scientific decisions."
+  publications_title: "Selected Publications"
+  publications_url: "/publications/"
+  publications_link: "Full Publication List"
+  paper_label: "Paper"
+  project_label: "Project"
+  code_label: "Code"
+  background_title: "Background"
+  education_title: "Education"
+  education:
+    - title: "Renmin University of China"
+      role: "Ph.D. in Artificial Intelligence"
+      date: "2022.09 - 2027.06 (expected)"
+      description: "Gaoling School of Artificial Intelligence. Advisor: Prof. Jun Xu."
+    - title: "Nanyang Technological University"
+      role: "Visiting Student"
+      date: "2025.09 - 2026.03"
+      description: "College of Computing and Data Science. Host: Prof. Yang Liu. Research on AI safety and model interpretability."
+    - title: "Beijing Jiaotong University"
+      role: "B.Eng. in Computer Science and Technology"
+      date: "2018.09 - 2022.06"
+      description: "Ranked 1st out of 250 students."
+  experience_title: "Research Experience"
+  experience:
+    - title: "Westlake University-Renmin University of China Joint Institute for Future Humanity"
+      role: "Young Researcher"
+      date: "2025.10 - present"
+    - title: "Kuaishou"
+      role: "Research Intern"
+      date: "2022.02 - 2025.06"
+      description: "Model Applications, Search Technology, and Foundation Models and Applications teams. Mentors: Xiaoxue Zang, Kai Zheng, and Yang Song."
+  applications_title: "Projects & Applications"
+  applications:
+    - "Participated in national key R&D and general research projects, and collaborations with Kuaishou, Lenovo, ByteDance Seed, and Huawei."
+    - "Research and engineering outcomes have been applied in Kuaishou search and recommendation, legal case recommendation, ByteDance Seed AI search, and Lenovo e-commerce agents."
+    - "Founded Huishen Technology to develop a trustworthy mock-court prototype using legal reasoning, retrieval, evidence verification, and multi-agent collaboration. The project won First Prize in the 2025 national university AI and smart-governance innovation competition (135 teams), with demonstrations in judicial and educational settings."
+  patents_title: "Four Granted Invention Patents"
+  patents:
+    - {title: "Explainable legal case matching using inverse optimal transport", number: "ZL202210448566.5"}
+    - {title: "Causal representation learning for legal case matching", number: "ZL202310463448.6"}
+    - {title: "Resource recommendation and prediction-model training", number: "ZL202310781584.X"}
+    - {title: "Non-IID data simulation using large-model agents", number: "ZL202510095786.8"}
+  awards_title: "Honors & Awards"
+  awards:
+    - {date: "2024, 2026", text: "Graduate National Scholarship. Selected in 2025 as one of 100 national recipient representatives featured in People's Daily.", url: "https://www.peopleapp.com/column/30048976446-500006240986", link: "News"}
+    - {date: "2025", text: "China Association for Science and Technology Youth Talent Support Program for Ph.D. Students."}
+    - {date: "2026", text: "CCIR Best Paper Award."}
+    - {date: "2024", text: "SIGIR-AP Best Paper Award."}
+    - {date: "2026", text: "Linghang Dean's Scholarship, Renmin University of China."}
+    - {date: "2022", text: "Beijing Outstanding Graduate."}
+    - {date: "2022, 2023, 2025", text: "University Merit Student."}
+    - {date: "", text: "Renmin University of China Innovative Talent Development Program."}
+  teaching_title: "Teaching & Mentoring"
+  teaching_intro: "Teaching assistant at Renmin University of China:"
+  courses:
+    - {title: "Introduction to Big Data Analytics", date: "Fall 2022, 2023"}
+    - {title: "Python Programming", date: "Spring 2023, 2024"}
+    - {title: "Intelligent Information Retrieval", date: "Fall 2024"}
+  mentoring: >-
+    I have helped supervise 10 undergraduate and graduate students in problem formulation, experiments,
+    and paper writing. One graduate published seven research papers and joined the Tencent Qingyun
+    Program. Other outcomes include undergraduate first-author SIGIR publications and graduate
+    students' first research projects.
+  teaching_plan: "I plan to teach programming, data analysis, and information retrieval, with modules on model interpretability and agents built around paper reading, replication, and open-ended experiments."
+  service_title: "Academic Service"
+  service:
+    - "Reviewer for SIGIR, WWW, CIKM, ACL, NeurIPS, ICLR, and ICML; journal reviewing for TOIS and TASLP."
+    - "Operations lead for RUC Aseed+Lab and member of the academic operations team at the Institute for AI Governance."
+    - "Organizer for the Chinese AI and Law Challenge (CAIL); volunteer at SIGIR-AP 2024."
+  talks_title: "Talks"
+  talks:
+    - {text: "Accurate and Explainable Legal Case Matching. Renmin University of China's International Academic Symposium for Doctoral Students.", url: "https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing", link: "Slides"}
+    - {text: "Invited participant, Zhongguancun Science City Rixin Youth Talk Forum.", url: "https://mp.weixin.qq.com/s/_31wIQDcXwO5QquX6EUAMw", link: "News"}
+
+zh:
+  name: "孙忠祥"
+  secondary_name: "Zhongxiang Sun"
+  role: "博士研究生"
+  school: "高瓴人工智能学院"
+  university: "中国人民大学"
+  topics: "可信大模型与智能体、机制可解释性"
+  language_label: "English"
+  language_url: "/"
+  nav_label: "主页章节"
+  nav:
+    - {id: biography, label: "个人简介"}
+    - {id: research, label: "研究与计划"}
+    - {id: publications, label: "代表论文"}
+    - {id: education, label: "个人经历"}
+    - {id: awards, label: "荣誉奖励"}
+    - {id: teaching, label: "教学与服务"}
+    - {id: talks, label: "报告"}
+  about_title: "个人简介"
+  biography:
+    - >-
+      我是中国人民大学高瓴人工智能学院博士生，导师是徐君教授。我的研究方向是可信大模型与智能体、
+      机制可解释性。预计于 2027 年 6 月毕业，目前正在寻找研究岗位。
+    - >-
+      我借鉴认知神经科学的研究方法，刻画模型内部的能力结构，分析失效机制，并研究长程任务中的行为调控。
+      已以第一作者发表 CCF A/B 类论文 13 篇，其中 CCF A 类 10 篇；拥有授权发明专利 4 项。
+      相关工作获 ICLR Spotlight、SIGIR-AP 和 CCIR 最佳论文奖。
+  research_title: "研究与计划"
+  research_url: "/zh/research/cognitive-neuroscience/"
+  research_link: "完整研究规划"
+  research_intro: "我的研究主线是“AI 智能体的认知神经科学”，通过行为实验、表征分析和因果干预，回答以下问题："
+  threads:
+    - title: "认知能力在模型内部怎样组织？"
+      text: "NeuroCogMap 将稀疏特征、功能分区、能力层级和失效定位组织为内部认知图谱。"
+      label: "NeuroCogMap"
+      url: "https://neurocogmap.site/"
+    - title: "推理、检索和记忆中的错误从何而来？"
+      text: "ReDeEP 分析检索证据与参数知识的关系；RHD 研究推理过程的时间动态；FPPS 分析个性化记忆引起的事实偏移。"
+      label: "失效机制研究"
+      url: "/zh/research/cognitive-neuroscience/#module-mechanisms"
+    - title: "智能体怎样在执行任务时纠正行为？"
+      text: "ReARTeR 研究检索增强推理的过程奖励；DS-MCM 通过快、慢两级监控，在深度搜索中识别不确定性、反思并纠错。"
+      label: "元认知调控"
+      url: "/zh/research/cognitive-neuroscience/#metacognitive-control"
+  future_title: "下一步：面向 AI4Science 的机制研究"
+  future_intro: "我计划将认知图谱和因果干预方法拓展到科学大模型，提取可检验、可复用的机制，并用新证据持续修正。"
+  future_items:
+    - "机制世界模型：从模型表征中提取变量、作用关系与适用条件，以方程、程序或结构化模块表达候选机制，通过独立实验检验其跨条件复用能力。"
+    - "自动化机制发现：建立问题选择、假说与实验设计、独立验证、机制更新的研究流程，在关键科学判断处引入专家核实。"
+  publications_title: "代表论文"
+  publications_url: "/zh/publications/"
+  publications_link: "完整论文列表"
+  paper_label: "论文"
+  project_label: "项目主页"
+  code_label: "代码"
+  background_title: "个人经历"
+  education_title: "教育经历"
+  education:
+    - {title: "中国人民大学", role: "人工智能博士", date: "2022.09 - 2027.06（预计）", description: "高瓴人工智能学院，导师：徐君教授。"}
+    - {title: "南洋理工大学", role: "交换联培", date: "2025.09 - 2026.03", description: "计算机与数据科学学院，合作导师：刘杨教授。研究方向：AI 安全与模型可解释性。"}
+    - {title: "北京交通大学", role: "计算机科学与技术本科", date: "2018.09 - 2022.06", description: "专业排名 1/250。"}
+  experience_title: "研究经历"
+  experience:
+    - {title: "西湖大学-中国人民大学未来人类联合研究院", role: "青年研究员", date: "2025.10 - 至今"}
+    - {title: "快手", role: "研究实习生", date: "2022.02 - 2025.06", description: "模型应用部、搜索技术部、基础大模型与应用部。合作导师：臧晓雪、郑凯、宋洋。"}
+  applications_title: "项目与应用"
+  applications:
+    - "参与重点研发计划、面上项目，以及与快手、联想、字节 Seed、华为的合作项目。"
+    - "相关研究与工程成果应用于快手推荐与搜索、司法类案推荐、字节 Seed 的 AI 搜索产品和联想电商智能体。"
+    - "创办慧审科技，结合法律推理、检索、证据核验和多智能体协作开发可信模拟法庭原型。项目获 2025 年全国大学生人工智能与智慧治理创新创业大赛一等奖（135 支参赛队伍），并在司法和教育场景开展应用示范。"
+  patents_title: "4 项授权发明专利"
+  patents:
+    - {title: "一种基于逆向最优运输模型的可解释司法案例匹配方法及系统", number: "ZL202210448566.5"}
+    - {title: "一种用于司法类案匹配的因果表征学习框架", number: "ZL202310463448.6"}
+    - {title: "资源推荐方法、推荐预测模型训练方法、装置及设备", number: "ZL202310781584.X"}
+    - {title: "一种基于大模型智能体的非独立同分布数据模拟方法", number: "ZL202510095786.8"}
+  awards_title: "荣誉奖励"
+  awards:
+    - {date: "2024、2026", text: "研究生国家奖学金。2025 年入选全国 100 名获奖学生代表，登上《人民日报》。", url: "https://www.peopleapp.com/column/30048976446-500006240986", link: "报道"}
+    - {date: "2025", text: "中国科协青年人才托举工程博士生专项计划。"}
+    - {date: "2026", text: "CCIR 最佳论文奖。"}
+    - {date: "2024", text: "SIGIR-AP 最佳论文奖。"}
+    - {date: "2026", text: "“领航”院长奖学金。"}
+    - {date: "2022", text: "北京市优秀毕业生。"}
+    - {date: "2022、2023、2025", text: "校级三好学生。"}
+    - {date: "", text: "中国人民大学拔尖创新人才培育资助计划。"}
+  teaching_title: "教学与学生指导"
+  teaching_intro: "在中国人民大学担任课程助教："
+  courses:
+    - {title: "大数据分析导论", date: "2022、2023 年秋季"}
+    - {title: "Python 程序设计", date: "2023、2024 年春季"}
+    - {title: "智能信息检索", date: "2024 年秋季"}
+  mentoring: >-
+    协助指导本科生及研究生 10 名，参与选题、实验和论文写作指导。其中一名毕业生发表 7 篇高水平论文，
+    入选腾讯青云计划。其他指导案例包括本科阶段发表一作 SIGIR 论文，以及研究生科研入门和论文发表。
+  teaching_plan: "计划承担程序设计、数据分析和信息检索课程，并开设大模型可解释性与智能体专题，将论文研读、算法复现和开放问题实验融入教学。"
+  service_title: "学术与社会服务"
+  service:
+    - "担任 SIGIR、WWW、CIKM、ACL、NeurIPS、ICLR、ICML 等会议审稿人，以及 TOIS、TASLP 期刊审稿人。"
+    - "RUC Aseed+Lab 运营负责人，人工智能治理研究院学术运营团队成员。"
+    - "法律智能技术评测大赛（CAIL）组织者，SIGIR-AP 2024 志愿者。"
+  talks_title: "报告"
+  talks:
+    - {text: "中国人民大学博士生国际学术研讨会：精准且可解释的法律案例匹配。", url: "https://drive.google.com/file/d/1TxD8YiEUV4R7nvxL46bRJ_YGata4P8QZ/view?usp=sharing", link: "幻灯片"}
+    - {text: "受邀参加中关村科学城“日新青年说”论坛。", url: "https://mp.weixin.qq.com/s/_31wIQDcXwO5QquX6EUAMw", link: "报道"}

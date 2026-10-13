@@ -1,0 +1,269 @@
+{
+  "profile_id": "4n5whr0AAAAJ",
+  "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
+  "name": "Zhongxiang Sun",
+  "updated_at": "2026-10-13T01:55:56+00:00",
+  "citations": 2139,
+  "h_index": 19,
+  "i10_index": 22,
+  "papers": [
+    {
+      "id": "W7OEmFMy1HYC",
+      "title": "Uncovering ChatGPT's Capabilities in Recommender Systems",
+      "citations": 519,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:W7OEmFMy1HYC"
+    },
+    {
+      "id": "-f6ydRqryjwC",
+      "title": "Memory in the age of ai agents",
+      "citations": 273,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:-f6ydRqryjwC"
+    },
+    {
+      "id": "ULOm3_A8WrAC",
+      "title": "Redeep: Detecting hallucination in retrieval-augmented generation via mechanistic interpretability",
+      "citations": 197,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ULOm3_A8WrAC"
+    },
+    {
+      "id": "Y0pCki6q_DkC",
+      "title": "A short survey of viewing large language models in legal aspect",
+      "citations": 184,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:Y0pCki6q_DkC"
+    },
+    {
+      "id": "KlAtU1dfN6UC",
+      "title": "Twin v2: Scaling ultra-long user behavior sequence modeling for enhanced ctr prediction at kuaishou",
+      "citations": 124,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:KlAtU1dfN6UC"
+    },
+    {
+      "id": "8k81kl-MbHgC",
+      "title": "Large language models enhanced collaborative filtering",
+      "citations": 96,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:8k81kl-MbHgC"
+    },
+    {
+      "id": "u-x6o8ySG0sC",
+      "title": "Explainable legal case matching via inverse optimal transport-based rationale extraction",
+      "citations": 91,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:u-x6o8ySG0sC"
+    },
+    {
+      "id": "d1gkVwhDpl0C",
+      "title": "AddrMiner: A Comprehensive Global Active IPv6 Address Discovery System",
+      "citations": 86,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:d1gkVwhDpl0C"
+    },
+    {
+      "id": "4TOpqqG69KYC",
+      "title": "Generative retrieval with semantic tree-structured identifiers and contrastive learning",
+      "citations": 75,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:4TOpqqG69KYC"
+    },
+    {
+      "id": "YsMSGLbcyi4C",
+      "title": "When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation",
+      "citations": 67,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:YsMSGLbcyi4C"
+    },
+    {
+      "id": "WF5omc3nYNoC",
+      "title": "KuaiSAR: A Unified Search And Recommendation Dataset",
+      "citations": 64,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:WF5omc3nYNoC"
+    },
+    {
+      "id": "4DMP91E08xMC",
+      "title": "Rearter: Retrieval-augmented reasoning with trustworthy process rewarding",
+      "citations": 44,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:4DMP91E08xMC"
+    },
+    {
+      "id": "0EnyYjriUFMC",
+      "title": "Law Article-Enhanced Legal Case Matching: a Causal Learning Approach",
+      "citations": 42,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:0EnyYjriUFMC"
+    },
+    {
+      "id": "ns9cj8rnVeAC",
+      "title": "Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models",
+      "citations": 37,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ns9cj8rnVeAC"
+    },
+    {
+      "id": "QIV2ME_5wuYC",
+      "title": "Syler: A framework for explicit syllogistic legal reasoning in large language models",
+      "citations": 35,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:QIV2ME_5wuYC"
+    },
+    {
+      "id": "5nxA0vEk-isC",
+      "title": "Logic Rules as Explanations for Legal Case Retrieval",
+      "citations": 29,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:5nxA0vEk-isC"
+    },
+    {
+      "id": "IjCSPb-OGe4C",
+      "title": "Enhancing recommendation with search data in a causal learning manner",
+      "citations": 26,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:IjCSPb-OGe4C"
+    },
+    {
+      "id": "zYLM7Y9cAGgC",
+      "title": "Enough waiting for the couriers: Learning to estimate package pick-up arrival time from couriers’ spatial-temporal behaviors",
+      "citations": 24,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:zYLM7Y9cAGgC"
+    },
+    {
+      "id": "9ZlFYXVOiuMC",
+      "title": "Qe-rag: A robust retrieval-augmented generation benchmark for query entry errors",
+      "citations": 21,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:9ZlFYXVOiuMC"
+    },
+    {
+      "id": "UebtZRa9Y70C",
+      "title": "Explainable legal case matching via graph optimal transport",
+      "citations": 19,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:UebtZRa9Y70C"
+    },
+    {
+      "id": "7PzlFSSx8tAC",
+      "title": "Llm-empowered creator simulation for long-term evaluation of recommender systems under information asymmetry",
+      "citations": 13,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:7PzlFSSx8tAC"
+    },
+    {
+      "id": "j3f4tGmQtD8C",
+      "title": "Streaming hallucination detection in long chain-of-thought reasoning",
+      "citations": 10,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:j3f4tGmQtD8C"
+    },
+    {
+      "id": "M3NEmzRMIkIC",
+      "title": "Trigger3: Refining query correction via adaptive model selector",
+      "citations": 9,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:M3NEmzRMIkIC"
+    },
+    {
+      "id": "YOwf2qJgpHMC",
+      "title": "LargePiG: Your Large Language Model is Secretly a Pointer Generator",
+      "citations": 9,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:YOwf2qJgpHMC"
+    },
+    {
+      "id": "4JMBOYKVnBMC",
+      "title": "Deep search with hierarchical meta-cognitive monitoring inspired by cognitive neuroscience",
+      "citations": 6,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:4JMBOYKVnBMC"
+    },
+    {
+      "id": "RGFaLdJalmkC",
+      "title": "Omni-Safety under Cross-Modality Conflict: Vulnerabilities, Dynamics Mechanisms and Efficient Alignment",
+      "citations": 5,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:RGFaLdJalmkC"
+    },
+    {
+      "id": "qUcmZB5y_30C",
+      "title": "Trustworthy information retrieval in the LLM era: bias, unfairness, and hallucination",
+      "citations": 5,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:qUcmZB5y_30C"
+    },
+    {
+      "id": "35N4QoGY0k4C",
+      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
+      "citations": 4,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
+    },
+    {
+      "id": "R3hNpaxXUhUC",
+      "title": "Beyond high-entropy exploration: Correctness-aware low-entropy segment-based advantage shaping for reasoning llms",
+      "citations": 4,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:R3hNpaxXUhUC"
+    },
+    {
+      "id": "vV6vV6tmYwMC",
+      "title": "ToolArtist: Tool-Using Unified Multimodal Models for Agentic Image Generation",
+      "citations": 3,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:vV6vV6tmYwMC"
+    },
+    {
+      "id": "e5wmG9Sq2KIC",
+      "title": "When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs",
+      "citations": 3,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:e5wmG9Sq2KIC"
+    },
+    {
+      "id": "kNdYIx-mwKoC",
+      "title": "Effective In-Context Example Selection through Data Compression",
+      "citations": 3,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:kNdYIx-mwKoC"
+    },
+    {
+      "id": "BqipwSGYUEgC",
+      "title": "Empowering open-domain LLMs for legal document correction via legal knowledge integration and decoding constraints",
+      "citations": 2,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:BqipwSGYUEgC"
+    },
+    {
+      "id": "k_IJM867U9cC",
+      "title": "StyliTruth: Unlocking Stylized yet Truthful LLM Generation via Disentangled Steering",
+      "citations": 2,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:k_IJM867U9cC"
+    },
+    {
+      "id": "GnPB-g6toBAC",
+      "title": "HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios",
+      "citations": 2,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:GnPB-g6toBAC"
+    },
+    {
+      "id": "maZDTaKrznsC",
+      "title": "Diagnosing Knowledge Conflict in Multimodal Long-Chain Reasoning",
+      "citations": 2,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:maZDTaKrznsC"
+    },
+    {
+      "id": "3fE2CSJIrl8C",
+      "title": "To Search or to Recommend: Predicting Open-App Motivation with Neural Hawkes Process",
+      "citations": 2,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:3fE2CSJIrl8C"
+    },
+    {
+      "id": "lSLTfruPkqcC",
+      "title": "Hidden States Know Where Reasoning Diverges: Credit Assignment via Span-Level Wasserstein Distance",
+      "citations": 1,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:lSLTfruPkqcC"
+    },
+    {
+      "id": "JV2RwH3_ST0C",
+      "title": "DLLM-Searcher: Adapting Diffusion Large Language Model for Search Agents",
+      "citations": 1,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:JV2RwH3_ST0C"
+    },
+    {
+      "id": "2P1L_qKh6hAC",
+      "title": "What Did the Agent Actually Do? Evidence-Grounded Oversight for Long-Horizon Agents",
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:2P1L_qKh6hAC"
+    },
+    {
+      "id": "70eg2SAEIzsC",
+      "title": "Key Path Identification for Resolving Knowledge Conflicts via SAE-based Steering",
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:70eg2SAEIzsC"
+    },
+    {
+      "id": "NaGl4SEjCO4C",
+      "title": "NeuroCogMap Reveals Cognitive Organization of Large Language Models",
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:NaGl4SEjCO4C"
+    },
+    {
+      "id": "blknAaTinKkC",
+      "title": "Towards Understanding Continual Factual Knowledge Acquisition of Language Models: From Theory to Algorithm",
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:blknAaTinKkC"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{% if page.lang == 'zh' %}
+  {% assign publications_title = '完整论文列表' %}
+  {% assign publications_intro = '按作者角色与发表状态整理的完整论文记录。' %}
+  {% assign selected_label = '首页代表论文' %}
+  {% assign selected_url = '/zh/#publications' %}
+  {% assign program_label = '研究规划' %}
+  {% assign program_url = '/zh/research/cognitive-neuroscience/' %}
+  {% assign publication_sections = '第一作者论文,其他已发表或已接收论文,预印本' | split: ',' %}
+  {% assign author_legend = '* 共同第一作者；† 通讯作者。' %}
+  {% assign papers = site.data.publications_full_zh %}
+{% else %}
+  {% assign publications_title = 'Publications' %}
+  {% assign publications_intro = 'The complete publication record, grouped by authorship and publication status.' %}
+  {% assign selected_label = 'Selected Papers' %}
+  {% assign selected_url = '/#publications' %}
+  {% assign program_label = 'Research Program' %}
+  {% assign program_url = '/research/cognitive-neuroscience/' %}
+  {% assign publication_sections = 'First-Author Papers,Other Published or Accepted Papers,Preprints' | split: ',' %}
+  {% assign author_legend = '* Equal contribution; † corresponding author.' %}
+  {% assign papers = site.data.publications_full %}
+{% endif %}
+
+<section class="research-hero research-hero--text">
+  <div class="research-hero__text">
+    <h1>{{ publications_title }}</h1>
+    <p class="research-lede">{{ publications_intro }}</p>
+    <div class="research-link-row">
+      <a class="research-button research-button--secondary" href="{{ selected_url | relative_url }}">{{ selected_label }}</a>
+      <a class="research-button research-button--secondary" href="{{ program_url | relative_url }}">{{ program_label }}</a>
+    </div>
+    {% include scholar-metrics.html %}
+  </div>
+</section>
+
+<p class="publication-legend">{{ author_legend }}</p>
+{% assign section_ids = 'first_author,other,preprints' | split: ',' %}
+{% assign publication_number = 1 %}
+{% for section_id in section_ids %}
+{% assign section_papers = papers | where: 'section', section_id %}
+<section class="research-section" id="{{ section_id }}">
+  <h2>{{ publication_sections[forloop.index0] }}</h2>
+  <ol class="research-publication-list" start="{{ publication_number }}">
+    {% for paper in section_papers %}
+    <li>
+      <p class="research-paper-title">{{ paper.title | escape }}</p>
+      <p class="research-paper-authors">{{ paper.authors | escape | replace: 'Zhongxiang Sun', '<strong>Zhongxiang Sun</strong>' }}</p>
+      <p class="research-paper-meta">
+        <strong>{{ paper.venue }}</strong>
+        {% if paper.highlight and paper.highlight != '' %}<span>{{ paper.highlight }}</span>{% endif %}
+      </p>
+      <p class="research-paper-links">
+        {% for link in paper.links %}<a href="{{ link.url | relative_url }}">{{ link.label }}</a>{% endfor %}
+        <a class="scholar-paper-count" data-scholar-title="{{ paper.title | escape }}"{% if paper.scholar_title %} data-scholar-alias="{{ paper.scholar_title | escape }}"{% endif %}{% if paper.scholar_id %} data-scholar-id="{{ paper.scholar_id }}"{% endif %} href="{{ site.author.googlescholar }}" hidden></a>
+      </p>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% assign publication_number = publication_number | plus: section_papers.size %}
+{% endfor %}

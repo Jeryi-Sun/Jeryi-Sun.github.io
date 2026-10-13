@@ -1,0 +1,6 @@
+---
+layout: null
+permalink: /scholar.json
+sitemap: false
+---
+{{ site.data.scholar | jsonify }}
