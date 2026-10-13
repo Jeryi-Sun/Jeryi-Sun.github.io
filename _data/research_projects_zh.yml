@@ -541,8 +541,11 @@
   title: "ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding"
   short_title: "ReARTeR"
   venue: "SIGIR 2025"
+  recognition:
+    label: "Paper Digest SIGIR 2025 高影响力论文（第 2 名）"
+    url: "https://www.paperdigest.org/2026/03/most-influential-sigir-papers-2026-03-version/"
   role: "第一作者"
-  authors: "Zhongxiang Sun, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Song Yang, Han Li"
+  authors: "Zhongxiang Sun, Qipeng Wang, Weijie Yu, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Yang Song, Han Li"
   layer: "元认知调控"
   paper_url: "https://arxiv.org/abs/2501.07861"
   project_url: "/zh/ReARTeR_Page/"

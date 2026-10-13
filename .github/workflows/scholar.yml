@@ -1,0 +1,42 @@
+name: Update Google Scholar
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - "scripts/update_scholar.py"
+      - ".github/workflows/scholar.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scholar-metrics
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch verified Scholar data
+        run: python scripts/update_scholar.py
+      - name: Save the snapshot
+        run: |
+          if git diff --quiet -- _data/scholar.json; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/scholar.json
+          git commit -m "Update Google Scholar snapshot"
+          git push

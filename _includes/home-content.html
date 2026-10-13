@@ -1,0 +1,111 @@
+{% assign home = site.data.home[page.lang] %}
+<section id="biography" class="home-section home-section--about">
+  <h2>{{ home.about_title }}</h2>
+  {% for paragraph in home.biography %}<p>{{ paragraph }}</p>{% endfor %}
+  <div id="impact">{% include scholar-metrics.html %}</div>
+</section>
+
+<section id="research" class="home-section">
+  <div class="home-section__heading">
+    <h2>{{ home.research_title }}</h2>
+    <a class="home-section__more" href="{{ home.research_url | relative_url }}">{{ home.research_link }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+  <p>{{ home.research_intro }}</p>
+  <dl class="home-research">
+    {% for thread in home.threads %}
+    <div>
+      <dt>{{ thread.title }}</dt>
+      <dd>{{ thread.text }} <a href="{{ thread.url | relative_url }}">{{ thread.label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a></dd>
+    </div>
+    {% endfor %}
+  </dl>
+  <div class="home-future">
+    <h3>{{ home.future_title }}</h3>
+    <p>{{ home.future_intro }}</p>
+    <ul>{% for item in home.future_items %}<li>{{ item }}</li>{% endfor %}</ul>
+  </div>
+</section>
+
+<section id="publications" class="home-section">
+  <div class="home-section__heading">
+    <h2>{{ home.publications_title }}</h2>
+    <a class="home-section__more" href="{{ home.publications_url | relative_url }}">{{ home.publications_link }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+  {% if page.lang == 'zh' %}{% assign projects = site.data.research_projects_zh %}{% else %}{% assign projects = site.data.research_projects %}{% endif %}
+  {% for project_id in site.data.home.selected_project_ids %}
+  {% assign project = projects | where: 'id', project_id | first %}
+  {% assign canonical_project = site.data.research_projects | where: 'id', project_id | first %}
+  <article class="home-paper">
+    <a class="home-paper__image" href="{{ project.project_url | relative_url }}" aria-label="{{ project.short_title | escape }}">
+      {% include optimized-image.html src=project.teaser alt=project.short_title loading="lazy" %}
+    </a>
+    <div class="home-paper__body">
+      <h3><a href="{{ project.project_url | relative_url }}">{{ canonical_project.title }}</a></h3>
+      <p class="home-paper__venue">{{ project.venue }}{% if project.recognition %} | <a href="{{ project.recognition.url }}">{{ project.recognition.label }}</a>{% endif %}</p>
+      <p class="home-paper__summary">{{ project.one_liner }}</p>
+      <div class="home-paper__links">
+        {% if project.paper_url and project.paper_url != '' %}<a href="{{ project.paper_url }}">{{ home.paper_label }}</a>{% endif %}
+        <a href="{{ project.project_url | relative_url }}">{{ home.project_label }}</a>
+        {% if project.code_url and project.code_url != '' %}<a href="{{ project.code_url }}">{{ home.code_label }}</a>{% endif %}
+        <a class="scholar-paper-count" data-scholar-title="{{ canonical_project.title | escape }}" href="{{ site.author.googlescholar }}" hidden></a>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section id="education" class="home-section">
+  <h2>{{ home.background_title }}</h2>
+  <h3>{{ home.education_title }}</h3>
+  <ul class="home-timeline">
+    {% for item in home.education %}
+    <li>
+      <div><strong>{{ item.title }}</strong><span class="home-timeline__date">{{ item.date }}</span></div>
+      <p>{{ item.role }}</p>
+      {% if item.description %}<p class="home-timeline__detail">{{ item.description }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  <div id="experience">
+    <h3>{{ home.experience_title }}</h3>
+    <ul class="home-timeline">
+      {% for item in home.experience %}
+      <li>
+        <div><strong>{{ item.title }}</strong><span class="home-timeline__date">{{ item.date }}</span></div>
+        <p>{{ item.role }}</p>
+        {% if item.description %}<p class="home-timeline__detail">{{ item.description }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <h3>{{ home.applications_title }}</h3>
+  <ul>{% for item in home.applications %}<li>{{ item }}</li>{% endfor %}</ul>
+  <details class="home-details">
+    <summary>{{ home.patents_title }}</summary>
+    <ul>{% for item in home.patents %}<li>{{ item.title }} <span class="home-patent-number">{{ item.number }}</span></li>{% endfor %}</ul>
+  </details>
+</section>
+
+<section id="awards" class="home-section">
+  <h2>{{ home.awards_title }}</h2>
+  <ul class="home-honors">
+    {% for item in home.awards %}
+    <li><span class="home-honors__date">{{ item.date }}</span><span>{{ item.text }}{% if item.url %} <a href="{{ item.url }}">{{ item.link }}</a>{% endif %}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="teaching" class="home-section">
+  <h2>{{ home.teaching_title }}</h2>
+  <p>{{ home.teaching_intro }}</p>
+  <ul class="home-courses">{% for item in home.courses %}<li><strong>{{ item.title }}</strong><span>{{ item.date }}</span></li>{% endfor %}</ul>
+  <p>{{ home.mentoring }}</p>
+  <p>{{ home.teaching_plan }}</p>
+  <h3>{{ home.service_title }}</h3>
+  <ul>{% for item in home.service %}<li>{{ item }}</li>{% endfor %}</ul>
+</section>
+
+<section id="talks" class="home-section">
+  <h2>{{ home.talks_title }}</h2>
+  <ul>{% for item in home.talks %}<li>{{ item.text }} <a href="{{ item.url }}">{{ item.link }}</a></li>{% endfor %}</ul>
+</section>

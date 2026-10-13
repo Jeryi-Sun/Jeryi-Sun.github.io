@@ -1,0 +1,19 @@
+{% if page.lang == 'zh' %}
+  {% assign scholar_citations_label = '引用' %}
+  {% assign scholar_updated_label = '数据更新于' %}
+{% else %}
+  {% assign scholar_citations_label = 'Citations' %}
+  {% assign scholar_updated_label = 'Updated' %}
+{% endif %}
+<div class="scholar-metrics" data-scholar-source="https://raw.githubusercontent.com/{{ site.repository }}/master/_data/scholar.json">
+  <div class="scholar-metrics__heading">
+    <a href="{{ site.author.googlescholar }}">Google Scholar <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+    <span class="scholar-metrics__updated">{{ scholar_updated_label }} <time data-scholar-updated datetime="{{ site.data.scholar.updated_at }}">{{ site.data.scholar.updated_at | date: '%Y-%m-%d' }}</time></span>
+  </div>
+  <dl>
+    <div><dt>{{ scholar_citations_label }}</dt><dd data-scholar-metric="citations">{{ site.data.scholar.citations }}</dd></div>
+    <div><dt>h-index</dt><dd data-scholar-metric="h_index">{{ site.data.scholar.h_index }}</dd></div>
+    <div><dt>i10-index</dt><dd data-scholar-metric="i10_index">{{ site.data.scholar.i10_index }}</dd></div>
+  </dl>
+</div>
+<script type="application/json" id="scholar-snapshot">{{ site.data.scholar | jsonify }}</script>
