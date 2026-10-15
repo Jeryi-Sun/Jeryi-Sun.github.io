@@ -535,7 +535,7 @@
       year={2026}
     }
   homepage_priority: 40
-  show_on_homepage: true
+  show_on_homepage: false
 
 - id: rearter
   title: "ReARTeR: Retrieval-Augmented Reasoning with Trustworthy Process Rewarding"
@@ -756,4 +756,22 @@
       year={2026}
     }
   homepage_priority: 60
+  show_on_homepage: true
+
+- id: llm_cf
+  title: "Large Language Models Enhanced Collaborative Filtering"
+  short_title: "LLM-CF"
+  venue: "CIKM 2024"
+  recognition:
+    label: "Paper Digest CIKM 2024 高影响力论文（第 4 名）"
+    url: "https://www.paperdigest.org/2026/03/most-influential-cikm-papers-2026-03-version/"
+  role: "共同第一作者"
+  authors: "Zhongxiang Sun, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu"
+  layer: "大模型增强推荐"
+  paper_url: "https://arxiv.org/abs/2403.17688"
+  project_url: ""
+  code_url: "https://github.com/Jeryi-Sun/LLM-CF"
+  teaser: "/images/research/llm-cf-teaser.png"
+  one_liner: "通过离线生成推理示例与上下文学习，将大模型的世界知识和推理能力融入协同过滤。"
+  summary: "LLM-CF 离线生成推理示例，在推荐时检索相关示例，并通过上下文学习模块增强协同过滤，无需在线调用大模型。"
   show_on_homepage: true

@@ -107,6 +107,15 @@
   quality: 100
   webp: /images/optimized/research/fpps-teaser.webp
   width: 1600
+/images/research/llm-cf-teaser.png:
+  bytes: 150180
+  category: teaser
+  digest: 2ef71be4fcde
+  height: 900
+  lossless: false
+  quality: 100
+  webp: /images/optimized/research/llm-cf-teaser.webp
+  width: 1600
 /images/research/mcm-ds-hierarchical-monitoring-web.png:
   bytes: 475378
   category: figure
