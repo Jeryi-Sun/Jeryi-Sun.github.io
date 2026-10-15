@@ -2,8 +2,8 @@
   "profile_id": "4n5whr0AAAAJ",
   "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
   "name": "Zhongxiang Sun",
-  "updated_at": "2026-10-14T12:03:39+00:00",
-  "citations": 2140,
+  "updated_at": "2026-10-15T21:30:21+00:00",
+  "citations": 2145,
   "h_index": 19,
   "i10_index": 22,
   "papers": [
@@ -16,19 +16,19 @@
     {
       "id": "-f6ydRqryjwC",
       "title": "Memory in the age of ai agents",
-      "citations": 273,
+      "citations": 274,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:-f6ydRqryjwC"
     },
     {
       "id": "ULOm3_A8WrAC",
       "title": "Redeep: Detecting hallucination in retrieval-augmented generation via mechanistic interpretability",
-      "citations": 197,
+      "citations": 198,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ULOm3_A8WrAC"
     },
     {
       "id": "Y0pCki6q_DkC",
       "title": "A short survey of viewing large language models in legal aspect",
-      "citations": 184,
+      "citations": 186,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:Y0pCki6q_DkC"
     },
     {
@@ -176,6 +176,12 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
     },
     {
+      "id": "e5wmG9Sq2KIC",
+      "title": "When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs",
+      "citations": 4,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:e5wmG9Sq2KIC"
+    },
+    {
       "id": "R3hNpaxXUhUC",
       "title": "Beyond high-entropy exploration: Correctness-aware low-entropy segment-based advantage shaping for reasoning llms",
       "citations": 4,
@@ -186,12 +192,6 @@
       "title": "ToolArtist: Tool-Using Unified Multimodal Models for Agentic Image Generation",
       "citations": 3,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:vV6vV6tmYwMC"
-    },
-    {
-      "id": "e5wmG9Sq2KIC",
-      "title": "When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs",
-      "citations": 3,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:e5wmG9Sq2KIC"
     },
     {
       "id": "kNdYIx-mwKoC",
