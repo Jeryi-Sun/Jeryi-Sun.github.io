@@ -37,7 +37,7 @@
     </a>
     <div class="home-paper__body">
       <h3><a href="{{ publication_url | relative_url }}">{{ canonical_project.title }}</a></h3>
-      <p class="home-paper__venue">{{ project.venue }}{% if project.recognition %} | <a href="{{ project.recognition.url }}">{{ project.recognition.label }}</a>{% endif %}</p>
+      <p class="home-paper__venue">{{ project.venue }}{% if project.recognition %} | <a class="home-paper__recognition" href="{{ project.recognition.url }}">{{ project.recognition.label }}</a>{% endif %}</p>
       <p class="home-paper__summary">{{ project.one_liner }}</p>
       <div class="home-paper__links">
         {% if project.paper_url and project.paper_url != '' %}<a href="{{ project.paper_url }}">{{ home.paper_label }}</a>{% endif %}

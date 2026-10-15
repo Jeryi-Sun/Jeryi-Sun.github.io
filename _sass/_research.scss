@@ -768,6 +768,7 @@ html[lang="zh"] .research-page {
 
 .research-figure-panel-grid {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 12px;
 
