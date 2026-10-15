@@ -107,6 +107,51 @@
   quality: 100
   webp: /images/optimized/research/fpps-teaser.webp
   width: 1600
+/images/research/llm-cf-context-length.png:
+  bytes: 45184
+  category: figure
+  digest: 26ee74d1236e
+  height: 983
+  lossless: true
+  quality: 100
+  webp: /images/optimized/research/llm-cf-context-length.webp
+  width: 2400
+/images/research/llm-cf-method.png:
+  bytes: 155762
+  category: figure
+  digest: ded3b5c95711
+  height: 1106
+  lossless: true
+  quality: 100
+  webp: /images/optimized/research/llm-cf-method.webp
+  width: 2400
+/images/research/llm-cf-overview.png:
+  bytes: 161830
+  category: figure
+  digest: 6f28f291861a
+  height: 1204
+  lossless: true
+  quality: 100
+  webp: /images/optimized/research/llm-cf-overview.webp
+  width: 2400
+/images/research/llm-cf-recgen-beauty.png:
+  bytes: 27686
+  category: figure
+  digest: 534550db7fd4
+  height: 901
+  lossless: true
+  quality: 100
+  webp: /images/optimized/research/llm-cf-recgen-beauty.webp
+  width: 1800
+/images/research/llm-cf-recgen-sports.png:
+  bytes: 27480
+  category: figure
+  digest: 1d4dd83e7140
+  height: 901
+  lossless: true
+  quality: 100
+  webp: /images/optimized/research/llm-cf-recgen-sports.webp
+  width: 1800
 /images/research/llm-cf-teaser.png:
   bytes: 150180
   category: teaser

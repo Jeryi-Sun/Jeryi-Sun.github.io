@@ -1109,3 +1109,200 @@
       The long-term impact is a framework for agents that can inspect their own execution state. As AI agents become more
       autonomous in research, legal, scientific, and decision-support tasks, this kind of monitoring layer becomes central
       to reliability.
+
+- id: llm_cf
+  narrative_sections:
+    - id: motivation
+      role: "Problem"
+      toc_label: "Problem"
+      title: "Connecting language-derived knowledge with collaborative signals"
+      figure: "/images/research/llm-cf-overview.png"
+      source: "Paper Fig. 1; graphs/introduction_graph.pdf"
+      layout: "wide"
+      summary: >-
+        LLM-CF uses an offline language-model teacher to build reusable reasoning examples, then retrieves those
+        examples to improve a conventional recommender's prediction.
+      paragraphs:
+        - >-
+          Collaborative filtering learns from patterns across user-item interactions. An LLM can add information about
+          product attributes, user preferences, and the compatibility between a history and a candidate item. A prompt
+          about one user and one item covers only a small part of the interaction data. LLM-CF brings similar historical
+          interactions into the prediction context, together with reasoning generated from them.
+        - >-
+          The dashed boundary in the figure separates offline generation from online serving. Below it, RecGen-LLaMA
+          writes a reusable collection of reasoning examples. Above it, the recommendation model receives a learned
+          feature derived from retrieved examples. Serving still requires feature encoding, retrieval, ICT, and the
+          backbone model; it does not require a fresh LLM-generated response for each request.
+      reading_guide:
+        - "Follow the lower path from recommendation data through RecGen-LLaMA to the in-context CoT dataset."
+        - "The retrieved examples feed a collaborative-filtering feature into the recommender alongside its original user and item features."
+    - id: architecture
+      role: "Method"
+      toc_label: "Method"
+      title: "From retrieved examples to an ICT feature"
+      figure: "/images/research/llm-cf-method.png"
+      source: "Paper Fig. 3; graphs/model_graph.pdf"
+      layout: "wide"
+      summary: >-
+        The full pipeline combines offline reasoning generation, top-K example retrieval, and a short transformer-decoder
+        sequence that produces an additional feature for the backbone recommender.
+      paragraphs:
+        - >-
+          Each stored example contains recommendation features, a generated chain of thought, and its historical
+          interaction label. The teacher prompt on the right asks about the user's history, the candidate item's
+          attributes, their compatibility, and possible interest in diversity. The historical label is supplied during
+          this offline generation. The reported collection is sampled from one tenth of the training interactions.
+        - >-
+          For a current query, the retrieval module uses BGE to embed its textual user and item features and selects similar
+          examples by cosine similarity. Examples from future time steps are excluded. The selected context contains
+          equal numbers of positive and negative historical labels, preventing its label balance from becoming a shortcut.
+          The current query's unknown label is not supplied to ICT.
+        - >-
+          At the upper right, each historical example becomes a feature embedding, a reasoning embedding, and a label
+          embedding. ICT places these triples before the current query feature in a transformer-decoder sequence.
+          With four examples, the sequence has thirteen positions. The query's final hidden representation becomes the
+          LLM-enhanced collaborative-filtering feature. The reported decoder has two layers and two attention heads.
+        - >-
+          Training combines the recommendation objective with a cosine reconstruction loss for historical reasoning
+          embeddings. This auxiliary objective encourages the learned feature representations to retain information
+          from the reasoning examples. Ranking models concatenate the resulting feature with their original features;
+          retrieval models add it to the user vector. For candidate retrieval, the current target item's information is
+          masked to avoid exposing the answer.
+      reading_guide:
+        - "Read the left-hand path bottom to top: generate examples, retrieve neighbors, encode the context, and predict."
+        - "The reconstruction branch trains representations to carry reasoning information; online prediction uses the learned feature, not generated prose."
+    - id: teacher
+      role: "Method"
+      toc_label: "Teacher"
+      title: "Training a teacher that can recommend and still explain"
+      source: "Paper Fig. 4; graphs/amazon_Beauty.pdf and graphs/amazon_Sports.pdf"
+      layout: "wide"
+      panel_layout: "two"
+      panels:
+        - image: "/images/research/llm-cf-recgen-beauty.png"
+          label: "Amazon Beauty"
+        - image: "/images/research/llm-cf-recgen-sports.png"
+          label: "Amazon Sports"
+      summary: >-
+        RecGen-LLaMA is trained by mixing recommendation data with general instruction data. The study evaluates the
+        trade-off using recommendation AUC and MMLU accuracy.
+      paragraphs:
+        - >-
+          The horizontal axis measures recommendation AUC; the vertical axis measures MMLU accuracy. Full-parameter
+          tuning on recommendation data alone improves recommendation performance but sharply reduces MMLU accuracy.
+          This trade-off matters because the teacher's next task is to generate informative reasoning examples.
+        - >-
+          The paper compares data mixing with LoRA, noise-based tuning, representation regularization, and weight
+          interpolation. RecGen mixes recommendation examples with LIMA and alpaca-gpt4 instruction data and retains a
+          useful position on both axes in these experiments. The figure establishes this measured balance; MMLU is the
+          general-capability benchmark used here.
+      reading_guide:
+        - "Compare points on both axes: a larger recommendation AUC alone does not describe the teacher's performance."
+        - "The mixed-data RecGen settings motivate the teacher used to generate the stored CoT examples."
+    - id: context
+      role: "Results"
+      toc_label: "Context"
+      title: "How much retrieved context is useful?"
+      figure: "/images/research/llm-cf-context-length.png"
+      source: "Paper Fig. 5; graphs/ICL_n_transposed.pdf"
+      layout: "wide"
+      summary: >-
+        The context-size study compares zero, two, four, six, and eight examples, plus a four-example setting without
+        the positive/negative label-balance constraint.
+      paragraphs:
+        - >-
+          Each panel holds the backbone fixed and plots AUC on the three datasets. Several curves improve when moving
+          from two to four examples, but their peaks occur at different context sizes. Individual settings favor two,
+          six, or eight examples, while others decline with longer contexts. Four examples are the selected practical
+          configuration, not a universal optimum across all curves.
+        - >-
+          The n4_noc setting removes the label-balance constraint. Its changes differ across datasets and backbones.
+          Keeping the balanced setting makes the main comparison less dependent on the proportion of positive labels
+          in the retrieved context. The ranking, retrieval, and ablation tables below show the main experimental evidence.
+      reading_guide:
+        - "Compare n2, n4, n6, and n8 within a panel; different backbones have different response curves."
+        - "n4_noc changes label balance at fixed context length, so it addresses a different question from adding examples."
+  main_results:
+    title: "Main results: ranking, retrieval, and ablation"
+    summary: >-
+      Experiments use the 2019 Amazon Sports & Outdoors, Beauty, and Toys & Games subsets with leave-one-out splits.
+      CTR evaluation pairs each positive interaction with one sampled negative. The three AUC tables reproduce the
+      main ranking comparison across all six backbones; higher is better. KD, KAR, and LLM-CF use the same 7B LLaMA2
+      family and consistent backbone architectures. LLM-CF improves all 18 unaugmented-backbone AUC values and leads
+      the four-framework comparison in 16 of 18 settings. Full LogLoss results are available in the paper's Table 3.
+    tables:
+      - title: "Ranking AUC: Amazon Sports"
+        columns: ["Backbone", "Backbone only", "KD", "KAR", "LLM-CF"]
+        rows:
+          - cells: ["DeepFM", "0.7990", "0.8043", "0.7991", "0.8137"]
+          - cells: ["xDeepFM", "0.8158", "0.8169", "0.8161", "0.8196"]
+          - cells: ["AutoInt", "0.8003", "0.8012", "0.8039", "0.8088"]
+          - cells: ["DCNv1", "0.8023", "0.8040", "0.8024", "0.8092"]
+          - cells: ["DCNv2", "0.8110", "0.8112", "0.8087", "0.8131"]
+          - cells: ["DIN", "0.7986", "0.8023", "0.7971", "0.8089"]
+        note: "Paper Table 3. LLM-CF has the highest AUC for each of the six Sports backbones."
+      - title: "Ranking AUC: Amazon Beauty"
+        columns: ["Backbone", "Backbone only", "KD", "KAR", "LLM-CF"]
+        rows:
+          - cells: ["DeepFM", "0.7853", "0.7959", "0.7870", "0.8044"]
+          - cells: ["xDeepFM", "0.8065", "0.8104", "0.8101", "0.8113"]
+          - cells: ["AutoInt", "0.7949", "0.7961", "0.7939", "0.8090"]
+          - cells: ["DCNv1", "0.8146", "0.8147", "0.8165", "0.8182"]
+          - cells: ["DCNv2", "0.8028", "0.8057", "0.8003", "0.8033"]
+          - cells: ["DIN", "0.7861", "0.7934", "0.7861", "0.7967"]
+        note: "Paper Table 3. DCNv2 is an exception: KD reaches 0.8057, above LLM-CF's 0.8033."
+      - title: "Ranking AUC: Amazon Toys"
+        columns: ["Backbone", "Backbone only", "KD", "KAR", "LLM-CF"]
+        rows:
+          - cells: ["DeepFM", "0.7681", "0.7713", "0.7698", "0.7881"]
+          - cells: ["xDeepFM", "0.7836", "0.7865", "0.7898", "0.7947"]
+          - cells: ["AutoInt", "0.7630", "0.7635", "0.7683", "0.7754"]
+          - cells: ["DCNv1", "0.7621", "0.7652", "0.7651", "0.7702"]
+          - cells: ["DCNv2", "0.7774", "0.7827", "0.7759", "0.7812"]
+          - cells: ["DIN", "0.7586", "0.7652", "0.7620", "0.7783"]
+        note: "Paper Table 3. DCNv2 again favors KD. For DeepFM, LogLoss falls from 0.5770 to 0.5581 as AUC rises."
+      - title: "Candidate retrieval: HIT@10 / NDCG@10"
+        columns: ["Backbone", "Setting", "Sports", "Beauty", "Toys"]
+        rows:
+          - cells: ["SASREC", "Backbone only", "0.0203 / 0.0101", "0.0648 / 0.0293", "0.0646 / 0.0251"]
+          - cells: ["SASREC", "+ LLM-CF", "0.0349 / 0.0154", "0.0652 / 0.0293", "0.0723 / 0.0321"]
+          - cells: ["YoutubeDNN", "Backbone only", "0.0177 / 0.0091", "0.0272 / 0.0128", "0.0229 / 0.0110"]
+          - cells: ["YoutubeDNN", "+ LLM-CF", "0.0191 / 0.0094", "0.0291 / 0.0139", "0.0285 / 0.0138"]
+          - cells: ["GRU4REC", "Backbone only", "0.0268 / 0.0135", "0.0470 / 0.0241", "0.0411 / 0.0202"]
+          - cells: ["GRU4REC", "+ LLM-CF", "0.0317 / 0.0164", "0.0504 / 0.0250", "0.0380 / 0.0192"]
+          - cells: ["SRGNN", "Backbone only", "0.0146 / 0.0073", "0.0341 / 0.0169", "0.0284 / 0.0137"]
+          - cells: ["SRGNN", "+ LLM-CF", "0.0210 / 0.0101", "0.0359 / 0.0174", "0.0302 / 0.0144"]
+        note: "Paper Table 4. Each cell is HIT@10 / NDCG@10; higher is better. Training uses 128 sampled negatives per interaction. GRU4REC on Toys declines on both metrics."
+      - title: "What contributes? DeepFM ablation AUC"
+        columns: ["Variant", "Sports", "Beauty", "Toys"]
+        rows:
+          - cells: ["Backbone only", "0.7990", "0.7853", "0.7681"]
+          - cells: ["Without text features", "0.8137", "0.8030", "0.7880"]
+          - cells: ["Without CoT + reconstruction", "0.8009", "0.7980", "0.7766"]
+          - cells: ["Base LLaMA2 teacher", "0.8132", "0.7973", "0.7806"]
+          - cells: ["Mean pooling instead of decoder", "0.8071", "0.7986", "0.7739"]
+          - cells: ["LLM-CF", "0.8137", "0.8044", "0.7881"]
+        note: "DeepFM rows from Paper Table 5. Removing CoT also removes its reconstruction loss, so this ablation does not isolate the two effects. Other backbones have individual exceptions to the full model's advantage."
+    insights:
+      - "Against the unaugmented backbone, ranking AUC improves in all 18 combinations. Against KD and KAR as well, LLM-CF has the highest AUC in 16 of 18; the two exceptions are DCNv2 on Beauty and Toys."
+      - "Candidate-retrieval HIT@10 improves in 11 of 12 combinations. GRU4REC on Toys is the negative-transfer case, so the result does not imply uniform gains for every backbone."
+      - "The DeepFM ablations support the value of reasoning examples and the ICT decoder. They measure downstream recommendation performance, not the faithfulness of the teacher's generated reasoning."
+  key_findings:
+    - title: "Knowledge transfer through historical examples"
+      paragraphs:
+        - "Offline-generated reasoning and retrieved user-item interactions jointly supply an additional feature to conventional recommendation models."
+    - title: "Broad ranking gains with identifiable limits"
+      paragraphs:
+        - "The main ranking comparison improves every unaugmented backbone's AUC, while the explicit KD and retrieval exceptions show where transfer is less effective."
+    - title: "An explicit offline/online serving boundary"
+      paragraphs:
+        - "LLM generation stays offline. Online serving computes retrieval and a small ICT module alongside the backbone, allowing the stored reasoning to be reused."
+  research_impact:
+    - >-
+      LLM-CF is an earlier knowledge-transfer project in my recommendation research. It studies how LLM-generated
+      reasoning and collaborative interaction data can improve a smaller decision model, with a clear separation
+      between teacher generation and serving.
+    - >-
+      This work connects to my broader interest in how models acquire and use knowledge. Here, the evidence concerns
+      recommendation accuracy, the contribution of retrieved reasoning examples, and transfer across backbones.
+      Later projects examine internal organization, failure mechanisms, and metacognitive control more directly.

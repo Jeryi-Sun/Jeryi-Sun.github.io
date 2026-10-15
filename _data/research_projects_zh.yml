@@ -769,9 +769,19 @@
   authors: "Zhongxiang Sun, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, Jun Xu"
   layer: "大模型增强推荐"
   paper_url: "https://arxiv.org/abs/2403.17688"
-  project_url: ""
+  project_url: "/zh/LLM_CF_Page/"
   code_url: "https://github.com/Jeryi-Sun/LLM-CF"
   teaser: "/images/research/llm-cf-teaser.png"
   one_liner: "通过离线生成推理示例与上下文学习，将大模型的世界知识和推理能力融入协同过滤。"
   summary: "LLM-CF 离线生成推理示例，在推荐时检索相关示例，并通过上下文学习模块增强协同过滤，无需在线调用大模型。"
+  research_question: >-
+    怎样把大模型的世界知识与推理能力用于历史用户交互中的协同过滤，同时将大模型文本生成留在离线阶段？
+  citation: |
+    @inproceedings{sun2024large,
+      title={Large Language Models Enhanced Collaborative Filtering},
+      author={Sun, Zhongxiang and Si, Zihua and Zang, Xiaoxue and Zheng, Kai and Song, Yang and Zhang, Xiao and Xu, Jun},
+      booktitle={Proceedings of the 33rd ACM International Conference on Information and Knowledge Management},
+      doi={10.1145/3627673.3679558},
+      year={2024}
+    }
   show_on_homepage: true

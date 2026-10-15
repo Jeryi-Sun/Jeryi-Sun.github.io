@@ -29,7 +29,8 @@ en:
       My research draws on cognitive neuroscience to map how capabilities are organized inside models,
       identify the mechanisms behind failures, and intervene during long-running tasks. My first-author
       work includes 13 papers at CCF A/B venues (10 at CCF A venues). I also hold four granted invention
-      patents. Research recognition includes an ICLR Spotlight and Best Paper Awards at SIGIR-AP and CCIR.
+      patents. Research recognition includes an <strong>ICLR Spotlight</strong> and <strong>Best Paper Awards
+      at SIGIR-AP and CCIR</strong>.
   research_title: "Research & Plans"
   research_url: "/research/cognitive-neuroscience/"
   research_link: "Full Research Program"
@@ -99,10 +100,10 @@ en:
     - {title: "Non-IID data simulation using large-model agents", number: "ZL202510095786.8"}
   awards_title: "Honors & Awards"
   awards:
-    - {date: "2024, 2026", text: "Graduate National Scholarship. Selected in 2025 as one of 100 national recipient representatives featured in People's Daily.", url: "https://www.peopleapp.com/column/30048976446-500006240986", link: "News"}
-    - {date: "2025", text: "China Association for Science and Technology Youth Talent Support Program for Ph.D. Students."}
-    - {date: "2026", text: "CCIR Best Paper Award."}
-    - {date: "2024", text: "SIGIR-AP Best Paper Award."}
+    - {date: "2024, 2026", text: "<strong>Graduate National Scholarship</strong>. Selected in 2025 as one of <strong>100 national recipient representatives</strong> featured in People's Daily.", url: "https://www.peopleapp.com/column/30048976446-500006240986", link: "News"}
+    - {date: "2025", text: "<strong>China Association for Science and Technology Youth Talent Support Program for Ph.D. Students</strong>."}
+    - {date: "2026", text: "<strong>CCIR Best Paper Award</strong>."}
+    - {date: "2024", text: "<strong>SIGIR-AP Best Paper Award</strong>."}
     - {date: "2026", text: "Linghang Dean's Scholarship, Renmin University of China."}
     - {date: "2022", text: "Beijing Outstanding Graduate."}
     - {date: "2022, 2023, 2025", text: "University Merit Student."}
@@ -155,7 +156,7 @@ zh:
     - >-
       我借鉴认知神经科学的研究方法，刻画模型内部的能力结构，分析失效机制，并研究长程任务中的行为调控。
       已以第一作者发表 CCF A/B 类论文 13 篇，其中 CCF A 类 10 篇；拥有授权发明专利 4 项。
-      相关工作获 ICLR Spotlight、SIGIR-AP 和 CCIR 最佳论文奖。
+      相关工作获 <strong>ICLR Spotlight</strong>、<strong>SIGIR-AP 和 CCIR 最佳论文奖</strong>。
   research_title: "研究与计划"
   research_url: "/zh/research/cognitive-neuroscience/"
   research_link: "完整研究规划"
@@ -207,10 +208,10 @@ zh:
     - {title: "一种基于大模型智能体的非独立同分布数据模拟方法", number: "ZL202510095786.8"}
   awards_title: "荣誉奖励"
   awards:
-    - {date: "2024、2026", text: "研究生国家奖学金。2025 年入选全国 100 名获奖学生代表，登上《人民日报》。", url: "https://www.peopleapp.com/column/30048976446-500006240986", link: "报道"}
-    - {date: "2025", text: "中国科协青年人才托举工程博士生专项计划。"}
-    - {date: "2026", text: "CCIR 最佳论文奖。"}
-    - {date: "2024", text: "SIGIR-AP 最佳论文奖。"}
+    - {date: "2024、2026", text: "<strong>研究生国家奖学金</strong>。2025 年入选<strong>全国 100 名获奖学生代表</strong>，登上《人民日报》。", url: "https://www.peopleapp.com/column/30048976446-500006240986", link: "报道"}
+    - {date: "2025", text: "<strong>中国科协青年人才托举工程博士生专项计划</strong>。"}
+    - {date: "2026", text: "<strong>CCIR 最佳论文奖</strong>。"}
+    - {date: "2024", text: "<strong>SIGIR-AP 最佳论文奖</strong>。"}
     - {date: "2026", text: "“领航”院长奖学金。"}
     - {date: "2022", text: "北京市优秀毕业生。"}
     - {date: "2022、2023、2025", text: "校级三好学生。"}

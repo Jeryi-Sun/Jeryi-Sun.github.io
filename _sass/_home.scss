@@ -27,6 +27,7 @@
 
   h1, h2, h3 {
     color: #20242a;
+    font-family: inherit;
     letter-spacing: 0;
   }
 
@@ -79,7 +80,7 @@
 
 .academic-home__role {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .academic-home__school {
@@ -172,12 +173,14 @@
     margin: 0 0 16px;
     font-size: 22px;
     line-height: 1.35;
+    font-weight: 600;
   }
 
   h3 {
     margin: 23px 0 9px;
     font-size: 16px;
     line-height: 1.45;
+    font-weight: 500;
   }
 
   p { margin: 0 0 14px; }
@@ -207,7 +210,7 @@
   align-items: center;
   gap: 7px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 400;
 
   i { font-size: 11px; }
 }
@@ -216,7 +219,7 @@
   margin: 20px 0 24px;
 
   > div { margin-bottom: 17px; }
-  dt { font-size: 16px; font-weight: 700; }
+  dt { font-size: 16px; font-weight: 500; }
   dd { margin: 4px 0 0; }
   a { font-size: 14px; white-space: normal; }
   a i { font-size: 10px; }
@@ -236,6 +239,7 @@
     margin: 0 0 5px;
     font-size: 16px;
     line-height: 1.4;
+    font-weight: 400;
   }
 
   p { margin: 0 0 5px; }
@@ -257,8 +261,10 @@
 .home-paper__venue {
   color: #4c535c;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 400;
 }
+
+.home-paper__recognition { font-weight: 600; }
 
 .home-paper__summary {
   color: #565d66;
@@ -292,6 +298,7 @@
   }
 
   p { margin: 2px 0 0; font-size: 15px; }
+  strong { font-weight: 500; }
 }
 
 .home-timeline__date {
@@ -334,6 +341,8 @@
     gap: 14px;
     margin-bottom: 12px;
   }
+
+  strong { color: #252a30; font-weight: 700; }
 }
 
 .home-honors__date {
@@ -356,6 +365,7 @@
   }
 
   span { color: #626970; font-size: 13px; }
+  strong { font-weight: 400; }
 }
 
 @media (min-width: 861px) and (max-height: 780px) {
