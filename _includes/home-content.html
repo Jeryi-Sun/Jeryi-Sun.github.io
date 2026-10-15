@@ -30,17 +30,18 @@
   {% for project_id in site.data.home.selected_project_ids %}
   {% assign project = projects | where: 'id', project_id | first %}
   {% assign canonical_project = site.data.research_projects | where: 'id', project_id | first %}
+  {% assign publication_url = project.project_url | default: project.paper_url %}
   <article class="home-paper">
-    <a class="home-paper__image" href="{{ project.project_url | relative_url }}" aria-label="{{ project.short_title | escape }}">
+    <a class="home-paper__image" href="{{ publication_url | relative_url }}" aria-label="{{ project.short_title | escape }}">
       {% include optimized-image.html src=project.teaser alt=project.short_title loading="lazy" %}
     </a>
     <div class="home-paper__body">
-      <h3><a href="{{ project.project_url | relative_url }}">{{ canonical_project.title }}</a></h3>
+      <h3><a href="{{ publication_url | relative_url }}">{{ canonical_project.title }}</a></h3>
       <p class="home-paper__venue">{{ project.venue }}{% if project.recognition %} | <a href="{{ project.recognition.url }}">{{ project.recognition.label }}</a>{% endif %}</p>
       <p class="home-paper__summary">{{ project.one_liner }}</p>
       <div class="home-paper__links">
         {% if project.paper_url and project.paper_url != '' %}<a href="{{ project.paper_url }}">{{ home.paper_label }}</a>{% endif %}
-        <a href="{{ project.project_url | relative_url }}">{{ home.project_label }}</a>
+        {% if project.project_url and project.project_url != '' %}<a href="{{ project.project_url | relative_url }}">{{ home.project_label }}</a>{% endif %}
         {% if project.code_url and project.code_url != '' %}<a href="{{ project.code_url }}">{{ home.code_label }}</a>{% endif %}
         <a class="scholar-paper-count" data-scholar-title="{{ canonical_project.title | escape }}" href="{{ site.author.googlescholar }}" hidden></a>
       </div>
