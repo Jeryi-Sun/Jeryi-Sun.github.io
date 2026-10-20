@@ -2,8 +2,8 @@
   "profile_id": "4n5whr0AAAAJ",
   "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
   "name": "Zhongxiang Sun",
-  "updated_at": "2026-10-17T20:43:04+00:00",
-  "citations": 2157,
+  "updated_at": "2026-10-20T21:42:49+00:00",
+  "citations": 2155,
   "h_index": 19,
   "i10_index": 22,
   "papers": [
@@ -16,25 +16,25 @@
     {
       "id": "-f6ydRqryjwC",
       "title": "Memory in the age of ai agents",
-      "citations": 281,
+      "citations": 286,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:-f6ydRqryjwC"
     },
     {
       "id": "ULOm3_A8WrAC",
       "title": "Redeep: Detecting hallucination in retrieval-augmented generation via mechanistic interpretability",
-      "citations": 198,
+      "citations": 199,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ULOm3_A8WrAC"
     },
     {
       "id": "Y0pCki6q_DkC",
       "title": "A short survey of viewing large language models in legal aspect",
-      "citations": 185,
+      "citations": 169,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:Y0pCki6q_DkC"
     },
     {
       "id": "KlAtU1dfN6UC",
       "title": "Twin v2: Scaling ultra-long user behavior sequence modeling for enhanced ctr prediction at kuaishou",
-      "citations": 124,
+      "citations": 126,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:KlAtU1dfN6UC"
     },
     {
@@ -64,7 +64,7 @@
     {
       "id": "YsMSGLbcyi4C",
       "title": "When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation",
-      "citations": 67,
+      "citations": 68,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:YsMSGLbcyi4C"
     },
     {
@@ -82,7 +82,7 @@
     {
       "id": "0EnyYjriUFMC",
       "title": "Law Article-Enhanced Legal Case Matching: a Causal Learning Approach",
-      "citations": 43,
+      "citations": 44,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:0EnyYjriUFMC"
     },
     {
@@ -152,21 +152,21 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:YOwf2qJgpHMC"
     },
     {
+      "id": "35N4QoGY0k4C",
+      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
+      "citations": 7,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
+    },
+    {
       "id": "4JMBOYKVnBMC",
       "title": "Deep search with hierarchical meta-cognitive monitoring inspired by cognitive neuroscience",
       "citations": 7,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:4JMBOYKVnBMC"
     },
     {
-      "id": "35N4QoGY0k4C",
-      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
-      "citations": 5,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
-    },
-    {
       "id": "RGFaLdJalmkC",
       "title": "Omni-Safety under Cross-Modality Conflict: Vulnerabilities, Dynamics Mechanisms and Efficient Alignment",
-      "citations": 5,
+      "citations": 6,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:RGFaLdJalmkC"
     },
     {
@@ -194,16 +194,16 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:R3hNpaxXUhUC"
     },
     {
+      "id": "BqipwSGYUEgC",
+      "title": "Empowering open-domain LLMs for legal document correction via legal knowledge integration and decoding constraints",
+      "citations": 3,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:BqipwSGYUEgC"
+    },
+    {
       "id": "kNdYIx-mwKoC",
       "title": "Effective In-Context Example Selection through Data Compression",
       "citations": 3,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:kNdYIx-mwKoC"
-    },
-    {
-      "id": "BqipwSGYUEgC",
-      "title": "Empowering open-domain LLMs for legal document correction via legal knowledge integration and decoding constraints",
-      "citations": 2,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:BqipwSGYUEgC"
     },
     {
       "id": "k_IJM867U9cC",
