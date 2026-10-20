@@ -5,7 +5,7 @@ layout: default
 {% include base_path %}
 {% assign home = site.data.home[page.lang] %}
 
-<div class="academic-home">
+<div class="academic-home" id="home-top">
   <aside class="academic-home__sidebar" aria-label="{{ home.nav_label }}">
     <div class="academic-home__identity">
       {% include optimized-image.html src="/images/profile.png" alt=home.name loading="eager" fetchpriority="high" picture_class="academic-home__portrait" %}
@@ -32,6 +32,19 @@ layout: default
       <a href="{{ '/zh/' | relative_url }}" lang="zh" hreflang="zh-CN"{% if page.lang == 'zh' %} aria-current="page"{% endif %}>中文</a>
     </div>
   </aside>
+
+  <nav class="academic-home__mobile-nav" aria-label="{{ home.nav_label }}">
+    <a href="#research">{% if page.lang == 'zh' %}研究{% else %}Research{% endif %}</a>
+    <a href="#publications">{% if page.lang == 'zh' %}论文{% else %}Papers{% endif %}</a>
+    <details class="academic-home__mobile-menu" data-mobile-menu>
+      <summary><i class="fas fa-bars" aria-hidden="true"></i> {% if page.lang == 'zh' %}目录{% else %}Sections{% endif %}</summary>
+      <div class="academic-home__mobile-links">
+        <a href="#home-top">{% if page.lang == 'zh' %}回到顶部{% else %}Back to Top{% endif %}</a>
+        {% for item in home.nav %}<a href="#{{ item.id }}">{{ item.label }}</a>{% endfor %}
+      </div>
+    </details>
+    <a class="academic-home__mobile-language" href="{{ home.language_url | relative_url }}" lang="{% if page.lang == 'zh' %}en{% else %}zh-CN{% endif %}" hreflang="{% if page.lang == 'zh' %}en{% else %}zh-CN{% endif %}">{{ home.language_label }}</a>
+  </nav>
 
   <main class="academic-home__content" id="main" role="main">
     {{ content }}

@@ -23,8 +23,7 @@
 {% if project and project_blog %}
 {% assign narrative_sections = project_blog.narrative_sections | default: project_blog.figure_guide %}
 
-<nav class="research-toc" aria-label="{% if is_zh %}项目目录{% else %}Project contents{% endif %}">
-  <span>{% if is_zh %}目录{% else %}Contents{% endif %}</span>
+{% capture project_contents %}
   <a href="#research-question">{% if is_zh %}问题{% else %}Question{% endif %}</a>
   {% for section in narrative_sections %}
     {% assign toc_label = section.toc_label | default: section.role | default: section.title %}
@@ -43,6 +42,16 @@
   <a href="#takeaways">{% if is_zh %}主要结论{% else %}Takeaways{% endif %}</a>
   <a href="#research-impact">{% if is_zh %}研究价值{% else %}Impact{% endif %}</a>
   <a href="#resources">{% if is_zh %}资源{% else %}Resources{% endif %}</a>
+{% endcapture %}
+<nav class="research-toc" aria-label="{% if is_zh %}项目目录{% else %}Project contents{% endif %}">
+  <span>{% if is_zh %}目录{% else %}Contents{% endif %}</span>
+  {{ project_contents }}
+</nav>
+<nav class="research-mobile-toc" aria-label="{% if is_zh %}项目目录{% else %}Project contents{% endif %}">
+  <details data-mobile-menu>
+    <summary><i class="fas fa-list-ul" aria-hidden="true"></i> {% if is_zh %}项目目录{% else %}On This Page{% endif %}<i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+    <div class="research-mobile-toc__links">{{ project_contents }}</div>
+  </details>
 </nav>
 
 <section class="research-hero research-hero--project">
@@ -119,14 +128,20 @@
           {% for panel in section.panels %}
           <div class="research-figure-panel">
             {% capture panel_alt %}{{ project.short_title }} {{ section.title }} {{ panel.label | default: forloop.index }}{% if is_zh %}子图{% else %} panel{% endif %}{% endcapture %}
-            {% include optimized-image.html src=panel.image alt=panel_alt loading="lazy" %}
+            <a class="research-figure-link" href="{{ panel.image | relative_url }}" title="{% if is_zh %}查看原图{% else %}View full-size figure{% endif %}" aria-label="{% if is_zh %}查看原图：{% else %}View full-size figure: {% endif %}{{ panel_alt | escape }}">
+              {% include optimized-image.html src=panel.image alt=panel_alt loading="lazy" %}
+              <span class="research-figure-link__icon" aria-hidden="true"><i class="fas fa-expand"></i></span>
+            </a>
             {% if panel.label %}<p><strong>{{ panel.label }}</strong></p>{% endif %}
           </div>
           {% endfor %}
         </div>
         {% else %}
         {% capture section_alt %}{{ project.short_title }} {{ section.title }}{% if is_zh %}图示{% else %} figure{% endif %}{% endcapture %}
-        {% include optimized-image.html src=section_image alt=section_alt loading="lazy" %}
+        <a class="research-figure-link" href="{{ section_image | relative_url }}" title="{% if is_zh %}查看原图{% else %}View full-size figure{% endif %}" aria-label="{% if is_zh %}查看原图：{% else %}View full-size figure: {% endif %}{{ section_alt | escape }}">
+          {% include optimized-image.html src=section_image alt=section_alt loading="lazy" %}
+          <span class="research-figure-link__icon" aria-hidden="true"><i class="fas fa-expand"></i></span>
+        </a>
         {% endif %}
       </figure>
 
