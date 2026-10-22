@@ -3,11 +3,15 @@
 
 import argparse
 import json
+import os
 import sys
+import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qs, urljoin, urlparse
 from urllib.request import Request, urlopen
 
@@ -15,7 +19,80 @@ from urllib.request import Request, urlopen
 PROFILE_ID = "4n5whr0AAAAJ"
 PROFILE_URL = f"https://scholar.google.com/citations?user={PROFILE_ID}&hl=en"
 OUTPUT = Path(__file__).resolve().parents[1] / "_data" / "scholar.json"
+RETRY_DELAYS = (20, 60)
+RETRYABLE_HTTP = {403, 429, 500, 502, 503, 504}
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
+
+
+class ScholarUnavailable(RuntimeError):
+    """The public profile could not be fetched after bounded retries."""
+
+
+def fetch_profile():
+    request = Request(PROFILE_URL + "&pagesize=100", headers={"User-Agent": "Mozilla/5.0", "Accept-Language": "en"})
+    for attempt in range(len(RETRY_DELAYS) + 1):
+        retry_after = None
+        try:
+            with urlopen(request, timeout=30) as response:
+                return response.read().decode(response.headers.get_content_charset() or "utf-8")
+        except HTTPError as error:
+            if error.code not in RETRYABLE_HTTP:
+                raise
+            reason = f"HTTP {error.code}"
+            retry_after = error.headers.get("Retry-After") if error.headers else None
+            error.close()
+        except (URLError, TimeoutError) as error:
+            reason = str(error)
+        if attempt == len(RETRY_DELAYS):
+            break
+        delay = RETRY_DELAYS[attempt]
+        if retry_after:
+            try:
+                wait = float(retry_after)
+            except ValueError:
+                try:
+                    wait = (parsedate_to_datetime(retry_after) - datetime.now(timezone.utc)).total_seconds()
+                except (ValueError, TypeError, OverflowError):
+                    wait = 0
+            if wait > max(RETRY_DELAYS):
+                break
+            delay = max(delay, wait)
+        print(f"Scholar request {attempt + 1} unavailable ({reason}); retrying in {delay:g}s.", flush=True)
+        time.sleep(delay)
+    raise ScholarUnavailable(f"{reason}; profile fetch stopped after {attempt + 1} attempt(s)")
+
+
+def verified_cache(output):
+    try:
+        snapshot = json.loads(output.read_text(encoding="utf-8"))
+        updated = datetime.fromisoformat(snapshot["updated_at"])
+        metrics = [snapshot[key] for key in ("citations", "h_index", "i10_index")]
+        papers = snapshot["papers"]
+        valid_papers = isinstance(papers, list) and papers and all(
+            isinstance(paper, dict) and paper.get("id") and paper.get("title")
+            and type(paper.get("citations")) is int and paper["citations"] >= 0
+            for paper in papers
+        )
+        if (snapshot["profile_id"] != PROFILE_ID or not updated.tzinfo
+                or not all(type(value) is int and value >= 0 for value in metrics)
+                or metrics[0] <= 0 or not valid_papers
+                or max(metrics[1:]) > len(papers)):
+            return None
+        return snapshot
+    except (OSError, KeyError, TypeError, ValueError):
+        return None
+
+
+def report_result(status, message, snapshot=None):
+    if os.environ.get("GITHUB_OUTPUT"):
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+            output.write(f"status={status}\n")
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
+            summary.write(f"## Google Scholar refresh\n\n**Result: {status}**\n\n{message}\n\n")
+            if snapshot:
+                summary.write(f"Last verified: `{snapshot['updated_at']}`\n\n")
+                summary.write(f"{snapshot['citations']} citations; h-index {snapshot['h_index']}; {len(snapshot['papers'])} papers.\n")
 
 
 @dataclass
@@ -113,6 +190,7 @@ def main():
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("--input-html", type=Path, help="Parse a saved public-profile response for verification.")
     cli.add_argument("--output", type=Path, default=OUTPUT)
+    cli.add_argument("--allow-stale", action="store_true", help="Report temporary fetch failures as stale only when a verified snapshot is available.")
     args = cli.parse_args()
     try:
         if args.input_html:
@@ -122,9 +200,17 @@ def main():
             except UnicodeDecodeError:
                 html = raw.decode("iso-8859-1")
         else:
-            request = Request(PROFILE_URL + "&pagesize=100", headers={"User-Agent": "Mozilla/5.0", "Accept-Language": "en"})
-            with urlopen(request, timeout=30) as response:
-                html = response.read().decode(response.headers.get_content_charset() or "utf-8")
+            try:
+                html = fetch_profile()
+            except ScholarUnavailable as error:
+                cached = verified_cache(args.output) if args.allow_stale else None
+                if cached is None:
+                    raise
+                print(f"Scholar remains unavailable: {error}.", file=sys.stderr)
+                message = "Google Scholar was unavailable; data was not updated. The previous verified snapshot and its original timestamp were retained."
+                print(f"::warning::{message}")
+                report_result("stale", message, cached)
+                return 0
         snapshot = parse_profile(html)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         temporary = args.output.with_suffix(".json.tmp")
@@ -132,7 +218,9 @@ def main():
         temporary.replace(args.output)
     except Exception as error:
         print(f"Scholar refresh failed: {error}. Previous data was not changed.", file=sys.stderr)
+        report_result("failed", "Refresh failed. No snapshot was published; see the fetch or validation error in the log.")
         return 1
+    report_result("updated", "Successfully fetched and verified the public Scholar profile.", snapshot)
     print(f"Scholar verified: {snapshot['citations']} citations, h-index {snapshot['h_index']}, {len(snapshot['papers'])} records.")
     return 0
 

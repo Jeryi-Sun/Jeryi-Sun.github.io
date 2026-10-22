@@ -8,6 +8,7 @@ on:
     branches: [master]
     paths:
       - "scripts/update_scholar.py"
+      - "scripts/test_update_scholar.py"
       - ".github/workflows/scholar.yml"
 
 permissions:
@@ -24,13 +25,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.repository.default_branch }}
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Test Scholar refresh handling
+        run: python -B -m unittest discover -s scripts -p test_update_scholar.py -v
       - name: Fetch verified Scholar data
-        run: python scripts/update_scholar.py
+        id: scholar
+        run: python -B scripts/update_scholar.py --allow-stale
       - name: Save the snapshot
+        if: github.ref_name == github.event.repository.default_branch && steps.scholar.outputs.status == 'updated'
         run: |
           if git diff --quiet -- _data/scholar.json; then
             exit 0
