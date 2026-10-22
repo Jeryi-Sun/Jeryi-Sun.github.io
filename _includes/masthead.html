@@ -46,7 +46,7 @@
       </nav>
 
       <nav class="mobile-nav" aria-label="{{ mobile_nav_label }}">
-        <a class="mobile-nav__title" href="{{ base_path }}{{ nav_home_url }}">{{ nav_home_title }}</a>
+        <a class="mobile-nav__title" href="{{ base_path }}{{ nav_home_url }}">{% if page.lang == "zh" %}孙忠祥{% else %}{{ site.author.name }}{% endif %}</a>
         <div class="mobile-nav__actions">
           {% if language_url %}<a class="language-switch language-switch--mobile" href="{{ base_path }}{{ language_url }}" lang="{{ language_code }}" hreflang="{{ language_code }}">{{ language_label }}</a>{% endif %}
           <details class="mobile-nav__details">

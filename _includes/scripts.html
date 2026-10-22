@@ -6,5 +6,9 @@
   <script src="{{ '/assets/js/scholar.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 {% endif %}
 
+{% if page.layout == 'home' or page.project_id %}
+  <script src="{{ '/assets/js/mobile-navigation.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+{% endif %}
+
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}

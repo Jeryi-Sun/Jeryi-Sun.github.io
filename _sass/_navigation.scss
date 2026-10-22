@@ -456,6 +456,7 @@
     min-width: 0;
     overflow: hidden;
     color: $masthead-link-color;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.25;
     text-overflow: ellipsis;
@@ -595,5 +596,16 @@
         background: mix(#fff, $primary-color, 92%);
       }
     }
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-nav__menu-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 }
