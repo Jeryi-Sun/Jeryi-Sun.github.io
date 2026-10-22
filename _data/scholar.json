@@ -2,8 +2,8 @@
   "profile_id": "4n5whr0AAAAJ",
   "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
   "name": "Zhongxiang Sun",
-  "updated_at": "2026-10-20T21:42:49+00:00",
-  "citations": 2155,
+  "updated_at": "2026-10-22T01:54:27+00:00",
+  "citations": 2161,
   "h_index": 19,
   "i10_index": 22,
   "papers": [
@@ -16,13 +16,13 @@
     {
       "id": "-f6ydRqryjwC",
       "title": "Memory in the age of ai agents",
-      "citations": 286,
+      "citations": 288,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:-f6ydRqryjwC"
     },
     {
       "id": "ULOm3_A8WrAC",
       "title": "Redeep: Detecting hallucination in retrieval-augmented generation via mechanistic interpretability",
-      "citations": 199,
+      "citations": 200,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ULOm3_A8WrAC"
     },
     {
@@ -64,7 +64,7 @@
     {
       "id": "YsMSGLbcyi4C",
       "title": "When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation",
-      "citations": 68,
+      "citations": 69,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:YsMSGLbcyi4C"
     },
     {
@@ -88,7 +88,7 @@
     {
       "id": "ns9cj8rnVeAC",
       "title": "Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models",
-      "citations": 38,
+      "citations": 39,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ns9cj8rnVeAC"
     },
     {
@@ -206,6 +206,12 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:kNdYIx-mwKoC"
     },
     {
+      "id": "lSLTfruPkqcC",
+      "title": "Hidden States Know Where Reasoning Diverges: Credit Assignment via Span-Level Wasserstein Distance",
+      "citations": 2,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:lSLTfruPkqcC"
+    },
+    {
       "id": "k_IJM867U9cC",
       "title": "StyliTruth: Unlocking Stylized yet Truthful LLM Generation via Disentangled Steering",
       "citations": 2,
@@ -228,12 +234,6 @@
       "title": "To Search or to Recommend: Predicting Open-App Motivation with Neural Hawkes Process",
       "citations": 2,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:3fE2CSJIrl8C"
-    },
-    {
-      "id": "lSLTfruPkqcC",
-      "title": "Hidden States Know Where Reasoning Diverges: Credit Assignment via Span-Level Wasserstein Distance",
-      "citations": 1,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:lSLTfruPkqcC"
     },
     {
       "id": "JV2RwH3_ST0C",
