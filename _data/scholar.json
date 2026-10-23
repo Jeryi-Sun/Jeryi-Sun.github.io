@@ -2,27 +2,27 @@
   "profile_id": "4n5whr0AAAAJ",
   "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
   "name": "Zhongxiang Sun",
-  "updated_at": "2026-10-22T01:57:22+00:00",
-  "citations": 2161,
+  "updated_at": "2026-10-23T11:48:30+00:00",
+  "citations": 2169,
   "h_index": 19,
   "i10_index": 22,
   "papers": [
     {
       "id": "W7OEmFMy1HYC",
       "title": "Uncovering ChatGPT's Capabilities in Recommender Systems",
-      "citations": 519,
+      "citations": 520,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:W7OEmFMy1HYC"
     },
     {
       "id": "-f6ydRqryjwC",
       "title": "Memory in the age of ai agents",
-      "citations": 288,
+      "citations": 291,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:-f6ydRqryjwC"
     },
     {
       "id": "ULOm3_A8WrAC",
       "title": "Redeep: Detecting hallucination in retrieval-augmented generation via mechanistic interpretability",
-      "citations": 200,
+      "citations": 201,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ULOm3_A8WrAC"
     },
     {
@@ -64,13 +64,13 @@
     {
       "id": "YsMSGLbcyi4C",
       "title": "When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation",
-      "citations": 69,
+      "citations": 70,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:YsMSGLbcyi4C"
     },
     {
       "id": "WF5omc3nYNoC",
       "title": "KuaiSAR: A Unified Search And Recommendation Dataset",
-      "citations": 64,
+      "citations": 65,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:WF5omc3nYNoC"
     },
     {
@@ -88,7 +88,7 @@
     {
       "id": "ns9cj8rnVeAC",
       "title": "Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models",
-      "citations": 39,
+      "citations": 40,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ns9cj8rnVeAC"
     },
     {
