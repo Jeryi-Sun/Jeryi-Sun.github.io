@@ -2,27 +2,27 @@
   "profile_id": "4n5whr0AAAAJ",
   "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
   "name": "Zhongxiang Sun",
-  "updated_at": "2026-11-01T06:21:13+00:00",
-  "citations": 2219,
+  "updated_at": "2026-11-06T19:30:03+00:00",
+  "citations": 2240,
   "h_index": 20,
-  "i10_index": 23,
+  "i10_index": 24,
   "papers": [
     {
       "id": "W7OEmFMy1HYC",
       "title": "Uncovering ChatGPT's Capabilities in Recommender Systems",
-      "citations": 523,
+      "citations": 525,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:W7OEmFMy1HYC"
     },
     {
       "id": "-f6ydRqryjwC",
       "title": "Memory in the age of ai agents",
-      "citations": 306,
+      "citations": 314,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:-f6ydRqryjwC"
     },
     {
       "id": "ULOm3_A8WrAC",
       "title": "Redeep: Detecting hallucination in retrieval-augmented generation via mechanistic interpretability",
-      "citations": 207,
+      "citations": 210,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ULOm3_A8WrAC"
     },
     {
@@ -34,7 +34,7 @@
     {
       "id": "KlAtU1dfN6UC",
       "title": "Twin v2: Scaling ultra-long user behavior sequence modeling for enhanced ctr prediction at kuaishou",
-      "citations": 128,
+      "citations": 129,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:KlAtU1dfN6UC"
     },
     {
@@ -58,7 +58,7 @@
     {
       "id": "4TOpqqG69KYC",
       "title": "Generative retrieval with semantic tree-structured identifiers and contrastive learning",
-      "citations": 81,
+      "citations": 84,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:4TOpqqG69KYC"
     },
     {
@@ -88,7 +88,7 @@
     {
       "id": "ns9cj8rnVeAC",
       "title": "Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models",
-      "citations": 42,
+      "citations": 43,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ns9cj8rnVeAC"
     },
     {
@@ -140,16 +140,16 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:j3f4tGmQtD8C"
     },
     {
+      "id": "35N4QoGY0k4C",
+      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
+      "citations": 10,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
+    },
+    {
       "id": "YOwf2qJgpHMC",
       "title": "LargePiG: Your Large Language Model is Secretly a Pointer Generator",
       "citations": 10,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:YOwf2qJgpHMC"
-    },
-    {
-      "id": "35N4QoGY0k4C",
-      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
-      "citations": 9,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
     },
     {
       "id": "M3NEmzRMIkIC",
@@ -194,6 +194,12 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:R3hNpaxXUhUC"
     },
     {
+      "id": "GnPB-g6toBAC",
+      "title": "HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios",
+      "citations": 4,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:GnPB-g6toBAC"
+    },
+    {
       "id": "BqipwSGYUEgC",
       "title": "Empowering open-domain LLMs for legal document correction via legal knowledge integration and decoding constraints",
       "citations": 3,
@@ -218,12 +224,6 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:k_IJM867U9cC"
     },
     {
-      "id": "GnPB-g6toBAC",
-      "title": "HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios",
-      "citations": 2,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:GnPB-g6toBAC"
-    },
-    {
       "id": "maZDTaKrznsC",
       "title": "Diagnosing Knowledge Conflict in Multimodal Long-Chain Reasoning",
       "citations": 2,
@@ -240,6 +240,12 @@
       "title": "DLLM-Searcher: Adapting Diffusion Large Language Model for Search Agents",
       "citations": 1,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:JV2RwH3_ST0C"
+    },
+    {
+      "id": "ldfaerwXgEUC",
+      "title": "Trustworthy Recursive Self-Improvement in the Era of Large Models: Foundation, Risks, Evaluation and Open Challenges",
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ldfaerwXgEUC"
     },
     {
       "id": "2P1L_qKh6hAC",
