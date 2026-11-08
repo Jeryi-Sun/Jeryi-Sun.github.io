@@ -2,8 +2,8 @@
   "profile_id": "4n5whr0AAAAJ",
   "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
   "name": "Zhongxiang Sun",
-  "updated_at": "2026-11-08T06:16:29+00:00",
-  "citations": 2272,
+  "updated_at": "2026-11-08T13:39:56+00:00",
+  "citations": 2278,
   "h_index": 20,
   "i10_index": 24,
   "papers": [
@@ -16,7 +16,7 @@
     {
       "id": "-f6ydRqryjwC",
       "title": "Memory in the age of ai agents",
-      "citations": 317,
+      "citations": 320,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:-f6ydRqryjwC"
     },
     {
@@ -28,7 +28,7 @@
     {
       "id": "Y0pCki6q_DkC",
       "title": "A short survey of viewing large language models in legal aspect",
-      "citations": 172,
+      "citations": 173,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:Y0pCki6q_DkC"
     },
     {
@@ -64,13 +64,13 @@
     {
       "id": "YsMSGLbcyi4C",
       "title": "When Search Meets Recommendation: Learning Disentangled Search Representation for Recommendation",
-      "citations": 74,
+      "citations": 75,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:YsMSGLbcyi4C"
     },
     {
       "id": "WF5omc3nYNoC",
       "title": "KuaiSAR: A Unified Search And Recommendation Dataset",
-      "citations": 71,
+      "citations": 72,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:WF5omc3nYNoC"
     },
     {
@@ -94,7 +94,7 @@
     {
       "id": "QIV2ME_5wuYC",
       "title": "Syler: A framework for explicit syllogistic legal reasoning in large language models",
-      "citations": 37,
+      "citations": 38,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:QIV2ME_5wuYC"
     },
     {
@@ -134,16 +134,16 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:7PzlFSSx8tAC"
     },
     {
-      "id": "35N4QoGY0k4C",
-      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
-      "citations": 12,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
-    },
-    {
       "id": "j3f4tGmQtD8C",
       "title": "Streaming hallucination detection in long chain-of-thought reasoning",
       "citations": 12,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:j3f4tGmQtD8C"
+    },
+    {
+      "id": "35N4QoGY0k4C",
+      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
+      "citations": 10,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
     },
     {
       "id": "YOwf2qJgpHMC",
@@ -176,6 +176,12 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:lSLTfruPkqcC"
     },
     {
+      "id": "e5wmG9Sq2KIC",
+      "title": "When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs",
+      "citations": 5,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:e5wmG9Sq2KIC"
+    },
+    {
       "id": "qUcmZB5y_30C",
       "title": "Trustworthy information retrieval in the LLM era: bias, unfairness, and hallucination",
       "citations": 5,
@@ -192,12 +198,6 @@
       "title": "ToolArtist: Tool-Using Unified Multimodal Models for Agentic Image Generation",
       "citations": 4,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:vV6vV6tmYwMC"
-    },
-    {
-      "id": "e5wmG9Sq2KIC",
-      "title": "When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs",
-      "citations": 4,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:e5wmG9Sq2KIC"
     },
     {
       "id": "R3hNpaxXUhUC",
