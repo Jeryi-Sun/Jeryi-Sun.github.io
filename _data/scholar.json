@@ -2,8 +2,8 @@
   "profile_id": "4n5whr0AAAAJ",
   "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
   "name": "Zhongxiang Sun",
-  "updated_at": "2026-11-09T06:48:56+00:00",
-  "citations": 2278,
+  "updated_at": "2026-11-10T07:27:51+00:00",
+  "citations": 2287,
   "h_index": 20,
   "i10_index": 24,
   "papers": [
@@ -16,13 +16,13 @@
     {
       "id": "-f6ydRqryjwC",
       "title": "Memory in the age of ai agents",
-      "citations": 320,
+      "citations": 321,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:-f6ydRqryjwC"
     },
     {
       "id": "ULOm3_A8WrAC",
       "title": "Redeep: Detecting hallucination in retrieval-augmented generation via mechanistic interpretability",
-      "citations": 213,
+      "citations": 215,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ULOm3_A8WrAC"
     },
     {
@@ -40,7 +40,7 @@
     {
       "id": "8k81kl-MbHgC",
       "title": "Large language models enhanced collaborative filtering",
-      "citations": 98,
+      "citations": 99,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:8k81kl-MbHgC"
     },
     {
@@ -58,7 +58,7 @@
     {
       "id": "4TOpqqG69KYC",
       "title": "Generative retrieval with semantic tree-structured identifiers and contrastive learning",
-      "citations": 84,
+      "citations": 85,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:4TOpqqG69KYC"
     },
     {
@@ -134,16 +134,16 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:7PzlFSSx8tAC"
     },
     {
+      "id": "35N4QoGY0k4C",
+      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
+      "citations": 13,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
+    },
+    {
       "id": "j3f4tGmQtD8C",
       "title": "Streaming hallucination detection in long chain-of-thought reasoning",
       "citations": 12,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:j3f4tGmQtD8C"
-    },
-    {
-      "id": "35N4QoGY0k4C",
-      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
-      "citations": 10,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
     },
     {
       "id": "YOwf2qJgpHMC",
@@ -160,7 +160,7 @@
     {
       "id": "RGFaLdJalmkC",
       "title": "Omni-Safety under Cross-Modality Conflict: Vulnerabilities, Dynamics Mechanisms and Efficient Alignment",
-      "citations": 7,
+      "citations": 8,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:RGFaLdJalmkC"
     },
     {
