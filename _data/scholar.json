@@ -2,8 +2,8 @@
   "profile_id": "4n5whr0AAAAJ",
   "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
   "name": "Zhongxiang Sun",
-  "updated_at": "2026-11-11T06:41:25+00:00",
-  "citations": 2287,
+  "updated_at": "2026-11-13T06:55:06+00:00",
+  "citations": 2292,
   "h_index": 20,
   "i10_index": 24,
   "papers": [
@@ -28,7 +28,7 @@
     {
       "id": "Y0pCki6q_DkC",
       "title": "A short survey of viewing large language models in legal aspect",
-      "citations": 173,
+      "citations": 174,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:Y0pCki6q_DkC"
     },
     {
@@ -46,7 +46,7 @@
     {
       "id": "u-x6o8ySG0sC",
       "title": "Explainable legal case matching via inverse optimal transport-based rationale extraction",
-      "citations": 93,
+      "citations": 94,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:u-x6o8ySG0sC"
     },
     {
@@ -70,7 +70,7 @@
     {
       "id": "WF5omc3nYNoC",
       "title": "KuaiSAR: A Unified Search And Recommendation Dataset",
-      "citations": 72,
+      "citations": 73,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:WF5omc3nYNoC"
     },
     {
@@ -94,7 +94,7 @@
     {
       "id": "QIV2ME_5wuYC",
       "title": "Syler: A framework for explicit syllogistic legal reasoning in large language models",
-      "citations": 38,
+      "citations": 39,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:QIV2ME_5wuYC"
     },
     {
@@ -212,6 +212,12 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:GnPB-g6toBAC"
     },
     {
+      "id": "maZDTaKrznsC",
+      "title": "Diagnosing Knowledge Conflict in Multimodal Long-Chain Reasoning",
+      "citations": 3,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:maZDTaKrznsC"
+    },
+    {
       "id": "kNdYIx-mwKoC",
       "title": "Effective In-Context Example Selection through Data Compression",
       "citations": 3,
@@ -222,12 +228,6 @@
       "title": "StyliTruth: Unlocking Stylized yet Truthful LLM Generation via Disentangled Steering",
       "citations": 2,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:k_IJM867U9cC"
-    },
-    {
-      "id": "maZDTaKrznsC",
-      "title": "Diagnosing Knowledge Conflict in Multimodal Long-Chain Reasoning",
-      "citations": 2,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:maZDTaKrznsC"
     },
     {
       "id": "3fE2CSJIrl8C",
