@@ -2,8 +2,8 @@
   "profile_id": "4n5whr0AAAAJ",
   "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
   "name": "Zhongxiang Sun",
-  "updated_at": "2026-11-13T06:55:06+00:00",
-  "citations": 2292,
+  "updated_at": "2026-11-15T06:45:43+00:00",
+  "citations": 2303,
   "h_index": 20,
   "i10_index": 24,
   "papers": [
@@ -16,7 +16,7 @@
     {
       "id": "-f6ydRqryjwC",
       "title": "Memory in the age of ai agents",
-      "citations": 321,
+      "citations": 324,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:-f6ydRqryjwC"
     },
     {
@@ -28,13 +28,13 @@
     {
       "id": "Y0pCki6q_DkC",
       "title": "A short survey of viewing large language models in legal aspect",
-      "citations": 174,
+      "citations": 175,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:Y0pCki6q_DkC"
     },
     {
       "id": "KlAtU1dfN6UC",
       "title": "Twin v2: Scaling ultra-long user behavior sequence modeling for enhanced ctr prediction at kuaishou",
-      "citations": 133,
+      "citations": 135,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:KlAtU1dfN6UC"
     },
     {
@@ -50,16 +50,16 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:u-x6o8ySG0sC"
     },
     {
+      "id": "4TOpqqG69KYC",
+      "title": "Generative retrieval with semantic tree-structured identifiers and contrastive learning",
+      "citations": 86,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:4TOpqqG69KYC"
+    },
+    {
       "id": "d1gkVwhDpl0C",
       "title": "AddrMiner: A Comprehensive Global Active IPv6 Address Discovery System",
       "citations": 86,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:d1gkVwhDpl0C"
-    },
-    {
-      "id": "4TOpqqG69KYC",
-      "title": "Generative retrieval with semantic tree-structured identifiers and contrastive learning",
-      "citations": 85,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:4TOpqqG69KYC"
     },
     {
       "id": "YsMSGLbcyi4C",
@@ -128,16 +128,16 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:UebtZRa9Y70C"
     },
     {
+      "id": "35N4QoGY0k4C",
+      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
+      "citations": 14,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
+    },
+    {
       "id": "7PzlFSSx8tAC",
       "title": "Llm-empowered creator simulation for long-term evaluation of recommender systems under information asymmetry",
       "citations": 14,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:7PzlFSSx8tAC"
-    },
-    {
-      "id": "35N4QoGY0k4C",
-      "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
-      "citations": 13,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
     },
     {
       "id": "j3f4tGmQtD8C",
@@ -176,10 +176,22 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:lSLTfruPkqcC"
     },
     {
+      "id": "vV6vV6tmYwMC",
+      "title": "ToolArtist: Tool-Using Unified Multimodal Models for Agentic Image Generation",
+      "citations": 5,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:vV6vV6tmYwMC"
+    },
+    {
       "id": "e5wmG9Sq2KIC",
       "title": "When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMs",
       "citations": 5,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:e5wmG9Sq2KIC"
+    },
+    {
+      "id": "GnPB-g6toBAC",
+      "title": "HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios",
+      "citations": 5,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:GnPB-g6toBAC"
     },
     {
       "id": "qUcmZB5y_30C",
@@ -194,22 +206,10 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:BqipwSGYUEgC"
     },
     {
-      "id": "vV6vV6tmYwMC",
-      "title": "ToolArtist: Tool-Using Unified Multimodal Models for Agentic Image Generation",
-      "citations": 4,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:vV6vV6tmYwMC"
-    },
-    {
       "id": "R3hNpaxXUhUC",
       "title": "Beyond high-entropy exploration: Correctness-aware low-entropy segment-based advantage shaping for reasoning llms",
       "citations": 4,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:R3hNpaxXUhUC"
-    },
-    {
-      "id": "GnPB-g6toBAC",
-      "title": "HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios",
-      "citations": 4,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:GnPB-g6toBAC"
     },
     {
       "id": "maZDTaKrznsC",
@@ -236,6 +236,12 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:3fE2CSJIrl8C"
     },
     {
+      "id": "ldfaerwXgEUC",
+      "title": "Trustworthy Recursive Self-Improvement in the Era of Large Models: Foundation, Risks, Evaluation and Open Challenges",
+      "citations": 1,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ldfaerwXgEUC"
+    },
+    {
       "id": "JV2RwH3_ST0C",
       "title": "DLLM-Searcher: Adapting Diffusion Large Language Model for Search Agents",
       "citations": 1,
@@ -246,12 +252,6 @@
       "title": "PROSE: Preservation-Constrained Selective Editing for Guilty Bias in Legal Judgment Prediction",
       "citations": 0,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:M05iB0D1s5AC"
-    },
-    {
-      "id": "ldfaerwXgEUC",
-      "title": "Trustworthy Recursive Self-Improvement in the Era of Large Models: Foundation, Risks, Evaluation and Open Challenges",
-      "citations": 0,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ldfaerwXgEUC"
     },
     {
       "id": "2P1L_qKh6hAC",
