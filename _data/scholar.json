@@ -2,9 +2,9 @@
   "profile_id": "4n5whr0AAAAJ",
   "profile_url": "https://scholar.google.com/citations?user=4n5whr0AAAAJ&hl=en",
   "name": "Zhongxiang Sun",
-  "updated_at": "2026-11-15T18:56:50+00:00",
-  "citations": 2303,
-  "h_index": 20,
+  "updated_at": "2026-11-17T21:03:00+00:00",
+  "citations": 2304,
+  "h_index": 19,
   "i10_index": 24,
   "papers": [
     {
@@ -16,19 +16,19 @@
     {
       "id": "-f6ydRqryjwC",
       "title": "Memory in the age of ai agents",
-      "citations": 324,
+      "citations": 325,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:-f6ydRqryjwC"
     },
     {
       "id": "ULOm3_A8WrAC",
       "title": "Redeep: Detecting hallucination in retrieval-augmented generation via mechanistic interpretability",
-      "citations": 215,
+      "citations": 216,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:ULOm3_A8WrAC"
     },
     {
       "id": "Y0pCki6q_DkC",
       "title": "A short survey of viewing large language models in legal aspect",
-      "citations": 175,
+      "citations": 174,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:Y0pCki6q_DkC"
     },
     {
@@ -124,20 +124,20 @@
     {
       "id": "UebtZRa9Y70C",
       "title": "Explainable legal case matching via graph optimal transport",
-      "citations": 20,
+      "citations": 19,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:UebtZRa9Y70C"
+    },
+    {
+      "id": "7PzlFSSx8tAC",
+      "title": "Llm-empowered creator simulation for long-term evaluation of recommender systems under information asymmetry",
+      "citations": 15,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:7PzlFSSx8tAC"
     },
     {
       "id": "35N4QoGY0k4C",
       "title": "JIT-Agent: Scaling harness intelligence via just-in-time harness evolution",
       "citations": 14,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:35N4QoGY0k4C"
-    },
-    {
-      "id": "7PzlFSSx8tAC",
-      "title": "Llm-empowered creator simulation for long-term evaluation of recommender systems under information asymmetry",
-      "citations": 14,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4n5whr0AAAAJ&pagesize=100&citation_for_view=4n5whr0AAAAJ:7PzlFSSx8tAC"
     },
     {
       "id": "j3f4tGmQtD8C",
